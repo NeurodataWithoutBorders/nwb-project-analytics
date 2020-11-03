@@ -4,7 +4,8 @@ DEV_USERNAMES = (  # issues raised by core devs are excluded from analysis
     'rly',
     'bendichter',
     'oruebel',
-    'ajtritt'
+    'ajtritt',
+    'ln-vidrio'
 )
 
 REPOS = (
