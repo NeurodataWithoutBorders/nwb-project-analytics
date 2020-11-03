@@ -25,7 +25,7 @@ df_dict = defaultdict(list)
 for repo in tqdm(REPOS, position=0, desc='repos'):    
     all_issues = g.get_repo(repo).get_issues(since=START)
     for issue in tqdm(all_issues, position=1, total=all_issues.totalCount, desc='issues'):
-        if issue.user.login not in DEV_USERNAMES:
+        if issue.user.login not in DEV_USERNAMES and issue.pull_request is None:
             df_dict['repo'].append(repo)
             df_dict['issue_number'].append(issue.number)
             df_dict['created_time'].append(issue.created_at)
