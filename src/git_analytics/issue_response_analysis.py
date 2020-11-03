@@ -5,7 +5,8 @@ DEV_USERNAMES = (  # issues raised by core devs are excluded from analysis
     'bendichter',
     'oruebel',
     'ajtritt',
-    'ln-vidrio'
+    'ln-vidrio',
+    't-b'
 )
 
 REPOS = (
@@ -30,11 +31,16 @@ for repo in tqdm(REPOS, position=0, desc='repos'):
             df_dict['issue_number'].append(issue.number)
             df_dict['created_time'].append(issue.created_at)
             
-            comments = issue.get_comments()
-            if len([x for x in comments]) == 0:
-                df_dict['response_time'].append(pd.NaT)
-            else:
-                df_dict['response_time'].append(comments[0].created_at)
+            df_dict['response_time'].append(pd.NaT)  # left as pd.NaT if no comments and not self-closed
+            
+            if issue.comments:
+                for comment in issue.get_comments():
+                    if issue.user != comment.user:  # don't count it if the user commented on their own issue
+                        df_dict['response_time'][-1] = comment.created_at
+                        continue
+            if issue.closed_by == issue.user:  # if user closes their own issue, count it as resolved
+                df_dict['response_time'][-1] = np.min([df_dict['response_time'][-1], issue.closed_at])
+                
                 
 df = pd.DataFrame(df_dict)
 df.to_csv('issue_responses.csv')
