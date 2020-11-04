@@ -1,10 +1,20 @@
-# nwb-project-analytics
+=====================
+nwb-project-analytics
+=====================
+
 Repository for collecting analytics and scripts related to the NWB project. 
 
-# Software Health
-## Latest Releases
-### PyNWB 
+Software Health
+===============
 
+Latest Releases
+---------------
+
+PyNWB 
+^^^^^
+
+Latest Release
+==============
 
 .. image:: https://badge.fury.io/py/pynwb.svg
      :target: https://badge.fury.io/py/pynwb
@@ -13,8 +23,11 @@ Repository for collecting analytics and scripts related to the NWB project.
      :target: https://anaconda.org/conda-forge/pynwb
 
 
-## Build Status
-### PyNWB
+
+Build Status
+------------
+PyNWB
+^^^^^
 
 .. table::
 
@@ -26,8 +39,10 @@ Repository for collecting analytics and scripts related to the NWB project.
   +-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 
-## Overall Health
-### PyNWB
+Overall Health
+--------------
+PyNWB
+^^^^^
 
 .. image:: https://codecov.io/gh/NeurodataWithoutBorders/pynwb/branch/dev/graph/badge.svg
     :target: https://codecov.io/gh/NeurodataWithoutBorders/pynwb
