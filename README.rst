@@ -109,3 +109,42 @@ Overall Health
   |                          |                                                                                           |                                                                                                  |       :target: https://nwb-storage.readthedocs.io/en/latest/?badge=latest              |
   |                          |                                                                                           |                                                                                                  |       :alt: Documentation Status                                                       |
   +--------------------------+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+GitHub Issue/PR Status
+----------------------
+
+.. table::
+
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  |                          | **Issues**                                                                                    | **Pull Requests**                                                                                |
+  +==========================+===============================================================================================+==================================================================================================+
+  | **PyNWB**                | .. image:: https://img.shields.io/github/issues-raw/neurodatawithoutborders/pynwb             | .. image:: https://img.shields.io/github/issues-pr-raw/neurodatawithoutborders/pynwb             |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/neurodatawithoutborders/pynwb      | .. image:: https://img.shields.io/github/issues-pr-closed-raw/neurodatawithoutborders/pynwb      |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **MatNWB**               | .. image:: https://img.shields.io/github/issues-raw/neurodatawithoutborders/matnwb            | .. image:: https://img.shields.io/github/issues-pr-raw/neurodatawithoutborders/matnwb            |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/neurodatawithoutborders/matnwb     | .. image:: https://img.shields.io/github/issues-pr-closed-raw/neurodatawithoutborders/matnwb     |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **HDMF**                 | .. image:: https://img.shields.io/github/issues-raw/hdmf-dev/hdmf                             | .. image:: https://img.shields.io/github/issues-pr-raw/hdmf-dev/hdmf                             |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/hdmf-dev/hdmf                      | .. image:: https://img.shields.io/github/issues-pr-closed-raw/hdmf-dev/hdmf                      |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **HDMF Docutils**        | .. image:: https://img.shields.io/github/issues-raw/hdmf-dev/hdmf-docutils                    | .. image:: https://img.shields.io/github/issues-pr-raw/hdmf-dev/hdmf-docutils                    |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/hdmf-dev/hdmf-docutils             | .. image:: https://img.shields.io/github/issues-pr-closed-raw/hdmf-dev/hdmf-docutils             |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **HDMF Schema Language** | .. image:: https://img.shields.io/github/issues-raw/hdmf-dev/hdmf-schema-language             | .. image:: https://img.shields.io/github/issues-pr-raw/hdmf-dev/hdmf-schema-language             |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/hdmf-dev/hdmf-schema-language      | .. image:: https://img.shields.io/github/issues-pr-closed-raw/hdmf-dev/hdmf-schema-language      |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **HDMF Common Schema**   | .. image:: https://img.shields.io/github/issues-raw/hdmf-dev/hdmf-common-schema               | .. image:: https://img.shields.io/github/issues-pr-raw/hdmf-dev/hdmf-common-schema               |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/hdmf-dev/hdmf-common-schema        | .. image:: https://img.shields.io/github/issues-pr-closed-raw/hdmf-dev/hdmf-common-schema        |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **NWB Schema**           | .. image:: https://img.shields.io/github/issues-raw/neurodatawithoutborders/nwb-schema        | .. image:: https://img.shields.io/github/issues-pr-raw/neurodatawithoutborders/nwb-schema        |
+  |                          |                                                                                               |                                                                                                  |
+  |                          | .. image:: https://img.shields.io/github/issues-closed-raw/neurodatawithoutborders/nwb-schema | .. image:: https://img.shields.io/github/issues-pr-closed-raw/neurodatawithoutborders/nwb-schema |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+  | **NWB Storage**          | Part of NWB Schema                                                                            | Part of NWB Schema                                                                               |
+  +--------------------------+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
