@@ -10,30 +10,20 @@ Software Health
 Latest Releases
 ---------------
 
-PyNWB 
-^^^^^
+.. table::
 
-.. image:: https://badge.fury.io/py/pynwb.svg
-     :target: https://badge.fury.io/py/pynwb
-
-.. image:: https://anaconda.org/conda-forge/pynwb/badges/version.svg
-     :target: https://anaconda.org/conda-forge/pynwb
-
-HDMF
-^^^^
-
-.. image:: https://badge.fury.io/py/hdmf.svg
-     :target: https://badge.fury.io/py/hdmf
-
-.. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg
-     :target: https://anaconda.org/conda-forge/hdmf
-     
-HDMF Docutils
-^^^^^^^^^^^^^
-
-.. image:: https://img.shields.io/pypi/v/hdmf-docutils.svg
-    :target: https://pypi.org/project/hdmf-docutils/
-    :alt:    PyPI
+ +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+ |            | PyNWB                                                                                   | HDMF                                                                                    | HDMF Docutils                                                                           |
+ +============+=========================================================================================+=========================================================================================+=========================================================================================+
+ | **PyPi**   | .. image:: https://badge.fury.io/py/pynwb.svg                                           |  .. image:: https://badge.fury.io/py/hdmf.svg                                           | .. image:: https://badge.fury.io/py/hdmf-docutils.svg                                   |
+ |            |     :target: https://badge.fury.io/py/pynwb                                             |      :target: https://badge.fury.io/py/hdmf                                             |      :target: https://badge.fury.io/py/hdmf-docutils                                    |
+ |            |     :alt:    PyPI - Verion                                                              |      :alt:    PyPI - Version                                                            |      :alt:    PyPI - Version                                                            |
+ +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+ | **Conda**  | .. image:: https://anaconda.org/conda-forge/pynwb/badges/version.svg                    |  .. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg                    |                                                                                         |
+ |            |     :target: https://anaconda.org/conda-forge/pynwb                                     |      :target: https://anaconda.org/conda-forge/hdmf                                     |                                                                                         |
+ |            |     :alt:    Conda - Version                                                            |      :alt:    Conda - Version                                                           |                                                                                         |
+ +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+ 
 
 Licences
 --------
