@@ -85,5 +85,16 @@ HDMF
      :target: https://hdmf.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
 
+HDMF Common Schema
+^^^^^^^^^^^^^^^^^^
 
+.. image:: https://readthedocs.org/projects/hdmf-common-schema/badge/?version=latest
+     :target: https://hdmf-common-schema.readthedocs.io/en/latest/?badge=latest
+     :alt: Documentation Status
 
+HDMF Schema Language
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://readthedocs.org/projects/hdmf-schema-language/badge/?version=latest
+     :target: https://hdmf-schema-language.readthedocs.io/en/latest/?badge=latest
+     :alt: Documentation Status
