@@ -27,6 +27,27 @@ HDMF
 
 .. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg
      :target: https://anaconda.org/conda-forge/hdmf
+     
+HDMF Docutils
+^^^^^^^^^^^^^
+
+.. image:: https://img.shields.io/pypi/v/hdmf-docutils.svg
+    :target: https://pypi.org/project/hdmf-docutils/
+    :alt:    PyPI
+
+Licences
+--------
+
+.. table::
+
+ +-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+ | PyNWB                                                                                   | HDMF                                                                                    | HDMF Docutils                                                                           |
+ +=========================================================================================+=========================================================================================+=========================================================================================+
+ | .. image:: https://img.shields.io/pypi/l/pynwb.svg                                      |  .. image:: https://img.shields.io/pypi/l/hdmf.svg                                      | .. image:: https://img.shields.io/pypi/l/hdmf-docutils.svg                              |
+ |     :target: https://github.com/neurodatawithoutborders/pynwb/blob/dev/license.txt      |      :target: https://github.com/hdmf-dev/hdmf/blob/master/license.txt                  |      :target: https://github.com/hdmf-dev/hdmf-docutils/blob/master/license.txt         |
+ |     :alt:    PyPI - License                                                             |      :alt:    PyPI - License                                                            |      :alt:    PyPI - License                                                            |
+ +-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
 
 Build Status
 ------------
