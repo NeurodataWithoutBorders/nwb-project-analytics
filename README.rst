@@ -4,6 +4,16 @@ nwb-project-analytics
 
 Repository for collecting analytics and scripts related to the NWB project. 
 
+NWB Online
+==========
+
+* `NWB.org <https://nwb.org>`_
+* `NDX Catalog <https://nwb-extensions.github.io/>`_
+* `HDMF <https://hdmf-dev.github.io/>`_
+* `YouTube <https://www.youtube.com/channel/UCfD_mU-EFz135a9TpNFJP5A/>`_
+
+.. image:: https://img.shields.io/twitter/follow/neurodatawb?style=social
+
 Software Health
 ===============
 
