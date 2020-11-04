@@ -13,7 +13,7 @@ Latest Releases
 .. table::
 
  +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
- |            | PyNWB                                                                                   | HDMF                                                                                    | HDMF Docutils                                                                           |
+ |            | **PyNWB**                                                                               | **HDMF**                                                                                | **HDMF Docutils**                                                                       |
  +============+=========================================================================================+=========================================================================================+=========================================================================================+
  | **PyPi**   | .. image:: https://badge.fury.io/py/pynwb.svg                                           |  .. image:: https://badge.fury.io/py/hdmf.svg                                           | .. image:: https://badge.fury.io/py/hdmf-docutils.svg                                   |
  |            |     :target: https://badge.fury.io/py/pynwb                                             |      :target: https://badge.fury.io/py/hdmf                                             |      :target: https://badge.fury.io/py/hdmf-docutils                                    |
@@ -31,7 +31,7 @@ Licences
 .. table::
 
  +-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
- | PyNWB                                                                                   | HDMF                                                                                    | HDMF Docutils                                                                           |
+ | **PyNWB**                                                                               | **HDMF**                                                                                | **HDMF Docutils**                                                                       |
  +=========================================================================================+=========================================================================================+=========================================================================================+
  | .. image:: https://img.shields.io/pypi/l/pynwb.svg                                      |  .. image:: https://img.shields.io/pypi/l/hdmf.svg                                      | .. image:: https://img.shields.io/pypi/l/hdmf-docutils.svg                              |
  |     :target: https://github.com/neurodatawithoutborders/pynwb/blob/dev/license.txt      |      :target: https://github.com/hdmf-dev/hdmf/blob/master/license.txt                  |      :target: https://github.com/hdmf-dev/hdmf-docutils/blob/master/license.txt         |
@@ -47,7 +47,7 @@ PyNWB
 .. table::
 
   +-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-  | Linux                                                                                   | Windows and MacOS                                                                                                               | Conda                                                                                                                           |
+  | **Linux**                                                                               | **Windows and MacOS**                                                                                                           | **Conda**                                                                                                                       |
   +=========================================================================================+=================================================================================================================================+=================================================================================================================================+
   | .. image:: https://circleci.com/gh/NeurodataWithoutBorders/pynwb.svg?style=shield       | .. image:: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_apis/build/status/NeurodataWithoutBorders.pynwb?branchName=dev  | .. image:: https://circleci.com/gh/conda-forge/pynwb-feedstock.svg?style=shield                                                 |
   |     :target: https://circleci.com/gh/NeurodataWithoutBorders/pynwb                      |     :target: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_build/latest?definitionId=3&branchName=dev                    |      :target: https://circleci.com/gh/conda-forge/pynwb-feedstocks                                                              |
@@ -59,7 +59,7 @@ HDMF
 .. table::
 
   +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-  | Linux                                                               | Windows and macOS                                                                                | Conda                                                                                            |
+  | **Linux**                                                           | **Windows and macOS**                                                                            | **Conda**                                                                                        |
   +=====================================================================+==================================================================================================+==================================================================================================+
   | .. image:: https://circleci.com/gh/hdmf-dev/hdmf.svg?style=shield   | .. image:: https://dev.azure.com/hdmf-dev/hdmf/_apis/build/status/hdmf-dev.hdmf?branchName=dev   | .. image:: https://circleci.com/gh/conda-forge/hdmf-feedstock.svg?style=shield                   |
   |     :target: https://circleci.com/gh/hdmf-dev/hdmf                  |     :target: https://dev.azure.com/hdmf-dev/hdmf/_build/latest?definitionId=1&branchName=dev     |     :target: https://circleci.com/gh/conda-forge/hdmf-feedstock                                  |
@@ -68,44 +68,21 @@ HDMF
 
 Overall Health
 --------------
-PyNWB
-^^^^^
 
-.. image:: https://codecov.io/gh/NeurodataWithoutBorders/pynwb/branch/dev/graph/badge.svg
-    :target: https://codecov.io/gh/NeurodataWithoutBorders/pynwb
+.. table::
 
-.. image:: https://requires.io/github/NeurodataWithoutBorders/pynwb/requirements.svg?branch=dev
-     :target: https://requires.io/github/NeurodataWithoutBorders/pynwb/requirements/?branch=dev
-     :alt: Requirements Status
-     
-.. image:: https://readthedocs.org/projects/pynwb/badge/?version=latest
-     :target: https://pynwb.readthedocs.io/en/latest/?badge=latest
-     :alt: Documentation Status
-     
-HDMF
-^^^^
-
-.. image:: https://codecov.io/gh/hdmf-dev/hdmf/branch/dev/graph/badge.svg
-    :target: https://codecov.io/gh/hdmf-dev/hdmf
-
-.. image:: https://requires.io/github/hdmf-dev/hdmf/requirements.svg?branch=dev
-     :target: https://requires.io/github/hdmf-dev/hdmf/requirements/?branch=dev
-     :alt: Requirements Status
-
-.. image:: https://readthedocs.org/projects/hdmf/badge/?version=latest
-     :target: https://hdmf.readthedocs.io/en/latest/?badge=latest
-     :alt: Documentation Status
-
-HDMF Common Schema
-^^^^^^^^^^^^^^^^^^
-
-.. image:: https://readthedocs.org/projects/hdmf-common-schema/badge/?version=latest
-     :target: https://hdmf-common-schema.readthedocs.io/en/latest/?badge=latest
-     :alt: Documentation Status
-
-HDMF Schema Language
-^^^^^^^^^^^^^^^^^^^^
-
-.. image:: https://readthedocs.org/projects/hdmf-schema-language/badge/?version=latest
-     :target: https://hdmf-schema-language.readthedocs.io/en/latest/?badge=latest
-     :alt: Documentation Status
+  +-------------------+-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------+
+  |                   | **PyNWB**                                                                                       | **HDMF**                                                                        | **HDMF Common Schema**                                                               | **HDMF Schema Language**                                                               | **HDMF Docutils** |
+  +===================+=================================================================================================+=================================================================================+======================================================================================+========================================================================================+===================+
+  | **Coverage**      | .. image:: https://codecov.io/gh/NeurodataWithoutBorders/pynwb/branch/dev/graph/badge.svg       | .. image:: https://codecov.io/gh/hdmf-dev/hdmf/branch/dev/graph/badge.svg       | N/A                                                                                  | N/A                                                                                    | Missing           |
+  |                   |     :target: https://codecov.io/gh/NeurodataWithoutBorders/pynwb                                |     :target: https://codecov.io/gh/hdmf-dev/hdmf    :alt: Code Coverage         |                                                                                      |                                                                                        |                   |
+  |                   |     :alt: Code Coverage                                                                         |                                                                                 |                                                                                      |                                                                                        |                   |
+  +-------------------+-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------+
+  | **Requirements**  | .. image:: https://requires.io/github/NeurodataWithoutBorders/pynwb/requirements.svg?branch=dev | .. image:: https://requires.io/github/hdmf-dev/hdmf/requirements.svg?branch=dev | N/A                                                                                  | N/A                                                                                    | Missing           |
+  |                   |      :target: https://requires.io/github/NeurodataWithoutBorders/pynwb/requirements/?branch=dev |      :target: https://requires.io/github/hdmf-dev/hdmf/requirements/?branch=dev |                                                                                      |                                                                                        |                   |
+  |                   |      :alt: Requirements Status                                                                  |      :alt: Requirements Status                                                  |                                                                                      |                                                                                        |                   |
+  +-------------------+-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------+
+  | **Documentation** | .. image:: https://readthedocs.org/projects/pynwb/badge/?version=latest                         | .. image:: https://readthedocs.org/projects/hdmf/badge/?version=latest          | .. image:: https://readthedocs.org/projects/hdmf-common-schema/badge/?version=latest | .. image:: https://readthedocs.org/projects/hdmf-schema-language/badge/?version=latest | Missing           |
+  |                   |      :target: https://pynwb.readthedocs.io/en/latest/?badge=latest                              |      :target: https://hdmf.readthedocs.io/en/latest/?badge=latest               |      :target: https://hdmf-common-schema.readthedocs.io/en/latest/?badge=latest      |      :target: https://hdmf-schema-language.readthedocs.io/en/latest/?badge=latest      |                   |
+  |                   |      :alt: Documentation Status                                                                 |      :alt: Documentation Status                                                 |      :alt: Documentation Status                                                      |      :alt: Documentation Status                                                        |                   |
+  +-------------------+-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------+
