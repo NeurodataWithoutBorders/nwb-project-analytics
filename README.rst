@@ -41,30 +41,29 @@ Licences
 
 Build Status
 ------------
-PyNWB
-^^^^^
 
 .. table::
 
-  +-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-  | **Linux**                                                                               | **Windows and MacOS**                                                                                                           | **Conda**                                                                                                                       |
-  +=========================================================================================+=================================================================================================================================+=================================================================================================================================+
-  | .. image:: https://circleci.com/gh/NeurodataWithoutBorders/pynwb.svg?style=shield       | .. image:: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_apis/build/status/NeurodataWithoutBorders.pynwb?branchName=dev  | .. image:: https://circleci.com/gh/conda-forge/pynwb-feedstock.svg?style=shield                                                 |
-  |     :target: https://circleci.com/gh/NeurodataWithoutBorders/pynwb                      |     :target: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_build/latest?definitionId=3&branchName=dev                    |      :target: https://circleci.com/gh/conda-forge/pynwb-feedstocks                                                              |
-  +-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-
-HDMF
-^^^^
-
-.. table::
-
-  +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-  | **Linux**                                                           | **Windows and macOS**                                                                            | **Conda**                                                                                        |
-  +=====================================================================+==================================================================================================+==================================================================================================+
-  | .. image:: https://circleci.com/gh/hdmf-dev/hdmf.svg?style=shield   | .. image:: https://dev.azure.com/hdmf-dev/hdmf/_apis/build/status/hdmf-dev.hdmf?branchName=dev   | .. image:: https://circleci.com/gh/conda-forge/hdmf-feedstock.svg?style=shield                   |
-  |     :target: https://circleci.com/gh/hdmf-dev/hdmf                  |     :target: https://dev.azure.com/hdmf-dev/hdmf/_build/latest?definitionId=1&branchName=dev     |     :target: https://circleci.com/gh/conda-forge/hdmf-feedstock                                  |
-  +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-
+  +-------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------+
+  |             | **PyNWB**                                                                                                                      | **HDMF**                                                                                       | HDMF DocUtils |
+  +=============+================================================================================================================================+================================================================================================+===============+
+  | **Linux**   | .. image:: https://circleci.com/gh/NeurodataWithoutBorders/pynwb.svg?style=shield                                              | .. image:: https://circleci.com/gh/hdmf-dev/hdmf.svg?style=shield                              | Not tested    |
+  |             |      :target: https://circleci.com/gh/NeurodataWithoutBorders/pynwb                                                            |      :target: https://circleci.com/gh/hdmf-dev/hdmf                                            |               |
+  |             |      :alt: CircleCI Status                                                                                                     |      :alt: CircleCI Status                                                                     |               |
+  +-------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------+
+  | **Windows** | .. image:: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_apis/build/status/NeurodataWithoutBorders.pynwb?branchName=dev | .. image:: https://dev.azure.com/hdmf-dev/hdmf/_apis/build/status/hdmf-dev.hdmf?branchName=dev | Not testet    |
+  |             |      :target: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_build/latest?definitionId=3&branchName=dev                  |     :target: https://dev.azure.com/hdmf-dev/hdmf/_build/latest?definitionId=1&branchName=dev   |               |
+  |             |      :alt: Azure Status                                                                                                        |     :alt: Azure Status                                                                         |               |
+  +-------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------+
+  | **MacOS**   | .. image:: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_apis/build/status/NeurodataWithoutBorders.pynwb?branchName=dev | .. image:: https://dev.azure.com/hdmf-dev/hdmf/_apis/build/status/hdmf-dev.hdmf?branchName=dev | Not tested    |
+  |             |      :target: https://dev.azure.com/NeurodataWithoutBorders/pynwb/_build/latest?definitionId=3&branchName=dev                  |     :target: https://dev.azure.com/hdmf-dev/hdmf/_build/latest?definitionId=1&branchName=dev   |               |
+  |             |      :alt: Azure Status                                                                                                        |     :alt: Azure Status                                                                         |               |
+  +-------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------+
+  | **Conda**   | .. image:: https://circleci.com/gh/conda-forge/pynwb-feedstock.svg?style=shield                                                | .. image:: https://circleci.com/gh/conda-forge/hdmf-feedstock.svg?style=shield                 | Not tested    |
+  |             |       :target: https://circleci.com/gh/conda-forge/pynwb-feedstocks                                                            |     :target: https://circleci.com/gh/conda-forge/hdmf-feedstock                                |               |
+  |             |       :alt: Conda Feedstock Status                                                                                             |     :alt: Conda Feedstock Status                                                               |               |
+  |             |                                                                                                                                |                                                                                                |               |
+  +-------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------+
 
 Overall Health
 --------------
