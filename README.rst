@@ -22,17 +22,25 @@ Latest Releases
 
 .. table::
 
- +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
- |            | **PyNWB**                                                                               | **HDMF**                                                                                | **HDMF Docutils**                                                                       |
- +============+=========================================================================================+=========================================================================================+=========================================================================================+
- | **PyPi**   | .. image:: https://badge.fury.io/py/pynwb.svg                                           |  .. image:: https://badge.fury.io/py/hdmf.svg                                           | .. image:: https://badge.fury.io/py/hdmf-docutils.svg                                   |
- |            |     :target: https://badge.fury.io/py/pynwb                                             |      :target: https://badge.fury.io/py/hdmf                                             |      :target: https://badge.fury.io/py/hdmf-docutils                                    |
- |            |     :alt:    PyPI - Verion                                                              |      :alt:    PyPI - Version                                                            |      :alt:    PyPI - Version                                                            |
- +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
- | **Conda**  | .. image:: https://anaconda.org/conda-forge/pynwb/badges/version.svg                    |  .. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg                    |                                                                                         |
- |            |     :target: https://anaconda.org/conda-forge/pynwb                                     |      :target: https://anaconda.org/conda-forge/hdmf                                     |                                                                                         |
- |            |     :alt:    Conda - Version                                                            |      :alt:    Conda - Version                                                           |                                                                                         |
- +------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+  +-----------+----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+  |           | **PyNWB**                                                            | **HDMF**                                                              | **HDMF Docutils**                                     |
+  +===========+======================================================================+=======================================================================+=======================================================+
+  | **PyPi**  | .. image:: https://badge.fury.io/py/pynwb.svg                        | .. image:: https://badge.fury.io/py/hdmf.svg                          | .. image:: https://badge.fury.io/py/hdmf-docutils.svg |
+  |           |      :target: https://badge.fury.io/py/pynwb                         |      :target: https://badge.fury.io/py/hdmf                           |       :target: https://badge.fury.io/py/hdmf-docutils |
+  |           |      :alt:    PyPI - Version                                         |      :alt:    PyPI - Version                                          |       :alt:    PyPI - Version                         |
+  |           | .. image:: https://img.shields.io/pypi/pyversions/pynwb              | .. image:: https://img.shields.io/pypi/pyversions/hdmf                |                                                       |
+  |           |      :target: https://badge.fury.io/py/pynwb                         |      :target: https://badge.fury.io/py/pynwb                          |                                                       |
+  |           |      :alt:    PyPI - Supported Python Versions                       |      :alt:    PyPI - Supported Python Versions                        |                                                       |
+  |           |                                                                      |                                                                       |                                                       |
+  +-----------+----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+  | **Conda** | .. image:: https://anaconda.org/conda-forge/pynwb/badges/version.svg |   .. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg |                                                       |
+  |           |      :target: https://anaconda.org/conda-forge/pynwb                 |       :target: https://anaconda.org/conda-forge/hdmf                  |                                                       |
+  |           |      :alt:    Conda - Version                                        |       :alt:    Conda - Version                                        |                                                       |
+  |           | .. image::  https://img.shields.io/conda/pn/conda-forge/pynwb        | .. image::  https://img.shields.io/conda/pn/conda-forge/hdmf          |                                                       |
+  |           |      :target: https://anaconda.org/conda-forge/pynwb                 |       :target: https://anaconda.org/conda-forge/hdmf                  |                                                       |
+  |           |      :alt:    Conda - Version                                        |       :alt:    Conda - Version                                        |                                                       |
+  +-----------+----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+
  
 .. table::
 
