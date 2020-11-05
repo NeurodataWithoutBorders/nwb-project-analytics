@@ -33,7 +33,7 @@ Latest Releases
   |           |      :alt:    PyPI - Supported Python Versions                       |      :alt:    PyPI - Supported Python Versions                        |                                                       |
   |           |                                                                      |                                                                       |                                                       |
   +-----------+----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-  | **Conda** | .. image:: https://anaconda.org/conda-forge/pynwb/badges/version.svg |   .. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg |                                                       |
+  | **Conda** | .. image:: https://anaconda.org/conda-forge/pynwb/badges/version.svg | .. image:: https://anaconda.org/conda-forge/hdmf/badges/version.svg |                                                       |
   |           |      :target: https://anaconda.org/conda-forge/pynwb                 |       :target: https://anaconda.org/conda-forge/hdmf                  |                                                       |
   |           |      :alt:    Conda - Version                                        |       :alt:    Conda - Version                                        |                                                       |
   |           | .. image::  https://img.shields.io/conda/pn/conda-forge/pynwb        | .. image::  https://img.shields.io/conda/pn/conda-forge/hdmf          |                                                       |
