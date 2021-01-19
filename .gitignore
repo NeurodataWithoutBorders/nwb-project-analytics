@@ -1,3 +1,6 @@
+# Custom folders with temp data from scripts
+src/git_analytics/temp_cloc_stats
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
