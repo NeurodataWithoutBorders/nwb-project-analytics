@@ -3,6 +3,9 @@ src/projectstats/notebooks/temp_cloc_stats
 src/projectstats/notebooks/*.pdf
 src/projectstats/notebooks/*.png
 
+#PyCharm
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
