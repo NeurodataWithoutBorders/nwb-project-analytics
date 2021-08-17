@@ -4,7 +4,10 @@ import numpy as np
 import requests
 from matplotlib import pyplot as plt
 import matplotlib.dates as mdates
+import matplotlib.patches as patches
 from collections import OrderedDict
+from distutils.version import LooseVersion
+import warnings
 
 
 class GitRepo(NamedTuple):
@@ -138,7 +141,7 @@ class GitHubRepoInfo:
         # return the results
         return self.__releases
 
-    def get_release_names_and_dats(self, **kwargs):
+    def get_release_names_and_dates(self, **kwargs):
         """
         Get names and dates of releases
         :param kwargs: Additional keyword arguments to be passed to self.get_releases
@@ -150,12 +153,19 @@ class GitHubRepoInfo:
         dates = []
         for rel in releases:
             if "Latest" not in rel["name"]:
-                names.append(rel["tag_name"])
+                names.append(rel["tag_name"].lstrip('v'))
                 dates.append(rel["published_at"])
         dates = [datetime.strptime(d[0:10], "%Y-%m-%d") for d in dates]
         return names, dates
 
-    def plot_release_timeline(self, figsize=None, fontsize=14, month_intervals=3, xlim=None, ax=None, title_on_yaxis=False):
+
+    def plot_release_timeline(self,
+                              figsize=None,
+                              fontsize=14,
+                              month_intervals=3,
+                              xlim=None, ax=None,
+                              title_on_yaxis=False,
+                              add_releases=None):
         """
         Plot a timeline of the releases for the repo
 
@@ -167,15 +177,42 @@ class GitHubRepoInfo:
         :param xlim: Optional tuple of datetime objects with the start and end-date for the x axis
         :param ax: Matplotlib axis object to be used for plotting
         :param title_on_yaxis: Show plot title as name of the y-axis (True) or as the main title (False) (default=False)
+        :param add_releases: Sometimes libraries did not use git tags to mark releases. With this we can add
+                             additional releases that are missing from the git tags.
+        :type add_releases: List of tuples with "name: str" and "date: datetime.strptime(d[0:10], "%Y-%m-%d")"
 
         :return: Matplotlib axis object use for plotting
         """
-        names, dates = self.get_release_names_and_dats()
-
+        names, dates = self.get_release_names_and_dates()
+        if add_releases is not None:
+            for r in add_releases:
+                names.append(r[0])
+                dates.append(r[1])
 
         # Choose some nice levels
-        levels = np.tile([-5, 5, -3, 3, -1, 1],
-                         int(np.ceil(len(dates)/6)))[:len(dates)]
+        try:
+            version_jumps = self.get_version_jump_from_tags(names)
+            levels = []
+            curr_major = 5
+            curr_minor = 2
+            curr_patch = -5
+            for n in names:
+                if version_jumps[n] == "major":
+                    levels.append(curr_major)
+                elif version_jumps[n] == "minor":
+                    levels.append(curr_minor)
+                    curr_minor = 2 if curr_minor < 2 else 1
+                elif version_jumps[n] == "patch":
+                    levels.append(curr_patch)
+                    curr_patch += 1
+                    if curr_patch > -0.5: # Check for 0 and loop back to -5
+                        curr_patch = -5
+            levels_by_version_jumps = True
+        except Exception as e:
+            warnings.warn("Computing version jumps from tags failed. Fall back to default levels." + str(e))
+            levels = np.tile([-5, 5, -3, 3, -1, 1],
+                             int(np.ceil(len(dates)/6)))[:len(dates)]
+            levels_by_version_jumps = False
 
         # Create figure and plot a stem plot with the date
         if ax is None:
@@ -208,5 +245,60 @@ class GitHubRepoInfo:
             ax.set_title("%s release dates" % self.repo.repo, fontdict={"fontsize": fontsize})
             ax.yaxis.set_visible(False)
 
+        # Set margins and grid lines
         ax.margins(y=0.1)
+
+        # If levels of lines correspond to version jumps, then color code the background and add a legend
+        if levels_by_version_jumps:
+            # Create a Rectangle patch
+            legend_items = []
+            # Major releases background
+            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 3.5), # xy origin
+                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0], # width
+                                                  height=ax.get_ylim()[1] - 3.5,
+                                                  linewidth=0, facecolor='lightgreen', edgecolor=None))
+            # Minor releases background
+            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 0), # xy origin
+                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0], # width
+                                                  height=3.5,
+                                                  linewidth=0, facecolor='lightblue', edgecolor=None))
+            # Patch releases background
+            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], ax.get_ylim()[0]), # xy origin
+                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0], # width
+                                                  height=abs(ax.get_ylim()[0]),
+                                                  linewidth=0, facecolor='lightgray', edgecolor=None))
+            # Add the patches to plot
+            for patch in legend_items:
+                ax.add_patch(patch)
+            # Add a a legend for the backround color
+            ax.legend(legend_items, ['Major', 'Minor', 'Patch'],
+                           loc='lower left', fontsize=14, edgecolor='black',
+                           facecolor='white', framealpha=1)
+        ax.grid(axis="x", linestyle='dashed', color='gray')
+
         return ax
+
+    @staticmethod
+    def get_version_jump_from_tags(tags):
+        """
+        Assuming semantic versioning release tags get the version jumps from the tags
+
+        :returns: OrderedDict
+        """
+        def compare_versions(v1, v2):
+            if v2.version[0] > v1.version[0]:
+                return "major"
+            elif v2.version[1] > v1.version[1]:
+                return "minor"
+            else:
+                return "patch"
+        versions = sorted([LooseVersion(t) for t in tags])
+        # The first version needs to be treated seprately since we don't have a version to compare to
+        version_jumps = OrderedDict([(versions[0].vstring,
+                                      'major' if versions[0].version[0] > 0 else 'minor')])
+        # Compare current and previous version to determine version jumps
+        version_jumps.update(OrderedDict([(versions[i].vstring,
+                                           compare_versions(versions[i-1], versions[i]))
+                                         for i in range(1, len(versions), 1)]))
+        # return results
+        return version_jumps
