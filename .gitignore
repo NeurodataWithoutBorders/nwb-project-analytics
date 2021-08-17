@@ -1,6 +1,7 @@
 # Custom folders with temp data from scripts
 src/projectstats/notebooks/temp_cloc_stats
 src/projectstats/notebooks/*.pdf
+src/projectstats/notebooks/*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
