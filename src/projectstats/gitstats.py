@@ -272,8 +272,8 @@ class GitHubRepoInfo:
                 ax.add_patch(patch)
             # Add a a legend for the backround color
             ax.legend(legend_items, ['Major', 'Minor', 'Patch'],
-                           loc='lower left', fontsize=14, edgecolor='black',
-                           facecolor='white', framealpha=1)
+                      loc='lower left', fontsize=fontsize, edgecolor='black',
+                      facecolor='white', framealpha=1)
         ax.grid(axis="x", linestyle='dashed', color='gray')
 
         return ax
