@@ -1,5 +1,6 @@
 # Custom folders with temp data from scripts
-src/git_analytics/temp_cloc_stats
+src/projectstats/notebooks/temp_cloc_stats
+src/projectstats/notebooks/*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

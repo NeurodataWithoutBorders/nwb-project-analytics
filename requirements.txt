@@ -1,0 +1,8 @@
+numpy
+pandas
+ruamel.yaml
+setuptools
+GitPython
+matplotlib
+cloc   # https://github.com/AlDanial
+requests
