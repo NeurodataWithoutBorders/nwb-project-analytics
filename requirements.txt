@@ -6,3 +6,5 @@ GitPython
 matplotlib
 cloc   # https://github.com/AlDanial
 requests
+PyGithub # For issue response time analysis
+tqdm # For issue response time analysis

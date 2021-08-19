@@ -2,6 +2,9 @@
 src/projectstats/notebooks/temp_cloc_stats
 src/projectstats/notebooks/*.pdf
 src/projectstats/notebooks/*.png
+src/projectstats/notebooks/*.csv
+src/projectstats/notebooks/ghk.txt
+
 
 #PyCharm
 .idea
