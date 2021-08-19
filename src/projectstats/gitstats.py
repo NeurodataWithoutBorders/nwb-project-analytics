@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import NamedTuple
 import numpy as np
+import pandas as pd
 import requests
 from matplotlib import pyplot as plt
 import matplotlib.dates as mdates
@@ -22,6 +23,47 @@ class GitRepo(NamedTuple):
     @property
     def github_path(self):
         return "https://github.com/%s/%s.git" % (self.owner, self.repo)
+
+    def get_issues_as_dataframe(self, date_threshold, github_obj, tqdm=None):
+        """
+        Get a dataframe for all issues with comments later than the given data
+
+        :param date_threshold: Datetime object with data of latest comment threshold
+        :param github_obj: PyGitHub github.Github object to use for retrieving issues
+        :param tqdm: Supply the tqdm progress bar class to use
+        :return:
+        """
+        issue_attrs = ['id', 'number', 'user', 'created_at',
+               'closed_at', 'state', 'title', 'milestone', 'labels',
+               'pull_request', 'closed_by', 'assignees', 'url']
+        custom_issue_attrs = ['user_login', 'response_time', 'time_to_response',
+                              'time_to_response_f', 'is_enhancement', 'is_help_wanted']
+        issues = github_obj.get_repo("%s/%s" % self).get_issues(since=date_threshold)
+        curr_df = pd.DataFrame(columns=(issue_attrs + custom_issue_attrs))
+        if tqdm is not None:
+            vals = tqdm(issues, position=1, total=issues.totalCount, desc='%s issues' % self.repo)
+        else:
+            vals = issues
+        for issue in vals:
+            curr_row = {k: getattr(issue, k) for k in issue_attrs}
+            curr_row['response_time'] = pd.NaT
+            curr_row['user_login'] = curr_row['user'].login
+            curr_row['is_enhancement'] = np.any([l.name == "enhancement" for l in curr_row['labels']])
+            curr_row['is_help_wanted'] = np.any([l.name == "help wanted" for l in curr_row['labels']])
+            if issue.comments:
+                for comment in issue.get_comments():
+                    if issue.user != comment.user:  # don't count it if the user commented on their own issue
+                        if pd.isnull(curr_row['response_time']) or curr_row['response_time'] > comment.created_at:
+                            curr_row['response_time'] = comment.created_at
+            if issue.closed_by == issue.user and issue.closed_at is not None:  # if user closes their own issue, count it as resolved
+                curr_row['response_time'] = np.min([curr_row['response_time'], issue.closed_at])
+            curr_row['time_to_response'] = pd.to_timedelta(curr_row['response_time'] - curr_row['created_at'])
+            curr_row['time_to_response_f'] = curr_row['time_to_response'] / np.timedelta64(1,'D')
+            curr_df = curr_df.append(curr_row, ignore_index=True)
+        curr_df.is_enhancement = curr_df.is_enhancement.astype('bool')
+        curr_df.is_help_wanted = curr_df.is_help_wanted.astype('bool')
+        return curr_df
+
 
 class GitRepos(OrderedDict):
     """Dict where the keys are names of codes and the values are GitRepo objects"""
@@ -97,6 +139,24 @@ class NWBGitInfo:
     """
     Dictionary with main NWB 1.x git repositories. The values are GitRepo tuples with the owner and repo name.
     """
+
+    CORE_API_REPOS = GitRepos(
+        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb")),
+         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf")),
+         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb")),
+         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema"))
+         ])
+    """
+    Dictionary with the main NWB git repos related the user APIs.
+    """
+
+    CORE_DEVELOPERS = ['rly', 'bendichter', 'oruebel', 'ajtritt', 'ln-vidrio', 'mavaylon1']
+    """
+    List of names of the core developers of NWB overall. These are used, e.g., when analyzing issue stats as
+    core developer issues should not count against user issues.
+    """
+
+
 
 
 class GitHubRepoInfo:
