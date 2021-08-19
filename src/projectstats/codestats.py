@@ -1,6 +1,6 @@
 import os
 import git
-import yaml
+import ruamel.yaml as yaml
 import time
 import shutil
 import pandas as pd
@@ -62,14 +62,14 @@ class GitCodeStats:
         if GitCodeStats.cached(output_dir):
             print("Loading cached results: %s" % re.cache_file_cloc)
             with open(re.cache_file_cloc) as f:
-                re.cloc_stats = yaml.load(f, Loader=yaml.FullLoader)
+                re.cloc_stats = yaml.safe_load(f) # Loader=yaml.FullLoader)
             print("Loading cached results: %s" % re.cache_file_commits)
             with open(re.cache_file_commits) as f:
-                re.commit_stats = yaml.load(f, Loader=yaml.FullLoader)
+                re.commit_stats = yaml.safe_load(f) #, Loader=yaml.FullLoader)
 
             print("Loading cached results: %s" % re.cache_git_paths)
             with open(re.cache_git_paths) as f:
-                re.git_paths = yaml.load(f, Loader=yaml.FullLoader)
+                re.git_paths = yaml.safe_load(f) #, Loader=yaml.FullLoader)
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
