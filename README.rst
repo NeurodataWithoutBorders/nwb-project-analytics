@@ -13,6 +13,8 @@ NWB Online
 * `YouTube <https://www.youtube.com/channel/UCfD_mU-EFz135a9TpNFJP5A/>`_
 
 .. image:: https://img.shields.io/twitter/follow/neurodatawb?style=social
+.. image:: https://img.shields.io/youtube/channel/views/UCfD_mU-EFz135a9TpNFJP5A?label=NWB%20Channel%20Views&style=social
+.. image:: https://img.shields.io/youtube/channel/subscribers/UCfD_mU-EFz135a9TpNFJP5A?label=NWB%20Channel%20Subscribers&style=social
 
 Software Health
 ===============
