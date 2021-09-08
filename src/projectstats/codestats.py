@@ -1,3 +1,6 @@
+"""
+Module for computing code statistics using CLOC
+"""
 import os
 import git
 import ruamel.yaml as yaml
