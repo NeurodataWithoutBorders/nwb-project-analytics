@@ -1,3 +1,6 @@
+"""
+Module for querying GitHub repos
+"""
 from datetime import datetime
 from typing import NamedTuple
 import numpy as np
@@ -19,6 +22,9 @@ class GitRepo(NamedTuple):
 
     repo: str
     """Name of the repository"""
+
+    mainbranch: str
+    """The main branch of the repository"""
 
     @property
     def github_path(self):
@@ -111,40 +117,40 @@ class NWBGitInfo:
     """
 
     GIT_REPOS = GitRepos(
-        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb")),
-         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb")),
-         ("NWBWidgets", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-jupyter-widgets")),
-         ("NWBInspector", GitRepo(owner="NeurodataWithoutBorders", repo="nwbinspector")),
-         ("Hackathons", GitRepo(owner="NeurodataWithoutBorders", repo="nwb_hackathons")),
-         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema")),
-         ("NWB_Schema_Language", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema-language")),
-         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf")),
-         ("HDMF_Common_Schema", GitRepo(owner="hdmf-dev", repo="hdmf-common-schema")),
-         ("HDMF_DocUtils", GitRepo(owner="hdmf-dev", repo="hdmf-docutils")),
+        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb", mainbranch='dev')),
+         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb", mainbranch='master')),
+         ("NWBWidgets", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-jupyter-widgets", mainbranch='master')),
+         ("NWBInspector", GitRepo(owner="NeurodataWithoutBorders", repo="nwbinspector", mainbranch='master')),
+         ("Hackathons", GitRepo(owner="NeurodataWithoutBorders", repo="nwb_hackathons", mainbranch='master')),
+         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema", mainbranch='dev')),
+         ("NWB_Schema_Language", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema-language", mainbranch='main')),
+         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf", mainbranch='dev')),
+         ("HDMF_Common_Schema", GitRepo(owner="hdmf-dev", repo="hdmf-common-schema", mainbranch='main')),
+         ("HDMF_DocUtils", GitRepo(owner="hdmf-dev", repo="hdmf-docutils", mainbranch='main')),
          # "HDMF Schema Language" , https,//github.com/hdmf-dev/hdmf-schema-language
-         ("NDX_Template", GitRepo(owner="nwb-extensions", repo="ndx-template")),
-         ("NDX_Staged_Extensions",  GitRepo(owner="nwb-extensions", repo="staged-extensions")),
+         ("NDX_Template", GitRepo(owner="nwb-extensions", repo="ndx-template", mainbranch='master')),
+         ("NDX_Staged_Extensions",  GitRepo(owner="nwb-extensions", repo="staged-extensions", mainbranch='master')),
          #"NDX Webservices", "https,//github.com/nwb-extensions/nwb-extensions-webservices.git",
-         ("NDX_Catalog",  GitRepo(owner="nwb-extensions", repo="nwb-extensions.github.io")),
-         ("NDX_Extension_Smithy",  GitRepo(owner="nwb-extensions", repo="nwb-extensions-smithy"))
+         ("NDX_Catalog",  GitRepo(owner="nwb-extensions", repo="nwb-extensions.github.io", mainbranch='master')),
+         ("NDX_Extension_Smithy",  GitRepo(owner="nwb-extensions", repo="nwb-extensions-smithy", mainbranch='master'))
          ])
     """
     Dictionary with main NWB git repositories. The values are GitRepo tuples with the owner and repo name.
     """
 
     NWB1_GIT_REPOS = GitRepos(
-        [("NWB_1.x_Matlab", GitRepo(owner="NeurodataWithoutBorders", repo="api-matlab")),
-         ("NWB_1.x_Python", GitRepo(owner="NeurodataWithoutBorders", repo="api-python.git"))
+        [("NWB_1.x_Matlab", GitRepo(owner="NeurodataWithoutBorders", repo="api-matlab", mainbranch='dev')),
+         ("NWB_1.x_Python", GitRepo(owner="NeurodataWithoutBorders", repo="api-python.git", mainbranch='dev'))
          ])
     """
     Dictionary with main NWB 1.x git repositories. The values are GitRepo tuples with the owner and repo name.
     """
 
     CORE_API_REPOS = GitRepos(
-        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb")),
-         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf")),
-         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb")),
-         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema"))
+        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb", mainbranch='dev')),
+         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf", mainbranch='dev')),
+         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb", mainbranch='master')),
+         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema", mainbranch='dev'))
          ])
     """
     Dictionary with the main NWB git repos related the user APIs.
