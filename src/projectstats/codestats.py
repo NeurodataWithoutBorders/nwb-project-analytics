@@ -63,16 +63,16 @@ class GitCodeStats:
         """
         re = GitCodeStats(output_dir)
         if GitCodeStats.cached(output_dir):
-            print("Loading cached results: %s" % re.cache_file_cloc)
+            print("Loading cached results: %s" % re.cache_file_cloc)  # noqa T001
             with open(re.cache_file_cloc) as f:
-                re.cloc_stats = yaml.safe_load(f) # Loader=yaml.FullLoader)
-            print("Loading cached results: %s" % re.cache_file_commits)
+                re.cloc_stats = yaml.safe_load(f)
+            print("Loading cached results: %s" % re.cache_file_commits)  # noqa T001
             with open(re.cache_file_commits) as f:
-                re.commit_stats = yaml.safe_load(f) #, Loader=yaml.FullLoader)
+                re.commit_stats = yaml.safe_load(f)
 
-            print("Loading cached results: %s" % re.cache_git_paths)
+            print("Loading cached results: %s" % re.cache_git_paths)  # noqa T001
             with open(re.cache_git_paths) as f:
-                re.git_paths = yaml.safe_load(f) #, Loader=yaml.FullLoader)
+                re.git_paths = yaml.safe_load(f)
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
@@ -112,13 +112,13 @@ class GitCodeStats:
         self.clean_outdirs(output_dir=self.output_dir,
                            source_dir=self.source_dir)
         # Clone all repos
-        print("Cloning all repos...")
+        print("Cloning all repos...")  # noqa T001
         git_repos = self.clone_repos(repos=self.git_paths, source_dir=self.source_dir)
         # Compute CLOC and Commit statistics for all repos
         self.commit_stats = {}
         self.cloc_stats = {}
         for name, repo in git_repos.items():
-            print("Compute CLOC stats: %s" % name)
+            print("Compute CLOC stats: %s" % name)  # noqa T001
             commit_res, cloc_res = self.git_repo_stats(
                 repo,
                 cloc_path=cloc_path,
@@ -126,14 +126,15 @@ class GitCodeStats:
             self.commit_stats[name] = commit_res
             self.cloc_stats[name] = cloc_res
         # Cache the results if requested
+        print("Caching results...")  # noqa T001
         if cache_results:
-            print("Caching results: %s" % self.cache_file_cloc)
+            print("saving %s" % self.cache_file_cloc)  # noqa T001
             with open(self.cache_file_cloc, 'w') as outfile:
                 yaml.dump(self.cloc_stats, outfile)
-            print("Caching results: %s" % self.cache_file_commits)
+            print("saving  %s" % self.cache_file_commits)  # noqa T001
             with open(self.cache_file_commits, 'w') as outfile:
                 yaml.dump(self.commit_stats, outfile)
-            print("Caching results: %s" % self.cache_git_paths)
+            print("saving %s" % self.cache_git_paths)  # noqa T001
             with open(self.cache_git_paths, 'w') as outfile:
                 yaml.dump(self.git_paths, outfile)
 
@@ -165,7 +166,8 @@ class GitCodeStats:
         for k, v in self.cloc_stats.items():
             # Dates and CLOC size for the current repo
             curr_dates = pd.pandas.DatetimeIndex([cloc_entry['date'] for cloc_entry in v])[::-1]
-            curr_sizes = [np.sum([v for k, v in cloc_entry['cloc']['SUM'].items() if k != 'nFiles']) for cloc_entry in v][::-1]
+            curr_sizes = [np.sum([v for k, v in cloc_entry['cloc']['SUM'].items() if k != 'nFiles'])
+                          for cloc_entry in v][::-1]
             curr_blanks = [cloc_entry['cloc']['SUM']['blank'] for cloc_entry in v][::-1]
             curr_codes = [cloc_entry['cloc']['SUM']['code'] for cloc_entry in v][::-1]
             curr_comments = [cloc_entry['cloc']['SUM']['comment'] for cloc_entry in v][::-1]
@@ -188,9 +190,9 @@ class GitCodeStats:
             # as the repo has a valid state prior to the range we are looking at
             if date_range[0] > curr_dates[0]:
                 if date_range[0] > curr_dates[-1]:
-                    curr_index = len(curr_dates) -1
+                    curr_index = len(curr_dates) - 1
                 else:
-                    for di ,d in enumerate(curr_dates):
+                    for di, d in enumerate(curr_dates):
                         if d > date_range[0]:
                             curr_index = di - 1
                             break
@@ -211,7 +213,7 @@ class GitCodeStats:
                     curr_val_codes = curr_codes[curr_index]
                     curr_val_comments = curr_comments[curr_index]
                     curr_val_nfiles = curr_nfiles[curr_index]
-                    if curr_index < (len(curr_dates) -1):
+                    if curr_index < (len(curr_dates) - 1):
                         curr_index += 1
                 # Append the approbriate value for the current data d
                 expanded_sizes.append(curr_val_sizes)
@@ -253,16 +255,20 @@ class GitCodeStats:
         """
 
         ignore_lang = [] if ignore_lang is None else ignore_lang
-        languages_used_all = np.unique([lang for v in self.cloc_stats.values() for cl in v for lang in cl['cloc'].keys() if lang not in ignore_lang])
         per_repo_lang_stats = {}
         for k, v in self.cloc_stats.items():
             # languages used in the current repo
             languages_used = np.unique([lang for cl in v for lang in cl['cloc'].keys() if lang not in ignore_lang])
             # linear range of dates across the lifetime of this repo
-            date_range_used = pd.date_range(start=self.cloc_stats[k][-1]['date'], end=time.strftime("%d %b %Y", time.localtime()), freq="D")
-            curr_index = 0  # start index in the CLOC data available for the repo
-            curr_values = {l: 0 for l in languages_used}  # current values to be used
-            curr_dates = pd.pandas.DatetimeIndex([cloc_entry['date'] for cloc_entry in v])[::-1] # dates available in the repo
+            date_range_used = pd.date_range(start=self.cloc_stats[k][-1]['date'],
+                                            end=time.strftime("%d %b %Y", time.localtime()),
+                                            freq="D")
+            # start index in the CLOC data available for the repo
+            curr_index = 0
+            # current values to be used
+            curr_values = {lang: 0 for lang in languages_used}
+            # dates available in the repo
+            curr_dates = pd.pandas.DatetimeIndex([cloc_entry['date'] for cloc_entry in v])[::-1]
             curr_stats = {lang: [] for lang in languages_used}
             # iterate through all date values and set the repo counts
             for d in date_range_used:
@@ -275,7 +281,7 @@ class GitCodeStats:
                         if lang in curr_values:  # e.g., SUM is being ignored
                             curr_values[lang] = val['blank'] + val['code'] + val['code']
                     # Move to the next date in the repo
-                    if curr_index < (len(curr_dates) -1):
+                    if curr_index < (len(curr_dates) - 1):
                         curr_index += 1
                 # Copy the current values into our curr_stats dict
                 for cl, cv in curr_values.items():
@@ -286,10 +292,16 @@ class GitCodeStats:
 
         return per_repo_lang_stats
 
-    def get_languages_used(self):
-        """Get the list of languages used in the repos"""
-        return np.unique([lang for v in self.cloc_stats.values() for cl in v for lang in cl['cloc'].keys() if lang not in ignore_lang])
+    def get_languages_used(self, ignore_lang=None):
+        """
+        Get the list of languages used in the repos
 
+        :param ignore_lang: List of strings with the languages that should be ignored. (Default=None)
+        """
+        if ignore_lang is None:
+            ignore_lang = []
+        return np.unique([lang for v in self.cloc_stats.values()
+                          for cl in v for lang in cl['cloc'].keys() if lang not in ignore_lang])
 
     @staticmethod
     def clean_outdirs(output_dir, source_dir):
@@ -323,7 +335,7 @@ class GitCodeStats:
         """
         git_repos = {}
         for k, v in repos.items():
-            print("Cloning: %s" % k)
+            print("Cloning: %s" % k)  # noqa T001
             git_repos[k] = git.Repo.clone_from(v, os.path.join(source_dir, k))
         return git_repos
 
@@ -370,12 +382,12 @@ class GitCodeStats:
                 cloc_yaml = os.path.join(
                     output_dir,
                     "%s.yaml" % os.path.basename(repo.working_dir))
-                    #"%s_%s.yaml" % (os.path.dirname(repo.working_dir), commit['hexsha']))
-                cloc_res['cloc'] = run_cloc(
+                # "%s_%s.yaml" % (os.path.dirname(repo.working_dir), commit['hexsha']))
+                cloc_res['cloc'] = GitCodeStats.run_cloc(
                     cloc_path=cloc_path,
                     src_dir=repo.working_dir,
                     out_file=cloc_yaml)
-                os.remove(cloc_yaml) # Remove the yaml file, we don't need it
+                os.remove(cloc_yaml)  # Remove the yaml file, we don't need it
                 re_cloc_stats.append(cloc_res)
             # drop the commit from the dict to make sure we can save things in YAML
             commit.pop('commit', None)

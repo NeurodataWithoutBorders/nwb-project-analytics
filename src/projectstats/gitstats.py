@@ -40,8 +40,8 @@ class GitRepo(NamedTuple):
         :return:
         """
         issue_attrs = ['id', 'number', 'user', 'created_at',
-               'closed_at', 'state', 'title', 'milestone', 'labels',
-               'pull_request', 'closed_by', 'assignees', 'url']
+                       'closed_at', 'state', 'title', 'milestone', 'labels',
+                       'pull_request', 'closed_by', 'assignees', 'url']
         custom_issue_attrs = ['user_login', 'response_time', 'time_to_response',
                               'time_to_response_f', 'is_enhancement', 'is_help_wanted']
         issues = github_obj.get_repo("%s/%s" % self).get_issues(since=date_threshold)
@@ -54,17 +54,18 @@ class GitRepo(NamedTuple):
             curr_row = {k: getattr(issue, k) for k in issue_attrs}
             curr_row['response_time'] = pd.NaT
             curr_row['user_login'] = curr_row['user'].login
-            curr_row['is_enhancement'] = np.any([l.name == "enhancement" for l in curr_row['labels']])
-            curr_row['is_help_wanted'] = np.any([l.name == "help wanted" for l in curr_row['labels']])
+            curr_row['is_enhancement'] = np.any([label.name == "enhancement" for label in curr_row['labels']])
+            curr_row['is_help_wanted'] = np.any([label.name == "help wanted" for label in curr_row['labels']])
             if issue.comments:
                 for comment in issue.get_comments():
                     if issue.user != comment.user:  # don't count it if the user commented on their own issue
                         if pd.isnull(curr_row['response_time']) or curr_row['response_time'] > comment.created_at:
                             curr_row['response_time'] = comment.created_at
-            if issue.closed_by == issue.user and issue.closed_at is not None:  # if user closes their own issue, count it as resolved
+            # if user closes their own issue, count it as resolved
+            if issue.closed_by == issue.user and issue.closed_at is not None:
                 curr_row['response_time'] = np.min([curr_row['response_time'], issue.closed_at])
             curr_row['time_to_response'] = pd.to_timedelta(curr_row['response_time'] - curr_row['created_at'])
-            curr_row['time_to_response_f'] = curr_row['time_to_response'] / np.timedelta64(1,'D')
+            curr_row['time_to_response_f'] = curr_row['time_to_response'] / np.timedelta64(1, 'D')
             curr_df = curr_df.append(curr_row, ignore_index=True)
         curr_df.is_enhancement = curr_df.is_enhancement.astype('bool')
         curr_df.is_help_wanted = curr_df.is_help_wanted.astype('bool')
@@ -73,7 +74,7 @@ class GitRepo(NamedTuple):
 
 class GitRepos(OrderedDict):
     """Dict where the keys are names of codes and the values are GitRepo objects"""
-    def __init__(self,*arg,**kw):
+    def __init__(self, *arg, **kw):
         super().__init__(*arg, **kw)
 
     def get_info_objects(self):
@@ -102,8 +103,7 @@ class NWBGitInfo:
     this will lead to some duplicate counting of code before 2019-03-13
     """
 
-
-    NWB1_DEPRECATION_DATE  = "2016-08-01"
+    NWB1_DEPRECATION_DATE = "2016-08-01"
     """
     Date when to declare the NWB 1.0 APIs as deprecated. The 3rd Hackathon was held on July 31 to August 1, 2017 at
     Janelia Farm, in Ashburn, Virginia, which marks the date when NWB 2.0 was officially accepted as the
@@ -123,14 +123,15 @@ class NWBGitInfo:
          ("NWBInspector", GitRepo(owner="NeurodataWithoutBorders", repo="nwbinspector", mainbranch='master')),
          ("Hackathons", GitRepo(owner="NeurodataWithoutBorders", repo="nwb_hackathons", mainbranch='master')),
          ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema", mainbranch='dev')),
-         ("NWB_Schema_Language", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema-language", mainbranch='main')),
+         ("NWB_Schema_Language", GitRepo(owner="NeurodataWithoutBorders",
+                                         repo="nwb-schema-language", mainbranch='main')),
          ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf", mainbranch='dev')),
          ("HDMF_Common_Schema", GitRepo(owner="hdmf-dev", repo="hdmf-common-schema", mainbranch='main')),
          ("HDMF_DocUtils", GitRepo(owner="hdmf-dev", repo="hdmf-docutils", mainbranch='main')),
          # "HDMF Schema Language" , https,//github.com/hdmf-dev/hdmf-schema-language
          ("NDX_Template", GitRepo(owner="nwb-extensions", repo="ndx-template", mainbranch='master')),
          ("NDX_Staged_Extensions",  GitRepo(owner="nwb-extensions", repo="staged-extensions", mainbranch='master')),
-         #"NDX Webservices", "https,//github.com/nwb-extensions/nwb-extensions-webservices.git",
+         # "NDX Webservices", "https,//github.com/nwb-extensions/nwb-extensions-webservices.git",
          ("NDX_Catalog",  GitRepo(owner="nwb-extensions", repo="nwb-extensions.github.io", mainbranch='master')),
          ("NDX_Extension_Smithy",  GitRepo(owner="nwb-extensions", repo="nwb-extensions-smithy", mainbranch='master'))
          ])
@@ -161,8 +162,6 @@ class NWBGitInfo:
     List of names of the core developers of NWB overall. These are used, e.g., when analyzing issue stats as
     core developer issues should not count against user issues.
     """
-
-
 
 
 class GitHubRepoInfo:
@@ -196,7 +195,7 @@ class GitHubRepoInfo:
         if use_cache and self.__releases is not None:
             return self.__releases
         # Get restuls from GitGub
-        per_page=100
+        per_page = 100
         r = requests.get("https://api.github.com/repos/%s/%s/releases?per_page=%s" %
                          (self.repo.owner, self.repo.repo, str(per_page)))
         if not r.ok:
@@ -223,7 +222,6 @@ class GitHubRepoInfo:
                 dates.append(rel["published_at"])
         dates = [datetime.strptime(d[0:10], "%Y-%m-%d") for d in dates]
         return names, dates
-
 
     def plot_release_timeline(self,
                               figsize=None,
@@ -271,7 +269,7 @@ class GitHubRepoInfo:
                 elif version_jumps[n] == "patch":
                     levels.append(curr_patch)
                     curr_patch += 1
-                    if curr_patch > -0.5: # Check for 0 and loop back to -5
+                    if curr_patch > -0.5:  # Check for 0 and loop back to -5
                         curr_patch = -5
             levels_by_version_jumps = True
         except Exception as e:
@@ -282,7 +280,7 @@ class GitHubRepoInfo:
 
         # Create figure and plot a stem plot with the date
         if ax is None:
-            fig, ax = plt.subplots(figsize=(12,5) if figsize is None else figsize)
+            fig, ax = plt.subplots(figsize=(12, 5) if figsize is None else figsize)
 
         ax.vlines(dates, 0, levels, color="dodgerblue")  # The vertical stems.
         ax.plot(dates, np.zeros_like(dates), "-o",
@@ -319,18 +317,18 @@ class GitHubRepoInfo:
             # Create a Rectangle patch
             legend_items = []
             # Major releases background
-            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 3.5), # xy origin
-                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0], # width
+            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 3.5),  # xy origin
+                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
                                                   height=ax.get_ylim()[1] - 3.5,
                                                   linewidth=0, facecolor='lightgreen', edgecolor=None))
             # Minor releases background
-            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 0), # xy origin
-                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0], # width
+            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 0),  # xy origin
+                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
                                                   height=3.5,
                                                   linewidth=0, facecolor='lightblue', edgecolor=None))
             # Patch releases background
-            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], ax.get_ylim()[0]), # xy origin
-                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0], # width
+            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], ax.get_ylim()[0]),  # xy origin
+                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
                                                   height=abs(ax.get_ylim()[0]),
                                                   linewidth=0, facecolor='lightgray', edgecolor=None))
             # Add the patches to plot

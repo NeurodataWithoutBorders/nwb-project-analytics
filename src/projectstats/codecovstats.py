@@ -16,7 +16,8 @@ class CodecovInfo:
 
         :param gitrepo: GitRepo object with the owner and repo info
         :type gitrepo: GitRepo
-        :param page_max: Integer with the maximum number of pages to request. Set to None to indicate unlimited. (default=100)
+        :param page_max: Integer with the maximum number of pages to request.
+                         Set to None to indicate unlimited. (default=100)
         'param state: Filter list by state. One of all, open, closed, merged. Default: merged
         :param key: One of 'pulls' or 'commits'
         :param branch: Branch for which the stats should be retrieved. (Default=None)
@@ -25,14 +26,15 @@ class CodecovInfo:
         """
         if key is None:
             key = 'pulls'
-        if not key in ['pulls', 'commits']:
+        if key not in ['pulls', 'commits']:
             raise ValueError("key must be in ['pulls', 'commits']")
         results = []
         page_index = 1
         page_max = 100
         while page_max is None or page_index < page_max:
             branch_str = '' if branch is None else 'branch/%s' % branch
-            response = requests.get('https://codecov.io/api/gh/%s/%s/%s/%s?page=%i&state=%s' % (gitrepo.owner, gitrepo.repo, branch_str,  key, page_index, state))
+            response = requests.get('https://codecov.io/api/gh/%s/%s/%s/%s?page=%i&state=%s' %
+                                    (gitrepo.owner, gitrepo.repo, branch_str,  key, page_index, state))
             raw = response.json()
             if len(raw[key]) > 0:
                 results += raw[key]
@@ -57,7 +59,9 @@ class CodecovInfo:
         timestamps = []
         coverage = []
         no_coverage = []
+
         def get_stamp_and_cov(indict, filter_zeros):
+            """Internal helper function to retrieve the timestamp and coverage value"""
             cov = float(indict['totals']['c'])
             if not (cov == 0 and filter_zeros):
                 ts = indict['timestamp'] if 'timestamp' in indict else indict['updatestamp']
@@ -90,7 +94,7 @@ class CodecovInfo:
         plt.fill_between(timestamps, coverage)
         plt.plot(timestamps, coverage, '--o', color='black')
         if plot_xlim is not None:
-            r = np.logical_and(timestamps >= plot_xlim[0] , timestamps <= plot_xlim[1])
+            r = np.logical_and(timestamps >= plot_xlim[0], timestamps <= plot_xlim[1])
             plt.ylim(coverage[r].min()-1, coverage[r].max()+1)
             plt.xlim(plot_xlim)
         plt.ylabel("Coverage in %", fontsize=fontsize)
@@ -149,8 +153,9 @@ class CodecovInfo:
                          (default=None)
         """
         fig, axes = plt.subplots(figsize=(8, len(codecovs)*4.2),
-                         nrows=len(codecovs),
-                         ncols=1, sharex=True, sharey=False, squeeze=True)
+                                 nrows=len(codecovs), ncols=1,
+                                 sharex=True, sharey=False,
+                                 squeeze=True)
         i = 0
         for k, v in codecovs.items():
             timestamps, coverage, nocov = CodecovInfo.get_time_and_coverage(v)
@@ -196,7 +201,7 @@ class CodecovInfo:
                 plt.fill_between(timestamps, coverage, alpha=fill_alpha)
             plt.plot(timestamps, coverage, '--o', label=k)
             if plot_xlim:
-                r = np.logical_and(timestamps >= plot_xlim[0] , timestamps <= plot_xlim[1])
+                r = np.logical_and(timestamps >= plot_xlim[0], timestamps <= plot_xlim[1])
                 ymins.append(coverage[r].min())
                 ymaxs.append(coverage[r].max())
             else:
