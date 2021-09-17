@@ -1,0 +1,9 @@
+{HDMF: https://github.com/hdmf-dev/hdmf.git, HDMF_Common_Schema: https://github.com/hdmf-dev/hdmf-common-schema.git,
+HDMF_DocUtils: https://github.com/hdmf-dev/hdmf-docutils.git, HDMF_Schema_Language: https://github.com/hdmf-dev/hdmf-schema-language.git,
+Hackathons: https://github.com/NeurodataWithoutBorders/nwb_hackathons.git, MatNWB: https://github.com/NeurodataWithoutBorders/matnwb.git,
+NDX_Catalog: https://github.com/nwb-extensions/nwb-extensions.github.io.git, NDX_Extension_Smithy: https://github.com/nwb-extensions/nwb-extensions-smithy.git,
+NDX_Staged_Extensions: https://github.com/nwb-extensions/staged-extensions.git, NDX_Template: https://github.com/nwb-extensions/ndx-template.git,
+NWBInspector: https://github.com/NeurodataWithoutBorders/nwbinspector.git, NWBWidgets: https://github.com/NeurodataWithoutBorders/nwb-jupyter-widgets.git,
+NWB_1.x_Matlab: https://github.com/NeurodataWithoutBorders/api-matlab.git, NWB_1.x_Python: https://github.com/NeurodataWithoutBorders/api-python.git,
+NWB_Schema: https://github.com/NeurodataWithoutBorders/nwb-schema.git, NWB_Schema_Language: https://github.com/NeurodataWithoutBorders/nwb-schema-language.git,
+PyNWB: https://github.com/NeurodataWithoutBorders/pynwb.git}
