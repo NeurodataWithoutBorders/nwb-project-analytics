@@ -14,6 +14,107 @@ from distutils.version import LooseVersion
 import warnings
 
 
+class IssueLabel(NamedTuple):
+    """
+    Named tuple describing a label for issues on a Git repository.
+    """
+
+    label: str
+    """
+    Label of the issue, usually consisting <type>: <level>. <type> indicates the general
+    area the label is used for, e.g., to assign a category, priority, or topic to an issue.
+    <level> then indicates importance or sub-category with the given <type>, e.g., critical, high, medium, low
+    level as part of the priority type
+    """
+
+    description: str
+    """Description of the lable"""
+
+    color: str
+    """
+    Hex code of the color for the label
+    """
+
+    @property
+    def type(self):
+        """
+        Get the type of the issue label indicating the general area the label is used for, e.g.,
+        to assign a category, priority, or topic to an issue.
+
+        :returns: str with the type or None in case the label does not have a category (i.e., if the label
+                  does not contain a ':' to separate the type and level).
+        """
+        if ':' in self.label:
+            return self.label.split(":")[0]
+        return None
+
+    @property
+    def level(self):
+        """
+        Get the level of the issue, indicating the importance or sub-category of the label  within the given self.type,
+        e.g., critical, high, medium, low level as part of the priority type.
+
+        :returns: str with the level or None in case the label does not have a level (e.g.,  if the label
+                  does not contain a ':' to separate the type and level.
+        """
+        if ':' in self.label:
+            label_parts = self.label.split(":")
+            if len(label_parts) > 1 and len(label_parts[1]) > 0:
+                return label_parts[1]
+        return None
+
+    @property
+    def rgb(self):
+        """
+        Color code converted to RGB
+
+        :returns: Tuple of ints with (red, green, blue) color values
+        """
+        hexcol = self.color.lstrip("#")
+        return tuple(int(hexcol[i:i+2], 16) for i in (0, 2, 4))
+
+
+class IssueLabels(OrderedDict):
+    """OrderedDict where the keys are names of issues labels and the values are IssueLabel objects"""
+    def __init__(self, *arg, **kw):
+        super().__init__(*arg, **kw)
+
+    @staticmethod
+    def merge(o1, o2):
+        """Merger two IssueLabels dicts and return a new IssuesLabels dict with the combined items"""
+        return IssueLabels(list(o1.items()) + list(o2.items()))
+
+    def get_by_type(self, label_type):
+        """Get a new IssueLabels dict with just the lables with the given category"""
+        return IssueLabels([(key, label)
+                            for key, label in self.items()
+                            if label.type is not None and label.type == label_type])
+
+    @property
+    def types(self):
+        """Get a list of all type strings used in labels (may include None)"""
+        re = set([self[label].type for label in self.keys()])
+        return list(re)
+
+    @property
+    def levels(self):
+        """Get a list of all level strings used in labels (may include Node)"""
+        re = set([self[label].level for label in self.keys()])
+        return list(re)
+
+    @property
+    def colors(self):
+        """Get a list of all color hex codes uses"""
+        re = set([self[label].color for label in self.keys()])
+        return list(re)
+
+    @property
+    def rgbs(self):
+        """Get a list of all rgb color codes used"""
+        re = set([self[label].rgb for label in self.keys()])
+        return list(re)
+
+
 class GitRepo(NamedTuple):
     """Named tuple with basic information about a GitHub repository"""
 
@@ -117,41 +218,103 @@ class NWBGitInfo:
     """
 
     GIT_REPOS = GitRepos(
-        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb", mainbranch='dev')),
-         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb", mainbranch='master')),
-         ("NWBWidgets", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-jupyter-widgets", mainbranch='master')),
-         ("NWBInspector", GitRepo(owner="NeurodataWithoutBorders", repo="nwbinspector", mainbranch='master')),
-         ("Hackathons", GitRepo(owner="NeurodataWithoutBorders", repo="nwb_hackathons", mainbranch='master')),
-         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema", mainbranch='dev')),
-         ("NWB_Schema_Language", GitRepo(owner="NeurodataWithoutBorders",
-                                         repo="nwb-schema-language", mainbranch='main')),
-         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf", mainbranch='dev')),
-         ("HDMF_Common_Schema", GitRepo(owner="hdmf-dev", repo="hdmf-common-schema", mainbranch='main')),
-         ("HDMF_DocUtils", GitRepo(owner="hdmf-dev", repo="hdmf-docutils", mainbranch='main')),
-         # "HDMF Schema Language" , https,//github.com/hdmf-dev/hdmf-schema-language
-         ("NDX_Template", GitRepo(owner="nwb-extensions", repo="ndx-template", mainbranch='master')),
-         ("NDX_Staged_Extensions",  GitRepo(owner="nwb-extensions", repo="staged-extensions", mainbranch='master')),
+        [("PyNWB",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="pynwb",
+                  mainbranch='dev')),
+         ("MatNWB",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="matnwb",
+                  mainbranch='master')),
+         ("NWBWidgets",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="nwb-jupyter-widgets",
+                  mainbranch='master')),
+         ("NWBInspector",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="nwbinspector",
+                  mainbranch='master')),
+         ("Hackathons",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="nwb_hackathons",
+                  mainbranch='master')),
+         ("NWB_Schema",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="nwb-schema",
+                  mainbranch='dev')),
+         ("NWB_Schema_Language",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="nwb-schema-language",
+                  mainbranch='main')),
+         ("HDMF",
+          GitRepo(owner="hdmf-dev",
+                  repo="hdmf",
+                  mainbranch='dev')),
+         ("HDMF_Common_Schema",
+          GitRepo(owner="hdmf-dev",
+                  repo="hdmf-common-schema",
+                  mainbranch='main')),
+         ("HDMF_DocUtils",
+          GitRepo(owner="hdmf-dev",
+                  repo="hdmf-docutils",
+                  mainbranch='main')),
+         ("HDMF Schema Language",
+          GitRepo(owner="hdmf-dev",
+                  repo="hdmf-schema-language",
+                  mainbranch='main')),
+         ("NDX_Template",
+          GitRepo(owner="nwb-extensions",
+                  repo="ndx-template",
+                  mainbranch='master')),
+         ("NDX_Staged_Extensions",
+          GitRepo(owner="nwb-extensions",
+                  repo="staged-extensions",
+                  mainbranch='master')),
          # "NDX Webservices", "https,//github.com/nwb-extensions/nwb-extensions-webservices.git",
-         ("NDX_Catalog",  GitRepo(owner="nwb-extensions", repo="nwb-extensions.github.io", mainbranch='master')),
-         ("NDX_Extension_Smithy",  GitRepo(owner="nwb-extensions", repo="nwb-extensions-smithy", mainbranch='master'))
+         ("NDX_Catalog",
+          GitRepo(owner="nwb-extensions",
+                  repo="nwb-extensions.github.io",
+                  mainbranch='master')),
+         ("NDX_Extension_Smithy",
+          GitRepo(owner="nwb-extensions",
+                  repo="nwb-extensions-smithy",
+                  mainbranch='master'))
          ])
     """
     Dictionary with main NWB git repositories. The values are GitRepo tuples with the owner and repo name.
     """
 
     NWB1_GIT_REPOS = GitRepos(
-        [("NWB_1.x_Matlab", GitRepo(owner="NeurodataWithoutBorders", repo="api-matlab", mainbranch='dev')),
-         ("NWB_1.x_Python", GitRepo(owner="NeurodataWithoutBorders", repo="api-python.git", mainbranch='dev'))
+        [("NWB_1.x_Matlab",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="api-matlab",
+                  mainbranch='dev')),
+         ("NWB_1.x_Python",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="api-python.git",
+                  mainbranch='dev'))
          ])
     """
     Dictionary with main NWB 1.x git repositories. The values are GitRepo tuples with the owner and repo name.
     """
 
     CORE_API_REPOS = GitRepos(
-        [("PyNWB", GitRepo(owner="NeurodataWithoutBorders", repo="pynwb", mainbranch='dev')),
-         ("HDMF", GitRepo(owner="hdmf-dev", repo="hdmf", mainbranch='dev')),
-         ("MatNWB", GitRepo(owner="NeurodataWithoutBorders", repo="matnwb", mainbranch='master')),
-         ("NWB_Schema", GitRepo(owner="NeurodataWithoutBorders", repo="nwb-schema", mainbranch='dev'))
+        [("PyNWB",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="pynwb",
+                  mainbranch='dev')),
+         ("HDMF",
+          GitRepo(owner="hdmf-dev",
+                  repo="hdmf",
+                  mainbranch='dev')),
+         ("MatNWB",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="matnwb",
+                  mainbranch='master')),
+         ("NWB_Schema",
+          GitRepo(owner="NeurodataWithoutBorders",
+                  repo="nwb-schema",
+                  mainbranch='dev'))
          ])
     """
     Dictionary with the main NWB git repos related the user APIs.
@@ -162,6 +325,57 @@ class NWBGitInfo:
     List of names of the core developers of NWB overall. These are used, e.g., when analyzing issue stats as
     core developer issues should not count against user issues.
     """
+
+    STANDARD_ISSUE_LABELS = IssueLabels(
+        [("category: bug",
+          IssueLabel(label="category: bug",
+                     description="errors in the code or code behavior",
+                     color="#ee0701")),
+         ("category: enhancement",
+          IssueLabel(label="category: enhancement",
+                     description="improvements of code or code behavior",
+                     color="#1D76DB")),
+         ("category: proposal",
+          IssueLabel(label="category: proposal",
+                     description="discussion of proposed enhancements or new features",
+                     color="#dddddd")),
+         ("help wanted: good first issue",
+          IssueLabel(label="help wanted: good first issues",
+                     description="request for community contributions that are good for new contributors",
+                     color="#0E8A16")),
+         ("help wanted: deep dive",
+          IssueLabel(label="help wanted: deep dive",
+                     description="request for community contributions that will involve many parts of the code base",
+                     color="#0E8A16")),
+         ("priority: critical",
+          IssueLabel(label="priority: critical",
+                     description="impacts proper operation or use of core function of NWB or the software",
+                     color="#a0140c")),
+         ("priority: high",
+          IssueLabel(label="priority: high",
+                     description="impacts proper operation or use of feature important to most users",
+                     color="#D93F0B")),
+         ("priority: medium",
+          IssueLabel(label="priority: medium",
+                     description="non-critical problem and/or affecting only a small set of NWB users",
+                     color="#FBCA04")),
+         ("priority: low",
+          IssueLabel(label="priority: low",
+                     description="alternative solution already working and/or relevant to only specific user(s)",
+                     color="#FEF2C0")),
+         ("priority: wontfix",
+          IssueLabel(label="priority: wontfix",
+                     description="will not be fixed due to low priority and/or conflict with other feature/priority",
+                     color="#ffffff")),
+         ("topic: docs",
+          IssueLabel(label="topic: docs",
+                     description="Issues related to documentation",
+                     color="#D4C5F9")),
+         ("topic: testing",
+          IssueLabel(label="topic: testing",
+                     description="Issues related to testing",
+                     color="#D4C5F9"))
+         ])
 
 
 class GitHubRepoInfo:
