@@ -145,7 +145,7 @@ class GitRepo(NamedTuple):
                        'pull_request', 'closed_by', 'assignees', 'url']
         custom_issue_attrs = ['user_login', 'response_time', 'time_to_response',
                               'time_to_response_f', 'is_enhancement', 'is_help_wanted']
-        issues = github_obj.get_repo("%s/%s" % self).get_issues(since=date_threshold)
+        issues = github_obj.get_repo("%s/%s" % (self.owner, self.repo)).get_issues(since=date_threshold)
         curr_df = pd.DataFrame(columns=(issue_attrs + custom_issue_attrs))
         if tqdm is not None:
             vals = tqdm(issues, position=1, total=issues.totalCount, desc='%s issues' % self.repo)
@@ -192,7 +192,7 @@ class NWBGitInfo:
     """
     Class for storing basic information about NWB repositories
     """
-    HDMF_START_DATE = "2019-03-13"
+    HDMF_START_DATE = datetime(2019, 3, 13)
     """
     HDMF was originally part of PyNWB. As such code statistics before this start date for HDMF reflect stats
     that include both PyNWB and HDMF and will result in duplicate counting of code stats if PyNWB and HDMF
@@ -204,14 +204,14 @@ class NWBGitInfo:
     this will lead to some duplicate counting of code before 2019-03-13
     """
 
-    NWB1_DEPRECATION_DATE = "2016-08-01"
+    NWB1_DEPRECATION_DATE = datetime(2016, 8, 1)
     """
     Date when to declare the NWB 1.0 APIs as deprecated. The 3rd Hackathon was held on July 31 to August 1, 2017 at
     Janelia Farm, in Ashburn, Virginia, which marks the date when NWB 2.0 was officially accepted as the
     follow-up to NWB 1.0. NWB 1.0 as a project ended about 1 year before that.
     """
 
-    NWB_EXTENSION_SMITHY_START_DATE = "2019-04-25"
+    NWB_EXTENSION_SMITHY_START_DATE = datetime(2019, 4, 25)
     """
     NWB_Extension_Smithy is a fork with changes. We therefore should count only the sizes after the fork data
     which based on https://api.github.com/repos/nwb-extensions/nwb-extensions-smithy is 2019-04-25T20:56:02Z
@@ -258,7 +258,7 @@ class NWBGitInfo:
           GitRepo(owner="hdmf-dev",
                   repo="hdmf-docutils",
                   mainbranch='main')),
-         ("HDMF Schema Language",
+         ("HDMF_Schema_Language",
           GitRepo(owner="hdmf-dev",
                   repo="hdmf-schema-language",
                   mainbranch='main')),
@@ -291,7 +291,7 @@ class NWBGitInfo:
                   mainbranch='dev')),
          ("NWB_1.x_Python",
           GitRepo(owner="NeurodataWithoutBorders",
-                  repo="api-python.git",
+                  repo="api-python",
                   mainbranch='dev'))
          ])
     """
@@ -339,8 +339,12 @@ class NWBGitInfo:
           IssueLabel(label="category: proposal",
                      description="discussion of proposed enhancements or new features",
                      color="#dddddd")),
+         ("compatibility: breaking change",
+          IssueLabel(label="compatibility: breaking change",
+                     description="fixes or enhancements that will break schema compatability",
+                     color="#B24AD1")),
          ("help wanted: good first issue",
-          IssueLabel(label="help wanted: good first issues",
+          IssueLabel(label="help wanted: good first issue",
                      description="request for community contributions that are good for new contributors",
                      color="#0E8A16")),
          ("help wanted: deep dive",
