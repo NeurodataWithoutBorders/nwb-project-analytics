@@ -348,7 +348,7 @@ class GitCodeStats:
         command = "%s --yaml --report-file=%s %s" % (cloc_path, out_file, src_dir)
         os.system(command)
         with open(out_file) as f:
-            res = yaml.load(f, Loader=yaml.FullLoader)
+            res = yaml.safe_load(f)
         return res
 
     @staticmethod
