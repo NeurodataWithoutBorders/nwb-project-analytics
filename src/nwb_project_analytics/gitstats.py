@@ -232,10 +232,10 @@ class NWBGitInfo:
     MISSING_RELEASE_TAGS = {
         # Add 2.0 release for NWB schema using the same data as for PyNWB 1.0
         # Add 2.0beta release for NWB schema using the same data for PyNWB 0.2.0
-        "NWB_Schema" : [("2.0.0", NWB2_FIRST_STABLE_RELEASE),
-                        ("2.0.0b", NWB2_BETA_RELEASE)],
+        "NWB_Schema": [("2.0.0", NWB2_FIRST_STABLE_RELEASE),
+                       ("2.0.0b", NWB2_BETA_RELEASE)],
         # Add first beta release for MatNWB using the same date as for PyNWB 0.2.0
-        "MatNWB" : [("0.1.0b", NWB2_BETA_RELEASE)]
+        "MatNWB": [("0.1.0b", NWB2_BETA_RELEASE)]
     }
     """
     List of early releases that are missing a tag on GitHub

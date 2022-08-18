@@ -11,14 +11,15 @@ from datetime import datetime, timedelta
 from gitstats import GitHubRepoInfo, NWBGitInfo
 
 
-def plot_release_timeline(repo_info: GitHubRepoInfo,
-                          figsize:tuple = None,
-                          fontsize:int = 14,
-                          month_intervals:int = 3,
-                          xlim:tuple = None,
-                          ax=None,
-                          title_on_yaxis:bool = False,
-                          add_releases:list = None):
+def plot_release_timeline(
+        repo_info: GitHubRepoInfo,
+        figsize: tuple = None,
+        fontsize: int = 14,
+        month_intervals: int = 3,
+        xlim: tuple = None,
+        ax=None,
+        title_on_yaxis: bool = False,
+        add_releases: list = None):
     """
     Plot a timeline of the releases for the repo
 
@@ -133,13 +134,14 @@ def plot_release_timeline(repo_info: GitHubRepoInfo,
     return ax
 
 
-def plot_multiple_release_timeslines(github_repo_infos,
-                                     add_releases:dict = None,
-                                     date_range:tuple = None,
-                                     month_intervals:int = 2,
-                                     fontsize: int = 16,
-                                     title = None
-                                     ):
+def plot_multiple_release_timeslines(
+        github_repo_infos,
+        add_releases: dict = None,
+        date_range: tuple = None,
+        month_intervals: int = 2,
+        fontsize: int = 16,
+        title: str = None
+        ):
     """
 
     :param github_repo_infos: GitHubRepoInfo objects to render. For all NWB2 repos set
