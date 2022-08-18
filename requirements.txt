@@ -4,7 +4,7 @@ ruamel.yaml
 setuptools
 GitPython
 matplotlib
-cloc   # https://github.com/AlDanial
+cloc   # https://github.com/AlDanial/cloc
 requests
 PyGithub # For issue response time analysis
 tqdm # For issue response time analysis
