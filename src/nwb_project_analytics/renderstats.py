@@ -8,7 +8,7 @@ import numpy as np
 import warnings
 from datetime import datetime, timedelta
 
-from gitstats import GitHubRepoInfo, NWBGitInfo
+from .gitstats import GitHubRepoInfo, NWBGitInfo
 
 
 def plot_release_timeline(
