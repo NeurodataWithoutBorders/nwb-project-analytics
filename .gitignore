@@ -1,9 +1,10 @@
 # Custom folders with temp data from scripts
-src/nwb_project_analytics/notebooks/temp_cloc_stats
-src/projectstats/notebooks/*.pdf
-src/projectstats/notebooks/*.png
-src/projectstats/notebooks/*.csv
-src/nwb_project_analytics/notebooks/ghk.txt
+notebooks/temp_cloc_stats*
+notebooks/*.pdf
+notebooks/*.png
+notebooks/*.csv
+notebooks/ghk.txt
+notebooks/plots
 
 
 #PyCharm
