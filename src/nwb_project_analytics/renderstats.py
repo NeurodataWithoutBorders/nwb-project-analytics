@@ -1,0 +1,196 @@
+"""
+Module with routines for plotting code and git statistics
+"""
+from matplotlib import pyplot as plt
+import matplotlib.dates as mdates
+import matplotlib.patches as patches
+import numpy as np
+import warnings
+from datetime import datetime, timedelta
+
+from gitstats import GitHubRepoInfo, NWBGitInfo
+
+
+def plot_release_timeline(repo_info: GitHubRepoInfo,
+                          figsize:tuple = None,
+                          fontsize:int = 14,
+                          month_intervals:int = 3,
+                          xlim:tuple = None,
+                          ax=None,
+                          title_on_yaxis:bool = False,
+                          add_releases:list = None):
+    """
+    Plot a timeline of the releases for the repo
+
+    Based on https://matplotlib.org/stable/gallery/lines_bars_and_markers/timeline.html
+
+    :param repo_info: The GitHubRepoInfo object to plot a release timeline for
+    :param figsize: Tuple with the figure size if a new figure is to be created, i.e., if ax is None
+    :param fontsize: Fontsize to use for labels (default=14)
+    :param month_intervals: Integer indicating the step size in number of month for the y axis
+    :param xlim: Optional tuple of datetime objects with the start and end-date for the x axis
+    :param ax: Matplotlib axis object to be used for plotting
+    :param title_on_yaxis: Show plot title as name of the y-axis (True) or as the main title (False) (default=False)
+    :param add_releases: Sometimes libraries did not use git tags to mark releases. With this we can add
+                         additional releases that are missing from the git tags.
+    :type add_releases: List of tuples with "name: str" and "date: datetime.strptime(d[0:10], "%Y-%m-%d")"
+
+    :return: Matplotlib axis object used for plotting
+    """
+    names, dates = repo_info.get_release_names_and_dates()
+    if add_releases is not None:
+        for r in add_releases:
+            names.append(r[0])
+            dates.append(r[1])
+
+    # Choose some nice levels
+    try:
+        version_jumps = repo_info.get_version_jump_from_tags(names)
+        levels = []
+        curr_major = 5
+        curr_minor = 2
+        curr_patch = -5
+        for n in names:
+            if version_jumps[n] == "major":
+                levels.append(curr_major)
+            elif version_jumps[n] == "minor":
+                levels.append(curr_minor)
+                curr_minor = 2 if curr_minor < 2 else 1
+            elif version_jumps[n] == "patch":
+                levels.append(curr_patch)
+                curr_patch += 1
+                if curr_patch > -0.5:  # Check for 0 and loop back to -5
+                    curr_patch = -5
+        levels_by_version_jumps = True
+    except Exception as e:
+        warnings.warn("Computing version jumps from tags failed. Fall back to default levels." + str(e))
+        levels = np.tile([-5, 5, -3, 3, -1, 1],
+                         int(np.ceil(len(dates) / 6)))[:len(dates)]
+        levels_by_version_jumps = False
+
+    # Create figure and plot a stem plot with the date
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(12, 5) if figsize is None else figsize)
+
+    ax.vlines(dates, 0, levels, color="dodgerblue")  # The vertical stems.
+    ax.plot(dates, np.zeros_like(dates), "-o",
+            color="k", markerfacecolor="w")  # Baseline and markers on it.
+
+    # annotate lines
+    for d, l, r in zip(dates, levels, names):
+        ax.annotate(r, xy=(d, l),
+                    xytext=(fontsize + 2, np.sign(l) * 3), textcoords="offset points",
+                    horizontalalignment="right",
+                    verticalalignment="bottom" if l > 0 else "top",
+                    fontsize=fontsize)
+
+    # format xaxis with 4 month intervals
+    if xlim is not None:
+        ax.set_xlim(xlim)
+    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=month_intervals))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
+    plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=fontsize)
+
+    # set the title
+    if title_on_yaxis:
+        ax.get_yaxis().set_ticks([])
+        ax.set_ylabel(repo_info.repo.repo, fontsize=fontsize)
+    else:
+        ax.set_title("%s release dates" % repo_info.repo.repo, fontdict={"fontsize": fontsize})
+        ax.yaxis.set_visible(False)
+
+    # Set margins and grid lines
+    ax.margins(y=0.1)
+
+    # If levels of lines correspond to version jumps, then color code the background and add a legend
+    if levels_by_version_jumps:
+        # Create a Rectangle patch
+        legend_items = []
+        # Major releases background
+        legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 3.5),  # xy origin
+                                              width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
+                                              height=ax.get_ylim()[1] - 3.5,
+                                              linewidth=0, facecolor='lightgreen', edgecolor=None))
+        # Minor releases background
+        legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 0),  # xy origin
+                                              width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
+                                              height=3.5,
+                                              linewidth=0, facecolor='lightblue', edgecolor=None))
+        # Patch releases background
+        legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], ax.get_ylim()[0]),  # xy origin
+                                              width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
+                                              height=abs(ax.get_ylim()[0]),
+                                              linewidth=0, facecolor='lightgray', edgecolor=None))
+        # Add the patches to plot
+        for patch in legend_items:
+            ax.add_patch(patch)
+        # Add a a legend for the backround color
+        ax.legend(legend_items, ['Major', 'Minor', 'Patch'],
+                  loc='lower left', fontsize=fontsize, edgecolor='black',
+                  facecolor='white', framealpha=1)
+    ax.grid(axis="x", linestyle='dashed', color='gray')
+
+    return ax
+
+
+def plot_multiple_release_timeslines(github_repo_infos,
+                                     add_releases:dict = None,
+                                     date_range:tuple = None,
+                                     month_intervals:int = 2,
+                                     fontsize: int = 16,
+                                     title = None
+                                     ):
+    """
+
+    :param github_repo_infos: GitHubRepoInfo objects to render. For all NWB2 repos set
+                        to NWBGitInfo.GIT_REPOS.get_info_objects()
+    :type github_repo_infos: OrderdDict (or dict) of GitHubRepoInfo objects
+    :param add_releases: Sometimes libraries did not use git tags to mark releases. With this we can add
+                        additional releases that are missing from the git tags. If None this is set to
+                        NWBGitInfo.MISSING_RELEASE_TAGS by default. Set to empty dict if no additional
+                        releases should be added.
+    :type add_releases: Dict where the keys are a subset of the keys of the github_repos dict and the values are
+                        lists of tuples with "name: str" and "date: datetime.strptime(d[0:10], "%Y-%m-%d")" of
+                        additional releases for the given repo. Usually this is set to NWBGitInfo.MISSING_RELEASE_TAGS
+    :param date_range: Tuple of datetime objects with the start and stop time to use along the x axis for rendering
+                       By default this is set to (NWBGitInfo.NWB2_BETA_RELEASE - timedelta(days=60), datetime.today())
+    :param month_intervals: Integer with spacing of month along the x axis. (Default=2)
+    :param fontsize: Fontsize to use in the plots
+    :return: Tuple of matplotlib figure object and list of axes object used for rendering
+    """
+    if add_releases is None:
+        add_releases = NWBGitInfo.MISSING_RELEASE_TAGS
+    if date_range is None:
+        date_range = (NWBGitInfo.NWB2_BETA_RELEASE - timedelta(days=60),
+                      datetime.today())
+
+    # Render the release timeline for all repos
+    fig, axes = plt.subplots(figsize=(16, len(github_repo_infos) * 4.2),
+                             nrows=len(github_repo_infos),
+                             ncols=1,
+                             sharex=True,
+                             sharey=False,
+                             squeeze=True)
+    for i, repo in enumerate(github_repo_infos.keys()):
+        ax = plot_release_timeline(
+            repo_info=github_repo_infos[repo],
+            fontsize=fontsize,
+            month_intervals=month_intervals,
+            xlim=date_range,
+            ax=axes[i],
+            title_on_yaxis=True,
+            add_releases=add_releases.get(repo, None))
+        # Show the legend only on the first plot (since it is the same for all)
+        if i > 0:
+            # Remove the legend if it exists. The legend may be missing if there are no releases
+            if ax.get_legend() is not None:
+                ax.get_legend().remove()
+    # add the title
+    if title is not None:
+        axes[0].set_title(title, fontdict={'fontsize': fontsize})
+
+    # Final layout, save, and display
+    plt.tight_layout()
+    plt.subplots_adjust(wspace=0.0, hspace=0.02)
+
+    return fig, axes
