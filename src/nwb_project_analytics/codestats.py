@@ -8,6 +8,7 @@ import time
 import shutil
 import pandas as pd
 import numpy as np
+from datetime import datetime
 
 
 class GitCodeStats:
@@ -53,6 +54,73 @@ class GitCodeStats:
         self.cache_git_paths = os.path.join(self.output_dir, 'git_paths.yaml')
         self.commit_stats = None
         self.cloc_stats = None
+
+    @staticmethod
+    def from_nwb(
+            cache_dir: str,
+            cloc_path: str,
+            start_date: datetime = None,
+            end_date: datetime = None,
+            read_cache: bool = True,
+            write_cache: bool = True):
+        """
+        Convenience function to compute GitCodeStats statistics for all NWB git repositories
+        defined by GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS)
+
+        :param cache_dir: Path to the director where the files with the cached results
+                          are stored or should be written to
+        :param cloc_path: Path to the cloc shell command
+        :param start_date: Start date from which to compute summary statistics from.
+                           If set to None, then use NWBGitInfo.NWB2_START_DATE
+        :param end_date: End date until which to compute summary statistics to.
+                           If set to None, then use datetime.today()
+        :param read_cache: Bool indicating whether results should be loaded from cache
+                           if cached files exists at cache_dir. NOTE: If read_cache is
+                           True and files are in the cache then the results will be
+                           loaded without checking results (e.g., whether results
+                           in the cache are complete and up-to-date).
+        :param write_cache: Bool indicating whether to write the results to the cache.
+
+        :return: Tuple with the: 1) GitCodeStats object with all NWB code statistics and
+                 2) dict with the results form GitCodeStats.compute_summary_stats
+        """
+        from nwb_project_analytics.gitstats import NWBGitInfo, GitRepos
+
+        # Load results from the file cache if available
+        if GitCodeStats.cached(cache_dir) and read_cache:
+            git_code_stats = GitCodeStats.from_cache(cache_dir)
+        else:
+            git_paths = {k: v.github_path for k, v in
+                         GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS).items()}
+            git_code_stats = GitCodeStats(output_dir=cache_dir)
+            git_code_stats.compute_code_stats(git_paths=git_paths,
+                                              cloc_path=cloc_path,
+                                              cache_results=write_cache)
+
+        # Define our reference date range depending on whether we include NWB 1 in the plots or not
+        date_range = pd.date_range(
+            start=NWBGitInfo.NWB2_START_DATE if start_date is None else start_date,
+            end=datetime.today() if end_date is None else end_date,
+            freq="D")
+
+        # Compute the aligned data statistics
+        summary_stats = git_code_stats.compute_summary_stats(date_range=date_range)
+
+        # Clean up HDMF summary statistic results results to mark start date of HDMF.
+        # The HDMF repo was extracted from PyNWB. To avoid miscounting we'll set
+        # all results before the start data for HDMF to 0
+        # Set all LOC values prior to the given date to 0
+        hdmf_start_date = NWBGitInfo.HDMF_START_DATE.strftime("%Y-%m-%d")
+        for k in summary_stats.keys():
+            summary_stats[k]['HDMF'][:hdmf_start_date] = 0
+
+        # Clean up NDX_ExtensionSmithy results to mark start date for the extension smithy
+        # Set all LOC values prior to the given data to 0
+        extension_smithy_start_date = NWBGitInfo.NWB_EXTENSION_SMITHY_START_DATE.strftime("%Y-%m-%d")
+        for k in summary_stats.keys():
+            summary_stats[k]['NDX_Extension_Smithy'][:extension_smithy_start_date] = 0
+
+        return git_code_stats, summary_stats
 
     @staticmethod
     def from_cache(output_dir):
@@ -105,7 +173,7 @@ class GitCodeStats:
         :type load_cached_results: bool
         :param cache_results: Cache results as YAML to self.outdir
         :type cache_results: bool
-        :return: None. The function initalizes self.commit_stats and self.cloc_stats
+        :return: None. The function initializes self.commit_stats and self.cloc_stats
         """
         self.git_paths = git_paths
         # Clean and create output directory
@@ -149,8 +217,9 @@ class GitCodeStats:
 
         :param date_range: Pandas datarange object for which the stats should be computed
         :type pandas.date_range
-        :return: None. The function initalizes self.summary_stats
-
+        :return: Dict where the values are Pandas DataFrame objects with summary statistics
+                 and the keys are strings with the statistic type, i.e., 'sizes', 'blank',
+                 'codes', 'comment', 'nfiles'
         """
         if self.commit_stats is None or self.cloc_stats is None:
             raise AssertionError("commit_stats and cloc_stats have not been initalized. Call compute_code_stats first.")
