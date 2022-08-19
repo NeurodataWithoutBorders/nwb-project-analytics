@@ -6,6 +6,8 @@ notebooks/*.csv
 notebooks/ghk.txt
 notebooks/plots
 
+# Sphinx apidocs
+docs/source/nwb_project_analytics.*
 
 #PyCharm
 .idea
