@@ -216,7 +216,7 @@ class GitCodeStats:
         from the previous time are carried forward to fill in the gaps.
 
         :param date_range: Pandas datarange object for which the stats should be computed
-        :type pandas.date_range
+        :type date_range: pandas.date_range
         :return: Dict where the values are Pandas DataFrame objects with summary statistics
                  and the keys are strings with the statistic type, i.e., 'sizes', 'blank',
                  'codes', 'comment', 'nfiles'

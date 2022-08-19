@@ -18,7 +18,7 @@ class CodecovInfo:
         :type gitrepo: GitRepo
         :param page_max: Integer with the maximum number of pages to request.
                          Set to None to indicate unlimited. (default=100)
-        'param state: Filter list by state. One of all, open, closed, merged. Default: merged
+        :param state: Filter list by state. One of all, open, closed, merged. Default: merged
         :param key: One of 'pulls' or 'commits'
         :param branch: Branch for which the stats should be retrieved. (Default=None)
 
@@ -108,12 +108,17 @@ class CodecovInfo:
         Plot coverage results for one or more codes as a sequence of individual figures all of which are
         plotted and saved separately (one per code)
 
+        Example for setting for ``codecovs``:
+
+        .. code:: Python
+
+            codecovs = {r: CodecovInfo.get_pulls_or_commits(NWBGitInfo.GIT_REPOS[r],
+                                                            key='commits', state='all',
+                                                            branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
+                       for r in ['HDMF', 'PyNWB', 'MatNWB']}
+
         :param codecovs: Dictionary where the keys are the names of the codes and the values are the output from
-                         CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code. E.g., set to
-                         >> {r: CodecovInfo.get_pulls_or_commits(NWBGitInfo.GIT_REPOS[r],
-                                                              key='commits', state='all',
-                                                              branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
-                            for r in ['HDMF', 'PyNWB', 'MatNWB']}
+                         CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code.
         :param plot_xlim: Tuple of datatime objects defining the time-range of the x-axis. E.g.,
                           plot_xlim=(datetime.strptime("2021-01-01", "%Y-%m-%d"), datetime.today())
         :param fontsize: Fontsize to be used for axes label, tickmarks, and titles. (default=16)
@@ -139,12 +144,17 @@ class CodecovInfo:
         Plot coverage results for one or more codes as a single figure with one row per code so all
         codes appear in their own plots but with a shared x-axis for time and creating only a single file
 
+        Example for setting for ``codecovs``:
+
+        .. code:: Python
+
+            codecovs = {r: CodecovInfo.get_pulls_or_commits(NWBGitInfo.GIT_REPOS[r],
+                                                            key='commits', state='all',
+                                                            branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
+                       for r in ['HDMF', 'PyNWB', 'MatNWB']}
+
         :param codecovs: Dictionary where the keys are the names of the codes and the values are the output from
-                         CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code. E.g., set to
-                         >> {r: CodecovInfo.get_pulls_or_commits(NWBGitInfo.GIT_REPOS[r],
-                                                              key='commits', state='all',
-                                                              branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
-                            for r in ['HDMF', 'PyNWB', 'MatNWB']}
+                         CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code.
         :param plot_xlim: Tuple of datatime objects defining the time-range of the x-axis. E.g.,
                           plot_xlim=(datetime.strptime("2021-01-01", "%Y-%m-%d"), datetime.today())
         :param fontsize: Fontsize to be used for axes label, tickmarks, and titles. (default=16)
@@ -175,12 +185,17 @@ class CodecovInfo:
         Plot coverage results for one or more codes as a single figure with each code represented by
         a line plot with optional filled area.
 
+        Example for setting for ``codecovs``:
+
+        .. code:: Python
+
+            codecovs = {r: CodecovInfo.get_pulls_or_commits(NWBGitInfo.GIT_REPOS[r],
+                                                            key='commits', state='all',
+                                                            branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
+                       for r in ['HDMF', 'PyNWB', 'MatNWB']}
+
         :param codecovs: Dictionary where the keys are the names of the codes and the values are the output from
-                         CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code. E.g., set to
-                         >> {r: CodecovInfo.get_pulls_or_commits(NWBGitInfo.GIT_REPOS[r],
-                                                              key='commits', state='all',
-                                                              branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
-                            for r in ['HDMF', 'PyNWB', 'MatNWB']}
+                         CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code.
         :param plot_xlim: Tuple of datatime objects defining the time-range of the x-axis. E.g.,
                           plot_xlim=(datetime.strptime("2021-01-01", "%Y-%m-%d"), datetime.today())
         :param fill_alpha: Alpha value to be used for the area plots. Set to 0 or less to disable area plots
