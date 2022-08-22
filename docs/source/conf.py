@@ -161,13 +161,31 @@ def setup(app):
     app.connect('builder-inited', run_apidoc)
     # app.add_css_file("theme_overrides.css")
     app.connect("autodoc-skip-member", skip)
-    # Create the codestatistic pages
-    create_codestat_pages(
-        out_dir=code_stat_pages_dir,
-        data_dir=code_stat_data_dir,
-        cloc_path="cloc",
-        load_cached_results=True,
-        cache_results=True,
-        start_date=None,
-        end_date=None,
-        print_status=True)
+    # Create the code statistic pages if necessary
+    # First check if we need to update the code stat pages
+    update_code_stat_pages = False
+    cloc_data_yaml = os.path.join(code_stat_data_dir, 'cloc_stats.yaml')
+    code_stats_main_rst = os.path.join(code_stat_pages_dir, "code_stats_main.rst")
+    # Update the code stats pages if the cached data is missing (i.e., we are asked to update the data cache)
+    # or if the pages are missing
+    update_code_stat_pages = not os.path.exists(cloc_data_yaml) or not os.path.exists(code_stats_main_rst)
+    # If the codestat pages exists then check that they are up-to-date with the cache
+    if not update_code_stat_pages:
+        data_cache_create_time = os.path.getctime(cloc_data_yaml)
+        code_stats_pages_create_time = os.path.getctime(code_stat_pages_dir)
+        update_code_stat_pages = code_stats_pages_create_time < data_cache_create_time
+    # Recreate the code stat pages and figures if necessary
+    if update_code_stat_pages:
+        create_codestat_pages(
+            out_dir=code_stat_pages_dir,
+            data_dir=code_stat_data_dir,
+            cloc_path="cloc",
+            load_cached_results=True,
+            cache_results=True,
+            start_date=None,
+            end_date=None,
+            print_status=True)
+    else:
+        print("\033[1mSKIPPING: create_codestat_pages... \033[0m done  "
+              "(the existing code_stat_pages up-to-date with the data cache)")
+
