@@ -4,7 +4,6 @@ Module for getting data from Codecov.io
 import numpy as np
 import requests
 import datetime
-from matplotlib import pyplot as plt
 
 
 class CodecovInfo:
