@@ -21,6 +21,7 @@ All main NWB analytics are compiled automatically when building the ``docs``
     conda activate nwb_analytics_env
 
 2. Install ``cloc`` (see `here <https://github.com/AlDanial/cloc#install-via-package-manager>`_)
+   (only needed when you want to update the cloc code statistics in ``data/``)
 
 3. Install the tools via
 
