@@ -40,6 +40,19 @@ All main NWB analytics are compiled automatically when building the ``docs``
     open build/html/index.html
 
 
+How to update the ``data/``
+===========================
+
+Computing ``cloc`` statistics for all codes is time-consuming as we need to compute them over time, i.e., we need to run ``cloc`` for all commits on the main branch of each code. The cloc results are, therefore, saved in the ``data/`` folder and only updated when necessary. To update the ``cloc`` statistics simply remove the cached results and build the docs:
+
+.. code-block:: bash
+
+    rm data/cloc_stats.yaml
+    rm data/commit_stats.yaml
+    rm data/git_path.yaml
+    cd docs
+    make html
+
 How to build custom analytics
 =============================
 
