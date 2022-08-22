@@ -62,7 +62,8 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
         start_date=start_date,
         end_date=end_date,
         read_cache=load_cached_results,
-        write_cache=cache_results
+        write_cache=cache_results,
+        clean_source_dir=True
     )
     #  show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
     codeorder = [codename for codename in list(sorted(summary_stats['sizes'].keys()))

@@ -63,6 +63,7 @@ class GitCodeStats:
             end_date: datetime = None,
             read_cache: bool = True,
             write_cache: bool = True,
+            clean_source_dir: bool = True
     ):
         """
         Convenience function to compute GitCodeStats statistics for all NWB git repositories
@@ -87,8 +88,9 @@ class GitCodeStats:
                            loaded without checking results (e.g., whether results
                            in the cache are complete and up-to-date).
         :param write_cache: Bool indicating whether to write the results to the cache.
-        :param include_language_stats: Also compute the language breakdown using
-                           compute_language_stats
+        :param clean_source_dir: Bool indicating whether to remove self.source_dir when finished
+                           computing the code stats. This argument only takes effect when
+                           code statistics are computed (i.e., not when data is loaded from cache)
 
         :return: Tuple with the: 1) GitCodeStats object with all NWB code statistics and
                  2) dict with the results form GitCodeStats.compute_summary_stats
@@ -106,7 +108,8 @@ class GitCodeStats:
             git_code_stats = GitCodeStats(output_dir=cache_dir)
             git_code_stats.compute_code_stats(git_paths=git_paths,
                                               cloc_path=cloc_path,
-                                              cache_results=write_cache)
+                                              cache_results=write_cache,
+                                              clean_source_dir=clean_source_dir)
 
         # Define our reference date range depending on whether we include NWB 1 in the plots or not
         date_range = pd.date_range(
@@ -174,7 +177,13 @@ class GitCodeStats:
                 os.path.exists(temp.cache_file_commits) and
                 os.path.exists(temp.cache_git_paths))
 
-    def compute_code_stats(self, git_paths, cloc_path, cache_results=True):
+    def compute_code_stats(
+            self,
+            git_paths: str,
+            cloc_path: str,
+            cache_results: bool = True,
+            clean_source_dir: bool = False
+    ):
         """
         Compute code statistics suing CLOC.
 
@@ -193,8 +202,8 @@ class GitCodeStats:
                                     if the cache should be cleaned and results recomputed. NOTE: Setting to false
                                     will lead to calling clean_outdir to clean up results.
         :type load_cached_results: bool
-        :param cache_results: Cache results as YAML to self.outdir
-        :type cache_results: bool
+        :param cache_results: Bool indicating whether to cache results as YAML to self.output_dir
+        :param clean_source_dir: Bool indicating whether to remove self.source_dir when finished
         :return: None. The function initializes self.commit_stats and self.cloc_stats
         """
         self.git_paths = git_paths
@@ -227,6 +236,10 @@ class GitCodeStats:
             print("saving %s" % self.cache_git_paths)  # noqa T001
             with open(self.cache_git_paths, 'w') as outfile:
                 yaml.dump(self.git_paths, outfile)
+        print("Clean code source dir %s ..." % self.source_dir)
+        if clean_source_dir:
+            if os.path.exists(self.source_dir):
+                shutil.rmtree(self.source_dir)
 
     def compute_summary_stats(self, date_range):
         """
@@ -392,7 +405,7 @@ class GitCodeStats:
         """
         Delete the output directory and all its contents and create a new clean directory. Create a new source_dir.
 
-        :param output_dir: Output directory for chaching results
+        :param output_dir: Output directory for caching results
         :param source_dir: Directory for storing repos checked out from git
 
         :returns: A tuple of two strings with the output_dir and source_dir for git sources
