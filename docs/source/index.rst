@@ -10,7 +10,9 @@ Welcome to nwb-project-analytics's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   code_stat_pages/code_stats.rst
+   code_health.rst
+   code_stat_pages/code_stats_main.rst
+   code_stat_pages/code_stats_tools.rst
    nwb_project_analytics
 
 
