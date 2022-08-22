@@ -181,7 +181,9 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
         plot_xlim=(NWBGitInfo.NWB2_FIRST_STABLE_RELEASE, datetime.today()),
         fill_alpha=0.2,
         fontsize=16,
-        figsize=(12, 6))
+        figsize=(12, 6),
+        title="Test coverage: NWB core APIs"
+    )
     plt.savefig(os.path.join(out_dir, 'test_coverage_nwb_main.pdf'))
     plt.savefig(os.path.join(out_dir, 'test_coverage_nwb_main.png'), dpi=300)
     plt.close()
@@ -201,7 +203,8 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
                 codecovs={repo_name: codecov_commits},
                 plot_xlim=None,
                 fontsize=16,
-                figsize=(14, 6)
+                figsize=(14, 6),
+                title="Test Coverage: %s" % repo_name
             )
             test_coverage_figures[repo_name] = "test_coverage_%s.png" % repo_name
             plt.savefig(os.path.join(out_dir, 'test_coverage_%s.pdf' % repo_name))

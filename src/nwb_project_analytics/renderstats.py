@@ -103,7 +103,7 @@ class RenderReleaseTimeline:
             ax.get_yaxis().set_ticks([])
             ax.set_ylabel(repo_info.repo.repo, fontsize=fontsize)
         else:
-            ax.set_title("%s release dates" % repo_info.repo.repo, fontdict={"fontsize": fontsize})
+            ax.set_title("Release: %s" % repo_info.repo.repo, fontdict={"fontsize": fontsize})
             ax.yaxis.set_visible(False)
 
         # Set margins and grid lines
@@ -137,7 +137,7 @@ class RenderReleaseTimeline:
             # Add the mpl.patches to plot
             for patch in legend_items:
                 ax.add_patch(patch)
-            # Add a a legend for the backround color
+            # Add the legend
             ax.legend(
                 legend_items,
                 ['Major', 'Minor', 'Patch'],
@@ -234,7 +234,9 @@ class RenderCodecovInfo:
             timestamps,
             coverage,
             plot_xlim: tuple,
-            fontsize: int):
+            fontsize: int,
+            title: str = None
+    ):
         """Internal helper function used to plot a single codecov  on an existing figure using pyplot"""
         mpl.pyplot.fill_between(timestamps, coverage)
         mpl.pyplot.plot(timestamps, coverage, '--o', color='black')
@@ -243,7 +245,8 @@ class RenderCodecovInfo:
             mpl.pyplot.ylim(coverage[r].min()-1, coverage[r].max()+1)
             mpl.pyplot.xlim(plot_xlim)
         mpl.pyplot.ylabel("Coverage in %", fontsize=fontsize)
-        mpl.pyplot.title(codename, fontsize=fontsize)
+        if title is not None:
+            mpl.pyplot.title(title, fontsize=fontsize)
         mpl.pyplot.yticks(fontsize=fontsize)
         mpl.pyplot.xticks(fontsize=fontsize, rotation=45)
 
@@ -253,7 +256,9 @@ class RenderCodecovInfo:
             codecovs: dict,
             plot_xlim: tuple = None,
             fontsize: int = 16,
-            figsize: tuple = None):
+            figsize: tuple = None,
+            title: str = None
+    ):
         """
         Plot coverage results for a code as an individual figure
 
@@ -272,6 +277,7 @@ class RenderCodecovInfo:
                           plot_xlim=(datetime.strptime("2021-01-01", "%Y-%m-%d"), datetime.today())
         :param fontsize: Fontsize to be used for axes label, tickmarks, and titles. (default=16)
         :param figsize: Figure size tuple. Default is (18,6)
+        :param title: Optional title for the figure
 
         :returns: Matplotlib figure
         """
@@ -359,10 +365,8 @@ class RenderCodecovInfo:
         :param fill_alpha: Alpha value to be used for the area plots. Set to 0 or less to disable area plots
                           (default=0.2)
         :param fontsize: Fontsize to be used for axes label, tickmarks, and titles. (default=16)
-        :param title: Title for the figure
-        :param basefilename: Base name of the file(s) where the plots should eb saved to. Set to None to
-                         only show but not save the plots. Figures will be saved as both PDF and PNG.
-                         (default=None)
+        :param title: Optional title for the figure
+        :param figsize: Opitonal tuple of ints with the figure size
 
         :returns: Matplotlib figure created here
         """
