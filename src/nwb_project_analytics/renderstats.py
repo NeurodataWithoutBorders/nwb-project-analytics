@@ -1,9 +1,8 @@
 """
 Module with routines for plotting code and git statistics
 """
-from matplotlib import pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.patches as patches
+import matplotlib as mpl
+import pandas as pd
 import numpy as np
 import warnings
 from datetime import datetime, timedelta
@@ -78,7 +77,7 @@ class RenderReleaseTimeline:
 
         # Create figure and plot a stem plot with the date
         if ax is None:
-            fig, ax = plt.subplots(figsize=(12, 5) if figsize is None else figsize)
+            fig, ax = mpl.pyplot.subplots(figsize=(12, 5) if figsize is None else figsize)
 
         ax.vlines(dates, 0, levels, color="dodgerblue")  # The vertical stems.
         ax.plot(dates, np.zeros_like(dates), "-o",
@@ -95,9 +94,9 @@ class RenderReleaseTimeline:
         # format xaxis with 4 month intervals
         if xlim is not None:
             ax.set_xlim(xlim)
-        ax.xaxis.set_major_locator(mdates.MonthLocator(interval=month_intervals))
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
-        plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=fontsize)
+        ax.xaxis.set_major_locator(mpl.dates.MonthLocator(interval=month_intervals))
+        ax.xaxis.set_major_formatter(mpl.dates.DateFormatter("%b %Y"))
+        mpl.pyplot.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=fontsize)
 
         # set the title
         if title_on_yaxis:
@@ -115,21 +114,27 @@ class RenderReleaseTimeline:
             # Create a Rectangle patch
             legend_items = []
             # Major releases background
-            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 3.5),  # xy origin
-                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
-                                                  height=ax.get_ylim()[1] - 3.5,
-                                                  linewidth=0, facecolor='lightgreen', edgecolor=None))
+            legend_items.append(mpl.patches.Rectangle(
+                xy=(ax.get_xlim()[0], 3.5),  # xy origin
+                width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
+                height=ax.get_ylim()[1] - 3.5,
+                linewidth=0,
+                facecolor='lightgreen', edgecolor=None))
             # Minor releases background
-            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], 0),  # xy origin
-                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
-                                                  height=3.5,
-                                                  linewidth=0, facecolor='lightblue', edgecolor=None))
+            legend_items.append(mpl.patches.Rectangle(
+                xy=(ax.get_xlim()[0], 0),  # xy origin
+                width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
+                height=3.5,
+                linewidth=0,
+                facecolor='lightblue', edgecolor=None))
             # Patch releases background
-            legend_items.append(patches.Rectangle(xy=(ax.get_xlim()[0], ax.get_ylim()[0]),  # xy origin
-                                                  width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
-                                                  height=abs(ax.get_ylim()[0]),
-                                                  linewidth=0, facecolor='lightgray', edgecolor=None))
-            # Add the patches to plot
+            legend_items.append(mpl.patches.Rectangle(
+                xy=(ax.get_xlim()[0], ax.get_ylim()[0]),  # xy origin
+                width=ax.get_xlim()[1] - ax.get_xlim()[0],  # width
+                height=abs(ax.get_ylim()[0]),
+                linewidth=0,
+                facecolor='lightgray', edgecolor=None))
+            # Add the mpl.patches to plot
             for patch in legend_items:
                 ax.add_patch(patch)
             # Add a a legend for the backround color
@@ -178,12 +183,13 @@ class RenderReleaseTimeline:
                           datetime.today())
 
         # Render the release timeline for all repos
-        fig, axes = plt.subplots(figsize=(16, len(github_repo_infos) * 4.2),
-                                 nrows=len(github_repo_infos),
-                                 ncols=1,
-                                 sharex=True,
-                                 sharey=False,
-                                 squeeze=True)
+        fig, axes = mpl.pyplot.subplots(
+            figsize=(16, len(github_repo_infos) * 4.2),
+            nrows=len(github_repo_infos),
+            ncols=1,
+            sharex=True,
+            sharey=False,
+            squeeze=True)
         for i, repo in enumerate(github_repo_infos.keys()):
             ax = cls.plot_release_timeline(
                 repo_info=github_repo_infos[repo],
@@ -203,8 +209,8 @@ class RenderReleaseTimeline:
             axes[0].set_title(title, fontdict={'fontsize': fontsize})
 
         # Final layout, save, and display
-        plt.tight_layout()
-        plt.subplots_adjust(wspace=0.0, hspace=0.02)
+        mpl.pyplot.tight_layout()
+        mpl.pyplot.subplots_adjust(wspace=0.0, hspace=0.02)
 
         return fig, axes
 
@@ -215,21 +221,32 @@ class RenderCodecovInfo:
     """
 
     @classmethod
-    def __plot_single_codecov(cls, codename, timestamps, coverage, plot_xlim, fontsize):
+    def __plot_single_codecov(
+            cls,
+            codename: str,
+            timestamps,
+            coverage,
+            plot_xlim: tuple,
+            fontsize: int):
         """Internal helper function used to plot a single codecov  """
-        plt.fill_between(timestamps, coverage)
-        plt.plot(timestamps, coverage, '--o', color='black')
+        mpl.pyplot.fill_between(timestamps, coverage)
+        mpl.pyplot.plot(timestamps, coverage, '--o', color='black')
         if plot_xlim is not None:
             r = np.logical_and(timestamps >= plot_xlim[0], timestamps <= plot_xlim[1])
-            plt.ylim(coverage[r].min()-1, coverage[r].max()+1)
-            plt.xlim(plot_xlim)
-        plt.ylabel("Coverage in %", fontsize=fontsize)
-        plt.title(codename, fontsize=fontsize)
-        plt.yticks(fontsize=fontsize)
-        plt.xticks(fontsize=fontsize, rotation=45)
+            mpl.pyplot.ylim(coverage[r].min()-1, coverage[r].max()+1)
+            mpl.pyplot.xlim(plot_xlim)
+        mpl.pyplot.ylabel("Coverage in %", fontsize=fontsize)
+        mpl.pyplot.title(codename, fontsize=fontsize)
+        mpl.pyplot.yticks(fontsize=fontsize)
+        mpl.pyplot.xticks(fontsize=fontsize, rotation=45)
 
     @classmethod
-    def plot_codecov_individual(cls, codecovs, plot_xlim=None, fontsize=16, basefilename=None):
+    def plot_codecov_individual(
+            cls,
+            codecovs: dict,
+            plot_xlim: tuple = None,
+            fontsize: int = 16,
+            basefilename: str = None):
         """
         Plot coverage results for one or more codes as a sequence of individual figures all of which are
         plotted and saved separately (one per code)
@@ -258,14 +275,19 @@ class RenderCodecovInfo:
             timestamps, coverage, nocov = CodecovInfo.get_time_and_coverage(v)
             cls.__plot_single_codecov(k, timestamps, coverage, plot_xlim, fontsize)
             i += 1
-            plt.tight_layout()
+            mpl.pyplot.tight_layout()
             if basefilename is not None:
-                plt.savefig(basefilename + "_" + k + '.pdf', dpi=300)
-                plt.savefig(basefilename + "_" + k + '.png', dpi=300)
-            plt.show()
+                mpl.pyplot.savefig(basefilename + "_" + k + '.pdf', dpi=300)
+                mpl.pyplot.savefig(basefilename + "_" + k + '.png', dpi=300)
+            mpl.pyplot.show()
 
     @classmethod
-    def plot_codecov_grid(cls, codecovs, plot_xlim=None, fontsize=16, basefilename=None):
+    def plot_codecov_grid(
+            cls,
+            codecovs: dict,
+            plot_xlim: tuple = None,
+            fontsize: int = 16,
+            basefilename: str = None):
         """
         Plot coverage results for one or more codes as a single figure with one row per code so all
         codes appear in their own plots but with a shared x-axis for time and creating only a single file
@@ -288,25 +310,32 @@ class RenderCodecovInfo:
                          only show but not save the plots. Figures will be saved as both PDF and PNG.
                          (default=None)
         """
-        fig, axes = plt.subplots(figsize=(8, len(codecovs)*4.2),
-                                 nrows=len(codecovs), ncols=1,
-                                 sharex=True, sharey=False,
-                                 squeeze=True)
+        fig, axes = mpl.pyplot.subplots(
+            figsize=(8, len(codecovs)*4.2),
+            nrows=len(codecovs), ncols=1,
+            sharex=True, sharey=False,
+            squeeze=True)
         i = 0
         for k, v in codecovs.items():
             timestamps, coverage, nocov = CodecovInfo.get_time_and_coverage(v)
             ax = axes[i] if len(codecovs) > 1 else axes
-            plt.sca(ax)
+            mpl.pyplot.sca(ax)
             cls.__plot_single_codecov(k, timestamps, coverage, plot_xlim, fontsize)
             i += 1
-        plt.tight_layout()
+        mpl.pyplot.tight_layout()
         if basefilename is not None:
-            plt.savefig(basefilename + '.pdf', dpi=300)
-            plt.savefig(basefilename + '.png', dpi=300)
-        plt.show()
+            mpl.pyplot.savefig(basefilename + '.pdf', dpi=300)
+            mpl.pyplot.savefig(basefilename + '.png', dpi=300)
+        mpl.pyplot.show()
 
     @staticmethod
-    def plot_codecov_multiline(codecovs, plot_xlim=None, fill_alpha=0.2,  fontsize=16, basefilename=None, figsize=None):
+    def plot_codecov_multiline(
+            codecovs: dict,
+            plot_xlim: tuple = None,
+            fill_alpha: float = 0.2,
+            fontsize: int = 16,
+            basefilename: str = None,
+            figsize: tuple = None):
         """
         Plot coverage results for one or more codes as a single figure with each code represented by
         a line plot with optional filled area.
@@ -331,7 +360,7 @@ class RenderCodecovInfo:
                          only show but not save the plots. Figures will be saved as both PDF and PNG.
                          (default=None)
         """
-        plt.figure(figsize=figsize)
+        mpl.pyplot.figure(figsize=figsize)
         # Compute the proper yrange for the given timerange
         ymins = []
         ymaxs = []
@@ -339,8 +368,8 @@ class RenderCodecovInfo:
         for k, v in codecovs.items():
             timestamps, coverage, nocov = CodecovInfo.get_time_and_coverage(v)
             if fill_alpha > 0:
-                plt.fill_between(timestamps, coverage, alpha=fill_alpha)
-            plt.plot(timestamps, coverage, '--o', label=k)
+                mpl.pyplot.fill_between(timestamps, coverage, alpha=fill_alpha)
+            mpl.pyplot.plot(timestamps, coverage, '--o', label=k)
             if plot_xlim:
                 r = np.logical_and(timestamps >= plot_xlim[0], timestamps <= plot_xlim[1])
                 ymins.append(coverage[r].min())
@@ -350,17 +379,177 @@ class RenderCodecovInfo:
                 ymaxs.append(coverage.max())
         # Set the xlim
         if plot_xlim is not None:
-            plt.xlim(plot_xlim)
+            mpl.pyplot.xlim(plot_xlim)
         # Compute the approbriate ylim for the xlim timerange
-        plt.ylim(np.min(ymins)-1, np.max(ymaxs) + 1)
+        mpl.pyplot.ylim(np.min(ymins)-1, np.max(ymaxs) + 1)
         # Update fontsizes, labels, and legend
-        plt.yticks(fontsize=fontsize)
-        plt.xticks(fontsize=fontsize, rotation=45)
-        plt.ylabel("Coverage in %", fontsize=fontsize)
-        plt.legend(fontsize=fontsize)
-        plt.tight_layout()
+        mpl.pyplot.yticks(fontsize=fontsize)
+        mpl.pyplot.xticks(fontsize=fontsize, rotation=45)
+        mpl.pyplot.ylabel("Coverage in %", fontsize=fontsize)
+        mpl.pyplot.legend(fontsize=fontsize)
+        mpl.pyplot.tight_layout()
         # save and display
         if basefilename is not None:
-            plt.savefig(basefilename + '.pdf', dpi=300)
-            plt.savefig(basefilename + '.png', dpi=300)
-        plt.show()
+            mpl.pyplot.savefig(basefilename + '.pdf', dpi=300)
+            mpl.pyplot.savefig(basefilename + '.png', dpi=300)
+        mpl.pyplot.show()
+
+
+class RenderClocStats:
+    """
+    Helper class for rendering code line statistics generated
+    using GitCodeStats, e.g., via GitCodeStats.from_nwb.
+    """
+    @staticmethod
+    def plot_reposize_language(
+            per_repo_lang_stats: dict,
+            languages_used_all: list,
+            repo_name: str,
+            figsize: tuple = None,
+            fontsize: int = 18,
+            title: str = None
+    ):
+        """
+        Plot repository size broken down by language for a particular repo
+
+        To compute the language statistics for code repositories we can use
+
+        .. code:: Python
+
+            git_code_stats, summary_stats = GitCodeStats.from_nwb(...)
+            ignore_lang = ['SUM', 'header']
+            languages_used_all = git_code_stats.get_languages_used(ignore_lang)
+            per_repo_lang_stats = git_code_stats.compute_language_stats(ignore_lang)
+
+        :param per_repo_lang_stats: Dict with per repository language statistics compute via
+                    GitCodeStats.compute_language_statistics
+        :param  languages_used_all: List/array with the languages uses
+        :param repo_name: Key in dataframes of summary_stats with the name of the code repository to plot.
+        :param figsize: Figure size tuple. Default=(18, 10)
+        :param fontsize: Fontsize
+        :param title: Title of the plot
+        :return: Matplotlib axis object used for plotting
+        """
+        # Create unique colors per language so we can be consistent across plots
+        evenly_spaced_interval = np.linspace(0, 1, len(languages_used_all))
+        language_colors = {languages_used_all[i]: mpl.cm.jet(x)  # tab20(x)
+                           for i, x in enumerate(evenly_spaced_interval)}
+        # Plot the per-language size statistics
+        curr_df = per_repo_lang_stats[repo_name].copy()
+        ax = curr_df.plot.area(
+            figsize=(18, 10) if figsize is None else figsize,
+            stacked=True,
+            linewidth=1,
+            fontsize=fontsize,
+            color=[language_colors[lang] for lang in curr_df.columns]
+        )
+        # Adjust the labels
+        mpl.pyplot.legend(loc=2, prop={'size': fontsize})
+        mpl.pyplot.ylabel('Lines of Code (CLOC)', fontsize=fontsize)
+        mpl.pyplot.grid(color='black', linestyle='--', linewidth=0.7, axis='both')
+        if title is not None:
+            mpl.pyplot.title(title, fontsize=fontsize)
+        mpl.pyplot.tight_layout()
+        # Place the legend next to plot
+        box = ax.get_position()
+        ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+        handles, labels = ax.get_legend_handles_labels()
+        ax.legend(handles[::-1],  # Reverse labels in the legend to match the stacking in the plot
+                  labels[::-1],
+                  title='Language',
+                  loc='center left',
+                  bbox_to_anchor=(1, 0.5),
+                  fontsize=fontsize, )
+        # Return the axis
+        return ax
+
+    @staticmethod
+    def plot_reposize_code_comment_blank(
+            summary_stats: dict,
+            repo_name: str,
+            title: str = None
+    ):
+        """
+        Plot repository size broken down by code, comment, and blank for a particular repo
+
+        :param summary_stats:  dict with the results form GitCodeStats.compute_summary_stats
+        :param repo_name: Key in dataframes of summary_stats with the name of the code repository to plot.
+        :param title: Title of the plot
+        :return: Matplotlib axis object used for plotting
+        """
+        # Render all the plots
+        curr_df = pd.DataFrame.from_dict({'code': summary_stats['codes'][repo_name],
+                                          'blank': summary_stats['blanks'][repo_name],
+                                          'comment': summary_stats['comments'][repo_name]})
+        ax = curr_df.plot.area(
+            figsize=(18, 10),
+            stacked=True,
+            linewidth=1,
+            fontsize=16)
+        mpl.pyplot.legend(loc=2, prop={'size': 16})
+        mpl.pyplot.ylabel('Lines of Code (CLOC)', fontsize=16)
+        mpl.pyplot.grid(color='black', linestyle='--', linewidth=0.7, axis='both')
+        if title is not None:
+            mpl.pyplot.title(title, fontsize=20)
+        mpl.pyplot.tight_layout()
+        return ax
+
+    @staticmethod
+    def plot_cloc_sizes_stacked_area(
+            summary_stats: dict,
+            order: list = None,
+            colors: list = None,
+            title: str = None,
+            fontsize: int = 20):
+        """
+        Stacked curve plot of code size statistics
+
+        :param summary_stats:  dict with the results form GitCodeStats.compute_summary_stats
+        :param order: List of strings selecting the order in which codes should be stacked in the plot.
+                      If set to none then all keys in summary_stats will be used sorted alphabetically.
+        :param colors: List of colors to be used. One per repo. Must be the same lenght as order.
+
+        :return: Matplotlib axis object used for plotting
+        """
+        # define plot order
+        if order is None:
+            order = list(sorted(summary_stats['sizes'].keys()))
+        # define plot colors
+        if colors is None:
+            # create colors from the jet color map
+            evenly_spaced_interval = np.linspace(0, 1, len(order))
+            colors = [mpl.cm.tab20(x) for x in evenly_spaced_interval]
+            # mix up colors so that neighbouring areas have more dissimilar colors
+            colors = ([c for i, c in enumerate(colors) if i % 2 == 0] +
+                      [c for i, c in enumerate(colors) if i % 2 == 1])
+        # plot the stacked curve plot
+        ax = summary_stats['sizes'][order].plot.area(
+            figsize=(18, 10),
+            stacked=True,
+            linewidth=1,
+            fontsize=24,
+            color=colors)
+        # define the legend, axis labels, title etc.
+        ax.get_yaxis().set_major_formatter(
+            mpl.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
+        mpl.pyplot.legend(loc=2, prop={'size': fontsize})
+        mpl.pyplot.ylabel('Lines of Code', fontsize=fontsize)
+        mpl.pyplot.xlabel('Date', fontsize=fontsize)
+        mpl.pyplot.grid(color='black', linestyle='--', linewidth=0.7, axis='both')
+        # Place the legend next to plot
+        box = ax.get_position()
+        ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+        handles, labels = ax.get_legend_handles_labels()
+        ax.legend(handles[::-1],  # Reverse labels in the legend to match the stacking in the plot
+                  labels[::-1],
+                  title='Code Name',
+                  loc='center left',
+                  bbox_to_anchor=(1, 0.5),
+                  title_fontsize=fontsize,
+                  fontsize=fontsize-2)
+        # set the tile
+        if title is not None:
+            mpl.pyplot.title(title, fontsize=fontsize)
+        # mpl.pyplot.tight_layout()
+        # return the plot axis
+        return ax
