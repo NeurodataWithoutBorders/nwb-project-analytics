@@ -62,10 +62,17 @@ class GitCodeStats:
             start_date: datetime = None,
             end_date: datetime = None,
             read_cache: bool = True,
-            write_cache: bool = True):
+            write_cache: bool = True,
+    ):
         """
         Convenience function to compute GitCodeStats statistics for all NWB git repositories
         defined by GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS)
+
+        For HDMF and the NDX_Extension_Smithy code statistics before the start date of the
+        repo are set to 0. HDMF was extracted from PyNWB and as such, while there is code
+        history before the official date for HDMF that part is history of PyNWB and so
+        we set those values to 0. Similarly, the NDX_Extension_Smithy also originated
+        from another code.
 
         :param cache_dir: Path to the director where the files with the cached results
                           are stored or should be written to
@@ -80,9 +87,13 @@ class GitCodeStats:
                            loaded without checking results (e.g., whether results
                            in the cache are complete and up-to-date).
         :param write_cache: Bool indicating whether to write the results to the cache.
+        :param include_language_stats: Also compute the language breakdown using
+                           compute_language_stats
 
         :return: Tuple with the: 1) GitCodeStats object with all NWB code statistics and
                  2) dict with the results form GitCodeStats.compute_summary_stats
+                 3) dict with language statistics computed via GitCodeStats.compute_language_stats
+                 4) list of all languages used
         """
         from nwb_project_analytics.gitstats import NWBGitInfo, GitRepos
 
@@ -106,6 +117,11 @@ class GitCodeStats:
         # Compute the aligned data statistics
         summary_stats = git_code_stats.compute_summary_stats(date_range=date_range)
 
+        # compute the language statistics
+        ignore_lang = ['SUM', 'header']
+        languages_used_all = git_code_stats.get_languages_used(ignore_lang)
+        per_repo_lang_stats = git_code_stats.compute_language_stats(ignore_lang)
+
         # Clean up HDMF summary statistic results results to mark start date of HDMF.
         # The HDMF repo was extracted from PyNWB. To avoid miscounting we'll set
         # all results before the start data for HDMF to 0
@@ -113,14 +129,20 @@ class GitCodeStats:
         hdmf_start_date = NWBGitInfo.HDMF_START_DATE.strftime("%Y-%m-%d")
         for k in summary_stats.keys():
             summary_stats[k]['HDMF'][:hdmf_start_date] = 0
+        # also update the per-language stats for HDMF
+        datemask = (per_repo_lang_stats['HDMF'].index < hdmf_start_date)
+        per_repo_lang_stats['HDMF'].loc[datemask] = 0
 
         # Clean up NDX_ExtensionSmithy results to mark start date for the extension smithy
         # Set all LOC values prior to the given data to 0
         extension_smithy_start_date = NWBGitInfo.NWB_EXTENSION_SMITHY_START_DATE.strftime("%Y-%m-%d")
         for k in summary_stats.keys():
             summary_stats[k]['NDX_Extension_Smithy'][:extension_smithy_start_date] = 0
+        # also update the per-language stats for the extension smithy
+        datemask = (per_repo_lang_stats['NDX_Extension_Smithy'].index < hdmf_start_date)
+        per_repo_lang_stats['NDX_Extension_Smithy'].loc[datemask] = 0
 
-        return git_code_stats, summary_stats
+        return git_code_stats, summary_stats, per_repo_lang_stats, languages_used_all
 
     @staticmethod
     def from_cache(output_dir):
@@ -315,8 +337,15 @@ class GitCodeStats:
                 'comments': repo_comments_aligned_df,
                 'nfiles': repo_nfiles_aligned_df}
 
-    def compute_language_stats(self, ignore_lang=None):
+    def compute_language_stats(self,
+                               ignore_lang=None):
         """
+        Compute for each code the breakdown in lines-of-code per language (including
+        blank, comment, and code lines for each language).
+
+        The index of the resulting dataframe will typically be different for each code
+        as changes occurred on different dates. The index reflects dates on which
+        code changes occurred.
 
         :param ignore_lang: List of languages to ignore. Usually ['SUM', 'header'] are useful to ignore.
 
@@ -325,39 +354,23 @@ class GitCodeStats:
 
         ignore_lang = [] if ignore_lang is None else ignore_lang
         per_repo_lang_stats = {}
-        for k, v in self.cloc_stats.items():
+        for codename, cloc_values in self.cloc_stats.items():
             # languages used in the current repo
-            languages_used = np.unique([lang for cl in v for lang in cl['cloc'].keys() if lang not in ignore_lang])
-            # linear range of dates across the lifetime of this repo
-            date_range_used = pd.date_range(start=self.cloc_stats[k][-1]['date'],
-                                            end=time.strftime("%d %b %Y", time.localtime()),
-                                            freq="D")
-            # start index in the CLOC data available for the repo
-            curr_index = 0
-            # current values to be used
-            curr_values = {lang: 0 for lang in languages_used}
+            languages_used = np.unique([lang for cl in cloc_values
+                                        for lang in cl['cloc'].keys()
+                                        if lang not in ignore_lang])
             # dates available in the repo
-            curr_dates = pd.pandas.DatetimeIndex([cloc_entry['date'] for cloc_entry in v])[::-1]
+            available_dates = pd.pandas.DatetimeIndex([cloc_entry['date']
+                                                       for cloc_entry in cloc_values])
             curr_stats = {lang: [] for lang in languages_used}
-            # iterate through all date values and set the repo counts
-            for d in date_range_used:
-                # If we found a matching date, then update the results
-                # Else we'll carry-forward the previous value since the
-                # repo has not changed
-                if d == curr_dates[curr_index]:
-                    # Update the current values to report until we find curr_dates[curr_index+1]
-                    for lang, val in v[curr_index]['cloc'].items():
-                        if lang in curr_values:  # e.g., SUM is being ignored
-                            curr_values[lang] = val['blank'] + val['code'] + val['code']
-                    # Move to the next date in the repo
-                    if curr_index < (len(curr_dates) - 1):
-                        curr_index += 1
-                # Copy the current values into our curr_stats dict
-                for cl, cv in curr_values.items():
-                    curr_stats[cl].append(cv)
-            # Now that we have our stats lets convert them to pandas
-            per_repo_lang_stats[k] = pd.DataFrame.from_dict(curr_stats)
-            per_repo_lang_stats[k].index = date_range_used[::-1]
+            for cloc_entry in cloc_values:
+                for lang in languages_used:
+                    val = (cloc_entry['cloc'][lang]
+                           if lang in cloc_entry['cloc']
+                           else {'blank': 0, 'code': 0, 'comment': 0})
+                    curr_stats[lang].append(val['blank'] + val['code'] + val['comment'])
+            per_repo_lang_stats[codename] = pd.DataFrame.from_dict(curr_stats)
+            per_repo_lang_stats[codename].index = available_dates
 
         return per_repo_lang_stats
 
@@ -366,6 +379,8 @@ class GitCodeStats:
         Get the list of languages used in the repos
 
         :param ignore_lang: List of strings with the languages that should be ignored. (Default=None)
+
+        :return: array of strings with the unique set of languages used
         """
         if ignore_lang is None:
             ignore_lang = []
