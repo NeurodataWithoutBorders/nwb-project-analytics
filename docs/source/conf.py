@@ -110,11 +110,32 @@ sphinx_tabs_valid_builders = ['linkcheck']
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+# html_logo = None
+html_logo = '_static/analytics_page_logo.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_theme_options = {
+    # 'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    # 'analytics_anonymize_ip': False,
+    'logo_only': False,  # Only show the NWB logo without the documentation title
+    'display_version': True,  # show the version of the docs
+    'prev_next_buttons_location': 'bottom',  # Show previous/next button at the bottom
+    'style_external_links': True,  # Add marker to indicate external links
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': 'darkgray',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
 
 
 def run_apidoc(_):
@@ -150,4 +171,3 @@ def setup(app):
         start_date=None,
         end_date=None,
         print_status=True)
-
