@@ -11,6 +11,7 @@ Welcome to nwb-project-analytics's documentation!
    :caption: Contents:
 
    nwb_project_analytics
+   code_stat_pages/code_stats.rst
 
 
 

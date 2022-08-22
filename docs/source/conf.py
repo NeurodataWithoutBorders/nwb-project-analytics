@@ -13,6 +13,11 @@
 
 import os
 import sys
+import sphinx_rtd_theme
+from nwb_project_analytics.create_codestat_pages import create_codestat_pages
+from nwb_project_analytics._version import get_versions
+
+
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- Support building doc without install --------------------------------------
@@ -25,13 +30,15 @@ import sys
 # Get the project root dir, which is the parent parent dir of this
 cwd = os.getcwd()
 project_root = os.path.dirname(os.path.dirname(cwd))
+code_stat_pages_dir = os.path.join(os.path.dirname(__file__), 'code_stat_pages')
+code_stat_data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data'))
+
+
 
 # Insert the project root dir as the first element in the PYTHONPATH.
 # This lets us ensure that the source package is imported, and that its
 # version is used.
 sys.path.insert(0, os.path.join(project_root, 'src'))
-
-from nwb_project_analytics._version import get_versions
 
 # -- Autodoc configuration -----------------------------------------------------
 
@@ -62,6 +69,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
     # 'sphinx_gallery.gen_gallery',
+    'sphinx_tabs.tabs',
     'sphinx_copybutton'
 ]
 
@@ -99,7 +107,9 @@ add_function_parentheses = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'agogo' # 'alabaster'
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -130,4 +140,14 @@ def setup(app):
     app.connect('builder-inited', run_apidoc)
     # app.add_css_file("theme_overrides.css")
     app.connect("autodoc-skip-member", skip)
+    # Create the codestatistic pages
+    create_codestat_pages(
+        out_dir=code_stat_pages_dir,
+        data_dir=code_stat_data_dir,
+        cloc_path="cloc",
+        load_cached_results=True,
+        cache_results=True,
+        start_date=None,
+        end_date=None,
+        print_status=True)
 
