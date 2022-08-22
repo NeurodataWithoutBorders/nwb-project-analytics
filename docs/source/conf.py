@@ -33,8 +33,6 @@ project_root = os.path.dirname(os.path.dirname(cwd))
 code_stat_pages_dir = os.path.join(os.path.dirname(__file__), 'code_stat_pages')
 code_stat_data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data'))
 
-
-
 # Insert the project root dir as the first element in the PYTHONPATH.
 # This lets us ensure that the source package is imported, and that its
 # version is used.
@@ -99,6 +97,8 @@ master_doc = 'index'
 # If true, '()' will be appended to :func: etc. cross-reference text.
 add_function_parentheses = False
 
+# sphinx tabs configuration
+sphinx_tabs_valid_builders = ['linkcheck']
 
 
 
