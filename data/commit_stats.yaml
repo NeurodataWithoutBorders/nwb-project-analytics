@@ -1,4 +1,7 @@
 HDMF:
+- {author: Ryan Ly, committer: GitHub, hexsha: 94e9e3dfa3d4ddb965cdddfb5f6f7f2597fde4ca,
+  summary: Fix upload of assets in deploy release CI (#754), time: Thu Aug 18 23:24:08
+    2022}
 - {author: Ryan Ly, committer: GitHub, hexsha: 7be40229d778dea940134753de957f2457a11e1f,
   summary: Prepare 3.4.0 release (#753), time: Fri Aug  5 17:51:30 2022}
 - {author: Ryan Ly, committer: GitHub, hexsha: bb156780017a5ca19b7f148f4452862761bef751,
@@ -5121,6 +5124,13 @@ HDMF_Schema_Language:
 - {author: Ben Dichter, committer: GitHub, hexsha: db052965ebb51a7460a1dec1ae7d428aaa3727cd,
   summary: Initial commit, time: Sat Jan  4 00:37:38 2020}
 HDMF_Zarr:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 4897d4bade0373273141cb1751669a28f6ea97a5,
+  summary: Add badges to the README (#34), time: Mon Aug 22 14:22:49 2022}
+- {author: mavaylon1, committer: GitHub, hexsha: 0befe92b17f3df8fd7ce16bf4cb9e07bcf0f1ace,
+  summary: Create workflows (#32), time: Fri Aug 19 21:59:54 2022}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: c7f9c0c2a2c39f254d4bbad7877a02a4fe440c13,
+  summary: Minor fixes and enhancements for the docs (#33), time: Thu Aug 18 17:20:38
+    2022}
 - {author: mavaylon1, committer: GitHub, hexsha: d85ac3c92adf693c9c0d826fad52e5000cea10b2,
   summary: Create .gitattributes and manifest (#30), time: Tue Aug 16 18:28:42 2022}
 - {author: mavaylon1, committer: GitHub, hexsha: 1013d9825a5e0c3a13df991170e10f9c4d5732c6,
@@ -8277,6 +8287,34 @@ Hackathons:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 36f80fce751d79214616cd569ec74eefaafe3af8,
   summary: Initial commit, time: Fri Jan 12 23:42:41 2018}
 MatNWB:
+- {author: Lawrence, committer: GitHub, hexsha: 0e22ed997a6dbb58f2ffa56897711b79961b8bbc,
+  summary: 'Merge pull request #459 from NeurodataWithoutBorders/457-fix-invalid-dynamic-tables',
+  time: Thu Aug 18 18:09:39 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 8744228eae7d6a34d686e6172d8e5bd9b315a78e,
+  summary: Allow for type upscaling when correcting for types, time: Wed Aug 17 16:24:33
+    2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: dd770aac1731d68595aa2fe7bb48b832f73cd255,
+  summary: add short circuit if cast unnecessary, time: Wed Aug 17 14:08:38 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 4064b7c429cf38bc25ed5bdc5fee891eab7b8074,
+  summary: implement type precision expansion for correctType, time: Tue Aug 16 21:56:44
+    2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: c81b0e2b203c674961bbddc5fb8d43dfd672bb90,
+  summary: Use correct type names in tests., time: Tue Aug 16 20:47:50 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 4a77e08423eeb3a67af4608f6992c4c04b13c52a,
+  summary: Roll definitions into mapType, time: Tue Aug 16 20:46:36 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 9e7d00695cc211a71a5fc8e1fb140d09b705fbea,
+  summary: minor file.Dataset refactor, time: Tue Aug 16 20:46:25 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 4fa0556041219444a3ce95ac6bba02ba00085f8a,
+  summary: Add `char` as a unicode text type, time: Tue Aug 16 19:21:16 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 2eb3f48c6e2e5c468af6f95e39fdc062bd201da5,
+  summary: Fix syntax errors, time: Tue Aug 16 19:20:55 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 50975b9b4ea22c0186af883d19232425e7f7f8d4,
+  summary: fix syntax error, time: Tue Aug 16 19:09:01 2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: 5b8226b390f821c8df75eb27ffc8207ab6fde9d6,
+  summary: Fix minor function name diff in getMatTypeSize, time: Tue Aug 16 19:01:38
+    2022}
+- {author: Lawrence Niu, committer: Lawrence Niu, hexsha: c13d25bf7b26736ca57a348aa41147bcb2a5ae2d,
+  summary: Reimplemenet checkDtype and correctType, time: Tue Aug 16 19:00:18 2022}
 - {author: Lawrence, committer: GitHub, hexsha: 3b267776e2cd5d39a590568940762fee81fad7bb,
   summary: Add dynamic filter class documentation (#456), time: Tue Aug 16 12:39:08
     2022}
@@ -16843,6 +16881,8 @@ NDX_Template:
   summary: Initial commit. Set up cookiecutter and template files, time: Wed May  1
     01:30:22 2019}
 NWBInspector:
+- {author: Cody Baker, committer: GitHub, hexsha: 0fafb09e14cedf81705a1f443766f1540afade16,
+  summary: Update general.py, time: Fri Aug 19 13:50:19 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: c68041948ad70b9d0ed5a0220cbd7ca7a05f0ea0,
   summary: Improve experimenter message (#254), time: Wed Aug 17 21:35:52 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: f9b58ebff25f8a05a1a1e1ba6823e29a06acc6ff,
@@ -21698,6 +21738,9 @@ NWB_1.x_Python:
 - {author: Jeff Teeters, committer: Jeff Teeters, hexsha: b4428d208b395c97946c079998f27a0ec8e1a1cd,
   summary: first commit, time: Wed Aug  5 08:16:46 2015}
 NWB_Overview:
+- {author: Ben Dichter, committer: GitHub, hexsha: 0391602ee9768af6d17bf05310da009d78cbbab1,
+  summary: 'Merge pull request #53 from NeurodataWithoutBorders/update/index', time: Thu
+    Aug 18 21:40:49 2022}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 28ed29a53132dadbd7f1e9efd8db3bccd11869fe,
   summary: Update description of NWBInspector and add hint for which tool to use (#56),
   time: Thu Aug 11 00:10:19 2022}
@@ -21713,6 +21756,8 @@ NWB_Overview:
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 75d28e2cd8dc9866a0ff81a07e0fcb39d48db15a,
   summary: Updated HDMF external links to use stable instead of latest, time: Wed
     Aug 10 21:19:53 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 82e4a116c069b1c3b90b15520136577cd15301ce,
+  summary: Minor reordering of user sections, time: Mon Aug  8 06:12:22 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: a9b658901a2811a799f6f525b392fca7a45853cf,
   summary: 'Merge pull request #48 from NeurodataWithoutBorders/add/pyreadlinks',
   time: Fri Jul 29 14:51:12 2022}
@@ -24342,6 +24387,74 @@ NWB_Schema_Language:
 - {author: Ben Dichter, committer: GitHub, hexsha: db052965ebb51a7460a1dec1ae7d428aaa3727cd,
   summary: Initial commit, time: Sat Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Ben Dichter, committer: GitHub, hexsha: 8422c036b2f238c222791b68fe0c1cf5fcca83e0,
+  summary: 'Merge pull request #103 from catalystneuro/icephys_api_docs', time: Mon
+    Aug 22 12:29:13 2022}
+- {author: luiz, committer: luiz, hexsha: 3aa3584e543934f565c9d58f1dad2ccfd6c8683a,
+  summary: rename, time: Mon Aug 22 09:41:24 2022}
+- {author: luiz, committer: luiz, hexsha: ea9e04c5142150d6f3125bc472ebf1395c8bf3d4,
+  summary: changelog, time: Mon Aug 22 09:39:00 2022}
+- {author: luiz, committer: luiz, hexsha: f5917b3c9be21d5e873c11b976a35f6a3c31bb2a,
+  summary: icephys api docs, time: Mon Aug 22 09:35:14 2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 47b580faee0539b4c933e9a061a38d4b194d600b,
+  summary: 'Merge pull request #99 from catalystneuro/fix_icephys_gallery', time: Fri
+    Aug 19 16:32:48 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 16d43187bedb53913a5bb4d8f1dff6473d990846,
+  summary: Merge branch 'main' into fix_icephys_gallery, time: Fri Aug 19 16:06:30
+    2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: e497a0a986a0ac03acc4e4239eba98255b796d68,
+  summary: 'Merge pull request #97 from catalystneuro/add_anotation_types_roiextractors',
+  time: Fri Aug 19 16:05:50 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: ed1d58bbca4a94a0cc71a7e650efa24ff403dac7,
+  summary: prevent icephys from making file; add deprecation to icephys, time: Fri
+    Aug 19 15:44:59 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: a41378853c75531233c13bccfe7ae04298196e3f,
+  summary: added annotation types, time: Thu Aug 18 20:39:33 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ca427aa5994b742c2d3cdddd14212aa3a0758cb0,
+  summary: 'Merge pull request #90 from catalystneuro/integrate_data_chunker', time: Thu
+    Aug 18 20:36:07 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 240fbbf22f7b0367bffa0bba6f970294b7c89901,
+  summary: Merge branch 'main' into integrate_data_chunker, time: Thu Aug 18 18:58:41
+    2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 0ab430028b406de77865b443d8c4dfe7943c0d94,
+  summary: 'Merge pull request #89 from catalystneuro/abf_interface_clean_code', time: Thu
+    Aug 18 18:05:08 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 92931bc20ba7660186cbe0442fef0f9420ff7867,
+  summary: Merge branch 'integrate_data_chunker' of https://github.com/catalystneuro/neuroconv
+    into integrate_data_chunker, time: Thu Aug 18 15:19:29 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 6397d5f9f269fd78f1a5f8f15fe1c72c975e57cc,
+  summary: fix new tests, time: Thu Aug 18 15:19:24 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 3cce5b4a8000fd0e691081394281663ce6c032a6,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Thu Aug 18
+    15:15:01 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: b3e08f06faa167b4b100678cb96fa5759498ec2d,
+  summary: increase coverage, time: Thu Aug 18 15:11:19 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 7f12e0e4431e2c415b0fdff5a095031922abcb00,
+  summary: add None condition and memory check, time: Thu Aug 18 14:30:13 2022}
+- {author: Luiz Tauffer, committer: GitHub, hexsha: e53bebb50db6af2c4640cf98e1490702e792580e,
+  summary: Merge branch 'main' into abf_interface_clean_code, time: Thu Aug 18 13:51:49
+    2022}
+- {author: luiz, committer: luiz, hexsha: d01582f17ee7c038829144d0ca77667dd920d127,
+  summary: path to files doctest, time: Thu Aug 18 13:50:18 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 1f9c7f49791157e0b53c3d0638f66dc293b72294,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Thu Aug 18
+    09:03:45 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: 09a0aa201dbea8558cabbb6515d6b2b814532ee9,
+  summary: fix failing tests, time: Thu Aug 18 09:03:25 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: d5406752e9e85d5451fd2a327fbf1381257c1459,
+  summary: integrated with write_imaging; added stub control to imaging, time: Wed
+    Aug 17 18:11:58 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0663290f76b2e94d2b36821fbf60fe853557d4b2,
+  summary: Update CHANGELOG.md, time: Wed Aug 17 15:31:57 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e945c09fb2fac3a272ea623636836b4cbbfa94e1,
+  summary: Merge branch 'main' into integrate_data_chunker, time: Wed Aug 17 14:14:10
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9fb02165a4712f0e215e4295e904be4ce777d807,
+  summary: 'Merge pull request #92 from catalystneuro/add_tests_for_iterator', time: Wed
+    Aug 17 14:13:26 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ed3abe3bb7a0cbd4ee73f107332c48cd353e6083,
+  summary: 'Merge pull request #91 from catalystneuro/create_aux_method_for_iterators',
+  time: Wed Aug 17 14:11:04 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: fb2cb082425d595ebcb06e285f80c0fc6c9a6710,
   summary: Update feature_request.yml, time: Wed Aug 17 13:57:38 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: dfce6ff1b1bed62a673a7b97f663d29ff7dba412,
@@ -24359,6 +24472,68 @@ NeuroConv:
     Aug 17 13:52:43 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: d663491378690eea01ad036257492a686abd36c8,
   summary: update text to neuroconv, time: Wed Aug 17 13:37:31 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 347d144865004ee6bd33b711a03a8cceddf59828,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Tue Aug 16
+    12:29:08 2022}
+- {author: luiz, committer: luiz, hexsha: 419d191f1bc98712b4e9177283cc0c003166f8a4,
+  summary: Merge branch 'abf_interface_clean_code' of https://github.com/catalystneuro/neuroconv
+    into abf_interface_clean_code, time: Tue Aug 16 12:28:45 2022}
+- {author: luiz, committer: luiz, hexsha: e90b951d8dfddbead6543172bb44d6e89fb34cf9,
+  summary: first fixes for doctest, time: Tue Aug 16 12:27:07 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: fbe59d00a09d1da21cf5b913ebd2c081dd91c4b9,
+  summary: assert stronger equality, time: Tue Aug 16 11:02:06 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: c37dd4fba4dbda564c6c9515bca9700d55cbca98,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Tue Aug 16
+    10:00:44 2022}
+- {author: luiz, committer: luiz, hexsha: 90c2c23e4c013d46a3a63335774fcbe847ff33d0,
+  summary: fix doc, time: Tue Aug 16 10:00:31 2022}
+- {author: Luiz Tauffer, committer: GitHub, hexsha: 8c49e08db6ed258b3cb1ad64647ba6aa9787b4a1,
+  summary: Merge branch 'main' into abf_interface_clean_code, time: Tue Aug 16 09:29:13
+    2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: eb2a664ec2ccd1209536ba06185db325d12ad41d,
+  summary: Merge remote-tracking branch 'origin/add_tests_for_iterator' into add_tests_for_iterator,
+  time: Tue Aug 16 09:04:58 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: cfedd4cb888bc3103b16130ef884a5f402184498,
+  summary: refactor name of test, time: Tue Aug 16 09:04:50 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: c802629262e77a5b11180f26f50f836cf5bc158a,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Tue Aug 16
+    08:33:40 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: b30ad9e0e710f14209f50ec0867bd2aceb7effae,
+  summary: test data is extracted correctly, time: Tue Aug 16 08:29:47 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: a78834290bd8d1dcca2a168990f8343ace602902,
+  summary: add test for iterator options propagation, time: Tue Aug 16 08:21:45 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: d566fd98b6d7741ca870ba09de13678d1ea98b31,
+  summary: add test for using DataChunkIterator as iterator type, time: Tue Aug 16
+    08:11:27 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: cf1dc89c1524d3e4612a6c85962eb37605f07d5b,
+  summary: add assert to roundtrip test, time: Tue Aug 16 08:05:47 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: 825994fb1d27b772559d117d4ec4068d3c71ca30,
+  summary: test add two photon series with default iterator, time: Tue Aug 16 08:05:27
+    2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: 620b95ca5be0e1e1f6e052b896ef0c9f60746cf9,
+  summary: add setupclass method, time: Tue Aug 16 08:04:59 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: 4916bc585fda96337dadb5905de7803498736788,
+  summary: test for iterator type assertion, time: Tue Aug 16 08:04:21 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 8a2f4cb803beb37a029d3fc0d8f27ebb4e219622,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Tue Aug 16
+    07:46:01 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: de0ff0a2d786fbf5294048ef9ecb8d1f7c4c4dda,
+  summary: create aux method for choosing iterator type, time: Tue Aug 16 07:43:15
+    2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: e6e254e98605483d1f4b0cc6403b9bfc7c55fb2e,
+  summary: Merge branch 'integrate_data_chunker' of https://github.com/catalystneuro/neuroconv
+    into integrate_data_chunker, time: Mon Aug 15 17:29:47 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 240667da27fa52ce48744e2a8298597acf25bbd3,
+  summary: remove print statements, time: Mon Aug 15 17:29:41 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1ee0730c3361fd82be4cd70780482e7c3099a0bc,
+  summary: Merge branch 'main' into integrate_data_chunker, time: Mon Aug 15 17:03:50
+    2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 38d525dfc9b73331e90001bef567f55221eba894,
+  summary: more fixes, time: Mon Aug 15 16:58:29 2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 6df274efff207b23db4f72b27762221146d30797,
+  summary: Update CHANGELOG.md, time: Mon Aug 15 16:40:14 2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 9f50f162a8140793168a2c15e14faf820412edda,
+  summary: Update CHANGELOG.md, time: Mon Aug 15 16:39:55 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 27357f8145746f2279e580b8a5565eaa26a98f96,
   summary: 'Merge pull request #87 from catalystneuro/update_ExtractSegmentationInterface',
   time: Mon Aug 15 15:23:03 2022}
@@ -24366,11 +24541,39 @@ NeuroConv:
   summary: Update requirements-full.txt, time: Mon Aug 15 14:43:46 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 396a18d2cb5ed15c3f2ff2277ed4142eb576ae14,
   summary: Update requirements-minimal.txt, time: Mon Aug 15 14:43:40 2022}
+- {author: luiz, committer: luiz, hexsha: 64b94d0b255dc6b0153668f1ab678ad526da472f,
+  summary: Merge branch 'abf_interface_clean_code' of https://github.com/catalystneuro/neuroconv
+    into abf_interface_clean_code, time: Mon Aug 15 14:17:34 2022}
+- {author: luiz, committer: luiz, hexsha: 7b1ba41dbd82cca9e4c08e649f8f9351e8897fa3,
+  summary: changelog, time: Mon Aug 15 14:17:33 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: db7066a675e6ab970652aeb7deb6e2a3d59064f9,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Mon Aug 15
+    14:12:39 2022}
+- {author: luiz, committer: luiz, hexsha: 8d6e191695ff657e721f228602841c1eba615c82,
+  summary: multi file example, time: Mon Aug 15 14:12:19 2022}
+- {author: luiz, committer: luiz, hexsha: a8891022e1fbb5e570f8b908b68d2e3ea3b4d11e,
+  summary: update gallery, time: Mon Aug 15 13:58:04 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 5aab15aa6ba89d38a3b4b9f9f90515f2713eb11a,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Mon Aug 15
+    13:52:34 2022}
+- {author: luiz, committer: luiz, hexsha: 48adeecb62e6f4eab900b69f02ec16481ad65843,
+  summary: Merge branch 'abf_interface_clean_code' of https://github.com/catalystneuro/neuroconv
+    into abf_interface_clean_code, time: Mon Aug 15 13:52:23 2022}
+- {author: luiz, committer: luiz, hexsha: 5f2054a888dd16e20c55e4e31287890772900aaa,
+  summary: doc tutorial, time: Mon Aug 15 13:52:21 2022}
 - {author: Szonja Weigl, committer: GitHub, hexsha: b5dab0d65ebc5f04668036c1b9e7e66529b620d5,
   summary: Merge branch 'main' into update_ExtractSegmentationInterface, time: Mon
     Aug 15 13:45:21 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: b5d924964b939a315bf92b45e029c1590098279b,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Mon Aug 15
+    13:40:39 2022}
+- {author: Luiz Tauffer, committer: GitHub, hexsha: 581996923ba5462759fe228a34134ae46d2068f8,
+  summary: Merge branch 'main' into abf_interface_clean_code, time: Mon Aug 15 13:39:32
+    2022}
 - {author: Cody Baker, committer: GitHub, hexsha: af7f1c87eba4320744a8ce44bab72aa0642a0829,
   summary: Update PULL_REQUEST_TEMPLATE.md, time: Mon Aug 15 13:32:20 2022}
+- {author: luiz, committer: luiz, hexsha: 2321a0f70a7a4ac39f726f6aa59e92b252b9c4ea,
+  summary: imrpovements for abf interface, time: Mon Aug 15 13:24:37 2022}
 - {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: ccfc2fef3c59233717391a796f9942ea5f4c85e7,
   summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Mon Aug 15
     11:33:11 2022}
@@ -24383,6 +24586,11 @@ NeuroConv:
 - {author: Szonja Weigl, committer: GitHub, hexsha: daabd741e2ebd4a26bd6efeb206060d1750e5ec4,
   summary: Merge branch 'main' into update_ExtractSegmentationInterface, time: Mon
     Aug 15 09:30:37 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: f48530e426194f137192b295e7f48f6ffa3fa7bc,
+  summary: Merge branch 'main' into integrate_data_chunker, time: Mon Aug 15 04:03:39
+    2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: fd3583231935090de839a08714f808684f57e1c1,
+  summary: wip, time: Mon Aug 15 04:03:15 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: c64efce7f5dfa8477ccafa50716da5d9e2d1bec8,
   summary: 'Merge pull request #88 from catalystneuro/update_generic_optical_channel_naming',
   time: Mon Aug 15 04:02:41 2022}
