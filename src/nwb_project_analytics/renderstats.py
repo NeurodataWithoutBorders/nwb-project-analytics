@@ -138,9 +138,16 @@ class RenderReleaseTimeline:
             for patch in legend_items:
                 ax.add_patch(patch)
             # Add a a legend for the backround color
-            ax.legend(legend_items, ['Major', 'Minor', 'Patch'],
-                      loc='lower left', fontsize=fontsize, edgecolor='black',
-                      facecolor='white', framealpha=1)
+            ax.legend(
+                legend_items,
+                ['Major', 'Minor', 'Patch'],
+                loc='lower left',
+                fontsize=fontsize,
+                edgecolor='black',
+                facecolor='white',
+                title="Release Type",
+                title_fontsize=fontsize,
+                framealpha=1)
         ax.grid(axis="x", linestyle='dashed', color='gray')
 
         return ax
@@ -359,8 +366,10 @@ class RenderCodecovInfo:
         :param basefilename: Base name of the file(s) where the plots should eb saved to. Set to None to
                          only show but not save the plots. Figures will be saved as both PDF and PNG.
                          (default=None)
+
+        :returns: Matplotlib figure created here
         """
-        mpl.pyplot.figure(figsize=figsize)
+        fig = mpl.pyplot.figure(figsize=figsize)
         # Compute the proper yrange for the given timerange
         ymins = []
         ymaxs = []
@@ -388,11 +397,7 @@ class RenderCodecovInfo:
         mpl.pyplot.ylabel("Coverage in %", fontsize=fontsize)
         mpl.pyplot.legend(fontsize=fontsize)
         mpl.pyplot.tight_layout()
-        # save and display
-        if basefilename is not None:
-            mpl.pyplot.savefig(basefilename + '.pdf', dpi=300)
-            mpl.pyplot.savefig(basefilename + '.png', dpi=300)
-        mpl.pyplot.show()
+        return fig
 
 
 class RenderClocStats:
@@ -459,7 +464,8 @@ class RenderClocStats:
                   title='Language',
                   loc='center left',
                   bbox_to_anchor=(1, 0.5),
-                  fontsize=fontsize, )
+                  fontsize=fontsize,
+                  title_fontsize=fontsize)
         # Return the axis
         return ax
 
