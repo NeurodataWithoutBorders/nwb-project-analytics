@@ -235,7 +235,7 @@ class RenderCodecovInfo:
             coverage,
             plot_xlim: tuple,
             fontsize: int):
-        """Internal helper function used to plot a single codecov  """
+        """Internal helper function used to plot a single codecov  on an existing figure using pyplot"""
         mpl.pyplot.fill_between(timestamps, coverage)
         mpl.pyplot.plot(timestamps, coverage, '--o', color='black')
         if plot_xlim is not None:
@@ -253,10 +253,9 @@ class RenderCodecovInfo:
             codecovs: dict,
             plot_xlim: tuple = None,
             fontsize: int = 16,
-            basefilename: str = None):
+            figsize: tuple = None):
         """
-        Plot coverage results for one or more codes as a sequence of individual figures all of which are
-        plotted and saved separately (one per code)
+        Plot coverage results for a code as an individual figure
 
         Example for setting for ``codecovs``:
 
@@ -267,26 +266,23 @@ class RenderCodecovInfo:
                                                             branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
                        for r in ['HDMF', 'PyNWB', 'MatNWB']}
 
-        :param codecovs: Dictionary where the keys are the names of the codes and the values are the output from
+        :param codecovs: Dictionary where the key is the name of the codes and the values are the output from
                          CodecovInfo.get_pulls_or_commits defining the coverage timeline for each code.
         :param plot_xlim: Tuple of datatime objects defining the time-range of the x-axis. E.g.,
                           plot_xlim=(datetime.strptime("2021-01-01", "%Y-%m-%d"), datetime.today())
         :param fontsize: Fontsize to be used for axes label, tickmarks, and titles. (default=16)
-        :param basefilename: Base name of the file(s) where the plots should eb saved to. Set to None to
-                         only show but not save the plots. Figures will be saved as both PDF and PNG.
-                         (default=None)
+        :param figsize: Figure size tuple. Default is (18,6)
+
+        :returns: Matplotlib figure
         """
         # Create separate figure for each code
-        i = 0
-        for k, v in codecovs.items():
-            timestamps, coverage, nocov = CodecovInfo.get_time_and_coverage(v)
-            cls.__plot_single_codecov(k, timestamps, coverage, plot_xlim, fontsize)
-            i += 1
-            mpl.pyplot.tight_layout()
-            if basefilename is not None:
-                mpl.pyplot.savefig(basefilename + "_" + k + '.pdf', dpi=300)
-                mpl.pyplot.savefig(basefilename + "_" + k + '.png', dpi=300)
-            mpl.pyplot.show()
+        k = list(codecovs.keys())[0]
+        v = codecovs[k]
+        fig = mpl.pyplot.figure(figsize=figsize)
+        timestamps, coverage, nocov = CodecovInfo.get_time_and_coverage(v)
+        cls.__plot_single_codecov(k, timestamps, coverage, plot_xlim, fontsize)
+        mpl.pyplot.tight_layout()
+        return fig
 
     @classmethod
     def plot_codecov_grid(
@@ -341,7 +337,7 @@ class RenderCodecovInfo:
             plot_xlim: tuple = None,
             fill_alpha: float = 0.2,
             fontsize: int = 16,
-            basefilename: str = None,
+            title: str = None,
             figsize: tuple = None):
         """
         Plot coverage results for one or more codes as a single figure with each code represented by
@@ -363,6 +359,7 @@ class RenderCodecovInfo:
         :param fill_alpha: Alpha value to be used for the area plots. Set to 0 or less to disable area plots
                           (default=0.2)
         :param fontsize: Fontsize to be used for axes label, tickmarks, and titles. (default=16)
+        :param title: Title for the figure
         :param basefilename: Base name of the file(s) where the plots should eb saved to. Set to None to
                          only show but not save the plots. Figures will be saved as both PDF and PNG.
                          (default=None)
@@ -396,6 +393,8 @@ class RenderCodecovInfo:
         mpl.pyplot.xticks(fontsize=fontsize, rotation=45)
         mpl.pyplot.ylabel("Coverage in %", fontsize=fontsize)
         mpl.pyplot.legend(fontsize=fontsize)
+        if title is not None:
+            mpl.pyplot.title(title, fontsize=fontsize)
         mpl.pyplot.tight_layout()
         return fig
 
