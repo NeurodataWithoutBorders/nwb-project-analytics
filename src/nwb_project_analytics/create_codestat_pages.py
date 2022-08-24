@@ -52,9 +52,9 @@ def create_toolstat_page(
         tool_codestats_rst.add_subsection("Lines of Code")
         tool_codestats_rst.add_figure(figure=figures.pop('loc', None))
         tool_codestats_rst.add_figure(figure=figures.pop('lang_loc', None))
-    if "cloc" in figures:
-        tool_codestats_rst.add_subsection("Code Coverage:")
-        tool_codestats_rst.add_figure(figure=figures.pop('cloc', None))
+    if "codecov" in figures:
+        tool_codestats_rst.add_subsection("Test Coverage")
+        tool_codestats_rst.add_figure(figure=figures.pop("codecov", None))
     if "releases" in figures:
         tool_codestats_rst.add_subsection("Release History")
         tool_codestats_rst.add_figure(figure=figures.pop('releases', None))
@@ -75,7 +75,189 @@ def create_toolstat_page(
     return tool_page_name
 
 
-def create_codestat_pages(out_dir: str,   # noqa: C901
+def __create_loc_summary_plot(
+        summary_stats,
+        code_order,
+        out_dir: str,
+        print_status: bool = True):
+    """
+    Internal helper function used to render the the summary plot of the lines of code of all repos
+
+    :param summary_stats: Summary statistics from GitCodeStats.compute_summary_stats
+    :param code_order: List of code names to sort entries in the plot
+    :param out_dir: Output directory
+    :param print_status: Print status of creation (Default=True)
+    :return: RSTFigure to add to the document
+    """
+    if print_status:
+        PrintHelper.print("PLOTTING: nwb_reposize_all", PrintHelper.BOLD)
+    ax = RenderClocStats.plot_cloc_sizes_stacked_area(
+        summary_stats=summary_stats,
+        order=code_order,  # show all codes in alphabetical order
+        colors=None,  # use default color
+        title="NWB code repository sizes in lines-of-code (LOC)",
+        fontsize=20)
+    plt.savefig(os.path.join(out_dir, "nwb_reposize_all.pdf"))
+    plt.savefig(os.path.join(out_dir, "nwb_reposize_all.png"), dpi=300)
+    plt.close()
+    del ax
+    fig = RSTFigure(
+        image_path="nwb_reposize_all.png",
+        alt="NWB code repository sizes",
+        width="100%")
+    return fig
+
+
+def __create_nwb_release_timeline_summary_plot(
+        out_dir: str,
+        print_status: bool = True):
+    """
+    Internal helper function used to render the the summary plot of the release timeline
+
+    :param out_dir: Output directory
+    :param print_status: Print status of creation (Default=True)
+    :return: RSTFigure to add to the document
+    """
+    if print_status:
+        PrintHelper.print("PLOTTING: releases_timeline_nwb_main", PrintHelper.BOLD)
+    github_repo_infos = NWBGitInfo.GIT_REPOS.get_info_objects()
+    release_timeline_repos = OrderedDict(
+        [(k, github_repo_infos[k])
+         for k in ['PyNWB', 'HDMF', 'MatNWB', 'NWB_Schema']
+         ]
+    )
+    RenderReleaseTimeline.plot_multiple_release_timeslines(
+        github_repo_infos=release_timeline_repos,
+        add_releases=None,  # Use default of NWBGitInfo.MISSING_RELEASE_TAGS,
+        date_range=None,  # Use the default range of
+        month_intervals=2,
+        fontsize=16,
+        title="Timeline of NWB Release")
+    plt.savefig(os.path.join(out_dir, 'releases_timeline_nwb_main.pdf'))
+    plt.savefig(os.path.join(out_dir, 'releases_timeline_nwb_main.png'), dpi=300)
+    plt.close()
+    fig = RSTFigure(
+        image_path="releases_timeline_nwb_main.png",
+        alt="Release timeline of the main NWB repositories",
+        width="100%")
+    return fig
+
+
+def __create_nwb_codecov_summary_plot(
+        out_dir: str,
+        print_status: bool = True):
+    """
+    Internal helper function used to render the the summary plot of code coverage for NWB core API
+
+    :param out_dir: Output directory
+    :param print_status: Print status of creation (Default=True)
+    :return: RSTFigure to add to the document
+    """
+
+    if print_status:
+        PrintHelper.print("PLOTTING: test_coverage_nwb_main", PrintHelper.BOLD)
+    codecov_commits = {
+        r: CodecovInfo.get_pulls_or_commits(
+            NWBGitInfo.GIT_REPOS[r],
+            key='commits',
+            state='all',
+            branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
+        for r in ['HDMF', 'PyNWB', 'MatNWB']}
+    RenderCodecovInfo.plot_codecov_multiline(
+        codecovs=codecov_commits,
+        plot_xlim=(NWBGitInfo.NWB2_FIRST_STABLE_RELEASE, datetime.today()),
+        fill_alpha=0.2,
+        fontsize=16,
+        figsize=(12, 6),
+        title="Test coverage: NWB core APIs"
+    )
+    plt.savefig(os.path.join(out_dir, 'test_coverage_nwb_main.pdf'))
+    plt.savefig(os.path.join(out_dir, 'test_coverage_nwb_main.png'), dpi=300)
+    plt.close()
+    fig = RSTFigure(
+        image_path="test_coverage_nwb_main.png",
+        alt="Code test coverage for the main NWB repositories",
+        width=800)
+    return fig
+
+
+def __create_nwb_codestat_summary_rst(
+        loc_summary_figure: RSTFigure = None,
+        release_timeline_figure: RSTFigure = None,
+        codecov_nwb_summary_figure: RSTFigure = None,
+        print_status: bool = True):
+    """
+    Render the RST document with the plots of the NWB summary
+
+    :param out_dir: Output directory
+    :param print_status: Print status of creation (Default=True)
+    :return: RSTDocument with nwb codestat summary
+    """
+    if print_status:
+        PrintHelper.print("CREATING: code_stats.rst", PrintHelper.BOLD)
+    codestats_rst = RSTDocument()
+    codestats_rst.add_label("nwbmain-code-statistics")
+    codestats_rst.add_section("Code Statistics: NWB Core")
+    # Add overview figure
+    if loc_summary_figure is not None:
+        codestats_rst.add_subsection("Lines of Code: All NWB Codes")
+        codestats_rst.add_figure(loc_summary_figure)
+
+    # Add release timeline figure
+    if release_timeline_figure is not None:
+        codestats_rst.add_subsection("Release Timeline: NWB APIs and Schema")
+        codestats_rst.add_figure(release_timeline_figure)
+
+    # Add code coverage figure for main NWB repos
+    if codecov_nwb_summary_figure is not None:
+        codestats_rst.add_subsection("Test Coverage: NWB APIs")
+        codestats_rst.add_figure(codecov_nwb_summary_figure)
+    return codestats_rst
+
+
+def __create_tool_codestat_pages(
+        code_figures: dict,
+        code_order: list,
+        out_dir: str,
+        print_status: bool):
+    """
+
+    :param code_figures:
+    :param code_order:
+    :param out_dir: Output directory
+    :param print_status: Print status of creation (Default=True)
+    :return: RSTDocument with the tool summary
+    """
+
+    if print_status:
+        PrintHelper.print("CREATING: code_stats_tools.rst", PrintHelper.BOLD)
+    tool_codestats_rst = RSTDocument()
+    tool_codestats_rst.add_label("code-statistics")
+    tool_codestats_rst.add_section("Code Statistics")
+    tool_codestats_rst.add_text(
+        "Select a tool or code repository below to view the corresponding code statistics:" +
+        tool_codestats_rst.newline +
+        tool_codestats_rst.newline)
+    # Compile tabs with plots for each repo
+    toc_obj = RSTToc(
+        maxdepth=1,
+        hidden=False,
+        titlesonly=True
+    )
+    for repo_name in code_order:
+        tool_page_name = create_toolstat_page(
+            out_dir=out_dir,
+            repo_name=repo_name,
+            repo=NWBGitInfo.GIT_REPOS[repo_name],
+            figures=code_figures[repo_name],
+            print_status=print_status,
+        )
+        toc_obj += tool_page_name
+    tool_codestats_rst.add_toc(toc_obj)
+    return tool_codestats_rst
+
+
+def create_codestat_pages(out_dir: str,
                           data_dir: str,
                           cloc_path: str = "cloc",
                           load_cached_results: bool = True,
@@ -84,6 +266,7 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
                           end_date: datetime = None,
                           print_status: bool = True):
     """
+    Main function used to render all pages and figures related to the tool statistics
 
     :param out_dir: Directory where the RST and image files should be saved to
     :param data_dir: Directory where the data for the code statistics should be cached
@@ -114,28 +297,21 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
         clean_source_dir=True
     )
     #  show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
-    codeorder = [codename for codename in list(sorted(summary_stats['sizes'].keys()))
+    code_order = [codename for codename in list(sorted(summary_stats['sizes'].keys()))
                  if codename not in NWBGitInfo.NWB1_GIT_REPOS]
     # Collect the figures generated for each code
-    code_figures = {repo_name: OrderedDict() for repo_name in codeorder}
+    code_figures = {repo_name: OrderedDict() for repo_name in code_order}
 
     # 3. Render all figures
     # 3.1 Render the summary plot of lines-of-code-stats
-    if print_status:
-        PrintHelper.print("PLOTTING: nwb_reposize_all", PrintHelper.BOLD)
-    ax = RenderClocStats.plot_cloc_sizes_stacked_area(
+    loc_summary_figure = __create_loc_summary_plot(
         summary_stats=summary_stats,
-        order=codeorder,   # show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
-        colors=None,  # use default color
-        title="NWB code repository sizes in lines-of-code (LOC)",
-        fontsize=20)
-    plt.savefig(os.path.join(out_dir, "nwb_reposize_all.pdf"))
-    plt.savefig(os.path.join(out_dir, "nwb_reposize_all.png"), dpi=300)
-    plt.close()
-    del ax
+        code_order=code_order,
+        out_dir=out_dir,
+        print_status=print_status)
 
     # 3.2 Plot per-repo total lines of code statistics broken down by: code, blank, comment
-    for repo_name in codeorder:
+    for repo_name in code_order:
         if print_status:
             PrintHelper.print("PLOTTING: loc_%s" % repo_name, PrintHelper.BOLD)
         ax = RenderClocStats.plot_reposize_code_comment_blank(
@@ -154,7 +330,7 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
 
     # 3.3 Plot per-repo language breakdown
     # Iterate through all repos and plot the per-language LOC stats for each repo
-    for repo_name in codeorder:
+    for repo_name in code_order:
         if print_status:
             PrintHelper.print("PLOTTING: loc_language_%s" % repo_name, PrintHelper.BOLD)
         ax = RenderClocStats.plot_reposize_language(
@@ -173,26 +349,13 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
             width="100%")
 
     # 3.4 Render summary release timeline
-    PrintHelper.print("PLOTTING: releases_timeline_nwb_main", PrintHelper.BOLD)
-    github_repo_infos = NWBGitInfo.GIT_REPOS.get_info_objects()
-    release_timeline_repos = OrderedDict(
-        [(k, github_repo_infos[k])
-         for k in ['PyNWB', 'HDMF', 'MatNWB', 'NWB_Schema']
-         ]
-    )
-    RenderReleaseTimeline.plot_multiple_release_timeslines(
-        github_repo_infos=release_timeline_repos,
-        add_releases=None,  # Use default of NWBGitInfo.MISSING_RELEASE_TAGS,
-        date_range=None,  # Use the default range of
-        month_intervals=2,
-        fontsize=16,
-        title="Timeline of NWB Release")
-    plt.savefig(os.path.join(out_dir, 'releases_timeline_nwb_main.pdf'))
-    plt.savefig(os.path.join(out_dir, 'releases_timeline_nwb_main.png'), dpi=300)
-    plt.close()
+    release_timeline_figure = __create_nwb_release_timeline_summary_plot(
+        out_dir=out_dir,
+        print_status=print_status)
 
     # 3.5 Render per repo release timeline
-    for repo_name in codeorder:
+    github_repo_infos = NWBGitInfo.GIT_REPOS.get_info_objects()
+    for repo_name in code_order:
         names, dates = github_repo_infos[repo_name].get_release_names_and_dates()
         if len(names) == 0 and NWBGitInfo.MISSING_RELEASE_TAGS.get(repo_name, None) is None:
             if print_status:
@@ -221,29 +384,12 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
             width="100%")
 
     # 3.6 Code coverage stats for main repos
-    if print_status:
-        PrintHelper.print("PLOTTING: test_coverage_nwb_main", PrintHelper.BOLD)
-    codecov_commits = {
-        r: CodecovInfo.get_pulls_or_commits(
-            NWBGitInfo.GIT_REPOS[r],
-            key='commits',
-            state='all',
-            branch=NWBGitInfo.GIT_REPOS[r].mainbranch)
-        for r in ['HDMF', 'PyNWB', 'MatNWB']}
-    RenderCodecovInfo.plot_codecov_multiline(
-        codecovs=codecov_commits,
-        plot_xlim=(NWBGitInfo.NWB2_FIRST_STABLE_RELEASE, datetime.today()),
-        fill_alpha=0.2,
-        fontsize=16,
-        figsize=(12, 6),
-        title="Test coverage: NWB core APIs"
-    )
-    plt.savefig(os.path.join(out_dir, 'test_coverage_nwb_main.pdf'))
-    plt.savefig(os.path.join(out_dir, 'test_coverage_nwb_main.png'), dpi=300)
-    plt.close()
+    codecov_nwb_summary_figure = __create_nwb_codecov_summary_plot(
+        out_dir=out_dir,
+        print_status=print_status)
 
     # 3.7 Code coverage stats per repo
-    for repo_name in codeorder:
+    for repo_name in code_order:
         codecov_commits = CodecovInfo.get_pulls_or_commits(
                 NWBGitInfo.GIT_REPOS[repo_name],
                 key='commits',
@@ -270,61 +416,20 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
             PrintHelper.print("SKIPPING: test_coverage_%s" % repo_name, PrintHelper.BOLD + PrintHelper.OKBLUE)
 
     # 4. Create the RST document
-    if print_status:
-        PrintHelper.print("CREATING: code_stats.rst", PrintHelper.BOLD)
-    codestats_rst = RSTDocument()
-    codestats_rst.add_label("nwb-code-statistics")
-    codestats_rst.add_section("NWB Code Statistics")
-    # Add overview figure
-    codestats_rst.add_figure(
-        figure=RSTFigure(
-            image_path="nwb_reposize_all.png",
-            alt="NWB code repository sizes",
-            width="100%")
-    )
-
-    # Add release timeline figure
-    codestats_rst.add_figure(
-        figure=RSTFigure(
-            image_path="releases_timeline_nwb_main.png",
-            alt="Release timeline of the main NWB repositories",
-            width="100%"
-        )
-    )
-
-    # Add code coverage figure for main NWB repos
-    codestats_rst.add_figure(
-        figure=RSTFigure(
-            image_path="test_coverage_nwb_main.png",
-            alt="Code test coverage for the main NWB repositories",
-            width=800
-        )
-    )
+    codestats_rst = __create_nwb_codestat_summary_rst(
+        loc_summary_figure=loc_summary_figure,
+        release_timeline_figure=release_timeline_figure,
+        codecov_nwb_summary_figure=codecov_nwb_summary_figure,
+        print_status=print_status)
+    # Write the summary RST documents
     codestats_rst.write(os.path.join(out_dir, "code_stats_main.rst"))
 
-    if print_status:
-        PrintHelper.print("CREATING: code_stats_tools.rst", PrintHelper.BOLD)
-    tool_codestats_rst = RSTDocument()
-    tool_codestats_rst.add_label("tools-statistics")
-    tool_codestats_rst.add_section("Tool Statistics")
-    tool_codestats_rst.add_text(
-        "Select a tool or code repository below to view the corresponding code statistics:" +
-        tool_codestats_rst.newline +
-        tool_codestats_rst.newline)
-    # Compile tabs with plots for each repo
-    toc_obj = RSTToc(
-        maxdepth=1,
-        hidden=False,
-        titlesonly=True
-    )
-    for repo_name in codeorder:
-        tool_page_name = create_toolstat_page(
-            out_dir=out_dir,
-            repo_name=repo_name,
-            repo=NWBGitInfo.GIT_REPOS[repo_name],
-            figures=code_figures[repo_name],
-            print_status=print_status,
-        )
-        toc_obj += tool_page_name
-    tool_codestats_rst.add_toc(toc_obj)
+    # 5. Create the RST pages for the individual tools.
+    # Note, the RST pages for the individual tools are written by _create_tool_codestat_pages directly
+    tool_codestats_rst = __create_tool_codestat_pages(
+        code_figures=code_figures,
+        code_order=code_order,
+        out_dir=out_dir,
+        print_status=print_status)
+    # Write the tools summary page.
     tool_codestats_rst.write(os.path.join(out_dir, "code_stats_tools.rst"))
