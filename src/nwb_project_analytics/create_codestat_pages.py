@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from collections import OrderedDict
 
 from nwb_project_analytics.codestats import GitCodeStats
-from nwb_project_analytics.gitstats import NWBGitInfo
+from nwb_project_analytics.gitstats import NWBGitInfo, GitRepo
 from nwb_project_analytics.codecovstats import CodecovInfo
 from nwb_project_analytics.renderstats import (
     RenderClocStats,
@@ -30,6 +30,7 @@ def init_codestat_pages_dir(out_dir):
 def create_toolstat_page(
         out_dir: str,
         repo_name: str,
+        repo: GitRepo,
         figures: OrderedDict,
         print_status: bool = True):
     """
@@ -61,6 +62,15 @@ def create_toolstat_page(
         tool_codestats_rst.add_subsection("Additional Figures:")
         for key, fig in figures.items():
             tool_codestats_rst.add_figure(figure=fig)
+    # Compile the list of links
+    tool_infolist = []
+    tool_infolist.append("Source: %s  (main branch = ``%s``)" % (repo.github_path, repo.mainbranch))
+    if repo.docs is not None:
+        tool_infolist.append("Docs: %s" % repo.docs)
+    if len(tool_infolist) > 0:
+        tool_codestats_rst.add_subsection("Additional Information")
+        tool_codestats_rst.add_list(content=tool_infolist)
+    # Write the file and return
     tool_codestats_rst.write(os.path.join(out_dir, tool_page_name))
     return tool_page_name
 
@@ -311,6 +321,7 @@ def create_codestat_pages(out_dir: str,   # noqa: C901
         tool_page_name = create_toolstat_page(
             out_dir=out_dir,
             repo_name=repo_name,
+            repo=NWBGitInfo.GIT_REPOS[repo_name],
             figures=code_figures[repo_name],
             print_status=print_status,
         )
