@@ -14,8 +14,7 @@ Welcome to nwb-project-analytics's documentation!
    code_stat_pages/code_stats_main.rst
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
+   :maxdepth: 2
 
    code_stat_pages/code_stats_tools.rst
 
