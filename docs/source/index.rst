@@ -12,9 +12,18 @@ Welcome to nwb-project-analytics's documentation!
 
    code_health.rst
    code_stat_pages/code_stats_main.rst
-   code_stat_pages/code_stats_tools.rst
-   nwb_project_analytics
 
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   code_stat_pages/code_stats_tools.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Analytics API:
+
+   nwb_project_analytics
 
 
 Indices and tables
