@@ -1,4 +1,13 @@
 HDMF:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 8888e92fa94e51c8802670d10c777360ed0e6502,
+  summary: Clarify automgenerated docs for MultiContainerInterface.add_* (#758), time: Sat
+    Aug 27 08:57:14 2022}
+- {author: Ryan Ly, committer: GitHub, hexsha: 28bc860db0803b5cd64fb0dd68ee595d8d1b5d81,
+  summary: Update deploy CI to use latest githubrelease (#759), time: Sat Aug 27 03:30:54
+    2022}
+- {author: Ryan Ly, committer: GitHub, hexsha: 8477ff9923e5e961e90c73a3ec6d2982fd30e3b8,
+  summary: Support "allow_none=True" in docval for args with non-None default (#757),
+  time: Tue Aug 23 20:09:30 2022}
 - {author: Ryan Ly, committer: GitHub, hexsha: 94e9e3dfa3d4ddb965cdddfb5f6f7f2597fde4ca,
   summary: Fix upload of assets in deploy release CI (#754), time: Thu Aug 18 23:24:08
     2022}
@@ -4491,6 +4500,23 @@ HDMF_Common_Schema:
 - {author: Andrew Tritt, committer: GitHub, hexsha: ef11451bf4483f62389e2a11ed52987687174add,
   summary: Initial commit, time: Mon Aug 19 19:13:23 2019}
 HDMF_DocUtils:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: c1d796dfb2ca23e0c992d1003e16fac030dd5b24,
+  summary: 'Merge pull request #77 from hdmf-dev/add/rstfigure', time: Wed Aug 24
+    18:30:12 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 65b08a31b5f8c076212e8d076742e06419a4c91d,
+  summary: Allow adding of empty figure, time: Tue Aug 23 23:56:13 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 0e1378c6c8e3140dd1336e6503addd8d085441e6,
+  summary: Fix flake8, time: Tue Aug 23 23:48:42 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: a8f0e9280e6defd4177b46e1c8aa3b0f44fc7c79,
+  summary: Fix bug in rendering a toctree, time: Tue Aug 23 23:45:46 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 84aabe630cf5125891ea1a21946100cbb63dbae8,
+  summary: Add helper functions and class for generating TOCs in RST, time: Tue Aug
+    23 23:01:57 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: a32a4d4114aea16f4c8453e3b9897084b90ec162,
+  summary: Use RSTFigure in RSTDocument.add_figure directly, time: Tue Aug 23 19:31:02
+    2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 7cd02e7860e0ad1a214aeb3c4f740c83ce8cdfaa,
+  summary: Add helper class for creating RSTFigure, time: Tue Aug 23 18:54:16 2022}
 - {author: Ryan Ly, committer: GitHub, hexsha: 96d381e7e84f7c5c526c2e6d69ae110d8f2c52d6,
   summary: Update setup and maintainer instructions (#74), time: Thu Nov 11 22:38:12
     2021}
@@ -5124,6 +5150,19 @@ HDMF_Schema_Language:
 - {author: Ben Dichter, committer: GitHub, hexsha: db052965ebb51a7460a1dec1ae7d428aaa3727cd,
   summary: Initial commit, time: Sat Jan  4 00:37:38 2020}
 HDMF_Zarr:
+- {author: mavaylon1, committer: GitHub, hexsha: 48ab39f6cd8950a572dbff378ed104caf5a60019,
+  summary: Update deploy_release.yml (#42), time: Tue Aug 30 02:13:04 2022}
+- {author: mavaylon1, committer: GitHub, hexsha: e3ef56e619d373bfe044f2cf5351fcc936215128,
+  summary: Update workflow for release and conda (#41), time: Tue Aug 30 00:25:03
+    2022}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: a99f0a4a94dabeaad5f9488c62f2f5f31fa4403f,
+  summary: Add RRID citation to the README (#39), time: Mon Aug 29 22:38:04 2022}
+- {author: mavaylon1, committer: GitHub, hexsha: f9131f7f60cfd8eb3bb829ae64123cffeea985f4,
+  summary: Update deploy_release.yml (#38), time: Tue Aug 23 19:08:24 2022}
+- {author: mavaylon1, committer: GitHub, hexsha: 5039f04d4789cfb140bfdf9a6a86955bc8edb0ed,
+  summary: Update deploy_release.yml (#37), time: Tue Aug 23 18:43:23 2022}
+- {author: mavaylon1, committer: GitHub, hexsha: acb6d7d6dadaf86cc7007719d477a4a4a407e38b,
+  summary: Update deploy_release.yml (#36), time: Tue Aug 23 18:32:16 2022}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 4897d4bade0373273141cb1751669a28f6ea97a5,
   summary: Add badges to the README (#34), time: Mon Aug 22 14:22:49 2022}
 - {author: mavaylon1, committer: GitHub, hexsha: 0befe92b17f3df8fd7ce16bf4cb9e07bcf0f1ace,
@@ -5275,6 +5314,13 @@ HDMF_Zarr:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 6b914df1f5f174ff9a90579462c1737ec472d1fc,
   summary: Initial commit, time: Tue Apr 12 08:35:19 2022}
 Hackathons:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: c3a1ecc1b6515b980601872f01ad7bec55191d88,
+  summary: 'Merge pull request #200 from NeurodataWithoutBorders/add/hck13_report',
+  time: Mon Aug 22 17:02:06 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: c5eeb30f2fe8172fb4672d7f5bd1cd37402ade1b,
+  summary: Fix date on hck11 page, time: Mon Aug 22 16:56:49 2022}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 72efcb0d6b03a336196bf978cb9cb0d731cc2563,
+  summary: Add hck13 report, time: Mon Aug 22 16:56:33 2022}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 5b2e41217c71a1a645b7b98bd0fd4ddb4e43d555,
   summary: 'Merge pull request #199 from NeurodataWithoutBorders/docathon_2022_09',
   time: Fri Aug 12 17:15:59 2022}
@@ -16881,6 +16927,49 @@ NDX_Template:
   summary: Initial commit. Set up cookiecutter and template files, time: Wed May  1
     01:30:22 2019}
 NWBInspector:
+- {author: Cody Baker, committer: GitHub, hexsha: 5ee9985c58b1b14a19ba5631b396e1fedde04cd7,
+  summary: hotfix config names, time: Thu Sep  1 12:53:55 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 1485ae072f1f35307cc45e85dfa3e671f43957ed,
+  summary: hotfix name, time: Wed Aug 31 19:15:13 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 388f0c57ebd76cadc117b914aad4672d72af8cb2,
+  summary: 'Merge pull request #242 from NeurodataWithoutBorders/fix_table_col_nan_check',
+  time: Thu Aug 25 22:59:15 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 7b490fc60f4c94c8bce3cee9f901e47678ab05e4,
+  summary: PR suggestion and added test, time: Thu Aug 25 20:26:32 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: f14ed9df4514cdf06e0759909883219ebb0bcf90,
+  summary: Merge branch 'dev' into fix_table_col_nan_check, time: Thu Aug 25 14:36:43
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c10471f373b1154b9a3b63b4ee1c35a877aee9f5,
+  summary: Update version.py, time: Thu Aug 25 14:36:03 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1f61e13f97d6463dedb5d67c85eb618d37459f2c,
+  summary: Merge branch 'dev' into fix_table_col_nan_check, time: Wed Aug 24 17:36:37
+    2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 2cbb99790bf67d696c07dafa6fe133b9f9630d98,
+  summary: Update dandi.inspector_config.yaml (#247), time: Wed Aug 24 17:18:43 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c55b0dcea3b762b3e9f024d64b98d6844c9f2d27,
+  summary: Update CHANGELOG.md, time: Wed Aug 24 16:38:44 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: a59e63d4361a640ea1fb2925e7c2828c0607f5cf,
+  summary: 'Merge pull request #257 from bendichter/add_check_ophys_shape_agreement',
+  time: Wed Aug 24 16:36:29 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: feb0598c12b987319eca3eb2f30d412788459f3d,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Wed Aug 24
+    15:33:32 2022}
+- {author: bendichter, committer: bendichter, hexsha: d1ae484bdc4ea8906962518b71bb8de5cd8d0e4c,
+  summary: add check_plane_segmentation_image_mask_shape_against_ref_images, time: Wed
+    Aug 24 15:30:00 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 7c48e21f86914e57207578265e3abe70ab743af8,
+  summary: Update CHANGELOG.md, time: Wed Aug 24 15:14:57 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 2f76527c3d8e5257b20d761834b00bde08ac2218,
+  summary: 'Merge pull request #256 from bendichter/icephys_cell_id', time: Wed Aug
+    24 15:14:27 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 91c400b2ed6fbc0f1065861ffc595c25b61656d9,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Tue Aug 23
+    20:17:45 2022}
+- {author: bendichter, committer: bendichter, hexsha: e4fb5a01c3362fba29cac23db7f61be769d66387,
+  summary: add to changelog, time: Tue Aug 23 20:15:38 2022}
+- {author: bendichter, committer: bendichter, hexsha: 7115fbaf4da023e0494768c21bfc11e2664e849b,
+  summary: add check for existence of IntracellularElectrode.cell_id, time: Tue Aug
+    23 20:12:44 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 0fafb09e14cedf81705a1f443766f1540afade16,
   summary: Update general.py, time: Fri Aug 19 13:50:19 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: c68041948ad70b9d0ed5a0220cbd7ca7a05f0ea0,
@@ -16890,6 +16979,11 @@ NWBInspector:
   time: Mon Aug 15 23:40:05 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: 6ec1c2b49ed9f1d4c0a137da5fe3e0360cc0bd68,
   summary: Update nwbfile_metadata.py, time: Mon Aug 15 21:17:13 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e2f0e610cd9de4c264ac5622008c86300dc49d4c,
+  summary: Merge branch 'dev' into fix_table_col_nan_check, time: Sun Aug  7 21:28:16
+    2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 4cbf057b2b10b4ca852191dec2645d33c93ca727,
+  summary: further specificity of data type, time: Sun Aug  7 21:16:28 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 0f9043e5e7adff189931d5710dc2217ce76123de,
   summary: 'Merge pull request #244 from TomDonoghue/version', time: Thu Aug  4 14:58:24
     2022}
@@ -16941,6 +17035,12 @@ NWBInspector:
     23:39:55 2022}
 - {author: Tom Donoghue, committer: Tom Donoghue, hexsha: 5ab86b0a58c504df3fbb7bc5c6f45ac0f2868da6,
   summary: update version number location, time: Fri Jul 29 23:37:56 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0e87eecd69033f43e923a62730c8fcb69d0fe514,
+  summary: Merge branch 'dev' into fix_table_col_nan_check, time: Wed Jul 27 14:43:32
+    2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: fd13488a20f7d89a2bc132862729abf7796fc213,
+  summary: fixing isnan error when applied to non-numbers, time: Wed Jul 27 13:46:36
+    2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 2a3d4519b852b64ee7ef76915815c2156ffb7d2a,
   summary: 'Merge pull request #240 from NeurodataWithoutBorders/testing_numpy_versions',
   time: Wed Jul 27 13:10:18 2022}
@@ -21738,6 +21838,10 @@ NWB_1.x_Python:
 - {author: Jeff Teeters, committer: Jeff Teeters, hexsha: b4428d208b395c97946c079998f27a0ec8e1a1cd,
   summary: first commit, time: Wed Aug  5 08:16:46 2015}
 NWB_Overview:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 5c8984c4373ba48a49c91a17b3e231353413d2a1,
+  summary: Add tool logos for core page (#57), time: Tue Aug 23 15:14:27 2022}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 580e4347a9cd10889cfacb2b49ab7666c485e16b,
+  summary: Add Neo to the tool list (#52), time: Tue Aug 23 04:36:11 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: 0391602ee9768af6d17bf05310da009d78cbbab1,
   summary: 'Merge pull request #53 from NeurodataWithoutBorders/update/index', time: Thu
     Aug 18 21:40:49 2022}
@@ -24387,6 +24491,352 @@ NWB_Schema_Language:
 - {author: Ben Dichter, committer: GitHub, hexsha: db052965ebb51a7460a1dec1ae7d428aaa3727cd,
   summary: Initial commit, time: Sat Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Cody Baker, committer: GitHub, hexsha: 44f018864e49e08feea3c67c5115c0495137ba6b,
+  summary: 'Merge pull request #78 from catalystneuro/remove_top_level_imports', time: Sat
+    Sep  3 19:37:44 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: dab71df0c38170807b5453543e779409882da16b,
+  summary: 'Merge pull request #129 from catalystneuro/remove_top_level_imports_stand_alone',
+  time: Sat Sep  3 19:12:20 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: 94ea18c56e4e1e48736fb37fa45588b8b2e46542,
+  summary: simplest possible change, time: Sat Sep  3 14:10:13 2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 37f9c89e4c68d7d56ae82829920809f793f6987e,
+  summary: Merge branch 'main' into remove_top_level_imports, time: Sat Sep  3 11:03:00
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ae08b4ae627f9e5ced0e0d59d15c1bd329abffb8,
+  summary: 'Merge pull request #120 from catalystneuro/add_compression', time: Fri
+    Sep  2 18:23:38 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: 33e31deda6d74700e9b70f8b7c85af0f0d0a86f0,
+  summary: Merge branch 'remove_top_level_imports' of https://github.com/catalystneuro/neuroconv
+    into remove_top_level_imports, time: Thu Sep  1 17:32:48 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: 974ba27efc5e84ab18934165f5ab98ea7673c865,
+  summary: restore aliased import, time: Thu Sep  1 17:32:28 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e859fc8dcc03acc3648a5cb0166b00087af0a415,
+  summary: Merge branch 'main' into remove_top_level_imports, time: Thu Sep  1 17:31:21
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e554b40a43e4c9bfab25cc2802e74de972eddb0b,
+  summary: Merge branch 'main' into add_compression, time: Thu Sep  1 17:31:05 2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 721e335120ebc463c13d666642347c20bd2761b5,
+  summary: 'Merge pull request #124 from catalystneuro/test_remove_top_level', time: Thu
+    Sep  1 17:11:00 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 471f119fcb7a18d028d4fd5e509818806f173663,
+  summary: Update requirements-minimal.txt, time: Thu Sep  1 16:39:50 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 5bdf14d78e66a53680565c7708bdfddd5d0d21e7,
+  summary: Merge branch 'main' into add_compression, time: Thu Sep  1 14:00:17 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: cab1bd124f64b128bff8ea436358b59d630a1e49,
+  summary: Update requirements.txt, time: Thu Sep  1 13:59:37 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e23fa7678c58314e2bf059277e5ffa2d7036cb54,
+  summary: Update requirements.txt, time: Thu Sep  1 13:59:28 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 7c40f32d4a306cf38086fea3ae6f908fd0e3b74a,
+  summary: Update requirements-minimal.txt, time: Thu Sep  1 13:58:41 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: a0b3665ed3066e1fc49736becdc1e1553f181a7f,
+  summary: Update requirements-minimal.txt, time: Thu Sep  1 13:33:29 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 9467354bbda8a9a47276dfce07261f0553c18100,
+  summary: PR suggestions, time: Thu Sep  1 13:22:16 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0ba5b04cd6dc36617bad43a2bcc2614fedf7a735,
+  summary: Merge branch 'main' into add_compression, time: Wed Aug 31 19:18:48 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 3d624289277fb0864ce8664b903588fab1efb232,
+  summary: Update conversion_example_gallery.rst, time: Wed Aug 31 18:12:20 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 4310200ee5594a6612a7c1b25cb20a56290a3ac3,
+  summary: Rename suit2p.rst to suite2p.rst, time: Wed Aug 31 18:11:40 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: d9889bee32f4c56b600450c1f5fe0fa68bc3f8a6,
+  summary: pin to essential fixes in ROIExtractors, time: Wed Aug 31 17:22:25 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 00f70d65ad0bf307d31cae0aed4c40cf04948fa1,
+  summary: fix dynamic import tests, time: Wed Aug 31 16:11:19 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 09866cc0b98e84cdb1d809681ab32fc3047469b9,
+  summary: debug, time: Wed Aug 31 15:37:43 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 3ae3c95bdf2e5bc561d4ac970f327678e3f6530e,
+  summary: Merge branch 'main' into add_compression, time: Wed Aug 31 15:24:24 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ea8e5c50d6eaf15f23b47832c01c1bdc7c4a5672,
+  summary: 'Merge pull request #126 from catalystneuro/add-data-type-installation-instructions',
+  time: Wed Aug 31 02:21:15 2022}
+- {author: bendichter, committer: bendichter, hexsha: 27144b6b999ea3c68dcf055d27176bfd6400e377,
+  summary: change the rest of the conversion gallery to include installation instructions,
+  time: Tue Aug 30 21:12:57 2022}
+- {author: bendichter, committer: bendichter, hexsha: d5ee46301794700ff816105ca1196a13719af978,
+  summary: add hdf5 and scanbox, time: Tue Aug 30 21:08:44 2022}
+- {author: bendichter, committer: bendichter, hexsha: 7c0c06f7721ab3599594b16296abb6250ef0ca61,
+  summary: add installation instructions for other data types, time: Tue Aug 30 21:05:45
+    2022}
+- {author: bendichter, committer: bendichter, hexsha: 0e66090524d751dd678f1f9eac7237a6c94bbdcb,
+  summary: add installation instructions for DeepLabCut, time: Tue Aug 30 20:33:38
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 07b3c8109259ef6b53adb5ebe47867fd872f7524,
+  summary: Update test_import_structure.py, time: Tue Aug 30 18:49:20 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9a64e3eafddbccec84b906fd6ccbf57fa780ef1e,
+  summary: Merge branch 'main' into add_compression, time: Tue Aug 30 18:47:27 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ddc4964908ad149cb4563d5d6d5883ebd65fd84e,
+  summary: 'Merge pull request #125 from catalystneuro/remove_upcoming_deprec', time: Tue
+    Aug 30 18:45:30 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 61c90a4bfae50e9ea58445b8ec4c43fca7e574e9,
+  summary: Merge branch 'main' into remove_upcoming_deprec, time: Tue Aug 30 18:29:56
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 77de791a33d1fea14f189ff984829468ea6b47a3,
+  summary: 'Merge pull request #118 from catalystneuro/add_roi_centroid_control',
+  time: Tue Aug 30 18:29:18 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 87f8cbab14456b8226e26a2b9d34d1e6c57f1dd9,
+  summary: Merge branch 'main' into remove_upcoming_deprec, time: Tue Aug 30 17:57:10
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ab805e5a55b237b154c4f6b2357dc871aa96dd28,
+  summary: Merge branch 'main' into add_roi_centroid_control, time: Tue Aug 30 17:56:43
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0a8da95d46ea88f5ab03264f0afcdd8818bda4db,
+  summary: 'Merge pull request #122 from catalystneuro/fix_context_success', time: Tue
+    Aug 30 17:53:22 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 5cded4707cd167c8812f1e5bba835c558554f4e2,
+  summary: redo, time: Tue Aug 30 17:00:26 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 02ee84e7e785c3a0f42d54d76651a5f7b4257b99,
+  summary: Merge branch 'main' into remove_top_level_imports, time: Tue Aug 30 16:31:38
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 4d9b5b55b8970615669b41141cb82dbad220ffc3,
+  summary: Merge branch 'main' into add_roi_centroid_control, time: Tue Aug 30 16:29:37
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 69c9045a9e57a1d67d07c337a29336ef2810832c,
+  summary: Update __init__.py, time: Tue Aug 30 16:24:36 2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: dec74e742cafd878f67d725dcd666199bd0ee97f,
+  summary: Merge branch 'main' into fix_context_success, time: Tue Aug 30 16:22:31
+    2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: e71874398d65a4b22426bf4c84d0be4e23578da5,
+  summary: 'Merge pull request #116 from catalystneuro/add_segmentation_stubbing',
+  time: Tue Aug 30 16:20:54 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: 870badec7020076dcd58739680d46dd9c48502b8,
+  summary: revert to check if it works, time: Tue Aug 30 16:06:14 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: 7311616c64204f06a71559903d143eebfa5aa42d,
+  summary: re-add test, time: Tue Aug 30 15:59:14 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: d5749506bdc1050e098a7bc82947245ab311c5e7,
+  summary: fix post merge, time: Tue Aug 30 15:55:14 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: b541e62b4727aa4221e0f73f0db5b61af559e218,
+  summary: attempt at solving conflits, time: Tue Aug 30 15:50:44 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 17e36ce393bf2f54ee9a596dd57ec71668daa887,
+  summary: Merge branch 'main' into add_segmentation_stubbing, time: Tue Aug 30 15:37:05
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 75285c92f374b8289bd92cbfd806bac9882ba7b3,
+  summary: 'Merge pull request #121 from catalystneuro/formatwise_testing_with_dispatch',
+  time: Tue Aug 30 15:32:39 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f4da80af00d569afc281cccea89730f008800589,
+  summary: added comment; moved transpose for clarity, time: Tue Aug 30 15:21:28 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 2a230f85f5f54d874f393fd0cb335bc2b1ca1022,
+  summary: debug, time: Tue Aug 30 15:10:44 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 856292e1b5cf8e705a8e31f71244401b3785ccb5,
+  summary: debug, time: Tue Aug 30 14:02:28 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 288aeaac3c25f7f55a056103ce2fb0911a7c4870,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Mon Aug 29
+    19:22:39 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: bba075d748aeb7b7a9d211922e44e0005f27a7be,
+  summary: debug other test, time: Mon Aug 29 19:22:09 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 68c56d71b4bcd0cc37719e0f9b4c46f25ff35d5f,
+  summary: fixed context issue, time: Mon Aug 29 19:18:47 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 6f930ad302fdc573f0c93de2123a01fafa30de15,
+  summary: Update roiextractors.py, time: Mon Aug 29 18:56:22 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 67211e0421d91d2f98ff33c8069b225cbdd2273f,
+  summary: Merge branch 'add_roi_centroid_control' into add_compression, time: Mon
+    Aug 29 18:46:46 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 99aaec8f6dccd8b5b60220e8af75fe3c0785284c,
+  summary: adjust name, time: Mon Aug 29 18:20:45 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: b37db72d52bf7c8636ebbeb8ede0936a485929de,
+  summary: peel off for rebase, time: Mon Aug 29 18:16:37 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f563c8e6830429dd990af8d42acdfe0084f3c9f4,
+  summary: debug, time: Mon Aug 29 17:38:20 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 6c885486701177384b91f9d32ba8386d63a63d93,
+  summary: Update requirements.txt, time: Mon Aug 29 17:34:09 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 6da859bf4ccb4309739a4877abc16d2b29c4b74c,
+  summary: Merge branch 'main' into add_segmentation_stubbing, time: Mon Aug 29 17:33:04
+    2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 6bfbd0d2ff7e9246736c6c50f0b6d8e0e02dfaa9,
+  summary: fix conflictss, time: Mon Aug 29 17:32:55 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 796e145f8d93a721a3757d36c004e9cd1d8fd094,
+  summary: wip, time: Mon Aug 29 17:29:43 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f5d4e2a26c20571b5ce78e9222eac5535aa54f12,
+  summary: added roi centroid flag, time: Mon Aug 29 16:54:14 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: a0983ef06f7e30c4e6ac6cb1f18c82aab21a3a43,
+  summary: Update setup.py, time: Mon Aug 29 16:35:30 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: bf81bab6c0483df775eab96392685e778761ea13,
+  summary: 'Merge pull request #100 from catalystneuro/formatwise_installs', time: Mon
+    Aug 29 15:13:43 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 791de0d2e341c9fb43479d12d92f9e7fe4c88fbe,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Sun Aug 28
+    20:26:54 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e6f753af786dcc5b2f073306be8147ce440dcb42,
+  summary: fix object references, time: Sun Aug 28 20:26:43 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 96c9c07856a11ecdb29e4f08e6b2adac9d451bf4,
+  summary: Update CHANGELOG.md, time: Sun Aug 28 20:10:26 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 4ce915ac420d1bb79e17d1facc2e46f8bc171a71,
+  summary: fix name, time: Sun Aug 28 20:09:24 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f532c9d0fa3c8539cf6642308df7818b50a0648f,
+  summary: bump version, time: Sun Aug 28 19:06:29 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 7adc732a9b3cb0ae54a0c6af61fe9bb4f8e180c2,
+  summary: added segmentation stubbing, time: Sun Aug 28 18:45:11 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: ab5cefe3b4aec7a0da2ab2164acf5b774e7a8f85,
+  summary: more modules, time: Sat Aug 27 14:22:06 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: dea4667664a45bf695c484cba4475b246c08b251,
+  summary: add test for tools import, time: Sat Aug 27 14:15:40 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: 998e43efda8382d6395b55523a5caad4192e2dab,
+  summary: Merge branch 'main' into remove_top_level_imports, time: Sat Aug 27 13:57:32
+    2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 20caf45538f4a81b5b4af24617cc2ca081101ca9,
+  summary: Merge branch 'formatwise_installs' of https://github.com/catalystneuro/neuroconv
+    into formatwise_installs, time: Fri Aug 26 17:12:00 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 4347e320f406dea42afbaad3649ce06843716d8d,
+  summary: fixed?, time: Fri Aug 26 17:11:54 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ced4bf96e60d5beb39d23fc4d7c9363d41558c22,
+  summary: disable test_icephys, time: Fri Aug 26 16:39:01 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 93b8e05d1593f38ae65f781f641c198fb812d3b9,
+  summary: Revert "Update and rename testing.yml to formatwise_testing.yml", time: Fri
+    Aug 26 16:33:11 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 882a17d1224e59d595c672de23a81682551202af,
+  summary: Update and rename testing.yml to formatwise_testing.yml, time: Fri Aug
+    26 16:32:10 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 30770612026ef0584bfe0d0ca868e4d7ce0ba58b,
+  summary: Merge branch 'formatwise_installs' of https://github.com/catalystneuro/neuroconv
+    into formatwise_installs, time: Fri Aug 26 16:24:24 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 887521c87bdb64d4e8413fecf6787348dcca32e7,
+  summary: add missing JSON, time: Fri Aug 26 16:24:18 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: a615db024f8cfc18eee628c43139c4a996bc2362,
+  summary: Update CHANGELOG.md, time: Fri Aug 26 16:23:24 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 2ab000732af29ca1c51db20ccfdc243421f68800,
+  summary: debug newly lazy interfaces, time: Fri Aug 26 16:18:03 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f8d5120af684cead84cfcc89b7e6d1a33e660657,
+  summary: remove requirements-full; diffuse format requirements; trim minimal, time: Fri
+    Aug 26 15:16:32 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 47933c773bb06a1c5d379a12c022c4d6ae13894c,
+  summary: reorganized tests, time: Fri Aug 26 14:20:01 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 37f4035215caab76f903e3c34f49aac94b642a3a,
+  summary: fixing changelog, time: Fri Aug 26 14:14:37 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 8ec92003cf07bc250b4338a750a320352020266f,
+  summary: fix changelog, time: Fri Aug 26 14:10:43 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 0ba1ae570dd0a80ede0daf11ef433975cfc0cf5b,
+  summary: progress, time: Fri Aug 26 14:07:18 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e5d45bdf3936350c982374495ab59223693256e8,
+  summary: Merge branch 'main' into formatwise_installs, time: Fri Aug 26 14:03:10
+    2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: d1ec04c20a6270816dc027d3a8883e2fe7bb3f36,
+  summary: 'Merge pull request #112 from catalystneuro/test_latest_roiextractors',
+  time: Fri Aug 26 08:00:11 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 156f894dcaaf997eab9400cb5f35e779a40e5c39,
+  summary: Update CHANGELOG.md, time: Thu Aug 25 17:40:21 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 95511c86cb826482164451b090d1d94c74e2569f,
+  summary: update to latest roiextractors, time: Thu Aug 25 17:35:01 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 40fcd202d3c2342f57fe06d3d15c2a1398fa9714,
+  summary: 'Merge pull request #108 from catalystneuro/fix_phy_se_backend', time: Thu
+    Aug 25 16:37:32 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 68b8fd184975f4322d7b4bdd7ba87722f9252bd4,
+  summary: Merge branch 'main' into fix_phy_se_backend, time: Thu Aug 25 16:05:46
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 6d2901aa53e807faf36520848ead22265e6c14f4,
+  summary: 'Merge pull request #107 from catalystneuro/use_spikeinterface_names',
+  time: Thu Aug 25 16:05:13 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 37e2cf59e73294c9283cbd4ac7cd48c30e516325,
+  summary: Merge branch 'main' into use_spikeinterface_names, time: Thu Aug 25 15:47:16
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 37bc979bd1d72f6e4c3c8fd7a7ba01caf98d9a1b,
+  summary: Update conversion_example_gallery.rst, time: Thu Aug 25 15:46:59 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 80b64d6ccf005f06107370cb383b7aa28f5ca814,
+  summary: Revert "code injection", time: Thu Aug 25 15:31:04 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 5537cd9efaada0b2fc35521a56ae70ad14a58252,
+  summary: Revert "showcase in gallery", time: Thu Aug 25 15:30:32 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 2f60bcb9bf11cefc51adbea9a3f27214a5f249a7,
+  summary: showcase in gallery, time: Thu Aug 25 15:26:13 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: f78ec714b580c9b8437b8a47b15ae00e6323816b,
+  summary: code injection, time: Thu Aug 25 15:25:01 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 62c4163d75602055e9ec6c52669694e3474041f2,
+  summary: Update neuroscope.rst, time: Thu Aug 25 14:25:21 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 879e6258d3d90ff169d71df9a93dddec3e84497f,
+  summary: Update kilosort.rst, time: Thu Aug 25 14:25:04 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 89e699f29ac3467cef4b0408b72ed97a8d7dbd40,
+  summary: Update neuroscope.rst, time: Thu Aug 25 14:24:39 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: d3669dcaf56eddc811e596aab882c1791771986c,
+  summary: Update neuroscope.rst, time: Thu Aug 25 14:24:30 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 773c23169a99ffffa06b34107c6eed55a4af434a,
+  summary: update API doc titles, time: Thu Aug 25 14:22:35 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: eea0c33046f6900f3b2c0d31b13bf37fb77e8800,
+  summary: Update phydatainterface.py, time: Wed Aug 24 20:50:49 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 5b939e548dcde734e25876864a4c2aef45d373c1,
+  summary: Update CHANGELOG.md, time: Wed Aug 24 20:48:47 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 4a839083002b75b8f6dabe0334676070ef71b26e,
+  summary: updated names to match SI, time: Wed Aug 24 20:43:31 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e166c224a259012131382c059fbc2c8bdb7c4187,
+  summary: 'Merge pull request #74 from catalystneuro/efficient_imports', time: Wed
+    Aug 24 20:23:15 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 2cc4749919b840ca4491b13e74043390fb574179,
+  summary: Merge branch 'main' into efficient_imports, time: Wed Aug 24 19:41:08 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: f9930de4250bb73dcd5d9793dc77b1f1f0ad5b32,
+  summary: 'Merge pull request #106 from catalystneuro/remove_tutorials', time: Wed
+    Aug 24 19:40:59 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: fd22bfc7c6896ff06c5b190d245468fc8c57f36d,
+  summary: debug import exclusion and regex, time: Wed Aug 24 19:31:23 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f2d57d9486bb3605f59ce80782abd2eaeee730b6,
+  summary: restore json comparison, time: Wed Aug 24 17:32:42 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 68718df0a0409aa418498436f665f823d14d83be,
+  summary: Update testing.yml, time: Wed Aug 24 17:30:01 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 902c05a957502a2577791d9295fa6391cc92fd76,
+  summary: fix conflicts, time: Wed Aug 24 17:25:57 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: d342efc39cc23ec5d03e199eff0b6d85a1de3dcb,
+  summary: debug, time: Wed Aug 24 17:24:08 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: a309c3194a573e3b6664e22265dff35e770c3cfd,
+  summary: resolve conflicts, time: Wed Aug 24 17:16:30 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 28f617fa635b6850d6bf68ee26f31d659924c35a,
+  summary: remove tutorials in separate PR, time: Wed Aug 24 17:06:20 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 99bb8d5dc57e49c1a6e691d62060901715860805,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Wed Aug 24
+    17:02:05 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 9cd926c55e57e464ebefe4c358298c3fe27879b7,
+  summary: Merge branch 'efficient_imports' of https://github.com/catalystneuro/neuroconv
+    into efficient_imports, time: Wed Aug 24 17:01:31 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 8fa5358407fe2da940df29cac3d4084da62f5d1e,
+  summary: try raw string for sonpy tests; make remaining interfaces lazy, time: Wed
+    Aug 24 17:01:24 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 2f14a808d867b3ecc4093a057834fc2e88fac465,
+  summary: Merge branch 'main' into efficient_imports, time: Wed Aug 24 15:40:15 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 75e2324128798158841eddf9bee08570c6cc8ebb,
+  summary: fix sonpy test error type and message, time: Wed Aug 24 15:40:08 2022}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: be7f786aa8c9c77b5675e93322bb219b27e8ac80,
+  summary: 'Merge pull request #63 from catalystneuro/scanimage_using_datetime', time: Wed
+    Aug 24 07:36:12 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: b887875dd31cdab3addda728c7716fdb48619892,
+  summary: Merge branch 'efficient_imports' of https://github.com/catalystneuro/neuroconv
+    into efficient_imports, time: Wed Aug 24 03:19:12 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f10d5a06da46268fd669aa0ea4979bd34c5ef82c,
+  summary: debugged all, time: Wed Aug 24 03:17:52 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 431f2def00c8456dee2c1ee0ab36e16aa1c8048a,
+  summary: Merge branch 'main' into efficient_imports, time: Wed Aug 24 00:23:23 2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 1f4f0dbbe14d1ad66090b3af4e49ab264b16cccf,
+  summary: Update docs/conversion_examples_gallery/imaging/scanimage.rst, time: Tue
+    Aug 23 18:48:22 2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 83bff4fc9e3df751c96a95a314d1e10fc8073177,
+  summary: Merge branch 'main' into scanimage_using_datetime, time: Tue Aug 23 16:54:35
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e2d7ad530d4ae444bca0ad57bc8cac7577bc1692,
+  summary: 'Merge pull request #102 from catalystneuro/testing_workflow_with_s3_download',
+  time: Tue Aug 23 15:14:30 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 3215a6ee473759eae5ce81fbe4d588929f997630,
+  summary: Merge branch 'main' into testing_workflow_with_s3_download, time: Tue Aug
+    23 14:39:44 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ef4a5f9086e091a772d97cec94c65adc7500bbf8,
+  summary: Update test_interfaces.py, time: Tue Aug 23 14:32:51 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 690744b9c3c921c405f919c3f7e21393e83e5199,
+  summary: 'Merge pull request #104 from catalystneuro/fix_description_in_write_sorting',
+  time: Tue Aug 23 14:22:21 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: a8d1c5c48929bbe369f34a36c39b2cab3a44dd3f,
+  summary: update CHANGELOG.md, time: Tue Aug 23 14:00:09 2022}
+- {author: weiglszonja, committer: weiglszonja, hexsha: 3feab1bf9cff88eb3961eb27e31cdd11fce94bc1,
+  summary: fix description to mention neuroconv instead of nwb_conversion_tools, time: Tue
+    Aug 23 13:33:08 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1b1060296461ae49ae972456c25551eaf1472fbd,
+  summary: Merge branch 'main' into testing_workflow_with_s3_download, time: Tue Aug
+    23 04:01:07 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e27308b7c4bf3ec2cbd60a0ed2f123327b96249c,
+  summary: 'Merge pull request #101 from catalystneuro/upload_cache_to_s3', time: Tue
+    Aug 23 03:56:21 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 164f33aab0fcbc969139f0394c3c11850692f947,
+  summary: Merge branch 'main' into upload_cache_to_s3, time: Mon Aug 22 18:22:15
+    2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 06acd57825ec51e397ec9fcb2aaec195e26ad276,
+  summary: generalizing and making less fragile, time: Mon Aug 22 15:20:59 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e65410d6ab4be20bcc39fcbdc6ad72842bf43d7d,
+  summary: Merge branch 'main' into formatwise_installs, time: Mon Aug 22 13:55:37
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 295ea687f7ee44332e713b3ff5a3aaac5efd2a63,
+  summary: Merge branch 'main' into testing_workflow_with_s3_download, time: Mon Aug
+    22 13:46:53 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: 8422c036b2f238c222791b68fe0c1cf5fcca83e0,
   summary: 'Merge pull request #103 from catalystneuro/icephys_api_docs', time: Mon
     Aug 22 12:29:13 2022}
@@ -24396,9 +24846,206 @@ NeuroConv:
   summary: changelog, time: Mon Aug 22 09:39:00 2022}
 - {author: luiz, committer: luiz, hexsha: f5917b3c9be21d5e873c11b976a35f6a3c31bb2a,
   summary: icephys api docs, time: Mon Aug 22 09:35:14 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 20e05fd12b4fbc36816d113e29956fc0fbc1788b,
+  summary: debug tool/util swap, time: Sat Aug 20 22:10:23 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ac80efd5039cf3aef8bea9991e18874f25a87236,
+  summary: Delete importing.py, time: Sat Aug 20 21:36:05 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 27c3f078d3580a627144d28a3785ead15050fee3,
+  summary: Update __init__.py, time: Sat Aug 20 21:35:59 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0d875fceb58bf5c957fab2e8b692a1afd3a2c11c,
+  summary: Create importing.py, time: Sat Aug 20 21:35:36 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 1c7aefb4c91427f955b5920e34d59637ecc4823a,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Sat Aug 20
+    21:22:14 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ffce8d8d8380384ad4cb0b77d0505f987366a5eb,
+  summary: Update testing.yml, time: Sat Aug 20 21:21:59 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0cb2dd4bd2a1314d1e99d86083637c053c366100,
+  summary: Update test_gin_ecephys.py, time: Sat Aug 20 20:56:06 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: cb0dc3122a6b122c2f54bd3734d0030dcc805a30,
+  summary: Update test_interfaces.py, time: Sat Aug 20 20:55:32 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 4fd578c2118adab6fc9522a684e09a08fe280fce,
+  summary: Update test_interfaces.py, time: Sat Aug 20 20:54:56 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c8edc9bcafef65f53898e6a76cc5645a853fdecd,
+  summary: Update testing.yml, time: Sat Aug 20 20:51:01 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 33c514dcac53ec51144c8209ac5c1c70f51f5c0a,
+  summary: Update test_gin_ecephys.py, time: Sat Aug 20 20:50:36 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 30e11f3d3a9c5106b1b7bab9c07af62d0eba3021,
+  summary: Update test_interfaces.py, time: Sat Aug 20 20:47:15 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 69ac15efb6f44b4f296507818efe22f748b09c0d,
+  summary: Update testing.yml, time: Sat Aug 20 20:35:40 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: de29f1ed6f6da1f805ff83ec23aeeead9b01f880,
+  summary: Update testing.yml, time: Sat Aug 20 20:24:37 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c11cf2833e8dbb3daa0285279299ba4708e0a23c,
+  summary: Update testing.yml, time: Sat Aug 20 19:11:54 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: d89ebce1da67e34e15934130238b578e07803503,
+  summary: Update testing.yml, time: Sat Aug 20 19:10:35 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 8a0df81ac2fe022ae52fc1d7e4077acb06ebf381,
+  summary: Update testing.yml, time: Sat Aug 20 18:55:45 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 601dabb5f3e890b3c92475db45a53990701e0caf,
+  summary: typo, time: Sat Aug 20 18:53:51 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: da69dd355aaeced4f64bd6f37232c4ed265f8bc3,
+  summary: Update testing.yml, time: Sat Aug 20 18:41:38 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1793204697426dc51b86f931befd11fc7bdc1c79,
+  summary: Update testing.yml, time: Sat Aug 20 18:33:34 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1be0ce1cdb49c7cadca98c89aaef02f11f96afcd,
+  summary: reverse destination/source, time: Sat Aug 20 17:45:14 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 5e6372a6edb06b7dded9b6f45ba95c20fa60d8fd,
+  summary: swap to cp, time: Sat Aug 20 17:33:41 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: b7ed64569af614b99dd9c04c1198327d94b44ed3,
+  summary: Update testing.yml, time: Sat Aug 20 17:24:29 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 2b4587df914f683a577ec3acceed40403eb6ea7c,
+  summary: Merge branch 'main' into efficient_imports, time: Sat Aug 20 16:49:41 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 965afde2c6923b7f52c4ad7b22fe7d19dbe3205e,
+  summary: 'Merge pull request #98 from catalystneuro/lazy_class_attribute_via_metaclass',
+  time: Sat Aug 20 16:49:18 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 5e12c81fd49c6e9e898074abc60e8a62fbdef426,
+  summary: try pinning minor version, time: Sat Aug 20 16:16:16 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 766d97af086d2a953a8ab19ca3d56a6891e5469a,
+  summary: trying to narrow down sonpy issue, time: Sat Aug 20 14:57:38 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 2ff6e94f6e5f5810252b3d60d00b9c7c13adced1,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Sat Aug 20
+    14:46:36 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: bd7dc0af526da3a3fd9ff0a2a0cd45d60c634264,
+  summary: Update update-caches.yml, time: Sat Aug 20 14:39:14 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: d87bc00aca5de0857210871c84e040a8df8a84b1,
+  summary: debug import util error condition, time: Sat Aug 20 03:47:22 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 2db3b1f3ce2da9a327b50bb207e9836302beff2d,
+  summary: unskip; add manual override ability for subclasses, time: Sat Aug 20 03:37:12
+    2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 674c38be803eed09ca73ed5ab48b1bbcc2dee3dd,
+  summary: debugs, time: Fri Aug 19 23:18:04 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9b3d6bf927ea3bc780211c90ec8ca8595b89330a,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:46:37 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 3bccbb4f2be05ebbd686ab825a9f2d228387aa4d,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:44:19 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 167947cbbc1780fc9cecca23d7edd724e69dd27f,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:39:58 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c5fcc9a7b757090fcec97252809d1c60cddd6edf,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:36:16 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 529b81d3bfc9a8a4828f6ff63926ddcf7cb242f5,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:33:19 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0e81d1de90028a3caef3d0a484ea6a972cd615c5,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:28:46 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: b093f473c964455053911dbaa71ef6041fdf3759,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:26:08 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: cff648b555f970d42c8c347ee301f3acd5e4e8bc,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:23:04 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9f8a0e34fe1ce38b585511e4061945ee545ccd10,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:22:20 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 25ee689dcb3080284fd88187d782356ccae654b5,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:14:41 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1ca43eb2c5099be46f4e61cc59d8c4d707812e49,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:11:56 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 8c28ee107c0bb986e905b195111fd1ec6a3afa37,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:10:48 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 3529e9ac552292b9653c15a6a4b0a884fd395547,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:04:39 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 51bdb85627f4a0d65d82e70d2cce0af5b7aa31c3,
+  summary: Update update-caches.yml, time: Fri Aug 19 22:00:33 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9296b01d904ff8965b022a31f6195b3f5c7ceac4,
+  summary: Update update-caches.yml, time: Fri Aug 19 21:59:27 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 8e94a7894b359dcc4ec7292543e85ee2f03e6d58,
+  summary: debugging; implemented lazy extractor setting for other interfaces, time: Fri
+    Aug 19 21:51:56 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 929d51e06d22d9eaa84e72e748dd27063ceebb94,
+  summary: fix alignment, time: Fri Aug 19 21:10:35 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 72229843dfa7e11990fc76efe7d0190f3efde549,
+  summary: fixed doctest, time: Fri Aug 19 21:09:29 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 4a96f1f7c6dde01cb56d02d4458d886558dac59d,
+  summary: implemented very generic form for base imaging, time: Fri Aug 19 20:45:02
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 07e2766385eb27a4212a0914ce0fb28b512b152b,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:36:58 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 363f06871305e428f26f3b17ae9e9a68eb39cd9f,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:32:20 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 541814779c73cfe5493e8315caaf7051d86ee379,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:30:07 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c0e19676f6311cf93766ce3d9b24deda8011639f,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:27:33 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: bcf812b0ffc5d6ea64b8f40424699b2a659da1c6,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:22:28 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 7d7219e3e49b5a1e1cf017713110d9d7a11a9b23,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:20:05 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 2065ec1b0164de2a4236be496d41626a2b4817ea,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:17:29 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 5b4f0784a14ced6ad765613ec229a2865378469e,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:13:51 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: a73dff3b0482feb41a43ec7aa558b0c1a0b98429,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:11:54 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: b05268b5553a6696a541961bf08b707a6b030079,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:07:52 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 79ee2a23fecdf0719a8c4f61acb039e8bc89c571,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:06:42 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e1650c370fbde53ebf9f4acd3fbdc0d6703c9962,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:05:34 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: d48f28a3bd99386e7f0a7516a950bb2627ea89c1,
+  summary: Update update-caches.yml, time: Fri Aug 19 20:03:56 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: d965130f87cd6ee78e9f3b96adb6398541250c51,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:59:44 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 8ff16fa23f0547c11033b10b106874fe19d7a01f,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:57:56 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ce0b03920bd8b85eb8a6d997d4ad21b63d24965f,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:52:33 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 96ba0711656bf27c9c7152fc6d5f8b89feb46c7c,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:48:19 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 07a7e9231d6a4a1d22d20f83e91c64a5220a64ed,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:47:07 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c54f09458ee6ddb16826c192513457da72ba6794,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:41:30 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e4700c2a96fa5b9d452ab41a54fc31894feae2b7,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:37:51 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ec2829875bf434001e95650b351d22f7d000855b,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:29:55 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 3fcac1b618107cd89e1ad3dbe8102ecc187bd092,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:24:09 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: a2dac17d988d9f4708d68177bdcc29e261c4c471,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:21:27 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 416f90632aabd29e8eb2aeaa252fb9d0ac0bccfe,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:09:34 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: f67f321815e94f10c0782e4a9971197a8018e939,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:08:08 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ea8529b18fabf7ce0ce17986b71f54a0c90469e0,
+  summary: Update update-caches.yml, time: Fri Aug 19 19:07:01 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: f2c598f73c44832de20fde3d558285424229bfdc,
+  summary: Merge branch 'main' into formatwise_installs, time: Fri Aug 19 18:57:42
+    2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0da98a076ab81e87167040ac5e413562a18ea1cd,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:46:03 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 0ddd18ab93330d26474b3fa37df8dbc8363108ff,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:37:03 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: bdab0439fc0b2b9ee239d35642cbba8420edcfe1,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:35:06 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9ab3944e4c352d48f98cd2d1bc483fa814727dd4,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:32:01 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ca6d7396c641c020272a5f9976b87bc352bfef6d,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:25:39 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 758e14ced9bc9cba86e85b1026882446934be226,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:24:31 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9fbdd3127d27093a4da7bd8209f6a934da833bb6,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:21:20 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: e046f7776ed788b991e9d45b4b48b76b82346960,
+  summary: Update update-caches.yml, time: Fri Aug 19 18:14:20 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: b0bc2eee6ebdf06479df0768b631fa96642cbe57,
+  summary: Merge branch 'formatwise_installs' of https://github.com/catalystneuro/neuroconv
+    into formatwise_installs, time: Fri Aug 19 17:20:02 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 959cb10f24fe14d6e2e9190eb6983dbd1911c80c,
+  summary: rename ophys testing ddir, time: Fri Aug 19 17:19:56 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 73309b0d856d6a4ccc31d567689b9d4b16edd7a1,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Fri Aug 19
+    17:13:02 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: c0bdf656df35daa9182530ea1c7436eb59d7381e,
+  summary: Update testing.yml, time: Fri Aug 19 17:03:39 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 2f365cd2a286e71a18ed04ccf8938270ea40a6e4,
+  summary: add autoskipped file, time: Fri Aug 19 16:52:48 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 512eb1db1a81751931c7bbe00857a054144a4501,
+  summary: reorganize testing directory in advance of relaxing minimal requirements,
+  time: Fri Aug 19 16:51:06 2022}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 47b580faee0539b4c933e9a061a38d4b194d600b,
   summary: 'Merge pull request #99 from catalystneuro/fix_icephys_gallery', time: Fri
     Aug 19 16:32:48 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 0c05aee9720613066b8faed8551d67ac77dce6ef,
+  summary: utilize extra installation and setup glob for ophys, time: Fri Aug 19 16:25:46
+    2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 16d43187bedb53913a5bb4d8f1dff6473d990846,
   summary: Merge branch 'main' into fix_icephys_gallery, time: Fri Aug 19 16:06:30
     2022}
@@ -24408,6 +25055,26 @@ NeuroConv:
 - {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: ed1d58bbca4a94a0cc71a7e650efa24ff403dac7,
   summary: prevent icephys from making file; add deprecation to icephys, time: Fri
     Aug 19 15:44:59 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: b00d574d69be4de235caeb96cab78eb41f7337c0,
+  summary: Merge branch 'lazy_class_attribute_via_metaclass' of https://github.com/catalystneuro/neuroconv
+    into lazy_class_attribute_via_metaclass, time: Fri Aug 19 00:18:56 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 868055ca1bf50d5e772b42b2e6bb7f436a6cbb92,
+  summary: remove comment block, time: Fri Aug 19 00:18:51 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: 0026000d896c0424b818f3d2b87aa96dc560d635,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Fri Aug 19
+    00:04:21 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: e0a0757e302629e2553ffbd0889165a68417a469,
+  summary: disable dlc gallery test, time: Fri Aug 19 00:04:08 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 5c61fe76f7f255843cd6763db457a13a7bb9588c,
+  summary: debugs, time: Thu Aug 18 23:48:37 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 0ead8c2ebbe0113f3d2ca2ab0e8bfd24a704b2c0,
+  summary: skip non-lazy sonpy test, time: Thu Aug 18 21:28:49 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: c00e2a3b781b873e355e2cef9472e9ee13cf46c4,
+  summary: resolved metaclass conflict; restored ABC in base, time: Thu Aug 18 21:24:32
+    2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 848fac9c054f3ed9c73cda9e71dd2afcfb40508d,
+  summary: 'working class attribute retrieval, but in lazy fashion', time: Thu Aug
+    18 21:09:15 2022}
 - {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: a41378853c75531233c13bccfe7ae04298196e3f,
   summary: added annotation types, time: Thu Aug 18 20:39:33 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: ca427aa5994b742c2d3cdddd14212aa3a0758cb0,
@@ -24416,9 +25083,20 @@ NeuroConv:
 - {author: Cody Baker, committer: GitHub, hexsha: 240fbbf22f7b0367bffa0bba6f970294b7c89901,
   summary: Merge branch 'main' into integrate_data_chunker, time: Thu Aug 18 18:58:41
     2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: a98ebdeb889de0f56d2dcb58c6093dfa5f77def5,
+  summary: fix gallery imports; fix test imports; revert axona, time: Thu Aug 18 18:51:09
+    2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 297ab4595dfa808a09b8886455737848197f828c,
+  summary: restore axona, time: Thu Aug 18 18:39:15 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 7d9fd6c59c02070f86e2a6e863b20ec766800354,
+  summary: Merge branch 'main' into efficient_imports, time: Thu Aug 18 18:36:46 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: 0ab430028b406de77865b443d8c4dfe7943c0d94,
   summary: 'Merge pull request #89 from catalystneuro/abf_interface_clean_code', time: Thu
     Aug 18 18:05:08 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 9f3f5b0a60515adb92de0a11df7de1921288b77f,
+  summary: WIP, time: Thu Aug 18 17:11:13 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: ce1e69c98d9110ea7cbc5164c0adc6d80a7a31b1,
+  summary: Merge branch 'main' into efficient_imports, time: Thu Aug 18 15:22:29 2022}
 - {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: 92931bc20ba7660186cbe0442fef0f9420ff7867,
   summary: Merge branch 'integrate_data_chunker' of https://github.com/catalystneuro/neuroconv
     into integrate_data_chunker, time: Thu Aug 18 15:19:29 2022}
@@ -24455,6 +25133,9 @@ NeuroConv:
 - {author: Cody Baker, committer: GitHub, hexsha: ed3abe3bb7a0cbd4ee73f107332c48cd353e6083,
   summary: 'Merge pull request #91 from catalystneuro/create_aux_method_for_iterators',
   time: Wed Aug 17 14:11:04 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 1b6a4e9aa814367915e6e5920835ee608d5950b2,
+  summary: Merge branch 'main' into scanimage_using_datetime, time: Wed Aug 17 14:05:01
+    2022}
 - {author: Cody Baker, committer: GitHub, hexsha: fb2cb082425d595ebcb06e285f80c0fc6c9a6710,
   summary: Update feature_request.yml, time: Wed Aug 17 13:57:38 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: dfce6ff1b1bed62a673a7b97f663d29ff7dba412,
@@ -24811,9 +25492,18 @@ NeuroConv:
 - {author: Cody Baker, committer: GitHub, hexsha: 8eec3b147b95d58ad3cdee09e51a995896b106d2,
   summary: 'Merge pull request #73 from catalystneuro/update_contributing', time: Mon
     Aug  8 12:50:51 2022}
+- {author: h-mayorquin, committer: h-mayorquin, hexsha: f7e0ebdcc9aa6e940527f110b6fc376f199fbd50,
+  summary: remove top level imports of big modules, time: Mon Aug  8 12:38:11 2022}
 - {author: weiglszonja, committer: weiglszonja, hexsha: ff8d0e09dae0f5e4a1507e9fae5d18210d06d4c0,
   summary: Merge branch 'main' into refactor_write_segmentation_add_fluorescence,
   time: Mon Aug  8 12:11:27 2022}
+- {author: 'pre-commit-ci[bot]', committer: 'pre-commit-ci[bot]', hexsha: fe6c557d154b9d9e1bd4b018fad2e040b066444b,
+  summary: '[pre-commit.ci] auto fixes from pre-commit.com hooks', time: Sun Aug  7
+    22:04:14 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 86bb7398c81911df21a90591c1f92ee80a42b80a,
+  summary: Merge branch 'main' into efficient_imports, time: Sun Aug  7 22:04:11 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 9f282d911ba7f409f036d9ece209ae82f8265a19,
+  summary: Update openephysdatainterface.py, time: Sun Aug  7 22:03:26 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: 508688be882c2c32687b40e9d4264eae14fa8872,
   summary: Update CHANGELOG.md, time: Sun Aug  7 21:36:47 2022}
 - {author: Cody Baker, committer: GitHub, hexsha: dd91cbf18ddd223a33a32ffbcde922e4483deb83,
@@ -24859,6 +25549,10 @@ NeuroConv:
   summary: expand style guide, time: Sat Aug  6 20:11:16 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: 3e15ca58ddc1318671fae15af2383abd59dc9d47,
   summary: Merge branch 'main' into add_style_guide, time: Sat Aug  6 19:39:57 2022}
+- {author: CodyCBakerPhD, committer: CodyCBakerPhD, hexsha: f348e4f293357bbc697adf5664b8641fc27ae219,
+  summary: debug, time: Sat Aug  6 15:41:46 2022}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 6946d80c812f12937abf89cd5719ad49e8dcfd83,
+  summary: testing, time: Sat Aug  6 13:37:14 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: f860b065efd7d749f92d8655a0aee1b0f0e89d03,
   summary: 'Merge pull request #56 from catalystneuro/intersphinx', time: Sat Aug  6
     00:47:11 2022}
@@ -24937,6 +25631,8 @@ NeuroConv:
 - {author: Ben Dichter, committer: GitHub, hexsha: f017ba4ebdfde4b9d2eeb1f9a15650167a2f6d46,
   summary: 'Merge pull request #62 from catalystneuro/viewcode', time: Thu Aug  4
     17:03:32 2022}
+- {author: Ben Dichter, committer: GitHub, hexsha: 4131791224999a42e653a81e71e2637bfe956f74,
+  summary: Update scanimage.rst, time: Thu Aug  4 14:37:20 2022}
 - {author: Ben Dichter, committer: GitHub, hexsha: 285f1e365be13476eb571d9f8e5123ab524043ff,
   summary: Merge branch 'main' into viewcode, time: Thu Aug  4 14:32:25 2022}
 - {author: bendichter, committer: bendichter, hexsha: c4cfe31ceb8f0b71a107e66f05f57ad768328c05,
@@ -33688,6 +34384,24 @@ NeuroConv:
 - {author: Ben Dichter, committer: GitHub, hexsha: a5026627128de601ffbce2d3e57ea896485c3286,
   summary: Initial commit, time: Fri Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Ryan Ly, committer: GitHub, hexsha: 92ed81bcdc7f5243f08a72fd5ea10c0d5a0c5b90,
+  summary: 'Fix imageseries test warnings, update back compat (#1553)', time: Fri
+    Sep  2 05:10:34 2022}
+- {author: Ryan Ly, committer: GitHub, hexsha: 46627b50bb90fa0585cfac8d5d848d881fa6d8d4,
+  summary: Upgrade requirements and generate test files workflow (#1550), time: Thu
+    Sep  1 21:54:47 2022}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: fc78e346eef4cac321ea7f4767a4ed944be47c75,
+  summary: Enhance LabMetaData docstring (#1546), time: Thu Sep  1 14:45:33 2022}
+- {author: Ryan Ly, committer: GitHub, hexsha: 97c66a0aa76ae7b73d0cc370c3c0499119b91066,
+  summary: Save matrix name in artifacts (#1549), time: Thu Sep  1 03:37:11 2022}
+- {author: Ryan Ly, committer: GitHub, hexsha: e246156e686ffb25d97e28bea8b01fd2213558d6,
+  summary: 'Add GH Action to gen test files, update script (#1548)', time: Wed Aug
+    31 22:47:20 2022}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 8f1034df17e87510931e46e1d6607e1d89a48921,
+  summary: Fix broken link to install instructions in READM (#1543), time: Sat Aug
+    27 01:49:30 2022}
+- {author: Cody Baker, committer: GitHub, hexsha: 09f24c530536da8722b0eeac22fdbee04666220b,
+  summary: Update conf.py (#1545), time: Fri Aug 26 20:25:53 2022}
 - {author: Ryan Ly, committer: GitHub, hexsha: 89d1c1be156ae3b60c68f73517af9b5e1fd53da5,
   summary: Delete test files generated from running sphinx gallery examples (#1517),
   time: Sun Aug 14 14:33:24 2022}
