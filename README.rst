@@ -54,6 +54,12 @@ Computing ``cloc`` statistics for all codes is time-consuming as we need to comp
     cd docs
     make html
 
+After completing the update, commit the updated data to the repo
+
+.. code-block:: bash
+
+    git commit -m "Updated code statistics data" ./data/*.yaml
+
 How to build custom analytics
 =============================
 
