@@ -138,6 +138,15 @@ html_theme_options = {
 }
 
 
+# -- Options for Latex output -------------------------------------------------
+latex_engine = 'pdflatex'
+
+# The name of an image file (relative to this directory) to place at the top
+# of the front page
+latex_logo = '_static/analytics_page_logo.png'
+
+
+# -- Functions to generate docs  -------------------------------------------
 def run_apidoc(_):
     from sphinx.ext.apidoc import main as apidoc_main
     import os
