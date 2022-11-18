@@ -10,6 +10,106 @@ from datetime import datetime, timedelta
 from .gitstats import GitHubRepoInfo, NWBGitInfo
 from .codecovstats import CodecovInfo
 
+class RenderCommitStats:
+    """
+    Helper class for rendering commit history for repos
+    """
+    COLOR_ADDITIONS = "darkgreen"
+    COLOR_DELETIONS = "darkred"
+
+    @staticmethod
+    def plot_commit_additions_and_deletions(
+            commits: pd.DataFrame,
+            repo_name: str = None,
+            xaxis_dates:bool = False,
+            bar_width: float = 0.8,
+            color_additions = COLOR_ADDITIONS,
+            color_deletions = COLOR_DELETIONS,
+            xticks_rotate: int = 90
+    ):
+        """
+        Plot the number of additions and deletions for commits as a bar plot
+
+        :param commits: Pandas DataFrame with the commits generated via GitRepo.get_commits_as_dataframe
+        :param repo_name: Name of the Git repository
+        :param xaxis_dates: Place bars by date (True) or equally spaced by order of commits (False)
+        :param bar_width: Width of the bars. When plotting with xaxis_dates=True using a narrow bar width can help
+                          avoid overlap between bars
+        :param color_additions: Color to be used for additions
+        :param color_deletions: Color to be used for deletions
+        :param xticks_rotate: Degrees to rotate x axis labels
+        :return: Tuple with the Matplotlib figure and axis used
+        """
+        fig = mpl.pyplot.figure(figsize=(12, 6))
+        ax = mpl.pyplot.gca()
+        if len(commits) == 0:
+            return fig
+        x = commits['date'][::-1].values if xaxis_dates else range(0, len(commits))
+        total_additions = np.sum(commits['additions'].astype('int'))
+        total_deletions = np.sum(commits['deletions'].astype('int'))
+        mpl.pyplot.bar(
+            x,
+            commits['additions'][::-1].astype('int'),
+            label='additions (total=%i)' % total_additions,
+            width=bar_width,
+            color=color_additions
+        )
+        mpl.pyplot.bar(
+            x,
+            -1 * commits['deletions'][::-1].astype('int'),
+            label='deletions (total=%i)' % total_deletions,
+            width=bar_width,
+            color=color_deletions
+        )
+        mpl.pyplot.xticks(x, [str(d)[:10] for d in commits['date'][::-1].values], rotation=xticks_rotate)
+        if xaxis_dates:
+            ax.xaxis_date()
+        mpl.pyplot.title("%sLines of code changed per commit" % (repo_name + ": " if repo_name else ""))
+        mpl.pyplot.ylabel("Lines of code")
+        mpl.pyplot.xlabel("Date")
+        mpl.pyplot.legend()
+        return fig, ax
+
+    @staticmethod
+    def plot_commit_cumulative_additions_and_deletions(
+            commits: pd.DataFrame,
+            repo_name: str = None,
+            color_additions=COLOR_ADDITIONS,
+            color_deletions=COLOR_DELETIONS
+    ):
+        """
+        Plot the cumulative number of additions and deletions for commits as a stacked area plot
+
+        :param commits: Pandas DataFrame with the commits generated via GitRepo.get_commits_as_dataframe(
+        :param repo_name: Name of the Git repository
+        :param color_additions: Color to be used for additions
+        :param color_deletions: Color to be used for deletions
+        :return: Tuple with the Matplotlib figure and axis used
+        """
+        fig = mpl.pyplot.figure(figsize=(12, 6))
+        ax = mpl.pyplot.gca()
+        if len(commits) == 0:
+            return fig
+        total_additions = np.sum(commits['additions'].astype('int'))
+        total_deletions = np.sum(commits['deletions'].astype('int'))
+        mpl.pyplot.stackplot(
+            commits['date'][::-1].values,
+            np.cumsum(commits['additions']).values.astype('int'),
+            labels=['additions (total=%i)' % total_additions,],
+            colors=[color_additions]
+        )
+        mpl.pyplot.stackplot(
+            commits['date'][::-1].values,
+            -1 * np.cumsum(commits['deletions']).values.astype('int'),
+            labels=['deletions (total=%i)' % total_deletions,],
+            colors=[color_deletions]
+        )
+        mpl.pyplot.title("%sCumulative lines of code changed" % (repo_name + ": " if repo_name else ""))
+        mpl.pyplot.ylabel("Lines of code")
+        mpl.pyplot.xlabel("Date")
+        mpl.pyplot.legend()
+        return fig, ax
+
 
 class RenderReleaseTimeline:
     """
