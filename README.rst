@@ -13,7 +13,7 @@ How to use nwb-project-analytics (the docs)
 
 All main NWB analytics are compiled automatically when building the ``docs``
 
-1. Create a virtual enf (option)
+1. Create a virtual environment (option)
 
 .. code-block:: bash:
 
@@ -39,6 +39,16 @@ All main NWB analytics are compiled automatically when building the ``docs``
     cd docs
     make html
     open build/html/index.html
+
+How to force rebuild of all figures and apidoc
+==============================================
+
+.. code-block:: bash
+
+    cd docs
+    make allclean
+
+Using the ``make allclean`` command removes all auto-generated figures and rst files in the ``docs/source`` directory (specifically ``docs/source/code_stat_pages`` and ``docs/source/nwb_project_analytics.*rst``) as well as all builds fomr ``docs/builds``. When rebuilding the docs (e.g., via ``make html``) the files will be regenerated (using the data cached in ``data/``).
 
 
 How to update the ``data/``
