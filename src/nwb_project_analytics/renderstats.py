@@ -131,10 +131,13 @@ class RenderCommitStats:
         :param color_additions: Color to be used for additions
         :param color_deletions: Color to be used for deletions
         :param xticks_rotate: Degrees to rotate x axis labels
+        :param start_date: Optional start date to be rendered in the title
+        :param end_date: Optional end data to be rendered in the title
         """
-        repos = [repo.repo if isinstance(repo, GitRepo) else repo for repo in commits.keys()]
-        additions = np.array([np.sum(cdf['additions']) for repo, cdf in commits_dfs.items()])
-        deletions = np.array([np.sum(cdf['deletions']) for repo, cdf in commits_dfs.items()])
+        # list of repo names. The keys in commits dict are either string or GitHub repo objects
+        repos = [repo if isinstance(repo, str) else repo.repo for repo in commits.keys()]
+        additions = np.array([np.sum(cdf['additions']) for repo, cdf in commits.items()])
+        deletions = np.array([np.sum(cdf['deletions']) for repo, cdf in commits.items()])
 
         fig = mpl.pyplot.figure(figsize=(12, 6))
         ax = mpl.pyplot.gca()
