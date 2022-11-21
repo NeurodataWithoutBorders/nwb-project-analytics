@@ -298,7 +298,7 @@ def create_codestat_pages(out_dir: str,
     )
     #  show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
     code_order = [codename for codename in list(sorted(summary_stats['sizes'].keys()))
-                 if codename not in NWBGitInfo.NWB1_GIT_REPOS]
+                  if codename not in NWBGitInfo.NWB1_GIT_REPOS]
     # Collect the figures generated for each code
     code_figures = {repo_name: OrderedDict() for repo_name in code_order}
 
