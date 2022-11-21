@@ -61,6 +61,7 @@ class RenderCommitStats:
             width=bar_width,
             color=color_deletions
         )
+        # use str(d)[:10] here because github uses numpy.datetime64 not standard python datetime
         mpl.pyplot.xticks(x, [str(d)[:10] for d in commits['date'][::-1].values], rotation=xticks_rotate)
         if xaxis_dates:
             ax.xaxis_date()
@@ -107,6 +108,60 @@ class RenderCommitStats:
         mpl.pyplot.title("%sCumulative lines of code changed" % (repo_name + ": " if repo_name else ""))
         mpl.pyplot.ylabel("Lines of code")
         mpl.pyplot.xlabel("Date")
+        mpl.pyplot.legend()
+        return fig, ax
+
+    @staticmethod
+    def plot_commit_additions_and_deletions_summary(
+            commits: dict,
+            bar_width: float = 0.8,
+            color_additions=COLOR_ADDITIONS,
+            color_deletions=COLOR_DELETIONS,
+            xticks_rotate: int = 45,
+            start_date: datetime = None,
+            end_date: datetime = None
+    ):
+        """
+        Plot bar chart with total additions and deletions for a collection of repositories
+
+        :param commits: Dict where the keys are the nwb_project_analytics.gitstats.GitRepo objects
+                        (or the string name of the repo) and the values are pandas DataFrames with
+                        the commits generated via GitRepo.get_commits_as_dataframe
+        :param bar_width: Width of the bars
+        :param color_additions: Color to be used for additions
+        :param color_deletions: Color to be used for deletions
+        :param xticks_rotate: Degrees to rotate x axis labels
+        """
+        repos = [repo.repo if isinstance(repo, GitRepo) else repo for repo in commits.keys()]
+        additions = np.array([np.sum(cdf['additions']) for repo, cdf in commits_dfs.items()])
+        deletions = np.array([np.sum(cdf['deletions']) for repo, cdf in commits_dfs.items()])
+
+        fig = mpl.pyplot.figure(figsize=(12, 6))
+        ax = mpl.pyplot.gca()
+        x = range(len(repos))
+        mpl.pyplot.bar(
+            x,
+            additions,
+            label='additions (total=%i)' % np.sum(additions),
+            width=bar_width,
+            color=color_additions
+        )
+        mpl.pyplot.bar(
+            x,
+            -1 * deletions,
+            label='deletions (total=%i)' % (-1 * np.sum(deletions)),
+            width=bar_width,
+            color=color_deletions
+        )
+        mpl.pyplot.xticks(x, repos, rotation=xticks_rotate)
+        title = "Lines of code changed per repository"
+        if start_date is not None:
+            start_str = start_date.strftime("%Y-%m-%d")
+            end_str = end_date.strftime("%Y-%m-%d") if end_date else ""
+            title += " (%s - %s)" % (start_str, end_str)
+        mpl.pyplot.title(title)
+        mpl.pyplot.ylabel("Lines of code")
+        mpl.pyplot.xlabel("Repository")
         mpl.pyplot.legend()
         return fig, ax
 
