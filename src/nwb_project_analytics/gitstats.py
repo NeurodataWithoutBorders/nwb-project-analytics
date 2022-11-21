@@ -164,7 +164,7 @@ class GitRepo(NamedTuple):
         custom_issue_attrs = ["user_login", "response_time", "time_to_response",
                               "days_to_response", "is_enhancement", "is_help_wanted"]
         issues = github_obj.get_repo("%s/%s" % (self.owner, self.repo)).get_issues(since=since, state="all")
-        curr_df = pd.DataFrame(columns=(issue_attrs + custom_issue_attrs + ["issue",]))
+        curr_df = pd.DataFrame(columns=(issue_attrs + custom_issue_attrs + ["issue", ]))
         # Convert bool-type columns to bool to avoid Pandas deprecation warnings
         curr_df.is_enhancement = curr_df.is_enhancement.astype("bool")
         curr_df.is_help_wanted = curr_df.is_help_wanted.astype("bool")
@@ -180,8 +180,10 @@ class GitRepo(NamedTuple):
             curr_row["issue"] = issue
             curr_row["response_time"] = pd.NaT
             curr_row["user_login"] = curr_row["user"].login
-            curr_row["is_enhancement"] = np.any([label.name == "enhancement" for label in curr_row["labels"]]).astype("bool")
-            curr_row["is_help_wanted"] = np.any([label.name == "help wanted" for label in curr_row["labels"]]).astype("bool")
+            curr_row["is_enhancement"] = np.any([label.name == "enhancement"
+                                                 for label in curr_row["labels"]]).astype("bool")
+            curr_row["is_help_wanted"] = np.any([label.name == "help wanted"
+                                                 for label in curr_row["labels"]]).astype("bool")
             curr_row["response_time"] = self.compute_issue_time_of_first_response(issue)
             curr_row["time_to_response"] = pd.to_timedelta(curr_row["response_time"] - curr_row["created_at"])
             curr_row["days_to_response"] = curr_row["time_to_response"] / np.timedelta64(1, "D")
@@ -221,6 +223,7 @@ class GitRepo(NamedTuple):
             curr_row["commit"] = commit
             curr_df = pd.concat([curr_df, pd.DataFrame([curr_row])], axis=0, join="outer", ignore_index=True)
         return curr_df
+
 
 class GitRepos(OrderedDict):
     """Dict where the keys are names of codes and the values are GitRepo objects"""
@@ -303,114 +306,132 @@ class NWBGitInfo:
 
     GIT_REPOS = GitRepos(
         [("PyNWB",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="pynwb",
-                  mainbranch="dev",
-                  docs="https://pynwb.readthedocs.io",
-                  logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/pynwb/dev/docs/source/figures/logo_pynwb.png")),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="pynwb",
+              mainbranch="dev",
+              docs="https://pynwb.readthedocs.io",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/pynwb/dev/docs/source/figures/logo_pynwb.png")),  # noqa 501
          ("MatNWB",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="matnwb",
-                  mainbranch="master",
-                  docs="https://neurodatawithoutborders.github.io/matnwb/",
-                  logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/matnwb/master/logo/logo_matnwb.png")),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="matnwb",
+              mainbranch="master",
+              docs="https://neurodatawithoutborders.github.io/matnwb/",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/matnwb/master/logo/logo_matnwb.png")),
          ("NWBWidgets",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="nwb-jupyter-widgets",
-                  mainbranch="master",
-                  docs=None,
-                  logo=None)),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-jupyter-widgets",
+              mainbranch="master",
+              docs=None,
+              logo=None)),
          ("NWBInspector",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="nwbinspector",
-                  mainbranch="dev",
-                  docs="https://nwbinspector.readthedocs.io",
-                  logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwbinspector/dev/docs/logo/logo.png")),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwbinspector",
+              mainbranch="dev",
+              docs="https://nwbinspector.readthedocs.io",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwbinspector/dev/docs/logo/logo.png")),
          ("Hackathons",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="nwb_hackathons",
-                  mainbranch="main",
-                  docs="https://neurodatawithoutborders.github.io/nwb_hackathons/",
-                  logo=None)),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb_hackathons",
+              mainbranch="main",
+              docs="https://neurodatawithoutborders.github.io/nwb_hackathons/",
+              logo=None)),
          ("NWB_Overview",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="nwb-overview",
-                  mainbranch="main",
-                  docs="https://nwb-overview.readthedocs.io",
-                  logo=None)),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-overview",
+              mainbranch="main",
+              docs="https://nwb-overview.readthedocs.io",
+              logo=None)),
          ("NWB_Schema",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="nwb-schema",
-                  mainbranch="dev",
-                  docs="https://nwb-schema.readthedocs.io",
-                  logo=None)),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-schema",
+              mainbranch="dev",
+              docs="https://nwb-schema.readthedocs.io",
+              logo=None)),
          ("NWB_Schema_Language",
-          GitRepo(owner="NeurodataWithoutBorders",
-                  repo="nwb-schema-language",
-                  mainbranch="main",
-                  docs="https://schema-language.readthedocs.io",
-                  logo=None)),
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-schema-language",
+              mainbranch="main",
+              docs="https://schema-language.readthedocs.io",
+              logo=None)),
          ("HDMF",
-          GitRepo(owner="hdmf-dev",
-                  repo="hdmf",
-                  mainbranch="dev",
-                  docs="https://hdmf.readthedocs.io",
-                  logo="https://raw.githubusercontent.com/hdmf-dev/hdmf/dev/docs/source/hdmf_logo.png")),
+          GitRepo(
+              owner="hdmf-dev",
+              repo="hdmf",
+              mainbranch="dev",
+              docs="https://hdmf.readthedocs.io",
+              logo="https://raw.githubusercontent.com/hdmf-dev/hdmf/dev/docs/source/hdmf_logo.png")),
          ("HDMF_Zarr",
-          GitRepo(owner="hdmf-dev",
-                  repo="hdmf-zarr",
-                  mainbranch="dev",
-                  docs="https://hdmf-zarr.readthedocs.io",
-                  logo="https://raw.githubusercontent.com/hdmf-dev/hdmf-zarr/dev/docs/source/figures/logo_hdmf_zarr.png")),
+          GitRepo(
+              owner="hdmf-dev",
+              repo="hdmf-zarr",
+              mainbranch="dev",
+              docs="https://hdmf-zarr.readthedocs.io",
+              logo="https://raw.githubusercontent.com/hdmf-dev/hdmf-zarr/dev/docs/source/figures/logo_hdmf_zarr.png")),
          ("HDMF_Common_Schema",
-          GitRepo(owner="hdmf-dev",
-                  repo="hdmf-common-schema",
-                  mainbranch="main",
-                  docs="https://hdmf-common-schema.readthedocs.io",
-                  logo=None)),
+          GitRepo(
+              owner="hdmf-dev",
+              repo="hdmf-common-schema",
+              mainbranch="main",
+              docs="https://hdmf-common-schema.readthedocs.io",
+              logo=None)),
          ("HDMF_DocUtils",
-          GitRepo(owner="hdmf-dev",
-                  repo="hdmf-docutils",
-                  mainbranch="main",
-                  docs=None,
-                  logo=None)),
+          GitRepo(
+              owner="hdmf-dev",
+              repo="hdmf-docutils",
+              mainbranch="main",
+              docs=None,
+              logo=None)),
          ("HDMF_Schema_Language",
-          GitRepo(owner="hdmf-dev",
-                  repo="hdmf-schema-language",
-                  mainbranch="main",
-                  docs="https://hdmf-schema-language.readthedocs.io/",
-                  logo=None)),
+          GitRepo(
+              owner="hdmf-dev",
+              repo="hdmf-schema-language",
+              mainbranch="main",
+              docs="https://hdmf-schema-language.readthedocs.io/",
+              logo=None)),
          ("NDX_Template",
-          GitRepo(owner="nwb-extensions",
-                  repo="ndx-template",
-                  mainbranch="main",
-                  docs="https://github.com/nwb-extensions/ndx-template#getting-started",
-                  logo=None)),
+          GitRepo(
+              owner="nwb-extensions",
+              repo="ndx-template",
+              mainbranch="main",
+              docs="https://github.com/nwb-extensions/ndx-template#getting-started",
+              logo=None)),
          ("NDX_Staged_Extensions",
-          GitRepo(owner="nwb-extensions",
-                  repo="staged-extensions",
-                  mainbranch="master",
-                  docs=None,
-                  logo=None)),
+          GitRepo(
+              owner="nwb-extensions",
+              repo="staged-extensions",
+              mainbranch="master",
+              docs=None,
+              logo=None)),
          # "NDX Webservices", "https,//github.com/nwb-extensions/nwb-extensions-webservices.git",
          ("NDX_Catalog",
-          GitRepo(owner="nwb-extensions",
-                  repo="nwb-extensions.github.io",
-                  mainbranch="main",
-                  docs="https://nwb-extensions.github.io/",
-                  logo="https://github.com/nwb-extensions/nwb-extensions.github.io/blob/main/images/ndx-logo-text.png")),
+          GitRepo(
+              owner="nwb-extensions",
+              repo="nwb-extensions.github.io",
+              mainbranch="main",
+              docs="https://nwb-extensions.github.io/",
+              logo="https://github.com/nwb-extensions/nwb-extensions.github.io/blob/main/images/ndx-logo-text.png")),
          ("NDX_Extension_Smithy",
-          GitRepo(owner="nwb-extensions",
-                  repo="nwb-extensions-smithy",
-                  mainbranch="master",
-                  docs=None,
-                  logo=None)),
+          GitRepo(
+              owner="nwb-extensions",
+              repo="nwb-extensions-smithy",
+              mainbranch="master",
+              docs=None,
+              logo=None)),
          ("NeuroConv",
-          GitRepo(owner="catalystneuro",
-                  repo="neuroconv",
-                  mainbranch="main",
-                  docs="https://neuroconv.readthedocs.io",
-                  logo=None))
+          GitRepo(
+              owner="catalystneuro",
+              repo="neuroconv",
+              mainbranch="main",
+              docs="https://neuroconv.readthedocs.io",
+              logo=None))
          ])
     """
     Dictionary with main NWB git repositories. The values are GitRepo tuples with the owner and repo name.
@@ -439,7 +460,6 @@ class NWBGitInfo:
         Dictionary with the main NWB git repos related the user APIs.
         """
         return GitRepos([(k, cls.GIT_REPOS[k]) for k in ["PyNWB", "HDMF", "MatNWB", "NWB_Schema"]])
-
 
     CORE_DEVELOPERS = ["rly", "bendichter", "oruebel", "ajtritt", "ln-vidrio", "mavaylon1", "CodyCBakerPhD"]
     """
