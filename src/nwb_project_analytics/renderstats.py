@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 from .gitstats import GitHubRepoInfo, NWBGitInfo
 from .codecovstats import CodecovInfo
 
+
 class RenderCommitStats:
     """
     Helper class for rendering commit history for repos
@@ -21,10 +22,10 @@ class RenderCommitStats:
     def plot_commit_additions_and_deletions(
             commits: pd.DataFrame,
             repo_name: str = None,
-            xaxis_dates:bool = False,
+            xaxis_dates: bool = False,
             bar_width: float = 0.8,
-            color_additions = COLOR_ADDITIONS,
-            color_deletions = COLOR_DELETIONS,
+            color_additions: str = COLOR_ADDITIONS,
+            color_deletions: str = COLOR_DELETIONS,
             xticks_rotate: int = 90
     ):
         """
@@ -96,13 +97,13 @@ class RenderCommitStats:
         mpl.pyplot.stackplot(
             commits['date'][::-1].values,
             np.cumsum(commits['additions']).values.astype('int'),
-            labels=['additions (total=%i)' % total_additions,],
+            labels=['additions (total=%i)' % total_additions, ],
             colors=[color_additions]
         )
         mpl.pyplot.stackplot(
             commits['date'][::-1].values,
             -1 * np.cumsum(commits['deletions']).values.astype('int'),
-            labels=['deletions (total=%i)' % total_deletions,],
+            labels=['deletions (total=%i)' % total_deletions, ],
             colors=[color_deletions]
         )
         mpl.pyplot.title("%sCumulative lines of code changed" % (repo_name + ": " if repo_name else ""))
@@ -131,10 +132,13 @@ class RenderCommitStats:
         :param color_additions: Color to be used for additions
         :param color_deletions: Color to be used for deletions
         :param xticks_rotate: Degrees to rotate x axis labels
+        :param start_date: Optional start date to be rendered in the title
+        :param end_date: Optional end data to be rendered in the title
         """
-        repos = [repo.repo if isinstance(repo, GitRepo) else repo for repo in commits.keys()]
-        additions = np.array([np.sum(cdf['additions']) for repo, cdf in commits_dfs.items()])
-        deletions = np.array([np.sum(cdf['deletions']) for repo, cdf in commits_dfs.items()])
+        # list of repo names. The keys in commits dict are either string or GitHub repo objects
+        repos = [repo if isinstance(repo, str) else repo.repo for repo in commits.keys()]
+        additions = np.array([np.sum(cdf['additions']) for repo, cdf in commits.items()])
+        deletions = np.array([np.sum(cdf['deletions']) for repo, cdf in commits.items()])
 
         fig = mpl.pyplot.figure(figsize=(12, 6))
         ax = mpl.pyplot.gca()

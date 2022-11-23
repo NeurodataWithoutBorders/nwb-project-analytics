@@ -67,6 +67,8 @@ def create_toolstat_page(
     tool_infolist.append("Source: %s  (main branch = ``%s``)" % (repo.github_path, repo.mainbranch))
     if repo.docs is not None:
         tool_infolist.append("Docs: %s" % repo.docs)
+    if repo.logo is not None:
+        tool_infolist.append("Logo: %s" % repo.logo)
     if len(tool_infolist) > 0:
         tool_codestats_rst.add_subsection("Additional Information")
         tool_codestats_rst.add_list(content=tool_infolist)
@@ -298,7 +300,7 @@ def create_codestat_pages(out_dir: str,
     )
     #  show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
     code_order = [codename for codename in list(sorted(summary_stats['sizes'].keys()))
-                 if codename not in NWBGitInfo.NWB1_GIT_REPOS]
+                  if codename not in NWBGitInfo.NWB1_GIT_REPOS]
     # Collect the figures generated for each code
     code_figures = {repo_name: OrderedDict() for repo_name in code_order}
 
