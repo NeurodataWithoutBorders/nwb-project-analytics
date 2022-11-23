@@ -67,6 +67,8 @@ def create_toolstat_page(
     tool_infolist.append("Source: %s  (main branch = ``%s``)" % (repo.github_path, repo.mainbranch))
     if repo.docs is not None:
         tool_infolist.append("Docs: %s" % repo.docs)
+    if repo.logo is not None:
+        tool_infolist.append("Logo: %s" % repo.logo)
     if len(tool_infolist) > 0:
         tool_codestats_rst.add_subsection("Additional Information")
         tool_codestats_rst.add_list(content=tool_infolist)
