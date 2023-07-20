@@ -48,7 +48,7 @@ How to force rebuild of all figures and apidoc
     cd docs
     make allclean
 
-Using the ``make allclean`` command removes all auto-generated figures and rst files in the ``docs/source`` directory (specifically ``docs/source/code_stat_pages`` and ``docs/source/nwb_project_analytics.*rst``) as well as all builds fomr ``docs/builds``. When rebuilding the docs (e.g., via ``make html``) the files will be regenerated (using the data cached in ``data/``).
+Using the ``make allclean`` command removes all auto-generated figures and rst files in the ``docs/source`` directory (specifically ``docs/source/code_stat_pages`` and ``docs/source/nwb_project_analytics.*rst``) as well as all builds from ``docs/builds``. When rebuilding the docs (e.g., via ``make html``) the files will be regenerated (using the data cached in ``data/``).
 
 
 How to update the ``data/``
@@ -69,6 +69,11 @@ After completing the update, commit the updated data to the repo
 .. code-block:: bash
 
     git commit -m "Updated code statistics data" ./data/*.yaml
+
+How to add a new code
+=====================
+
+To add a new entry to the ``NWBGitInfo.GIT_REPOS`` dictionary in ``src/nwb_project_analytics/gitstats.py``. The dictionary is used to track all main NWB repositories and stores for each repo a `` GitRepo`` object with basic metadata about the code (e.g., the location of the repo, name of the main branch, etc.). When adding a new code, all statistics need to be updated following the instructions above on **How to update the ``data/``**.
 
 How to build custom analytics
 =============================
