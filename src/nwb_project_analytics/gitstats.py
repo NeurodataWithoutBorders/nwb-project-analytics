@@ -129,6 +129,9 @@ class GitRepo(NamedTuple):
     logo: str = None
     """URL with the PNG of the logo for the repository"""
 
+    startdate: datetime = None
+    """Some repos start from forks so we want to track statistics starting from then rather than the begining of time"""
+
     @property
     def github_path(self):
         return "https://github.com/%s/%s.git" % (self.owner, self.repo)
@@ -276,6 +279,11 @@ class NWBGitInfo:
     which based on https://api.github.com/repos/nwb-extensions/nwb-extensions-smithy is 2019-04-25T20:56:02Z
     """
 
+    NWB_GUIDE_START_DATE = datetime(2022, 11, 21)
+    """
+    NWB GUIDE was forked from SODA so we want to start tracking stats starting from that date
+    """
+
     NWB2_START_DATE = datetime(2016, 8, 31)
     """
     Date of the first release of PyNWB on the NWB GitHub. While some initial work was ongoing before that
@@ -333,6 +341,14 @@ class NWBGitInfo:
               mainbranch="dev",
               docs="https://nwbinspector.readthedocs.io",
               logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwbinspector/dev/docs/logo/logo.png")),
+         ("NWB_GUIDE",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-guide",
+              mainbranch="main",
+              docs="https://github.com/NeurodataWithoutBorders/nwb-guide",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwb-guide/main/src/renderer/assets/img/logo-guide-draft-transparent-tight.png",
+              startdate=NWB_GUIDE_START_DATE)),
          ("Hackathons",
           GitRepo(
               owner="NeurodataWithoutBorders",
@@ -367,7 +383,8 @@ class NWBGitInfo:
               repo="hdmf",
               mainbranch="dev",
               docs="https://hdmf.readthedocs.io",
-              logo="https://raw.githubusercontent.com/hdmf-dev/hdmf/dev/docs/source/hdmf_logo.png")),
+              logo="https://raw.githubusercontent.com/hdmf-dev/hdmf/dev/docs/source/hdmf_logo.png",
+              startdate=HDMF_START_DATE)),
          ("HDMF_Zarr",
           GitRepo(
               owner="hdmf-dev",
@@ -424,7 +441,8 @@ class NWBGitInfo:
               repo="nwb-extensions-smithy",
               mainbranch="master",
               docs=None,
-              logo=None)),
+              logo=None,
+              startdate=NWB_EXTENSION_SMITHY_START_DATE)),
          ("NeuroConv",
           GitRepo(
               owner="catalystneuro",
@@ -553,7 +571,7 @@ class GitHubRepoInfo:
         # Return cached results if available
         if use_cache and self.__releases is not None:
             return self.__releases
-        # Get restuls from GitGub
+        # Get results from GitGub
         per_page = 100
         r = requests.get("https://api.github.com/repos/%s/%s/releases?per_page=%s" %
                          (self.repo.owner, self.repo.repo, str(per_page)))
