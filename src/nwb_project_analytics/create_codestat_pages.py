@@ -298,6 +298,8 @@ def create_codestat_pages(out_dir: str,
         write_cache=cache_results,
         clean_source_dir=True
     )
+    release_timelines = git_code_stats.release_timelines
+
     #  show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
     code_order = [codename for codename in list(sorted(summary_stats['sizes'].keys()))
                   if codename not in NWBGitInfo.NWB1_GIT_REPOS]
@@ -384,7 +386,7 @@ def create_codestat_pages(out_dir: str,
             image_path="releases_timeline_%s.png" % repo_name,
             alt="Release times: %s" % repo_name,
             width="100%")
-
+    """
     # 3.6 Code coverage stats for main repos
     codecov_nwb_summary_figure = __create_nwb_codecov_summary_plot(
         out_dir=out_dir,
@@ -392,6 +394,7 @@ def create_codestat_pages(out_dir: str,
 
     # 3.7 Code coverage stats per repo
     for repo_name in code_order:
+        print("HERE0", repo_name)
         codecov_commits = CodecovInfo.get_pulls_or_commits(
                 NWBGitInfo.GIT_REPOS[repo_name],
                 key='commits',
@@ -400,6 +403,8 @@ def create_codestat_pages(out_dir: str,
         if len(codecov_commits) > 0:
             if print_status:
                 PrintHelper.print("PLOTTING: test_coverage_%s" % repo_name, PrintHelper.BOLD)
+            print(codecov_commits)
+            print("HERE1")
             _ = RenderCodecovInfo.plot_codecov_individual(
                 codecovs={repo_name: codecov_commits},
                 plot_xlim=None,
@@ -407,6 +412,7 @@ def create_codestat_pages(out_dir: str,
                 figsize=(14, 6),
                 title="Test Coverage: %s" % repo_name
             )
+            print("HERE2")
             plt.savefig(os.path.join(out_dir, 'test_coverage_%s.pdf' % repo_name))
             plt.savefig(os.path.join(out_dir, 'test_coverage_%s.png' % repo_name), dpi=300)
             plt.close()
@@ -416,6 +422,8 @@ def create_codestat_pages(out_dir: str,
                 width="100%")
         else:
             PrintHelper.print("SKIPPING: test_coverage_%s" % repo_name, PrintHelper.BOLD + PrintHelper.OKBLUE)
+    """
+    codecov_nwb_summary_figure=None
 
     # 4. Create the RST document
     codestats_rst = __create_nwb_codestat_summary_rst(

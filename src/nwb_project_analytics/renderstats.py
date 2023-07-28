@@ -603,11 +603,15 @@ class RenderClocStats:
                            for i, x in enumerate(evenly_spaced_interval)}
         # Plot the per-language size statistics
         curr_df = per_repo_lang_stats[repo_name].copy()
-        ax = curr_df.plot.area(
+        # TODO: Area plot does not support step style. Insert [x[i], y[i+1]] after each point to avoid interpolation of
+        #       CLOC data between data points that are far apart. Same is true for plot_reposize_code_comment_blank
+        #       but there it is less of an issue because we already align that data with the common time axis
+        ax = curr_df.plot(  #.area(
             figsize=(18, 10) if figsize is None else figsize,
             stacked=True,
-            linewidth=1,
+            linewidth=2,
             fontsize=fontsize,
+            drawstyle="steps-post",
             color=[language_colors[lang] for lang in curr_df.columns]
         )
         # Adjust the labels
@@ -649,10 +653,11 @@ class RenderClocStats:
         curr_df = pd.DataFrame.from_dict({'code': summary_stats['codes'][repo_name],
                                           'blank': summary_stats['blanks'][repo_name],
                                           'comment': summary_stats['comments'][repo_name]})
-        ax = curr_df.plot.area(
+        ax = curr_df.plot( #.area(
             figsize=(18, 10),
             stacked=True,
-            linewidth=1,
+            linewidth=2,
+            drawstyle="steps-post",
             fontsize=16)
         mpl.pyplot.legend(loc=2, prop={'size': 16})
         mpl.pyplot.ylabel('Lines of Code (CLOC)', fontsize=16)

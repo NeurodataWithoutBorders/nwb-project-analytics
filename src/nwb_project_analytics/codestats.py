@@ -9,6 +9,7 @@ import shutil
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from .gitstats import GitHubRepoInfo
 
 
 class GitCodeStats:
@@ -42,18 +43,23 @@ class GitCodeStats:
 
 
     """
-    def __init__(self, output_dir):
+    def __init__(self, output_dir:str,
+                 git_paths: dict = None):
         """
         :param output_dir: Path to the directory where outputs are being stored
+        :param git_paths: Dict of strings with the keys being the name of the tool and the values being
+                          the git URL, e.g,. 'https://github.com/NeurodataWithoutBorders/pynwb.git'.
         """
-        self.git_paths = {}
+        self.git_paths = git_paths if git_paths is not None else {}
         self.output_dir = output_dir
         self.source_dir = os.path.join(output_dir, 'src')
         self.cache_file_cloc = os.path.join(self.output_dir, 'cloc_stats.yaml')
         self.cache_file_commits = os.path.join(self.output_dir, 'commit_stats.yaml')
         self.cache_git_paths = os.path.join(self.output_dir, 'git_paths.yaml')
+        self.cache_release_timeline = os.path.join(self.output_dir, 'release_timelines.yaml')
         self.commit_stats = None
         self.cloc_stats = None
+        self.release_timelines = None
 
     @staticmethod
     def from_nwb(
@@ -96,20 +102,31 @@ class GitCodeStats:
                  2) dict with the results form GitCodeStats.compute_summary_stats
                  3) dict with language statistics computed via GitCodeStats.compute_language_stats
                  4) list of all languages used
+                 5) dict with the release date and timeline statistics
         """
         from nwb_project_analytics.gitstats import NWBGitInfo, GitRepos
 
         # Load results from the file cache if available
+        all_nwb_repos = GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS)
         if GitCodeStats.cached(cache_dir) and read_cache:
             git_code_stats = GitCodeStats.from_cache(cache_dir)
         else:
-            git_paths = {k: v.github_path for k, v in
-                         GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS).items()}
-            git_code_stats = GitCodeStats(output_dir=cache_dir)
-            git_code_stats.compute_code_stats(git_paths=git_paths,
+            # Compute git code statistics
+            git_code_stats = GitCodeStats(
+                output_dir=cache_dir,
+                git_paths = {k: v.github_path for k, v in all_nwb_repos.items()}
+            )
+            git_code_stats.compute_code_stats(git_paths=git_code_stats.git_paths,
                                               cloc_path=cloc_path,
-                                              cache_results=write_cache,
                                               clean_source_dir=clean_source_dir)
+            # Compute the release timeline
+            all_github_repo_infos = {k: GitHubRepoInfo(r) for k, r in all_nwb_repos.items()}
+            git_code_stats.release_timelines ={}
+            for k, r in all_github_repo_infos.items():
+                git_code_stats.release_timelines['k'] = r.get_release_names_and_dates()
+            # cache the results
+            if write_cache:
+                git_code_stats.write_to_cache()
 
         # Define our reference date range depending on whether we include NWB 1 in the plots or not
         date_range = pd.date_range(
@@ -125,27 +142,39 @@ class GitCodeStats:
         languages_used_all = git_code_stats.get_languages_used(ignore_lang)
         per_repo_lang_stats = git_code_stats.compute_language_stats(ignore_lang)
 
-        # Clean up HDMF summary statistic results results to mark start date of HDMF.
-        # The HDMF repo was extracted from PyNWB. To avoid miscounting we'll set
-        # all results before the start data for HDMF to 0
-        # Set all LOC values prior to the given date to 0
-        hdmf_start_date = NWBGitInfo.HDMF_START_DATE.strftime("%Y-%m-%d")
-        for k in summary_stats.keys():
-            summary_stats[k]['HDMF'][:hdmf_start_date] = 0
-        # also update the per-language stats for HDMF
-        datemask = (per_repo_lang_stats['HDMF'].index < hdmf_start_date)
-        per_repo_lang_stats['HDMF'].loc[datemask] = 0
-
-        # Clean up NDX_ExtensionSmithy results to mark start date for the extension smithy
-        # Set all LOC values prior to the given data to 0
-        extension_smithy_start_date = NWBGitInfo.NWB_EXTENSION_SMITHY_START_DATE.strftime("%Y-%m-%d")
-        for k in summary_stats.keys():
-            summary_stats[k]['NDX_Extension_Smithy'][:extension_smithy_start_date] = 0
-        # also update the per-language stats for the extension smithy
-        datemask = (per_repo_lang_stats['NDX_Extension_Smithy'].index < hdmf_start_date)
-        per_repo_lang_stats['NDX_Extension_Smithy'].loc[datemask] = 0
+        # Clean up code statistics for repos that have a start date
+        for repo_key in git_code_stats.git_paths.keys():
+            repo_startdate = all_nwb_repos[repo_key].startdate
+            # If a startdate is specified then clean up the statistics by setting
+            # values before the startdate to 0. This is the case, e.g., when a
+            # repo was build from a forke from a previous code and we want to capture the
+            # statistics for the new code (e.g., HDMF was derived from PyNWB or
+            # NWB GUIDE built on SODA etc.)
+            if repo_startdate is not None:
+                # Set all LOC values prior to the given date to 0
+                for k in summary_stats.keys():
+                    summary_stats[k][repo_key][:repo_startdate] = 0
+                # also update the per-language stats for the repo
+                datemask = (per_repo_lang_stats[repo_key].index < repo_startdate)
+                per_repo_lang_stats[repo_key].loc[datemask] = 0
 
         return git_code_stats, summary_stats, per_repo_lang_stats, languages_used_all
+
+    def write_to_cache(self):
+        """Save the stats to YAML"""
+        print("Caching results...")  # noqa T001
+        print("saving %s" % self.cache_file_cloc)  # noqa T001
+        with open(self.cache_file_cloc, 'w') as outfile:
+            yaml.dump(self.cloc_stats, outfile)
+        print("saving  %s" % self.cache_file_commits)  # noqa T001
+        with open(self.cache_file_commits, 'w') as outfile:
+            yaml.dump(self.commit_stats, outfile)
+        print("saving %s" % self.cache_git_paths)  # noqa T001
+        with open(self.cache_git_paths, 'w') as outfile:
+            yaml.dump(self.git_paths, outfile)
+        print("saving %s" % self.cache_release_timeline)  # noqa T001
+        with open(self.cache_release_timeline, 'w') as outfile:
+            yaml.dump(self.release_timelines, outfile)
 
     @staticmethod
     def from_cache(output_dir):
@@ -162,10 +191,12 @@ class GitCodeStats:
             print("Loading cached results: %s" % re.cache_file_commits)  # noqa T001
             with open(re.cache_file_commits) as f:
                 re.commit_stats = yaml.safe_load(f)
-
             print("Loading cached results: %s" % re.cache_git_paths)  # noqa T001
             with open(re.cache_git_paths) as f:
                 re.git_paths = yaml.safe_load(f)
+            print("Loading cached results: %s" % re.cache_release_timeline)  # noqa T001
+            with open(re.cache_release_timeline) as f:
+               re.release_timelines = yaml.safe_load(f)
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
@@ -179,9 +210,7 @@ class GitCodeStats:
 
     def compute_code_stats(
             self,
-            git_paths: str,
             cloc_path: str,
-            cache_results: bool = True,
             clean_source_dir: bool = False
     ):
         """
@@ -194,19 +223,14 @@ class GitCodeStats:
 
         WARNING: This function calls self.clean_outdirs. Any previously cached results will be lost!
 
-
-        :param git_paths: Dict of strings with the keys being the name of the tool and the values being
-                          the git URL, e.g,. 'https://github.com/NeurodataWithoutBorders/pynwb.git'.
         :param cloc_path: Path to the cloc command for running cloc stats
         :param load_cached_results: Boolean indicating whether results should be loaded from cache if possible or
                                     if the cache should be cleaned and results recomputed. NOTE: Setting to false
                                     will lead to calling clean_outdir to clean up results.
         :type load_cached_results: bool
-        :param cache_results: Bool indicating whether to cache results as YAML to self.output_dir
         :param clean_source_dir: Bool indicating whether to remove self.source_dir when finished
         :return: None. The function initializes self.commit_stats and self.cloc_stats
         """
-        self.git_paths = git_paths
         # Clean and create output directory
         self.clean_outdirs(output_dir=self.output_dir,
                            source_dir=self.source_dir)
@@ -224,18 +248,6 @@ class GitCodeStats:
                 output_dir=self.output_dir)
             self.commit_stats[name] = commit_res
             self.cloc_stats[name] = cloc_res
-        # Cache the results if requested
-        print("Caching results...")  # noqa T001
-        if cache_results:
-            print("saving %s" % self.cache_file_cloc)  # noqa T001
-            with open(self.cache_file_cloc, 'w') as outfile:
-                yaml.dump(self.cloc_stats, outfile)
-            print("saving  %s" % self.cache_file_commits)  # noqa T001
-            with open(self.cache_file_commits, 'w') as outfile:
-                yaml.dump(self.commit_stats, outfile)
-            print("saving %s" % self.cache_git_paths)  # noqa T001
-            with open(self.cache_git_paths, 'w') as outfile:
-                yaml.dump(self.git_paths, outfile)
         print("Clean code source dir %s ..." % self.source_dir)
         if clean_source_dir:
             if os.path.exists(self.source_dir):
@@ -443,9 +455,12 @@ class GitCodeStats:
         results.
         """
         command = "%s --yaml --report-file=%s %s" % (cloc_path, out_file, src_dir)
-        os.system(command)
-        with open(out_file) as f:
-            res = yaml.safe_load(f)
+        try:
+            os.system(command)
+            with open(out_file) as f:
+                res = yaml.safe_load(f)
+        except: # FileNotFoundError:
+            res = None
         return res
 
     @staticmethod
@@ -454,8 +469,12 @@ class GitCodeStats:
         :param repo: The git repository to process
         :type repo: git.repo.base.Repo
 
-        :returns: List of dicts with information about all commits. The list
-                  is sorted in time from most current [0] to oldest [-1]
+        :returns: The function returns 2 elements, commit_stats and cloc_stats.
+                  commit_stats is a list of dicts with information about all commits.
+                  The list is sorted in time from most current [0] to oldest [-1].
+                  cloc_stats is a list of dicts with CLOC code statistics. CLOC is
+                  run only on the last commit on each day to reduce
+                  the number of codecov runs and speed-up computation.
         """
         # Get hexsha and data of all commits
         re_commit_stats = []
@@ -484,8 +503,10 @@ class GitCodeStats:
                     cloc_path=cloc_path,
                     src_dir=repo.working_dir,
                     out_file=cloc_yaml)
-                os.remove(cloc_yaml)  # Remove the yaml file, we don't need it
-                re_cloc_stats.append(cloc_res)
+                if os.path.exists(cloc_yaml):
+                    os.remove(cloc_yaml)  # Remove the yaml file, we don't need it
+                if cloc_res['cloc'] is not None:
+                    re_cloc_stats.append(cloc_res)
             # drop the commit from the dict to make sure we can save things in YAML
             commit.pop('commit', None)
         return re_commit_stats, re_cloc_stats

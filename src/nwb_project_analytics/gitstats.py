@@ -560,7 +560,8 @@ class GitHubRepoInfo:
 
         NOTE: GitHub uses pageination. Here we set the number of items per page to 100
                which should usually fit all releases, but in the future we may need to
-               iterate over pages to get all the releases not just the latests 100
+               iterate over pages to get all the releases not just the latest 100.
+               Possible implementation https://gist.github.com/victorbordo/5581fdfb89ed93bf3eb2b478529b9e38
 
         :param use_cache: If set to True then return the chached results if computed previously.
                           In this case the per_page parameter will be ignored
