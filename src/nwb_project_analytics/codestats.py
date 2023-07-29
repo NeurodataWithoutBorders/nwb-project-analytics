@@ -116,8 +116,7 @@ class GitCodeStats:
                 output_dir=cache_dir,
                 git_paths={k: v.github_path for k, v in all_nwb_repos.items()}
             )
-            git_code_stats.compute_code_stats(git_paths=git_code_stats.git_paths,
-                                              cloc_path=cloc_path,
+            git_code_stats.compute_code_stats(cloc_path=cloc_path,
                                               clean_source_dir=clean_source_dir)
             if write_cache:
                 git_code_stats.write_to_cache()
