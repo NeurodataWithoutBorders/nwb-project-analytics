@@ -1,4 +1,4 @@
-name: Check Sphinx external links
+name: Build docs from cached data
 on:
   pull_request:
   schedule:
