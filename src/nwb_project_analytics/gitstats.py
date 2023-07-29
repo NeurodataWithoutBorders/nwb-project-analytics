@@ -453,7 +453,7 @@ class NWBGitInfo:
               repo="neuroconv",
               mainbranch="main",
               docs="https://neuroconv.readthedocs.io",
-              logo=None))
+              logo="https://github.com/catalystneuro/neuroconv/blob/main/docs/img/neuroconv_logo.png"))
          ])
     """
     Dictionary with main NWB git repositories. The values are GitRepo tuples with the owner and repo name.
