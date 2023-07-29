@@ -45,3 +45,12 @@ jobs:
           cd docs
           make allclean
           make html
+
+      - name: push updated yaml to the repo
+          git --version
+          git config --global user.email "neurodatawithoutborders.appv@gmail.com"
+          git config --global user.name "NWB Bot"
+          git config --global init.defaultBranch main
+          git remote set-url origin https://x-access-token:${{ secrets.BOT_GITHUB_TOKEN }}@github.com/@{{ github.repository }}
+          git commit -m "Automatic update of the code statistics YAML files" data/*.yaml
+          git push
