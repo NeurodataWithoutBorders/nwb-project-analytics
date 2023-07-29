@@ -9,7 +9,6 @@ import shutil
 import pandas as pd
 import numpy as np
 from datetime import datetime
-from .gitstats import GitHubRepoInfo
 
 
 class GitCodeStats:
@@ -43,7 +42,8 @@ class GitCodeStats:
 
 
     """
-    def __init__(self, output_dir:str,
+    def __init__(self,
+                 output_dir: str,
                  git_paths: dict = None):
         """
         :param output_dir: Path to the directory where outputs are being stored
@@ -114,17 +114,11 @@ class GitCodeStats:
             # Compute git code statistics
             git_code_stats = GitCodeStats(
                 output_dir=cache_dir,
-                git_paths = {k: v.github_path for k, v in all_nwb_repos.items()}
+                git_paths={k: v.github_path for k, v in all_nwb_repos.items()}
             )
             git_code_stats.compute_code_stats(git_paths=git_code_stats.git_paths,
                                               cloc_path=cloc_path,
                                               clean_source_dir=clean_source_dir)
-            # Compute the release timeline
-            all_github_repo_infos = {k: GitHubRepoInfo(r) for k, r in all_nwb_repos.items()}
-            git_code_stats.release_timelines ={}
-            for k, r in all_github_repo_infos.items():
-                git_code_stats.release_timelines['k'] = r.get_release_names_and_dates()
-            # cache the results
             if write_cache:
                 git_code_stats.write_to_cache()
 
@@ -172,9 +166,6 @@ class GitCodeStats:
         print("saving %s" % self.cache_git_paths)  # noqa T001
         with open(self.cache_git_paths, 'w') as outfile:
             yaml.dump(self.git_paths, outfile)
-        print("saving %s" % self.cache_release_timeline)  # noqa T001
-        with open(self.cache_release_timeline, 'w') as outfile:
-            yaml.dump(self.release_timelines, outfile)
 
     @staticmethod
     def from_cache(output_dir):
@@ -194,9 +185,6 @@ class GitCodeStats:
             print("Loading cached results: %s" % re.cache_git_paths)  # noqa T001
             with open(re.cache_git_paths) as f:
                 re.git_paths = yaml.safe_load(f)
-            print("Loading cached results: %s" % re.cache_release_timeline)  # noqa T001
-            with open(re.cache_release_timeline) as f:
-               re.release_timelines = yaml.safe_load(f)
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
@@ -459,7 +447,7 @@ class GitCodeStats:
             os.system(command)
             with open(out_file) as f:
                 res = yaml.safe_load(f)
-        except: # FileNotFoundError:
+        except:  # FileNotFoundError:
             res = None
         return res
 

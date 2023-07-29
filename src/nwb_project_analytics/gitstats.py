@@ -1,11 +1,14 @@
 """
 Module for querying GitHub repos
 """
+import warnings
 from datetime import datetime
 from typing import NamedTuple
 import numpy as np
 import pandas as pd
 import requests
+import os
+import ruamel.yaml as yaml
 from collections import OrderedDict
 from distutils.version import LooseVersion
 
@@ -347,7 +350,8 @@ class NWBGitInfo:
               repo="nwb-guide",
               mainbranch="main",
               docs="https://github.com/NeurodataWithoutBorders/nwb-guide",
-              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwb-guide/main/src/renderer/assets/img/logo-guide-draft-transparent-tight.png",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwb-guide"
+                   "/main/src/renderer/assets/img/logo-guide-draft-transparent-tight.png",
               startdate=NWB_GUIDE_START_DATE)),
          ("Hackathons",
           GitRepo(
@@ -553,6 +557,49 @@ class GitHubRepoInfo:
         """
         self.repo = repo
         self.__releases = None
+
+    @staticmethod
+    def releases_from_nwb(
+            cache_dir: str,
+            read_cache: bool = True,
+            write_cache: bool = True):
+        from nwb_project_analytics.gitstats import NWBGitInfo, GitRepos, GitHubRepoInfo
+        all_nwb_repos = GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS)
+        return GitHubRepoInfo.collect_all_release_names_and_date(
+            repos=all_nwb_repos,
+            cache_dir=cache_dir,
+            read_cache=read_cache,
+            write_cache=write_cache)
+
+    @staticmethod
+    def collect_all_release_names_and_date(
+            repos: dict,
+            cache_dir: str,
+            read_cache: bool = True,
+            write_cache: bool = True):
+        from nwb_project_analytics.gitstats import GitHubRepoInfo
+        cache_filename = os.path.join(cache_dir, 'release_timelines.yaml')
+        is_cached = os.path.exists(cache_filename)
+
+        # Load results from the file cache if available
+        if is_cached and read_cache:
+            print("Loading cached results: %s" % cache_filename)  # noqa T001
+            with open(cache_filename) as f:
+                with warnings.catch_warnings():
+                    warnings.simplefilter('ignore', yaml.error.UnsafeLoaderWarning)
+                    release_timelines = yaml.load(f)  # using load() instead of safe_load to allow loading of tuple
+        else:
+            # Compute the release timeline
+            all_github_repo_infos = {k: GitHubRepoInfo(r) for k, r in repos.items()}
+            release_timelines = {}
+            for k, r in all_github_repo_infos.items():
+                release_timelines['k'] = r.get_release_names_and_dates()
+            # cache the results
+            if write_cache:
+                print("saving %s" % cache_filename)  # noqa T001
+                with open(cache_filename, 'w') as outfile:
+                    yaml.dump(release_timelines, outfile)
+        return release_timelines
 
     def get_releases(self, use_cache=True):
         """

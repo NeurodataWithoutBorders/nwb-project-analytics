@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from collections import OrderedDict
 
 from nwb_project_analytics.codestats import GitCodeStats
-from nwb_project_analytics.gitstats import NWBGitInfo, GitRepo
+from nwb_project_analytics.gitstats import NWBGitInfo, GitRepo, GitHubRepoInfo
 from nwb_project_analytics.codecovstats import CodecovInfo
 from nwb_project_analytics.renderstats import (
     RenderClocStats,
@@ -111,25 +111,27 @@ def __create_loc_summary_plot(
 
 
 def __create_nwb_release_timeline_summary_plot(
+        release_timelines: dict,
         out_dir: str,
         print_status: bool = True):
     """
     Internal helper function used to render the the summary plot of the release timeline
 
+    :param release_timelines: Dict where the keys are the repo names and the values are tuples with the
+           1) name of the versions and 2) dates of the versions
     :param out_dir: Output directory
     :param print_status: Print status of creation (Default=True)
     :return: RSTFigure to add to the document
     """
     if print_status:
         PrintHelper.print("PLOTTING: releases_timeline_nwb_main", PrintHelper.BOLD)
-    github_repo_infos = NWBGitInfo.GIT_REPOS.get_info_objects()
-    release_timeline_repos = OrderedDict(
-        [(k, github_repo_infos[k])
-         for k in ['PyNWB', 'HDMF', 'MatNWB', 'NWB_Schema']
-         ]
+    # filter the release timelines to only select the main repos
+    nwb_main_release_timelines = OrderedDict(
+        [(k, release_timelines[k])
+         for k in ['PyNWB', 'HDMF', 'MatNWB', 'NWB_Schema']]
     )
     RenderReleaseTimeline.plot_multiple_release_timeslines(
-        github_repo_infos=release_timeline_repos,
+        release_timelines=nwb_main_release_timelines,
         add_releases=None,  # Use default of NWBGitInfo.MISSING_RELEASE_TAGS,
         date_range=None,  # Use the default range of
         month_intervals=2,
@@ -298,7 +300,10 @@ def create_codestat_pages(out_dir: str,
         write_cache=cache_results,
         clean_source_dir=True
     )
-    release_timelines = git_code_stats.release_timelines
+    release_timelines = GitHubRepoInfo.releases_from_nwb(
+        cache_dir=data_dir,
+        read_cache=load_cached_results,
+        write_cache=cache_results)
 
     #  show all NWB2 codes in alphabetical order (and ignore NWB1 codes)
     code_order = [codename for codename in list(sorted(summary_stats['sizes'].keys()))
@@ -354,6 +359,7 @@ def create_codestat_pages(out_dir: str,
 
     # 3.4 Render summary release timeline
     release_timeline_figure = __create_nwb_release_timeline_summary_plot(
+        release_timelines=release_timelines,
         out_dir=out_dir,
         print_status=print_status)
 
@@ -368,7 +374,9 @@ def create_codestat_pages(out_dir: str,
         elif print_status:
             PrintHelper.print("PLOTTING: release_timeline_%s" % repo_name, PrintHelper.BOLD)
         ax = RenderReleaseTimeline.plot_release_timeline(
-            repo_info=github_repo_infos[repo_name],
+            repo_name=repo_name,
+            versions=release_timelines[repo_name][0],
+            dates=release_timelines[repo_name][1],
             figsize=(18, 6),
             fontsize=16,
             month_intervals=3,
@@ -423,7 +431,7 @@ def create_codestat_pages(out_dir: str,
         else:
             PrintHelper.print("SKIPPING: test_coverage_%s" % repo_name, PrintHelper.BOLD + PrintHelper.OKBLUE)
     """
-    codecov_nwb_summary_figure=None
+    codecov_nwb_summary_figure = None
 
     # 4. Create the RST document
     codestats_rst = __create_nwb_codestat_summary_rst(
