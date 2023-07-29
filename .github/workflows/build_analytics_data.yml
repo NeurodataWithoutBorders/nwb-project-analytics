@@ -1,4 +1,4 @@
-name: Build docs from cached data
+name: Build code analytics data
 on:
   pull_request:
   schedule:
