@@ -593,7 +593,7 @@ class GitHubRepoInfo:
             all_github_repo_infos = {k: GitHubRepoInfo(r) for k, r in repos.items()}
             release_timelines = {}
             for k, r in all_github_repo_infos.items():
-                release_timelines['k'] = r.get_release_names_and_dates()
+                release_timelines[k] = r.get_release_names_and_dates()
             # cache the results
             if write_cache:
                 print("saving %s" % cache_filename)  # noqa T001
