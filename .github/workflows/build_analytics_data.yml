@@ -47,6 +47,7 @@ jobs:
           make html
 
       - name: push updated yaml to the repo
+        run: |
           git --version
           git config --global user.email "neurodatawithoutborders.appv@gmail.com"
           git config --global user.name "NWB Bot"
