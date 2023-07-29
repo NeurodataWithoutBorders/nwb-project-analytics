@@ -61,6 +61,7 @@ Computing ``cloc`` statistics for all codes is time-consuming as we need to comp
     rm data/cloc_stats.yaml
     rm data/commit_stats.yaml
     rm data/git_path.yaml
+    rm data/release_timelines.yaml
     cd docs
     make html
 
