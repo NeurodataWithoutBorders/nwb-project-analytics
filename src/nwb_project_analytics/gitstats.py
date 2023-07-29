@@ -1,11 +1,14 @@
 """
 Module for querying GitHub repos
 """
+import warnings
 from datetime import datetime
 from typing import NamedTuple
 import numpy as np
 import pandas as pd
 import requests
+import os
+import ruamel.yaml as yaml
 from collections import OrderedDict
 from distutils.version import LooseVersion
 
@@ -128,6 +131,9 @@ class GitRepo(NamedTuple):
 
     logo: str = None
     """URL with the PNG of the logo for the repository"""
+
+    startdate: datetime = None
+    """Some repos start from forks so we want to track statistics starting from then rather than the begining of time"""
 
     @property
     def github_path(self):
@@ -276,6 +282,11 @@ class NWBGitInfo:
     which based on https://api.github.com/repos/nwb-extensions/nwb-extensions-smithy is 2019-04-25T20:56:02Z
     """
 
+    NWB_GUIDE_START_DATE = datetime(2022, 11, 21)
+    """
+    NWB GUIDE was forked from SODA so we want to start tracking stats starting from that date
+    """
+
     NWB2_START_DATE = datetime(2016, 8, 31)
     """
     Date of the first release of PyNWB on the NWB GitHub. While some initial work was ongoing before that
@@ -333,6 +344,15 @@ class NWBGitInfo:
               mainbranch="dev",
               docs="https://nwbinspector.readthedocs.io",
               logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwbinspector/dev/docs/logo/logo.png")),
+         ("NWB_GUIDE",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-guide",
+              mainbranch="main",
+              docs="https://github.com/NeurodataWithoutBorders/nwb-guide",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwb-guide"
+                   "/main/src/renderer/assets/img/logo-guide-draft-transparent-tight.png",
+              startdate=NWB_GUIDE_START_DATE)),
          ("Hackathons",
           GitRepo(
               owner="NeurodataWithoutBorders",
@@ -367,7 +387,8 @@ class NWBGitInfo:
               repo="hdmf",
               mainbranch="dev",
               docs="https://hdmf.readthedocs.io",
-              logo="https://raw.githubusercontent.com/hdmf-dev/hdmf/dev/docs/source/hdmf_logo.png")),
+              logo="https://raw.githubusercontent.com/hdmf-dev/hdmf/dev/docs/source/hdmf_logo.png",
+              startdate=HDMF_START_DATE)),
          ("HDMF_Zarr",
           GitRepo(
               owner="hdmf-dev",
@@ -424,14 +445,15 @@ class NWBGitInfo:
               repo="nwb-extensions-smithy",
               mainbranch="master",
               docs=None,
-              logo=None)),
+              logo=None,
+              startdate=NWB_EXTENSION_SMITHY_START_DATE)),
          ("NeuroConv",
           GitRepo(
               owner="catalystneuro",
               repo="neuroconv",
               mainbranch="main",
               docs="https://neuroconv.readthedocs.io",
-              logo=None))
+              logo="https://github.com/catalystneuro/neuroconv/blob/main/docs/img/neuroconv_logo.png"))
          ])
     """
     Dictionary with main NWB git repositories. The values are GitRepo tuples with the owner and repo name.
@@ -536,13 +558,57 @@ class GitHubRepoInfo:
         self.repo = repo
         self.__releases = None
 
+    @staticmethod
+    def releases_from_nwb(
+            cache_dir: str,
+            read_cache: bool = True,
+            write_cache: bool = True):
+        from nwb_project_analytics.gitstats import NWBGitInfo, GitRepos, GitHubRepoInfo
+        all_nwb_repos = GitRepos.merge(NWBGitInfo.GIT_REPOS, NWBGitInfo.NWB1_GIT_REPOS)
+        return GitHubRepoInfo.collect_all_release_names_and_date(
+            repos=all_nwb_repos,
+            cache_dir=cache_dir,
+            read_cache=read_cache,
+            write_cache=write_cache)
+
+    @staticmethod
+    def collect_all_release_names_and_date(
+            repos: dict,
+            cache_dir: str,
+            read_cache: bool = True,
+            write_cache: bool = True):
+        from nwb_project_analytics.gitstats import GitHubRepoInfo
+        cache_filename = os.path.join(cache_dir, 'release_timelines.yaml')
+        is_cached = os.path.exists(cache_filename)
+
+        # Load results from the file cache if available
+        if is_cached and read_cache:
+            print("Loading cached results: %s" % cache_filename)  # noqa T001
+            with open(cache_filename) as f:
+                with warnings.catch_warnings():
+                    warnings.simplefilter('ignore', yaml.error.UnsafeLoaderWarning)
+                    release_timelines = yaml.load(f)  # using load() instead of safe_load to allow loading of tuple
+        else:
+            # Compute the release timeline
+            all_github_repo_infos = {k: GitHubRepoInfo(r) for k, r in repos.items()}
+            release_timelines = {}
+            for k, r in all_github_repo_infos.items():
+                release_timelines[k] = r.get_release_names_and_dates()
+            # cache the results
+            if write_cache:
+                print("saving %s" % cache_filename)  # noqa T001
+                with open(cache_filename, 'w') as outfile:
+                    yaml.dump(release_timelines, outfile)
+        return release_timelines
+
     def get_releases(self, use_cache=True):
         """
         Get the last 100 release for the given repo
 
         NOTE: GitHub uses pageination. Here we set the number of items per page to 100
                which should usually fit all releases, but in the future we may need to
-               iterate over pages to get all the releases not just the latests 100
+               iterate over pages to get all the releases not just the latest 100.
+               Possible implementation https://gist.github.com/victorbordo/5581fdfb89ed93bf3eb2b478529b9e38
 
         :param use_cache: If set to True then return the chached results if computed previously.
                           In this case the per_page parameter will be ignored
@@ -553,7 +619,7 @@ class GitHubRepoInfo:
         # Return cached results if available
         if use_cache and self.__releases is not None:
             return self.__releases
-        # Get restuls from GitGub
+        # Get results from GitGub
         per_page = 100
         r = requests.get("https://api.github.com/repos/%s/%s/releases?per_page=%s" %
                          (self.repo.owner, self.repo.repo, str(per_page)))

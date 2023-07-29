@@ -6,9 +6,29 @@ import pandas as pd
 import numpy as np
 import warnings
 from datetime import datetime, timedelta
-
+from pandas.plotting._matplotlib.core import MPLPlot
+import pandas
 from .gitstats import GitHubRepoInfo, NWBGitInfo
 from .codecovstats import CodecovInfo
+
+# TODO: Update once/if pandas adds support for stepped area plots.
+#       Area plot in pandas does not support step style. This patches the area plot
+#       to support post step style needed for plotting code statistics based on
+#       the suggestion in the corresponding pandas issue ticket
+#       https://github.com/pandas-dev/pandas/issues/29451#issuecomment-551331961
+
+
+class PatchedMPLPlot(MPLPlot):
+    def _plot(*args, **kwds):
+        if "step" in kwds:
+            kwds["drawstyle"] = "steps-" + kwds["step"]
+            kwds.pop("step")
+        return MPLPlot._plot(*args, **kwds)
+
+
+pandas.plotting._matplotlib.core.MPLPlot = PatchedMPLPlot
+
+
 
 
 class RenderCommitStats:
@@ -177,7 +197,9 @@ class RenderReleaseTimeline:
 
     @staticmethod
     def plot_release_timeline(
-            repo_info: GitHubRepoInfo,
+            repo_name: str,
+            dates: list,
+            versions: list,
             figsize: tuple = None,
             fontsize: int = 14,
             month_intervals: int = 3,
@@ -203,20 +225,19 @@ class RenderReleaseTimeline:
 
         :return: Matplotlib axis object used for plotting
         """
-        names, dates = repo_info.get_release_names_and_dates()
         if add_releases is not None:
             for r in add_releases:
-                names.append(r[0])
+                versions.append(r[0])
                 dates.append(r[1])
 
         # Choose some nice levels
         try:
-            version_jumps = repo_info.get_version_jump_from_tags(names)
+            version_jumps = GitHubRepoInfo.get_version_jump_from_tags(versions)
             levels = []
             curr_major = 5
             curr_minor = 2
             curr_patch = -5
-            for n in names:
+            for n in versions:
                 if version_jumps[n] == "major":
                     levels.append(curr_major)
                 elif version_jumps[n] == "minor":
@@ -243,7 +264,7 @@ class RenderReleaseTimeline:
                 color="k", markerfacecolor="w")  # Baseline and markers on it.
 
         # annotate lines
-        for d, l, r in zip(dates, levels, names):
+        for d, l, r in zip(dates, levels, versions):
             ax.annotate(r, xy=(d, l),
                         xytext=(fontsize + 2, np.sign(l) * 3), textcoords="offset points",
                         horizontalalignment="right",
@@ -260,9 +281,9 @@ class RenderReleaseTimeline:
         # set the title
         if title_on_yaxis:
             ax.get_yaxis().set_ticks([])
-            ax.set_ylabel(repo_info.repo.repo, fontsize=fontsize)
+            ax.set_ylabel(repo_name, fontsize=fontsize)
         else:
-            ax.set_title("Release: %s" % repo_info.repo.repo, fontdict={"fontsize": fontsize})
+            ax.set_title("Release: %s" % repo_name, fontdict={"fontsize": fontsize})
             ax.yaxis.set_visible(False)
 
         # Set margins and grid lines
@@ -314,7 +335,7 @@ class RenderReleaseTimeline:
     @classmethod
     def plot_multiple_release_timeslines(
             cls,
-            github_repo_infos,
+            release_timelines: dict,
             add_releases: dict = None,
             date_range: tuple = None,
             month_intervals: int = 2,
@@ -324,8 +345,8 @@ class RenderReleaseTimeline:
         """
         Plot multiple aligned timelines of the releases of a collection of GitHubRepoInfo repo objects
 
-        :param github_repo_infos: GitHubRepoInfo objects to render. For all NWB2 repos set
-                            to NWBGitInfo.GIT_REPOS.get_info_objects()
+        :param release_timelines: Dict where the keys are the repo names and the values are tuples with the
+                                  1) name of the versions and 2) dates of the versions
         :type github_repo_infos: OrderdDict (or dict) of GitHubRepoInfo objects
         :param add_releases: Sometimes libraries did not use git tags to mark releases. With this we can add
                             additional releases that are missing from the git tags. If None this is set to
@@ -350,15 +371,18 @@ class RenderReleaseTimeline:
 
         # Render the release timeline for all repos
         fig, axes = mpl.pyplot.subplots(
-            figsize=(16, len(github_repo_infos) * 4.2),
-            nrows=len(github_repo_infos),
+            figsize=(16, len(release_timelines) * 4.2),
+            nrows=len(release_timelines),
             ncols=1,
             sharex=True,
             sharey=False,
             squeeze=True)
-        for i, repo in enumerate(github_repo_infos.keys()):
+        for i, repo in enumerate(release_timelines.keys()):
+            versions, dates = release_timelines[repo]
             ax = cls.plot_release_timeline(
-                repo_info=github_repo_infos[repo],
+                repo_name=repo,
+                versions=versions,
+                dates=dates,
                 fontsize=fontsize,
                 month_intervals=month_intervals,
                 xlim=date_range,
@@ -606,8 +630,10 @@ class RenderClocStats:
         ax = curr_df.plot.area(
             figsize=(18, 10) if figsize is None else figsize,
             stacked=True,
-            linewidth=1,
+            linewidth=2,
             fontsize=fontsize,
+            step="post",
+            # drawstyle="steps-post",  # this is waht it would be with just plot for line-plot
             color=[language_colors[lang] for lang in curr_df.columns]
         )
         # Adjust the labels
@@ -652,7 +678,9 @@ class RenderClocStats:
         ax = curr_df.plot.area(
             figsize=(18, 10),
             stacked=True,
-            linewidth=1,
+            linewidth=2,
+            step='post',
+            #  drawstyle="steps-post",  # This is what it would be for lineplot with plot instead of area
             fontsize=16)
         mpl.pyplot.legend(loc=2, prop={'size': 16})
         mpl.pyplot.ylabel('Lines of Code (CLOC)', fontsize=16)
