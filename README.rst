@@ -8,6 +8,8 @@ The NWB project maintains and contributes to a large number of codes
 related to NWB. The goal of this effort is to help  developers to get a
 quick overview of the state of NWB code repositories. See, e.g., the `code health page <https://github.com/NeurodataWithoutBorders/nwb-project-analytics/blob/main/docs/source/code_health.rst>`_
 
+**Status:** This project is under active development. The code is in the alpha development phase. 
+
 How to use nwb-project-analytics (the docs)
 ===========================================
 
