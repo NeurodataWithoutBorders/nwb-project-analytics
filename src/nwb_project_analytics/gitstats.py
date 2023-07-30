@@ -381,6 +381,13 @@ class NWBGitInfo:
               mainbranch="main",
               docs="https://schema-language.readthedocs.io",
               logo=None)),
+         ("NWB_Project_Analytics",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb-project-analytics ",
+              mainbranch="main",
+              docs="https://github.com/NeurodataWithoutBorders/nwb-project-analytics#readme",
+              logo=None)),
          ("HDMF",
           GitRepo(
               owner="hdmf-dev",
