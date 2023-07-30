@@ -384,7 +384,7 @@ class NWBGitInfo:
          ("NWB_Project_Analytics",
           GitRepo(
               owner="NeurodataWithoutBorders",
-              repo="nwb-project-analytics ",
+              repo="nwb-project-analytics",
               mainbranch="main",
               docs="https://github.com/NeurodataWithoutBorders/nwb-project-analytics#readme",
               logo=None)),
