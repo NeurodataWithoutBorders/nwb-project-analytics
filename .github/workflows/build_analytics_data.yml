@@ -46,12 +46,12 @@ jobs:
           make allclean
           make html
 
-      - name: push updated yaml to the repo
-        run: |
-          git --version
-          git config --global user.email "neurodatawithoutborders.appv@gmail.com"
-          git config --global user.name "NWB Bot"
-          git config --global init.defaultBranch main
-          git remote set-url origin https://x-access-token:${{ secrets.BOT_GITHUB_TOKEN }}@github.com/@{{ github.repository }}
-          git commit -m "Automatic update of the code statistics YAML files" data/*.yaml
-          git push
+      # Commit all changed files back to the repository
+      - name: Push changes back to repo
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: 'data/*.yaml'
+          commit_message: "Automatic update of the code statistics YAML files"
+          commit_user_name: NWB Bot
+          commit_user_email: 32185786+nwb-bot@users.noreply.github.com
+          commit_author: NWB Bot <32185786+nwb-bot@users.noreply.github.com>
