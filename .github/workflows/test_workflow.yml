@@ -34,3 +34,4 @@ jobs:
           commit_message: "Automatic update of the code statistics YAML files"
           commit_user_name: NWB Bot
           commit_user_email: neurodatawithoutborders.appv@gmail.com
+          commit_author: NWB Bot <nwb-bot@users.noreply.github.com>
