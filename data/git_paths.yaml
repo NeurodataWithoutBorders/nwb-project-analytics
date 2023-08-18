@@ -7,5 +7,6 @@ NDX_Staged_Extensions: https://github.com/nwb-extensions/staged-extensions.git, 
 NWBInspector: https://github.com/NeurodataWithoutBorders/nwbinspector.git, NWBWidgets: https://github.com/NeurodataWithoutBorders/nwb-jupyter-widgets.git,
 NWB_1.x_Matlab: https://github.com/NeurodataWithoutBorders/api-matlab.git, NWB_1.x_Python: https://github.com/NeurodataWithoutBorders/api-python.git,
 NWB_GUIDE: https://github.com/NeurodataWithoutBorders/nwb-guide.git, NWB_Overview: https://github.com/NeurodataWithoutBorders/nwb-overview.git,
+NWB_Project_Analytics: https://github.com/NeurodataWithoutBorders/nwb-project-analytics.git,
 NWB_Schema: https://github.com/NeurodataWithoutBorders/nwb-schema.git, NWB_Schema_Language: https://github.com/NeurodataWithoutBorders/nwb-schema-language.git,
 NeuroConv: https://github.com/catalystneuro/neuroconv.git, PyNWB: https://github.com/NeurodataWithoutBorders/pynwb.git}
