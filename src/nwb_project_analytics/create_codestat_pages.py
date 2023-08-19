@@ -72,6 +72,12 @@ def create_toolstat_page(
     if len(tool_infolist) > 0:
         tool_codestats_rst.add_subsection("Additional Information")
         tool_codestats_rst.add_list(content=tool_infolist)
+    # # Add badges
+    # tool_codestats_rst.add_figure(RSTFigure(f"https://img.shields.io/github/issues-raw/{repo.owner}/{repo.repo}",
+    #                                         target=repo.github_issues_url))
+    # tool_codestats_rst.add_figure(RSTFigure(f"https://img.shields.io/github/issues-pr-raw/{repo.owner}/{repo.repo}",
+    #                                         target=repo.github_pulls_url))
+
     # Write the file and return
     tool_codestats_rst.write(os.path.join(out_dir, tool_page_name))
     return tool_page_name

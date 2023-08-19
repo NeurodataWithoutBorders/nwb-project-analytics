@@ -137,7 +137,18 @@ class GitRepo(NamedTuple):
 
     @property
     def github_path(self):
-        return "https://github.com/%s/%s.git" % (self.owner, self.repo)
+        """https path for the git repo"""
+        return f"https://github.com/{self.owner}/{self.repo}.git"
+
+    @property
+    def github_issues_url(self):
+        """URL for GitHub issues page"""
+        return f"https://github.com/{self.owner}/{self.repo}/issues"
+
+    @property
+    def github_pulls_url(self):
+        """URL for GitHub pull requests page"""
+        return f"https://github.com/{self.owner}/{self.repo}/pulls"
 
     @staticmethod
     def compute_issue_time_of_first_response(issue):
