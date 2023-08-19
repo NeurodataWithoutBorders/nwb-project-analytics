@@ -24,7 +24,10 @@ reqs = [
     'PyGithub',
     'setuptools',
     'matplotlib',
-    'tqdm'
+    'tqdm',
+    'requests',
+    'hdmf-docutils',
+    'cloc'
 ]
 print(reqs)
 
