@@ -56,7 +56,6 @@ class GitCodeStats:
         self.cache_file_cloc = os.path.join(self.output_dir, 'cloc_stats.yaml')
         self.cache_file_commits = os.path.join(self.output_dir, 'commit_stats.yaml')
         self.cache_git_paths = os.path.join(self.output_dir, 'git_paths.yaml')
-        self.cache_release_timeline = os.path.join(self.output_dir, 'release_timelines.yaml')
         self.commit_stats = None
         self.cloc_stats = None
         self.release_timelines = None

@@ -366,7 +366,7 @@ def create_codestat_pages(out_dir: str,
     # 3.5 Render per repo release timeline
     github_repo_infos = NWBGitInfo.GIT_REPOS.get_info_objects()
     for repo_name in code_order:
-        names, dates = github_repo_infos[repo_name].get_release_names_and_dates()
+        names, dates = release_timelines[repo_name]
         if len(names) == 0 and NWBGitInfo.MISSING_RELEASE_TAGS.get(repo_name, None) is None:
             if print_status:
                 PrintHelper.print("SKIPPING: release_timeline_%s" % repo_name, PrintHelper.BOLD + PrintHelper.OKBLUE)
