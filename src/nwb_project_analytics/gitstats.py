@@ -440,7 +440,7 @@ class NWBGitInfo:
               owner="nwb-extensions",
               repo="ndx-template",
               mainbranch="main",
-              docs="https://github.com/nwb-extensions/ndx-template#getting-started",
+              docs="https://nwb-overview.readthedocs.io/en/latest/extensions_tutorial/2_create_extension_spec_walkthrough.html",
               logo=None)),
          ("NDX_Staged_Extensions",
           GitRepo(
