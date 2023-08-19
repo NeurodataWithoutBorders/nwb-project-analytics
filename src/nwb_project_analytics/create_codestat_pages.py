@@ -237,7 +237,7 @@ def __create_tool_codestat_pages(
         PrintHelper.print("CREATING: code_stats_tools.rst", PrintHelper.BOLD)
     tool_codestats_rst = RSTDocument()
     tool_codestats_rst.add_label("code-statistics")
-    tool_codestats_rst.add_section("Code Statistics")
+    tool_codestats_rst.add_section("Code Statistics: NWB Tools")
     tool_codestats_rst.add_text(
         "Select a tool or code repository below to view the corresponding code statistics:" +
         tool_codestats_rst.newline +
