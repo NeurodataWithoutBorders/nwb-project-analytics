@@ -347,7 +347,7 @@ class NWBGitInfo:
               repo="nwb-jupyter-widgets",
               mainbranch="master",
               docs=None,
-              logo=None)),
+              logo="https://user-images.githubusercontent.com/844306/254117081-f20b8c26-79c7-4c1c-a3b5-b49ecf8cce5d.png")),
          ("NWBInspector",
           GitRepo(
               owner="NeurodataWithoutBorders",
