@@ -605,7 +605,8 @@ class GitHubRepoInfo:
             with open(cache_filename) as f:
                 with warnings.catch_warnings():
                     warnings.simplefilter('ignore', yaml.error.UnsafeLoaderWarning)
-                    release_timelines = yaml.load(f)  # using load() instead of safe_load to allow loading of tuple
+                    yaml_loader = yaml.YAML(typ='rt') # using 'rt' instead of 'safe' to allow loading of tuple
+                    release_timelines = yaml_loader.load(f)
         else:
             # Compute the release timeline
             all_github_repo_infos = {k: GitHubRepoInfo(r) for k, r in repos.items()}
