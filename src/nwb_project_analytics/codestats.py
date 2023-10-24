@@ -173,16 +173,17 @@ class GitCodeStats:
         :return: A new GitCodeStats object with the resutls loaded from the cache
         """
         re = GitCodeStats(output_dir)
+        yaml_safe_loader = yaml.YAML(typ='safe', pure=True)
         if GitCodeStats.cached(output_dir):
             print("Loading cached results: %s" % re.cache_file_cloc)  # noqa T001
             with open(re.cache_file_cloc) as f:
-                re.cloc_stats = yaml.safe_load(f)
+                re.cloc_stats = yaml_safe_loader.load(f)
             print("Loading cached results: %s" % re.cache_file_commits)  # noqa T001
             with open(re.cache_file_commits) as f:
-                re.commit_stats = yaml.safe_load(f)
+                re.commit_stats = yaml_safe_loader.load(f)
             print("Loading cached results: %s" % re.cache_git_paths)  # noqa T001
             with open(re.cache_git_paths) as f:
-                re.git_paths = yaml.safe_load(f)
+                re.git_paths = yaml_safe_loader.load(f)
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
@@ -443,8 +444,9 @@ class GitCodeStats:
         command = "%s --yaml --report-file=%s %s" % (cloc_path, out_file, src_dir)
         try:
             os.system(command)
+            yaml_safe_loader = yaml.YAML(typ='safe', pure=True)
             with open(out_file) as f:
-                res = yaml.safe_load(f)
+                res = yaml_safe_loader.load(f)
         except:  # FileNotFoundError:
             res = None
         return res
