@@ -295,8 +295,25 @@ class GitRepos(OrderedDict):
 
     @staticmethod
     def merge(o1, o2):
-        """Merger two GitRepo dicts and return a new GitRepos dict with the combined items"""
+        """Merge two GitRepo dicts and return a new GitRepos dict with the combined items"""
         return GitRepos(list(o1.items()) + list(o2.items()))
+
+    def get_contributors_as_dataframe(self, limit=500):
+        """
+        Create a dataframe with the contributors to all the repos in this GitRepos object
+
+        :param limit: Number of contributors per repo to list. This is the `per_page` parameter of the GitHub API
+
+        :return: Pandas dataframe
+        """
+        result = None
+        for repo in self.values():
+            df = repo.get_contributors_as_dataframe(limit=limit)
+            if result is None:
+                result = df
+            else:
+                result = pd.merge(result, df, on=result.columns.difference(df.columns).to_list())
+        return result
 
 
 class NWBGitInfo:
