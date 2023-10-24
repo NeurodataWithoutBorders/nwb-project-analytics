@@ -262,15 +262,18 @@ class GitRepo(NamedTuple):
                                                  'type',
                                                  self.repo]}
         for contributor in all_contributors:
-            columns['login'].append(contributor['user_info']['login'])
-            columns['name'].append(contributor['user_info']['name'])
-            columns['email'].append(contributor['user_info']['email'])
-            columns['id'].append(contributor['user_info']['id'])
-            columns['company'].append(contributor['user_info']['company'])
-            columns['location'].append(contributor['user_info']['location'])
-            columns['avatar_url'].append(contributor['user_info']['avatar_url'])
-            columns['html_url'].append(contributor['user_info']['html_url'])
-            columns['type'].append(contributor['user_info']['type'])
+            columns['login'].append(contributor['login'])
+            columns['id'].append(contributor['id'])
+            columns['type'].append(contributor['type'])
+            user_cols = ['name', 'email', 'company', 'location']
+            if contributor['user_info'] is not None:
+                for cname in user_cols:
+                    columns[cname].append(contributor['user_info'][cname])
+            else:
+                for cname in user_cols:
+                    columns[cname].append(None)
+            columns['avatar_url'].append(contributor['avatar_url'])
+            columns['html_url'].append(contributor['html_url'])
             columns[self.repo].append(contributor['contributions'])
 
         result = pd.DataFrame.from_dict(columns)
@@ -312,7 +315,12 @@ class GitRepos(OrderedDict):
             if result is None:
                 result = df
             else:
-                result = pd.merge(result, df, on=result.columns.difference(df.columns).to_list())
+                # find missing users and add row
+                for index, user in enumerate(df['login']):
+                    if user not in result['login']:
+                        result = pd.concat([result, df.iloc[index]])
+                # add values for this repo as a new column
+                result[result['login'].isin(df['login'])][repo.repo] = df[repo.repo]
         return result
 
 
