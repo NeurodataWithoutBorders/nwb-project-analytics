@@ -52,11 +52,10 @@ How to force rebuild of all figures and apidoc
 
 Using the ``make allclean`` command removes all auto-generated figures and rst files in the ``docs/source`` directory (specifically ``docs/source/code_stat_pages`` and ``docs/source/nwb_project_analytics.*rst``) as well as all builds from ``docs/builds``. When rebuilding the docs (e.g., via ``make html``) the files will be regenerated (using the data cached in ``data/``).
 
+How to manually update the ``data/``
+==================================
 
-How to update the ``data/``
-===========================
-
-Computing ``cloc`` statistics for all codes is time-consuming as we need to compute them over time, i.e., we need to run ``cloc`` for all commits on the main branch of each code. The cloc results are, therefore, saved in the ``data/`` folder and only updated when necessary. To update the ``cloc`` statistics simply remove the cached results and build the docs:
+On this repo, the information cached in ``data/`` is automatically updated nighlty by the `build_analytics_data.yml <https://github.com/NeurodataWithoutBorders/nwb-project-analytics/blob/main/.github/workflows/build_analytics_data.yml>`_ GitHub Action. To manually update the statistics cached in ``data/``, simply remove the cached results and build the docs:
 
 .. code-block:: bash
 
@@ -77,6 +76,11 @@ How to add a new code
 =====================
 
 To add a new entry to the ``NWBGitInfo.GIT_REPOS`` dictionary in ``src/nwb_project_analytics/gitstats.py``. The dictionary is used to track all main NWB repositories and stores for each repo a `` GitRepo`` object with basic metadata about the code (e.g., the location of the repo, name of the main branch, etc.). When adding a new code, all statistics need to be updated following the instructions above on **How to update the ``data/``**.
+
+How are code statistcs computed?
+================================
+
+The code uses the ``cloc`` tool to calculate line-of-code statistics. Computing ``cloc`` statistics for all codes is time-consuming as we need to compute them over time. This is accomplished by running ``cloc`` for all commits (or more accurately the last commit on each day) on the main branch of each code. The cloc results are saved in the ``data/`` folder to avoid unnecessary updates and safe time.
 
 How to build custom analytics
 =============================
