@@ -241,6 +241,41 @@ class GitRepo(NamedTuple):
             curr_df = pd.concat([curr_df, pd.DataFrame([curr_row])], axis=0, join="outer", ignore_index=True)
         return curr_df
 
+    def get_contributors_as_dataframe(self, limit=500):
+        """
+        Create a dataframe with all contributors to the repo
+
+        :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
+
+        :return: Pandas dataframe
+        """
+        repo_info = GitHubRepoInfo(self)
+        all_contributors = repo_info.get_contributors(limit=limit, get_user_info=True)
+        columns = {col_name: [] for col_name in ['login',
+                                                 'name',
+                                                 'email',
+                                                 'id',
+                                                 'company',
+                                                 'location',
+                                                 'avatar_url',
+                                                 'html_url',
+                                                 'type',
+                                                 self.repo]}
+        for contributor in all_contributors:
+            columns['login'].append(contributor['user_info']['login'])
+            columns['name'].append(contributor['user_info']['name'])
+            columns['email'].append(contributor['user_info']['email'])
+            columns['id'].append(contributor['user_info']['id'])
+            columns['company'].append(contributor['user_info']['company'])
+            columns['location'].append(contributor['user_info']['location'])
+            columns['avatar_url'].append(contributor['user_info']['avatar_url'])
+            columns['html_url'].append(contributor['user_info']['html_url'])
+            columns['type'].append(contributor['user_info']['type'])
+            columns[self.repo].append(contributor['contributions'])
+
+        result = pd.DataFrame.from_dict(columns)
+        return result
+
 
 class GitRepos(OrderedDict):
     """Dict where the keys are names of codes and the values are GitRepo objects"""
@@ -690,3 +725,30 @@ class GitHubRepoInfo:
                                          for i in range(1, len(versions), 1)]))
         # return results
         return version_jumps
+
+    def get_contributors(self, limit=500, get_user_info=True):
+        """
+        Get list of all contributors to the repo
+
+        :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
+        :param get_user_info: Also request the additional public info for the user, e.g., name
+
+        :return: List of dicts with information about the contributors
+        """
+
+        # Get results from GitGub
+        req_url = f"https://api.github.com/repos/{self.repo.owner}/{self.repo.repo}/contributors?per_page={limit}"
+        result = requests.get(req_url)
+        if not result.ok:
+            result.raise_for_status()
+        else:
+            result = result.json()
+        if get_user_info:
+            for ci, contributor in enumerate(result):
+                req_url = f"https://api.github.com/users/{contributor['login']}"
+                user_info = requests.get(req_url)
+                if user_info.ok:
+                    result[ci]['user_info'] = user_info.json()
+                else:
+                    result[ci]['user_info'] = None
+        return result
