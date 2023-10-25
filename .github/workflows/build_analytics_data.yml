@@ -38,6 +38,7 @@ jobs:
           rm data/commit_stats.yaml
           rm data/git_paths.yaml
           rm data/release_timelines.yaml
+          rm data/contributors.tsv
           cd docs
           make allclean
           make html

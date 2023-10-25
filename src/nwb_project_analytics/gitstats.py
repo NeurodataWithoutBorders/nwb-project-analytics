@@ -241,43 +241,47 @@ class GitRepo(NamedTuple):
             curr_df = pd.concat([curr_df, pd.DataFrame([curr_row])], axis=0, join="outer", ignore_index=True)
         return curr_df
 
-    def get_contributors_as_dataframe(self, limit=500):
-        """
-        Create a dataframe with all contributors to the repo
-
-        :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
-
-        :return: Pandas dataframe
-        """
-        repo_info = GitHubRepoInfo(self)
-        all_contributors = repo_info.get_contributors(limit=limit, get_user_info=True)
-        columns = {col_name: [] for col_name in ['login',
-                                                 'name',
-                                                 'email',
-                                                 'id',
-                                                 'company',
-                                                 'location',
-                                                 'avatar_url',
-                                                 'html_url',
-                                                 'type',
-                                                 self.repo]}
-        for contributor in all_contributors:
-            columns['login'].append(contributor['login'])
-            columns['id'].append(contributor['id'])
-            columns['type'].append(contributor['type'])
-            user_cols = ['name', 'email', 'company', 'location']
-            if contributor['user_info'] is not None:
-                for cname in user_cols:
-                    columns[cname].append(contributor['user_info'][cname])
-            else:
-                for cname in user_cols:
-                    columns[cname].append(None)
-            columns['avatar_url'].append(contributor['avatar_url'])
-            columns['html_url'].append(contributor['html_url'])
-            columns[self.repo].append(contributor['contributions'])
-
-        result = pd.DataFrame.from_dict(columns)
-        return result
+    # def get_contributors_as_dataframe(self, limit=500):
+    #     """
+    #     Create a dataframe with all contributors to the repo using the GitHub API
+    #
+    #     This function is currently not being used internally.  To avoid external calls to GitHub use
+    #     :py:meth:`nwb_project_analytics.codestats.GitCodeStats.get_contributors` instead, which computes
+    #     the stats from a local checkout of the repo.
+    #
+    #     :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
+    #
+    #     :return: Pandas dataframe
+    #     """
+    #     repo_info = GitHubRepoInfo(self)
+    #     all_contributors = repo_info.get_contributors(limit=limit, get_user_info=True)
+    #     columns = {col_name: [] for col_name in ['login',
+    #                                              'name',
+    #                                              'email',
+    #                                              'id',
+    #                                              'company',
+    #                                              'location',
+    #                                              'avatar_url',
+    #                                              'html_url',
+    #                                              'type',
+    #                                              self.repo]}
+    #     for contributor in all_contributors:
+    #         columns['login'].append(contributor['login'])
+    #         columns['id'].append(contributor['id'])
+    #         columns['type'].append(contributor['type'])
+    #         user_cols = ['name', 'email', 'company', 'location']
+    #         if contributor['user_info'] is not None:
+    #             for cname in user_cols:
+    #                 columns[cname].append(contributor['user_info'][cname])
+    #         else:
+    #             for cname in user_cols:
+    #                 columns[cname].append(None)
+    #         columns['avatar_url'].append(contributor['avatar_url'])
+    #         columns['html_url'].append(contributor['html_url'])
+    #         columns[self.repo].append(contributor['contributions'])
+    #
+    #     result = pd.DataFrame.from_dict(columns)
+    #     return result
 
 
 class GitRepos(OrderedDict):
@@ -300,28 +304,6 @@ class GitRepos(OrderedDict):
     def merge(o1, o2):
         """Merge two GitRepo dicts and return a new GitRepos dict with the combined items"""
         return GitRepos(list(o1.items()) + list(o2.items()))
-
-    def get_contributors_as_dataframe(self, limit=500):
-        """
-        Create a dataframe with the contributors to all the repos in this GitRepos object
-
-        :param limit: Number of contributors per repo to list. This is the `per_page` parameter of the GitHub API
-
-        :return: Pandas dataframe
-        """
-        result = None
-        for repo in self.values():
-            df = repo.get_contributors_as_dataframe(limit=limit)
-            if result is None:
-                result = df
-            else:
-                # find missing users and add row
-                for index, user in enumerate(df['login']):
-                    if user not in result['login']:
-                        result = pd.concat([result, df.iloc[index]])
-                # add values for this repo as a new column
-                result[result['login'].isin(df['login'])][repo.repo] = df[repo.repo]
-        return result
 
 
 class NWBGitInfo:
@@ -751,29 +733,33 @@ class GitHubRepoInfo:
         # return results
         return version_jumps
 
-    def get_contributors(self, limit=500, get_user_info=True):
-        """
-        Get list of all contributors to the repo
-
-        :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
-        :param get_user_info: Also request the additional public info for the user, e.g., name
-
-        :return: List of dicts with information about the contributors
-        """
-
-        # Get results from GitGub
-        req_url = f"https://api.github.com/repos/{self.repo.owner}/{self.repo.repo}/contributors?per_page={limit}"
-        result = requests.get(req_url)
-        if not result.ok:
-            result.raise_for_status()
-        else:
-            result = result.json()
-        if get_user_info:
-            for ci, contributor in enumerate(result):
-                req_url = f"https://api.github.com/users/{contributor['login']}"
-                user_info = requests.get(req_url)
-                if user_info.ok:
-                    result[ci]['user_info'] = user_info.json()
-                else:
-                    result[ci]['user_info'] = None
-        return result
+    # def get_contributors(self, limit=500, get_user_info=True):
+    #     """
+    #     Get list of all contributors to the repo
+    #
+    #     This function is currently not being used internally.  To avoid external calls to GitHub use
+    #     :py:meth:`nwb_project_analytics.codestats.GitCodeStats.get_contributors` instead, which computes
+    #     the stats from a local checkout of the repo.
+    #
+    #     :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
+    #     :param get_user_info: Also request the additional public info for the user, e.g., name
+    #
+    #     :return: List of dicts with information about the contributors
+    #     """
+    #
+    #     # Get results from GitGub
+    #     req_url = f"https://api.github.com/repos/{self.repo.owner}/{self.repo.repo}/contributors?per_page={limit}"
+    #     result = requests.get(req_url)
+    #     if not result.ok:
+    #         result.raise_for_status()
+    #     else:
+    #         result = result.json()
+    #     if get_user_info:
+    #         for ci, contributor in enumerate(result):
+    #             req_url = f"https://api.github.com/users/{contributor['login']}"
+    #             user_info = requests.get(req_url)
+    #             if user_info.ok:
+    #                 result[ci]['user_info'] = user_info.json()
+    #             else:
+    #                 result[ci]['user_info'] = None
+    #     return result
