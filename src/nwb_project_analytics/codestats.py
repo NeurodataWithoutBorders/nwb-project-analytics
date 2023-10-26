@@ -592,9 +592,6 @@ class GitCodeStats:
         # pd.merge turns the columns for the commits to floats and add NaN values
         # Replace the NaN values with 0 and turn the columns with commit counts back to int
         result = result.fillna(0).astype({repo_name: int for repo_name in data_frames.keys()})
-        # result.columns = pd.MultiIndex.from_tuples(
-        #     [('Contributor', 'name'), ('Contributor', 'email')] +
-        #     [('Number of Commits', repo_name) for repo_name in data_frames.keys()])
         if merge_duplicates:
             # Merge contributors with the same name
             grouped = result.groupby(["email"])  # merge with same email
