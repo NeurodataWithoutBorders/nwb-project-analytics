@@ -554,7 +554,7 @@ class GitCodeStats:
         :return Pandas dataframe with the name, email, and number of contributions to the repo
         """
         src_dir = repo if isinstance(repo, str) else repo.working_dir
-        cli_command = "git shortlog --summary --numbered --email"
+        cli_command = f"git -C {src_dir} shortlog --summary --numbered --email"
         if contributor_params is not None:
             cli_command += " " + contributor_params
         print("Get contributors ... " + src_dir + "   " + cli_command)
