@@ -587,17 +587,33 @@ class GitCodeStats:
             [('Number of Commits', repo_name) for repo_name in data_frames.keys()])
         if merge_duplicates:
             # Merge contributors with the same name
-            grouped = result.groupby([("Contributor", "email")])
-            filtered = grouped.sum()
-            filtered[("Contributor", "name")] = grouped.agg({("Contributor", "name"): tuple})
+            grouped = result.groupby([("Contributor", "email")])  # merge with same email
+            filtered = grouped.sum()  # Add up the contributions
+            filtered[("Contributor", "name")] = grouped.agg({("Contributor", "name"): tuple})  # keep all names
             filtered.reset_index(inplace=True)
             # Merge contributors with the same email
-            # TODO: If someone has both multiple emails and names then this won't merge all duplicates, because
-            #       We may already have multiple names at this point from merging by name
-            grouped = filtered.groupby([("Contributor", "name")])
-            filtered = grouped.sum()
+            # If someone has both multiple emails and names then simply grouping by email name won't work
+            # because we may already have multiple names at this point. Because of this we here compute
+            # new column group_col where we compare all names of a row against all names of previous rows
+            # and asign the index of the row that matched to then group by that column to merge name duplicates
+            group_col = []
+            for index, row in filtered.iterrows():
+                names = row[("Contributor", "name")]
+                match = -1
+                for index2, row2 in filtered.iterrows():
+                    if index2 >= index or match >= 0:
+                        break
+                    names2 = row2[("Contributor", "name")]
+                    for n in names:
+                        if np.any(np.array(names2) == n):
+                            match = index2
+                group_col.append(index if match < 0 else match)
+            filtered[('Contributor', 'name_index')] = group_col
+            grouped = filtered.groupby([("Contributor", "name_index")]) # group to find rows with matching names
+            filtered = grouped.sum()   # sum up contributions
             filtered[("Contributor", "email")] = grouped.agg({("Contributor", "email"): tuple})
-            filtered.reset_index(inplace=True)
-            return filtered
+            filtered.reset_index(inplace=True, drop=True)  # remove the `name_index` column we added for grouping
+            # Update the final result
+            result = filtered
 
         return result
