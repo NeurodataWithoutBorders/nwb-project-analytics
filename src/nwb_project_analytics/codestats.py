@@ -558,7 +558,7 @@ class GitCodeStats:
         if contributor_params is not None:
             cli_command += " " + contributor_params
         print("Get contributors ... " + src_dir + "   " + cli_command)
-        result = subprocess.run(
+        """result = subprocess.run(
             [cli_command, ""],
             capture_output=True,
             text=True,
@@ -568,6 +568,14 @@ class GitCodeStats:
         print("result.stdout", result.stdout)
         print("result.stderr", result.stderr)
         result_text = result.stdout
+        """
+        outfile = "git_shortlog.txt"
+        cli_command += "> " + outfile
+        os.system(cli_command)
+        with open(outfile, 'r') as file:
+            result_text = file.read()
+        os.remove(outfile)
+
         result_text = result_text.replace("<", "\t").replace(">", "")
         # parse the result
         result_text_io = StringIO(result_text)
