@@ -554,12 +554,12 @@ class GitCodeStats:
         :return Pandas dataframe with the name, email, and number of contributions to the repo
         """
         src_dir = repo if isinstance(repo, str) else repo.working_dir
-        cli_command = f"git -C {src_dir} shortlog --summary --numbered --email"
+        cli_command = f"git log | git shortlog --summary --numbered --email"
         if contributor_params is not None:
             cli_command += " " + contributor_params
         print("Get contributors ... " + src_dir + "   " + cli_command)
         print(os.path.exists(src_dir))
-        """result = subprocess.run(
+        result = subprocess.run(
             [cli_command, ""],
             capture_output=True,
             text=True,
@@ -569,14 +569,14 @@ class GitCodeStats:
         print("result.stdout", result.stdout)
         print("result.stderr", result.stderr)
         result_text = result.stdout
-        """
-        outfile = "git_shortlog.txt"
+
+        """outfile = "git_shortlog.txt"
         cli_command += "> " + outfile
         os.system(cli_command)
         with open(outfile, 'r') as file:
             result_text = file.read()
         print(result_text)
-        os.remove(outfile)
+        os.remove(outfile)"""
 
         result_text = result_text.replace("<", "\t").replace(">", "")
         # parse the result
