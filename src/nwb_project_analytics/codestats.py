@@ -236,6 +236,7 @@ class GitCodeStats:
         # Clone all repos
         print("Cloning all repos...")  # noqa T001
         git_repos = self.clone_repos(repos=self.git_paths, source_dir=self.source_dir)
+        #git_repos = {k: git.Repo(os.path.join(self.source_dir, k)) for k, v in self.git_paths.items()}
 
         # Compute list of contributors for all the repos
         # We must do this first after cloning the repos since computing cloc checks out the repo in different states
@@ -580,7 +581,7 @@ class GitCodeStats:
             else:
                 result = result.merge(df,
                                       how='outer',
-                                      on = ['name', 'email'])
+                                      on=['name', 'email'])
         # pd.merge turns the columns for the commits to floats and add NaN values
         # Replace the NaN values with 0 and turn the columns with commit counts back to int
         result = result.fillna(0).astype({repo_name: int for repo_name in data_frames.keys()})
@@ -618,7 +619,7 @@ class GitCodeStats:
             filtered.reset_index(inplace=True, drop=True)  # remove the `name_index` column we added for grouping
             # Remove duplicate emails and names
             filtered["name"] = [tuple(set(names)) for names in filtered["name"]]
-            filtered["email"] = [tuple(set(names)) for names in filtered["email"]]
+            filtered["email"] = [tuple(set(emails)) for emails in filtered["email"]]
             # Update the final result
             result = filtered
 
