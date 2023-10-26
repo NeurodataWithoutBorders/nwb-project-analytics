@@ -29,8 +29,6 @@ class PatchedMPLPlot(MPLPlot):
 pandas.plotting._matplotlib.core.MPLPlot = PatchedMPLPlot
 
 
-
-
 class RenderCommitStats:
     """
     Helper class for rendering commit history for repos

@@ -241,48 +241,6 @@ class GitRepo(NamedTuple):
             curr_df = pd.concat([curr_df, pd.DataFrame([curr_row])], axis=0, join="outer", ignore_index=True)
         return curr_df
 
-    # def get_contributors_as_dataframe(self, limit=500):
-    #     """
-    #     Create a dataframe with all contributors to the repo using the GitHub API
-    #
-    #     This function is currently not being used internally.  To avoid external calls to GitHub use
-    #     :py:meth:`nwb_project_analytics.codestats.GitCodeStats.get_contributors` instead, which computes
-    #     the stats from a local checkout of the repo.
-    #
-    #     :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
-    #
-    #     :return: Pandas dataframe
-    #     """
-    #     repo_info = GitHubRepoInfo(self)
-    #     all_contributors = repo_info.get_contributors(limit=limit, get_user_info=True)
-    #     columns = {col_name: [] for col_name in ['login',
-    #                                              'name',
-    #                                              'email',
-    #                                              'id',
-    #                                              'company',
-    #                                              'location',
-    #                                              'avatar_url',
-    #                                              'html_url',
-    #                                              'type',
-    #                                              self.repo]}
-    #     for contributor in all_contributors:
-    #         columns['login'].append(contributor['login'])
-    #         columns['id'].append(contributor['id'])
-    #         columns['type'].append(contributor['type'])
-    #         user_cols = ['name', 'email', 'company', 'location']
-    #         if contributor['user_info'] is not None:
-    #             for cname in user_cols:
-    #                 columns[cname].append(contributor['user_info'][cname])
-    #         else:
-    #             for cname in user_cols:
-    #                 columns[cname].append(None)
-    #         columns['avatar_url'].append(contributor['avatar_url'])
-    #         columns['html_url'].append(contributor['html_url'])
-    #         columns[self.repo].append(contributor['contributions'])
-    #
-    #     result = pd.DataFrame.from_dict(columns)
-    #     return result
-
 
 class GitRepos(OrderedDict):
     """Dict where the keys are names of codes and the values are GitRepo objects"""
@@ -388,7 +346,7 @@ class NWBGitInfo:
               repo="nwb-jupyter-widgets",
               mainbranch="master",
               docs=None,
-              logo="https://user-images.githubusercontent.com/844306/254117081-f20b8c26-79c7-4c1c-a3b5-b49ecf8cce5d.png")),
+              logo="https://user-images.githubusercontent.com/844306/254117081-f20b8c26-79c7-4c1c-a3b5-b49ecf8cce5d.png")),  # noqa E501
          ("NWBInspector",
           GitRepo(
               owner="NeurodataWithoutBorders",
@@ -481,7 +439,7 @@ class NWBGitInfo:
               owner="nwb-extensions",
               repo="ndx-template",
               mainbranch="main",
-              docs="https://nwb-overview.readthedocs.io/en/latest/extensions_tutorial/2_create_extension_spec_walkthrough.html",
+              docs="https://nwb-overview.readthedocs.io/en/latest/extensions_tutorial/2_create_extension_spec_walkthrough.html",  # noqa E501
               logo=None)),
          ("NDX_Staged_Extensions",
           GitRepo(
@@ -646,7 +604,7 @@ class GitHubRepoInfo:
             with open(cache_filename) as f:
                 with warnings.catch_warnings():
                     warnings.simplefilter('ignore', yaml.error.UnsafeLoaderWarning)
-                    yaml_loader = yaml.YAML(typ='rt') # using 'rt' instead of 'safe' to allow loading of tuple
+                    yaml_loader = yaml.YAML(typ='rt')  # using 'rt' instead of 'safe' to allow loading of tuple
                     release_timelines = yaml_loader.load(f)
         else:
             # Compute the release timeline
@@ -733,34 +691,3 @@ class GitHubRepoInfo:
                                          for i in range(1, len(versions), 1)]))
         # return results
         return version_jumps
-
-    # def get_contributors(self, limit=500, get_user_info=True):
-    #     """
-    #     Get list of all contributors to the repo
-    #
-    #     This function is currently not being used internally.  To avoid external calls to GitHub use
-    #     :py:meth:`nwb_project_analytics.codestats.GitCodeStats.get_contributors` instead, which computes
-    #     the stats from a local checkout of the repo.
-    #
-    #     :param limit: Number of contributors to list. This is the `per_page` parameter of the GitHub API
-    #     :param get_user_info: Also request the additional public info for the user, e.g., name
-    #
-    #     :return: List of dicts with information about the contributors
-    #     """
-    #
-    #     # Get results from GitGub
-    #     req_url = f"https://api.github.com/repos/{self.repo.owner}/{self.repo.repo}/contributors?per_page={limit}"
-    #     result = requests.get(req_url)
-    #     if not result.ok:
-    #         result.raise_for_status()
-    #     else:
-    #         result = result.json()
-    #     if get_user_info:
-    #         for ci, contributor in enumerate(result):
-    #             req_url = f"https://api.github.com/users/{contributor['login']}"
-    #             user_info = requests.get(req_url)
-    #             if user_info.ok:
-    #                 result[ci]['user_info'] = user_info.json()
-    #             else:
-    #                 result[ci]['user_info'] = None
-    #     return result
