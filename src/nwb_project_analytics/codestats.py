@@ -121,8 +121,12 @@ class GitCodeStats:
                 output_dir=cache_dir,
                 git_paths={k: v.github_path for k, v in all_nwb_repos.items()}
             )
+            # Define --since parameter to avoid inclusion of contributors before a repo started (e.g., for forks)
+            contributor_params = {v.repo: ("--since " + v.startdate.isoformat()) if v.startdate is not None else None
+                                  for k, v in all_nwb_repos.items()}
             git_code_stats.compute_code_stats(cloc_path=cloc_path,
-                                              clean_source_dir=clean_source_dir)
+                                              clean_source_dir=clean_source_dir,
+                                              contributor_params=contributor_params)
             if write_cache:
                 git_code_stats.write_to_cache()
 
@@ -211,7 +215,7 @@ class GitCodeStats:
          self,
          cloc_path: str,
          clean_source_dir: bool = False,
-         contributor_params: str = None
+         contributor_params: dict = None
     ):
         """
         Compute code statistics suing CLOC.
@@ -225,7 +229,7 @@ class GitCodeStats:
 
         :param cloc_path: Path to the cloc command for running cloc stats
         :param clean_source_dir: Bool indicating whether to remove self.source_dir when finished
-        :param contributor_params: String indicating additional command line parameters to pass to
+        :param contributor_params: dict of string indicating additional command line parameters to pass to
                                   `git shortlog`. E.g., `--since="3 years"`. Similarly we may
                                   specify --since, --after, --before and --until.
         :return: None. The function initializes self.commit_stats, self.cloc_stats, and self.contributors
@@ -240,9 +244,13 @@ class GitCodeStats:
 
         # Compute list of contributors for all the repos
         # We must do this first after cloning the repos since computing cloc checks out the repo in different states
-        repo_contributors = {name: GitCodeStats.get_contributors(repo=repo,
-                                                                 contributor_params=contributor_params)
-                             for name, repo in git_repos.items()}
+        print("Compute contributors...")
+        # TODO Use contributor_params here!!!
+        repo_contributors = {
+            name: GitCodeStats.get_contributors(
+                repo=repo,
+                contributor_params=None) #contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None))
+            for name, repo in git_repos.items()}
         self.contributors = GitCodeStats.merge_contributors(data_frames=repo_contributors)
 
         # Compute CLOC and Commit statistics for all repos
@@ -545,6 +553,7 @@ class GitCodeStats:
         cli_command = "git shortlog --summary --numbered --email"
         if contributor_params is not None:
             cli_command += " " + contributor_params
+        print("Get contributors ... " + src_dir + "   " + cli_command)
         result = subprocess.run(
             [cli_command, ""],
             capture_output=True,
@@ -561,6 +570,7 @@ class GitCodeStats:
                                 names=["commits", "name", "email"])
         # remove trailing whitespaces from names
         result_df["name"] = [n.rstrip(" ") for n in result_df["name"]]
+        print(result_df[["name", "email", "commits"]])
         return result_df[["name", "email", "commits"]]
 
     @staticmethod
@@ -573,6 +583,7 @@ class GitCodeStats:
         :param merge_duplicates: Attempt to detect and merge duplicate contributors by name and email
         :return: Combined pandas dataframe
         """
+        print("Merging contributors ...")
         result = None
         for repo_name, df in data_frames.items():
             df = df.rename(columns={"name": "name", "email": "email", "commits": repo_name})
@@ -588,6 +599,8 @@ class GitCodeStats:
         # result.columns = pd.MultiIndex.from_tuples(
         #     [('Contributor', 'name'), ('Contributor', 'email')] +
         #     [('Number of Commits', repo_name) for repo_name in data_frames.keys()])
+        print("Merged:")
+        print(result)
         if merge_duplicates:
             # Merge contributors with the same name
             grouped = result.groupby(["email"])  # merge with same email
@@ -595,6 +608,8 @@ class GitCodeStats:
             names = grouped.agg({"name": tuple})  # keep all names
             filtered["name"] = names
             filtered.reset_index(inplace=True)
+            print("Depublicate by email:")
+            print(filtered)
             # Merge contributors with the same email
             # If someone has both multiple emails and names then simply grouping by email name won't work
             # because we may already have multiple names at this point. Because of this we here compute
@@ -612,14 +627,18 @@ class GitCodeStats:
                         if np.any(np.array(names2) == n):
                             match = index2
                 group_col.append(index if match < 0 else match)
-            filtered[('Contributor', 'name_index')] = group_col
-            grouped = filtered.groupby([("Contributor", "name_index")]) # group to find rows with matching names
+            filtered['name_index'] = group_col
+            grouped = filtered.groupby(["name_index"]) # group to find rows with matching names
             filtered = grouped.sum()   # sum up contributions
             filtered["email"] = grouped.agg({"email": tuple})
             filtered.reset_index(inplace=True, drop=True)  # remove the `name_index` column we added for grouping
+            print("Depublicate by name:")
+            print(filtered)
             # Remove duplicate emails and names
             filtered["name"] = [tuple(set(names)) for names in filtered["name"]]
             filtered["email"] = [tuple(set(emails)) for emails in filtered["email"]]
+            print("Remove duplicate names and emails")
+            print(filtered)
             # Update the final result
             result = filtered
 
