@@ -367,7 +367,8 @@ class NWBGitInfo:
     """
     List of early releases that are missing a tag on GitHub
     """
-
+    GIT_REPOS = GitRepos([])
+    """
     GIT_REPOS = GitRepos(
         [("PyNWB",
           GitRepo(
@@ -515,6 +516,7 @@ class NWBGitInfo:
               docs="https://neuroconv.readthedocs.io",
               logo="https://github.com/catalystneuro/neuroconv/blob/main/docs/img/neuroconv_logo.png"))
          ])
+    """
     """
     Dictionary with main NWB git repositories. The values are GitRepo tuples with the owner and repo name.
     """

@@ -255,6 +255,7 @@ class GitCodeStats:
                 contributor_params=contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None))
             for name, repo in git_repos.items()}
         self.contributors = GitCodeStats.merge_contributors(data_frames=repo_contributors)
+        print("", flush=True)
 
         # Compute CLOC and Commit statistics for all repos
         self.commit_stats = {}
