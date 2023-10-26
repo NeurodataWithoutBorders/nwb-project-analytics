@@ -222,6 +222,16 @@ def __create_nwb_codestat_summary_rst(
     if codecov_nwb_summary_figure is not None:
         codestats_rst.add_subsection("Test Coverage: NWB APIs")
         codestats_rst.add_figure(codecov_nwb_summary_figure)
+
+    # Add link to the contributors
+    codestats_rst.add_subsection("Contributors")
+    codestats_rst.add_text(
+        "For a listing of all contributors to the various NWB Git repositories see the `contributors.tsv "
+        "<https://github.com/NeurodataWithoutBorders/nwb-project-analytics/blob/main/data/contributors.tsv>`_ "
+        "file as part of the `nwb-project-analytics "
+        "<https://github.com/NeurodataWithoutBorders/nwb-project-analytics>`_ "
+        "Git repository.")
+
     return codestats_rst
 
 
