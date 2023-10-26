@@ -558,6 +558,7 @@ class GitCodeStats:
         if contributor_params is not None:
             cli_command += " " + contributor_params
         print("Get contributors ... " + src_dir + "   " + cli_command)
+        print(os.path.exists(src_dir))
         """result = subprocess.run(
             [cli_command, ""],
             capture_output=True,
