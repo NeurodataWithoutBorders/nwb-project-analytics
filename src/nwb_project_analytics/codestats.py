@@ -162,14 +162,15 @@ class GitCodeStats:
         """Save the stats to YAML"""
         print("Caching results...")  # noqa T001
         print("saving %s" % self.cache_file_cloc)  # noqa T001
+        yaml_dumper = yaml.YAML(typ='safe', pure=True)
         with open(self.cache_file_cloc, 'w') as outfile:
-            yaml.dump(self.cloc_stats, outfile)
+            yaml_dumper.dump(self.cloc_stats, outfile)
         print("saving  %s" % self.cache_file_commits)  # noqa T001
         with open(self.cache_file_commits, 'w') as outfile:
-            yaml.dump(self.commit_stats, outfile)
+            yaml_dumper.dump(self.commit_stats, outfile)
         print("saving %s" % self.cache_git_paths)  # noqa T001
         with open(self.cache_git_paths, 'w') as outfile:
-            yaml.dump(self.git_paths, outfile)
+            yaml_dumper.dump(self.git_paths, outfile)
         print("saving %s" %  self.cache_contributors)  # noqa T001
         self.contributors.to_csv(self.cache_contributors , sep="\t", index=False)
 
