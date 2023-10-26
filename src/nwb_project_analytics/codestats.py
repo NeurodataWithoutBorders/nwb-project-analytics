@@ -244,18 +244,14 @@ class GitCodeStats:
 
         # Compute list of contributors for all the repos
         # We must do this first after cloning the repos since computing cloc checks out the repo in different states
-        print("Compute contributors...")
-        # TODO Use contributor_params here!!!
-        print({name: os.path.basename(repo.working_tree_dir.split("/")[-1]) for name, repo in git_repos.items()})
-        print({name: contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None) for name, repo in git_repos.items()})
-        print(contributor_params)
+        print("Compute contributors...") # noqa T001
         repo_contributors = {
             name: GitCodeStats.get_contributors(
                 repo=repo,
                 contributor_params=contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None))
             for name, repo in git_repos.items()}
         self.contributors = GitCodeStats.merge_contributors(data_frames=repo_contributors)
-        print("", flush=True)
+        print("", flush=True) # noqa T001
 
         # Compute CLOC and Commit statistics for all repos
         self.commit_stats = {}
@@ -268,7 +264,7 @@ class GitCodeStats:
                 output_dir=self.output_dir)
             self.commit_stats[name] = commit_res
             self.cloc_stats[name] = cloc_res
-        print("Clean code source dir %s ..." % self.source_dir)
+        print("Clean code source dir %s ..." % self.source_dir) # noqa T001
         if clean_source_dir:
             if os.path.exists(self.source_dir):
                 shutil.rmtree(self.source_dir)
@@ -557,26 +553,13 @@ class GitCodeStats:
         cli_command = f"git log | git shortlog --summary --numbered --email"
         if contributor_params is not None:
             cli_command += " " + contributor_params
-        print("Get contributors ... " + src_dir + "   " + cli_command)
-        print(os.path.exists(src_dir))
         result = subprocess.run(
             [cli_command, ""],
             capture_output=True,
             text=True,
             cwd=src_dir,
             shell=True)
-        print(result)
-        print("result.stdout", result.stdout)
-        print("result.stderr", result.stderr)
         result_text = result.stdout
-
-        """outfile = "git_shortlog.txt"
-        cli_command += "> " + outfile
-        os.system(cli_command)
-        with open(outfile, 'r') as file:
-            result_text = file.read()
-        print(result_text)
-        os.remove(outfile)"""
 
         result_text = result_text.replace("<", "\t").replace(">", "")
         # parse the result
@@ -587,7 +570,6 @@ class GitCodeStats:
                                 names=["commits", "name", "email"])
         # remove trailing whitespaces from names
         result_df["name"] = [n.rstrip(" ") for n in result_df["name"]]
-        print(result_df[["name", "email", "commits"]])
         return result_df[["name", "email", "commits"]]
 
     @staticmethod
@@ -600,7 +582,6 @@ class GitCodeStats:
         :param merge_duplicates: Attempt to detect and merge duplicate contributors by name and email
         :return: Combined pandas dataframe
         """
-        print("Merging contributors ...")
         result = None
         for repo_name, df in data_frames.items():
             df = df.rename(columns={"name": "name", "email": "email", "commits": repo_name})
@@ -616,8 +597,6 @@ class GitCodeStats:
         # result.columns = pd.MultiIndex.from_tuples(
         #     [('Contributor', 'name'), ('Contributor', 'email')] +
         #     [('Number of Commits', repo_name) for repo_name in data_frames.keys()])
-        print("Merged:")
-        print(result)
         if merge_duplicates:
             # Merge contributors with the same name
             grouped = result.groupby(["email"])  # merge with same email
@@ -625,8 +604,6 @@ class GitCodeStats:
             names = grouped.agg({"name": tuple})  # keep all names
             filtered["name"] = names
             filtered.reset_index(inplace=True)
-            print("Depublicate by email:")
-            print(filtered)
             # Merge contributors with the same email
             # If someone has both multiple emails and names then simply grouping by email name won't work
             # because we may already have multiple names at this point. Because of this we here compute
@@ -649,13 +626,9 @@ class GitCodeStats:
             filtered = grouped.sum()   # sum up contributions
             filtered["email"] = grouped.agg({"email": tuple})
             filtered.reset_index(inplace=True, drop=True)  # remove the `name_index` column we added for grouping
-            print("Depublicate by name:")
-            print(filtered)
             # Remove duplicate emails and names
             filtered["name"] = [tuple(set(names)) for names in filtered["name"]]
             filtered["email"] = [tuple(set(emails)) for emails in filtered["email"]]
-            print("Remove duplicate names and emails")
-            print(filtered)
             # Update the final result
             result = filtered
 
