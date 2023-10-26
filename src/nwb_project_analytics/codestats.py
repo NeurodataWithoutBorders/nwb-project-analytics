@@ -564,6 +564,7 @@ class GitCodeStats:
             text=True,
             cwd=src_dir,
             shell=True)
+        print(result)
         print("result.stdout", result.stdout)
         print("result.stderr", result.stderr)
         result_text = result.stdout
