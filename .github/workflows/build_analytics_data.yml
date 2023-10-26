@@ -34,11 +34,11 @@ jobs:
 
       - name: build the docs
         run: |
-          rm data/cloc_stats.yaml
-          rm data/commit_stats.yaml
-          rm data/git_paths.yaml
-          rm data/release_timelines.yaml
-          rm data/contributors.tsv
+          rm -f data/cloc_stats.yaml
+          rm -f data/commit_stats.yaml
+          rm -f data/git_paths.yaml
+          rm -f data/release_timelines.yaml
+          rm -f data/contributors.tsv
           cd docs
           make allclean
           make html
