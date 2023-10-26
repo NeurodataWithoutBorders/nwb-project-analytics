@@ -1,0 +1,349 @@
+Contributor	Contributor	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits	Number of Commits
+name	email	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_Schema	NWB_Schema_Language	NWB_Project_Analytics	HDMF	HDMF_Zarr	HDMF_Common_Schema	HDMF_DocUtils	HDMF_Schema_Language	NDX_Template	NDX_Staged_Extensions	NDX_Catalog	NDX_Extension_Smithy	NeuroConv	NWB_1.x_Matlab	NWB_1.x_Python
+Andrew Tritt 	ajtritt@lbl.gov	1892	0	1	0	0	19	0	126	0	0	682	0	43	0	0	0	1	0	0	0	0	0
+Ben Dichter 	ben.dichter@gmail.com	329	64	79	138	5	151	57	77	2	4	167	2	3	22	4	9	4	2	0	423	0	0
+Oliver Ruebel 	oruebel@lbl.gov	228	1	0	4	0	97	70	347	0	149	94	40	0	88	0	3	0	13	0	0	0	0
+Ryan Ly 	rly@lbl.gov	203	22	2	38	23	321	42	102	11	0	312	11	44	39	7	179	51	24	42	0	0	0
+Jean-Christophe Fillion-Robin 	jchris.fillionr@kitware.com	105	3	0	0	0	76	0	1	0	0	84	0	0	47	0	37	0	0	0	0	0	0
+Oliver Ruebel 	oruebel@users.noreply.github.com	93	3	0	1	0	316	41	92	0	41	97	27	6	9	0	2	1	4	0	0	0	0
+bendichter 	ben.dichter@gmail.com	89	92	22	133	0	49	46	3	0	0	13	2	0	0	0	0	0	0	0	367	0	0
+Doruk Ozturk 	doruk.ozturk@kitware.com	71	0	0	0	0	0	0	1	0	0	65	0	0	0	0	0	0	0	0	0	0	0
+Andrew Tritt 	AJTritt@lbl.gov	66	0	0	0	0	0	0	10	0	0	32	0	0	0	0	0	0	0	0	0	0	0
+Thomas Braun 	thomas.braun@byte-physics.de	49	0	0	0	0	7	0	0	0	0	13	0	1	0	0	3	0	0	0	0	0	1
+nicholasc 	nicain.seattle@gmail.com	47	0	1	0	0	1	0	0	0	0	28	0	0	2	0	0	0	0	0	0	0	0
+Doruk Ozturk 	dorukozturk@users.noreply.github.com	32	0	0	0	0	1	0	0	0	0	27	0	0	0	0	0	0	0	0	0	0	0
+nilegraddis 	nilegraddis@gmail.com	21	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tom Davidson 	tjd@alum.mit.edu	21	0	0	0	0	11	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0
+nicain 	nicain.seattle@gmail.com	20	0	0	0	0	11	0	1	0	0	10	0	0	2	0	0	0	0	0	0	0	0
+mavaylon1 	mavaylon1@berkeley.edu	19	2	0	0	0	1	1	1	0	0	17	16	8	3	7	0	0	0	0	0	0	0
+NileGraddis 	nilegraddis@gmail.com	13	0	0	0	0	13	0	0	0	0	7	0	0	2	0	0	0	0	0	0	0	0
+David Camp 	dcamp@tracy.lbl.gov	13	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0
+Cody Baker 	51133164+CodyCBakerPhD@users.noreply.github.com	12	1	69	1079	821	46	0	13	0	0	6	1	0	0	0	0	0	0	0	2264	0	0
+Thomas Braun 	t-b@users.noreply.github.com	12	0	0	0	0	13	0	3	0	0	6	0	0	0	0	0	0	0	0	0	0	0
+Szonja Weigl 	wszonja@gmail.com	9	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	102	0	0
+Jay R Bolton 	jayrbolton@gmail.com	8	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
+Matthias Kastner 	matthias.kastner@byte-physics.de	8	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0
+nile graddis 	nilegraddis@gmail.com	7	0	3	0	0	1	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
+Yaroslav Halchenko 	debian@onerussian.com	6	0	0	0	0	6	0	13	0	0	3	0	1	0	0	0	0	0	0	4	0	0
+NileGraddis 	NileGraddis@Gmail.com	6	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Jed Perkins 	perkins.jed@gmail.com	5	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
+Tom 	tdonoghue.research@gmail.com	5	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+dorukozturk 	doruk.ozturk@kitware.com	5	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0
+Mario 	maamelara@gmail.com	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+John Yearsley 	yearsj@uw.edu	4	0	0	0	0	0	0	1	0	0	3	0	0	0	0	0	0	0	0	0	0	0
+Michael Grauer 	michael.grauer@kitware.com	4	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
+Eric Miller 	angevineMiller@gmail.com	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+matthias 	mail@matthias-kastner.de	3	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0
+Matthew Avaylon 	mavaylon1@berkeley.edu	3	0	0	0	0	1	0	1	0	0	22	11	11	9	0	0	0	0	0	0	0	0
+arokem 	arokem@gmail.com	3	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0
+ls 	kevinalexbrown@gmail.com	3	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+!git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD` 	ben.dichter@gmail.com	3	29	244	3	0	15	0	5	7	0	8	0	0	1	7	0	0	0	0	74	0	0
+Lowell Umayam 	umayaml@vm504.int.janelia.org	2	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Justin Kiggins 	justink@alleninstitute.org	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+nicholasc 	nicholasc@alleninstitute.org	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+dependabot[bot] 	49699333+dependabot[bot]@users.noreply.github.com	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	5	0	0
+Kevin 	kevinalexbrown@gmail.com	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+jeff Teeters 	jeff@teeters.us	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	49
+Darin Erat Sleiter 	darin@ae.studio	1	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0
+Darin Erat Sleiter 	darin.sleiter@gmail.com	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0
+Iouri Khramtsov 	ikhramts@users.noreply.github.com	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Heberto Mayorquin 	h.mayorquin@gmail.com	1	0	2	3	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	444	0	0
+Szonja Weigl 	weigl.anna.szonja@hallgato.ppke.hu	1	0	0	2	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Nicholas Nadeau, P.Eng., AVS 	nnadeau@users.noreply.github.com	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Mario Melara 	maamelara@gmail.com	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+charles 	charlesguan94@gmail.com	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+dcamp_lbl 	dcamp@lbl.gov	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Lawrence 	lawrence@vidriotech.com	0	383	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lawrence 	lancewiu@tutanota.com	0	286	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ln-vidrio 	33462079+ln-vidrio@users.noreply.github.com	0	128	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lawrence Niu 	lawrence@mbfbioscience.com	0	99	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lawrence 	lawrence@mbfbioscience.com	0	86	0	0	0	0	15	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lawrence 	33462079+lawrence-mbf@users.noreply.github.com	0	50	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+cechava 	cechavarria@g.harvard.edu	0	17	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Mark Cafaro 	mark.cafaro@mathworks.com	0	17	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Nathan Clack 	nclack@gmail.com	0	8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Vijay Iyer 	vijayi@mathworks.com	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+lawrence 	lawrence@mbfbioscience.com	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+cechava 	cesar@Cesars-MacBook-Pro-2.local	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Nathan Clack 	nathan@vidriotech.com	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lawrence Niu 	lawrence@vidriotech.com	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Alex Estrada 	87288871+stradaa@users.noreply.github.com	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Biafra Ahanonu 	bahanonu@alum.mit.edu	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+vijayi 	vijayi@ah-vijayi.dhcp.mathworks.com	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+wuffi 	2758427+wuffi@users.noreply.github.com	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+IvanSmal 	smalianchuk.ivan@gmail.com	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Vincent Prevosto 	prevosto@mit.edu	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Vincent Prevosto 	vincent.prevosto@duke.edu	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+cechava 	cechavarria60@gmail.com	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+nwb-schema Upstream 	neurodatawithoutborders@googlegroups.com	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+luiz 	luiz_tauffer@hotmail.com	0	0	77	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	175	0	0
+Armin Najarpour Foroushani 	armin.najarpour@gmail.com	0	0	46	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Luiz Tauffer 	luiz_tauffer@hotmail.com	0	0	38	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	81	0	0
+pre-commit-ci[bot] 	66853113+pre-commit-ci[bot]@users.noreply.github.com	0	0	16	145	404	0	0	0	0	0	9	0	0	0	0	0	0	0	0	276	0	0
+Saksham Sharda 	11567561+Saksham20@users.noreply.github.com	0	0	14	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	35	0	0
+luiztauffer 	luiz_tauffer@hotmail.com	0	0	12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	233	0	0
+Tom Donoghue 	tdonoghue.research@gmail.com	0	0	11	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Matt McCormick 	matt.mccormick@kitware.com	0	0	9	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
+Heberto 	h.mayorquin@gmail.com	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14	0	0
+Abby Dichter 	abigail_dichter@brown.edu	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Ben Hardcastle 	ben.hardcastle@alleninstitute.org	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+CodyCBakerPhD 	cody.c.baker.phd@gmail.com	0	0	3	9	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	360	0	0
+Jeremy Magland 	jeremy.magland@gmail.com	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Alessio Buccino 	alejoe9187@gmail.com	0	0	3	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	74	0	0
+Michael Scheid 	michael.r.scheid@gmail.com	0	0	2	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+d-sot 	54951034+d-sot@users.noreply.github.com	0	0	2	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0
+Brian H. Hu 	brianhhu@users.noreply.github.com	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Dav Clark 	dav@bead.glass	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Cody Baker 	cbaker9@nd.edu	0	0	0	420	41	0	0	0	0	0	0	0	0	0	0	0	0	0	0	716	0	0
+Cody Baker 	codycbakerphd@gmail.com	0	0	0	78	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	23	0	0
+weiglszonja 	wszonja@gmail.com	0	0	0	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	399	0	0
+Alessandra Trapani 	alessandramaria.trapani@polimi.it	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+h-mayorquin 	h.mayorquin@gmail.com	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	671	0	0
+John T. Wodder II 	git@varonathe.org	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Alessandra Trapani 	55453048+alessandratrapani@users.noreply.github.com	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+CodyCBakerPhD 	codycbakerphd@gmail.com	0	0	0	3	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	42	0	0
+Tram Ngo 	tramngo1603@gmail.com	0	0	0	0	1138	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+aaronm-2112 	aaron.marroquin96@gmail.com	0	0	0	0	1013	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Garrett 	gflynn@usc.edu	0	0	0	0	969	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0
+fairdataihub-bot 	fairdataihub@gmail.com	0	0	0	0	853	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jacob Clark 	jacobcs@zoho.com	0	0	0	0	651	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+slugb0t 	wheresdorian@gmail.com	0	0	0	0	582	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+unknown 	jacobcs@zoho.com	0	0	0	0	503	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Aaron Marroquin 	aaron.marroquin96@gmail.com	0	0	0	0	475	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sanjay Soundarajan 	sanjays344@mail.fresnostate.edu	0	0	0	0	451	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+bvhpatel 	8172375+bvhpatel@users.noreply.github.com	0	0	0	0	382	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+bvhpatel 	b.patel@berkeley.edu	0	0	0	0	233	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Aaron M 	43050715+aaronm-2112@users.noreply.github.com	0	0	0	0	171	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Harshit Srivastava 	hs3500@nyu.edu	0	0	0	0	139	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sanjay Soundarajan 	ssoundarajan@calmi2.org	0	0	0	0	132	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Aaron 	aaron.marroquin96@gmail.com	0	0	0	0	130	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tram Kate Ngo 	tramngo1603@gmail.com	0	0	0	0	129	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Ishani Bhansali 	47305677+ishanibhansali@users.noreply.github.com	0	0	0	0	123	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sanjay Soundarajan 	sanjay.16@live.com	0	0	0	0	78	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bhavesh Patel 	b.patel@berkeley.edu	0	0	0	0	74	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+unknown 	sanjays344@mail.fresnostate.edu	0	0	0	0	68	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+rly 	rly@lbl.gov	0	0	0	0	43	3	0	0	0	4	0	0	0	0	0	10	1	0	0	0	0	0
+Garrett Michael Flynn 	garrettmflynn@gmail.com	0	0	0	0	41	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Harshit Srivastava 	32726514+harshit0511@users.noreply.github.com	0	0	0	0	33	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+megasanjay 	sanjays344@mail.fresnostate.edu	0	0	0	0	20	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Dorian Portillo 	50216901+slugb0t@users.noreply.github.com	0	0	0	0	18	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JacobDClark 	jacobcs@zoho.com	0	0	0	0	15	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Garrett Michael Flynn 	46533749+GarrettMFlynn@users.noreply.github.com	0	0	0	0	14	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Karl Helmer 	helmer@nmr.mgh.harvard.edu	0	0	0	0	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Harshit Srivastava 	HSrivastava@calmi2domain.local	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Dorian Portillo 	slugb0t@Dorians-MacBook-Pro.local	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Bhavesh 	b.patel@berkeley.edu	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+aaronm-2112 	aaronm-2112@users.noreply.github.com	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Aaron 	aaron@Sanjays-Mac-mini.local	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jacob 	jacob@Sanjays-Mac-mini.local	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+dev2 	dev2@devs-MacBook-Pro.local	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+fairdataihub-bot 	91559232+fairdataihub-bot@users.noreply.github.com	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+dev 	dev@devs-MacBook-Pro.local	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+dev 	dev@BPatels-MacBook-Pro.local	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tom Gillespie 	tgbugs@gmail.com	0	0	0	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+slugb0t 	50216901+slugb0t@users.noreply.github.com	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JacobiClark 	JacobiClark@users.noreply.github.com	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JacobiClark 	jacobcs@zoho.com	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+megasanjay 	megasanjay@users.noreply.github.com	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+sourcery-ai[bot] 	58596630+sourcery-ai[bot]@users.noreply.github.com	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+mgrauer 	michael.grauer@kitware.com	0	0	0	0	0	28	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Matteo Cantarelli 	matteo.cantarelli@gmail.com	0	0	0	0	0	24	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pamela Baker 	58545063+rightbower@users.noreply.github.com	0	0	0	0	0	15	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+yangll0620 	yll0620@gmail.com	0	0	0	0	0	14	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Ali Mohebi 	mohebial@users.noreply.github.com	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Lydia Ng 	lydian@alleninstitute.org	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Justin Kiggins 	justin.kiggins@gmail.com	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Kael Dai 	kaeldai@users.noreply.github.com	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Josh Siegle 	joshs@alleninstitute.org	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+lynnebecker13 	35577925+lynnebecker13@users.noreply.github.com	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jeremy Delahanty 	jdelahanty@salk.edu	0	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jerome Lecoq 	jlecoq@gmail.com	0	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sylvain Takerkart 	Sylvain.Takerkart@univ-amu.fr	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Padraig Gleeson 	p.gleeson@gmail.com	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+efinkel 	efinkel88@gmail.com	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Liviu S 	lvsltz-g@yahoo.com	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Shreejoy Tripathy 	stripat3@gmail.com	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+kevinalexbrown 	kevinalexbrown@gmail.com	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Nand Chandravadia 	31257907+nandchandravadia@users.noreply.github.com	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ajgranger 	granger.adam@gmail.com	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+bergjim 	34321192+bergjim@users.noreply.github.com	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+nicthib 	34455769+nicthib@users.noreply.github.com	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Aaron D. Milstein 	neurosutras@users.noreply.github.com	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Xiaoxuan Jia 	xiaoxuanj@alleninstitute.org	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Eric Denovellis 	edeno@bu.edu	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+kcasimo 	48135486+kcasimo@users.noreply.github.com	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Akshay Jaggi 	akshay.x.jaggi@gmail.com	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jens K 	jens-k@users.noreply.github.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Ariel Rokem 	arokem@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Borde Sandor 	borde@inf.u-szeged.hu	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+DSegebarth 	64020372+DSegebarth@users.noreply.github.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+David Tingley 	davidtingley2@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Dipterix Wang 	8163576+dipterix@users.noreply.github.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jeremy Forest 	jerem.forest@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Konstantinos 	knasiwtis@hotmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Luke Campagnola 	luke.campagnola@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Mike Grauer 	michael.grauer@kitware.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Mikkel Elle Lepperød 	lep.mik@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sumner L Norman 	sumner.norman@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ehennestad 	ehennestad@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+neuroelf 	30698080+neuroelf@users.noreply.github.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+sebiRolotti 	srolotti@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+shenshan 	shenshanpku@gmail.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+zcbo 	44985805+zcbo@users.noreply.github.com	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Luke Campagnola 	lukec@alleninstitute.org	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Thinh Nguyen 	37779736+ttngu207@users.noreply.github.com	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Matthew Sit 	msit@berkeley.edu	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Eric Thomson 	thomson.eric@gmail.com	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Thinh Nguyen 	thinh@vathes.com	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Jessie Liu 	jessie.liu@berkeley.edu	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Roni Choudhury 	2903332+waxlamp@users.noreply.github.com	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Laurelrr 	20727325+laurelrr@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Kenneth Dyson 	70381642+M3-Coordinator@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Vyassa Baratham 	vbaratham@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Josh Siegle 	jsiegle@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+actionpotential 	company@actionpotential.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Hannah Choi 	myhannahchoi@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+atlandau 	andrewtylerlandau@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Evan Lyall 	elyall@berkeley.edu	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+colleenjg 	colleenjgillon@hotmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+smestern 	SMestern@uwo.ca	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+jeylau 	30733203+jeylau@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+karnitas 	karen.lavi@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Derek 	derekhoward@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+lgoirandlopez 	51376595+lgoirandlopez@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Deepti Mittal 	deepti.mittal12@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Daniel Aharoni 	dbaharoni@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Dan Millman 	daniem@alleninstitute.org	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Chenggang Chen 	37786589+ccg1988@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+nileg 	nileg@alleninstitute.org	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+owoolnough 	48069742+owoolnough@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+rhuszar 	roman.huszar.17@dartmouth.edu	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Matt Earnshaw 	matt@earnshaw.org.uk	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Matt McCormick 	matt@mmmccormick.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Pierre Le Merre 	50451055+PierreLeMerre@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Michael Wulf 	michael.wulf@gmail.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Satrajit Ghosh 	satra@mit.edu	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+MarikeReimer 	35542396+MarikeReimer@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+smestern 	52610944+smestern@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Marike Reimer 	35542396+MarikeReimer@users.noreply.github.com	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Sylvia Schröder 	sylvia.schroeder@ucl.ac.uk	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Kyu Hyun Lee 	kyuhyun9056@gmail.com	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Constantinos Eleftheriou 	Constantinos.Eleftheriou@ed.ac.uk	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Guillaume Viejo 	guillaume.viejo@gmail.com	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Liezl Maree 	38435167+roomrys@users.noreply.github.com	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Zeta 	ZeitgeberH@users.noreply.github.com	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tom Davidson 	cheakamus@gmail.com	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+NWB Bot 	32185786+nwb-bot@users.noreply.github.com	0	0	0	0	0	0	0	0	0	81	0	0	0	0	0	0	0	0	0	0	0	0
+NWB Bot 	nwb-bot@users.noreply.github.com	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0
+Ben Beasley 	code@musicinmybrain.net	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Tomáš Hrnčiar 	tomas.hrnciar@me.com	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Eric Denovellis 	edeno@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+Matthew Avaylon 	mavaylon@MacBook-Pro.local	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+NWB Extensions Bot 	nwb-extensions-bot@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	2	0	0	0
+tuanpham96 	42875763+tuanpham96@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+Isuru Fernando 	isuruf@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	302	0	0	0
+John Kirkham 	kirkhamj@janelia.hhmi.org	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	273	0	0	0
+Phil Elson 	pelson.pub@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	235	0	0	0
+Anthony Scopatz 	scopatz@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	162	0	0	0
+Marius van Niekerk 	marius.v.niekerk@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	161	0	0	0
+jakirkham 	jakirkham@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	136	0	0	0
+Filipe 	ocefpaf@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	54	0	0	0
+christopher 	cjwright4242@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	47	0	0	0
+Dougal J. Sutherland 	dougal@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	39	0	0	0
+shadow_walker 	shadowwalkersb@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	34	0	0	0
+Michael Sarahan 	msarahan@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	30	0	0	0
+Christopher J. Wright 	cjwright4242@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	29	0	0	0
+Min RK 	benjaminrk@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	28	0	0	0
+ocefpaf 	ocefpaf@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	26	0	0	0
+Isuru Fernando 	isuru.11@cse.mrt.ac.lk	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	0	0
+Christopher J. Wright 	cjwright4242gh@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14	0	0	0
+Josh Reichardt 	josh.reichardt@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	12	0	0	0
+Mark Harfouche 	mark.harfouche@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0
+Jan Schulz 	jasc@gmx.net	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0
+refraction-ray 	kcanamgal@foxmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
+Patrick Sodré 	psodre@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
+Jason Furmanek 	furmanek@us.ibm.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
+Justin Calamari 	justin.calamari@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
+C.A.M. Gerlach 	widenetservices@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0
+Eric Dill 	edill@bnl.gov	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0
+Leopold Talirz 	leopold.talirz@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8	0	0	0
+Mike Sarahan 	msarahan@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0
+Gonzalo Pena-Castellanos 	goanpeca@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0
+Filipe Fernandes 	ocefpaf@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0
+Matt Craig 	mattwcraig@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0	0
+mariusvniekerk 	marius.v.niekerk@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0
+Matthew Craig 	mattwcraig@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0
+Marcel Bargull 	marcel.bargull@udo.edu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	0
+Johannes Köster 	johannes.koester@tu-dortmund.de	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0	0	0
+Peter Williams 	peter@newton.cx	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
+John Blischak 	jdblischak@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
+xoviat 	xoviat@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
+Patrick Sodré 	sodre@sodre.co	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
+Elmar Pruesse 	epruesse@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
+Tobias Megies 	megies@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Bruno Oliveira 	nicoddemus@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Carlo 	carlo.dri@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Carlo 	carlodri@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Chris Burr 	chrisburr@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Florian Rathgeber 	florian.rathgeber@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Jonathan Helmus 	jjhelmus@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Josh Barnes 	joshuacookebarnes@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Marius van Niekerk 	marius.vanniekerk@maxpoint.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Tony Kelman 	tony@kelman.net	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+pelson 	pelson.pub@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
+Jan Janßen 	janssen@mpie.de	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+buijennifer 	bui.jennifert@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Jan Janßen 	jan-janssen@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Peter Killick 	peter.killick@metoffice.gov.uk	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+gouarin 	loic.gouarin@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+hajapy 	hajapy@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Henry Schreiner 	HenrySchreinerIII@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Alex Goodman 	agoodm@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Guilherme Quentel Melo 	gqmelo@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+melsyt 	melinda.y.song@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Eric Dill 	thedizzle@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Maksim Rakitin 	mrakitin@bnl.gov	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Eric Dill 	edill@anaconda.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Nicholas Bollweg 	nick.bollweg@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+santi 	sdvillal@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+Lion Krischer 	krischer@geophysik.uni-muenchen.de	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+ap-- 	andreas@poehlmann.io	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+roryk 	rory.kirchner@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Marius Van Niekerk 	marius.v.niekerk@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Marcel Bargull 	mbargull@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Max Linke 	max_linke@gmx.de	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Maksim Rakitin 	mrakitin@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Morten Enemark Lund 	melund@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Nathan Goldbaum 	ngoldbau@illinois.edu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Julien Schueller 	schueller@phimeca.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Julian Rüth 	julian.rueth@fsfe.org	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Jason Grout 	jasongrout@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Richard Hattersley 	rhattersley@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Ryan May 	rmay31@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Thomas Robitaille 	thomas.robitaille@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Tom Augspurger 	tom.augspurger88@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Duncan Macleod 	duncan.macleod@ligo.org	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Uwe L. Korn 	uwe.korn@quantco.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Uwe L. Korn 	xhochy@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+cshaley 	6740446+cshaley@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+danielballan 	daniel.b.allan@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+lorenz 	looooo@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Dominik Kutra 	k-dominik@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+Saksham Sharda 	saksham20.sharda@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	189	0	0
+Cody Baker 	cody.c.baker.phd@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	183	0	0
+Julia Sprenger 	julia.sprenger@rwth-aachen.de	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	37	0	0
+sbuergers 	sbuergers@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	33	0	0
+Blood Raven 	cody.c.baker.phd@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	32	0	0
+felixp8 	felp8484@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	16	0	0
+Felix Pei 	64850082+felixp8@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0
+Steffen Bürgers 	31699416+sbuergers@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
+Simon Ball 	48679510+simon-ball@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
+Tuan Pham 	42875763+tuanpham96@users.noreply.github.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
+codycbakerphd 	codycbakerphd@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0
+luiz 	luiz_tauffer@otmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+Claudia 	claudia.friedsam@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	0
+Vadim Frolov 	fralik@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0
+friedsam 	claudia.friedsam@gmail.com	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+Jonathan Cooper 	j.p.cooper@ucl.ac.uk	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11
+Jeff Teeters 	jeff@teeters.us	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9
+jeffteeters 	jeff@teeters.us	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6
