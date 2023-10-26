@@ -574,6 +574,7 @@ class GitCodeStats:
         os.system(cli_command)
         with open(outfile, 'r') as file:
             result_text = file.read()
+        print(result_text)
         os.remove(outfile)
 
         result_text = result_text.replace("<", "\t").replace(">", "")
