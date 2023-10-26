@@ -122,7 +122,7 @@ class GitCodeStats:
                 git_paths={k: v.github_path for k, v in all_nwb_repos.items()}
             )
             # Define --since parameter to avoid inclusion of contributors before a repo started (e.g., for forks)
-            contributor_params = {v.repo: ("--since " + v.startdate.isoformat()) if v.startdate is not None else None
+            contributor_params = {k: ("--since " + v.startdate.isoformat()) if v.startdate is not None else None
                                   for k, v in all_nwb_repos.items()}
             git_code_stats.compute_code_stats(cloc_path=cloc_path,
                                               clean_source_dir=clean_source_dir,
@@ -246,10 +246,13 @@ class GitCodeStats:
         # We must do this first after cloning the repos since computing cloc checks out the repo in different states
         print("Compute contributors...")
         # TODO Use contributor_params here!!!
+        print({name: os.path.basename(repo.working_tree_dir.split("/")[-1]) for name, repo in git_repos.items()})
+        print({name: contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None) for name, repo in git_repos.items()})
+        print(contributor_params)
         repo_contributors = {
             name: GitCodeStats.get_contributors(
                 repo=repo,
-                contributor_params=None) #contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None))
+                contributor_params=contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None))
             for name, repo in git_repos.items()}
         self.contributors = GitCodeStats.merge_contributors(data_frames=repo_contributors)
 
@@ -560,6 +563,8 @@ class GitCodeStats:
             text=True,
             cwd=src_dir,
             shell=True)
+        print("result.stdout", result.stdout)
+        print("result.stderr", result.stderr)
         result_text = result.stdout
         result_text = result_text.replace("<", "\t").replace(">", "")
         # parse the result
