@@ -194,7 +194,7 @@ class GitCodeStats:
             with open(re.cache_git_paths) as f:
                 re.git_paths = yaml_safe_loader.load(f)
             print("Loading cached results: %s" % re.cache_contributors)  # noqa T001
-            re.contributors = pd.read_csv(re.cache_contributors, header=[0, 1], sep="\t")
+            re.contributors = pd.read_csv(re.cache_contributors, header=[0,], sep="\t")
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
