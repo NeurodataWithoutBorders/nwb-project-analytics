@@ -7,33 +7,33 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('30733203+jeylau@users.noreply.github.com',)	('jeylau',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('31257907+nandchandravadia@users.noreply.github.com',)	('Nand Chandravadia',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('31699416+sbuergers@users.noreply.github.com',)	('Steffen Bürgers',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
-('32185786+nwb-bot@users.noreply.github.com', 'nwb-bot@users.noreply.github.com')	('NWB Bot',)	0	0	0	0	0	0	0	0	0	83	0	0	0	0	0	0	0	0	0	0	0	0
-('32726514+harshit0511@users.noreply.github.com', 'hs3500@nyu.edu', 'HSrivastava@calmi2domain.local')	('Harshit Srivastava',)	0	0	0	0	181	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('lancewiu@tutanota.com', 'lawrence@mbfbioscience.com', 'lawrence@vidriotech.com', '33462079+lawrence-mbf@users.noreply.github.com')	('lawrence', 'Lawrence', 'Lawrence Niu')	0	911	0	0	0	0	20	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('nwb-bot@users.noreply.github.com', '32185786+nwb-bot@users.noreply.github.com')	('NWB Bot',)	0	0	0	0	0	0	0	0	0	83	0	0	0	0	0	0	0	0	0	0	0	0
+('hs3500@nyu.edu', 'HSrivastava@calmi2domain.local', '32726514+harshit0511@users.noreply.github.com')	('Harshit Srivastava',)	0	0	0	0	181	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('lawrence@mbfbioscience.com', 'lancewiu@tutanota.com', '33462079+lawrence-mbf@users.noreply.github.com', 'lawrence@vidriotech.com')	('Lawrence Niu', 'lawrence', 'Lawrence')	0	911	0	0	0	0	20	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('33462079+ln-vidrio@users.noreply.github.com',)	('ln-vidrio',)	0	128	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('34321192+bergjim@users.noreply.github.com',)	('bergjim',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('34455769+nicthib@users.noreply.github.com',)	('nicthib',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('35542396+MarikeReimer@users.noreply.github.com',)	('Marike Reimer', 'MarikeReimer')	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('35542396+MarikeReimer@users.noreply.github.com',)	('MarikeReimer', 'Marike Reimer')	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('35577925+lynnebecker13@users.noreply.github.com',)	('lynnebecker13',)	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('37779736+ttngu207@users.noreply.github.com', 'thinh@vathes.com')	('Thinh Nguyen',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('thinh@vathes.com', '37779736+ttngu207@users.noreply.github.com')	('Thinh Nguyen',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('37786589+ccg1988@users.noreply.github.com',)	('Chenggang Chen',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('38435167+roomrys@users.noreply.github.com',)	('Liezl Maree',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('42875763+tuanpham96@users.noreply.github.com',)	('tuanpham96', 'Tuan Pham')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	7	0	0
 ('43050715+aaronm-2112@users.noreply.github.com',)	('Aaron M',)	0	0	0	0	171	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('44985805+zcbo@users.noreply.github.com',)	('zcbo',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('garrettmflynn@gmail.com', '46533749+GarrettMFlynn@users.noreply.github.com')	('Garrett Michael Flynn',)	0	0	0	0	55	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+('46533749+GarrettMFlynn@users.noreply.github.com', 'garrettmflynn@gmail.com')	('Garrett Michael Flynn',)	0	0	0	0	55	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
 ('47305677+ishanibhansali@users.noreply.github.com',)	('Ishani Bhansali',)	0	0	0	0	123	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('48069742+owoolnough@users.noreply.github.com',)	('owoolnough',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('48135486+kcasimo@users.noreply.github.com',)	('kcasimo',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('48679510+simon-ball@users.noreply.github.com',)	('Simon Ball',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
 ('49699333+dependabot[bot]@users.noreply.github.com',)	('dependabot[bot]',)	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	5	0	0
-('50216901+slugb0t@users.noreply.github.com', 'slugb0t@Dorians-MacBook-Pro.local', 'wheresdorian@gmail.com')	('slugb0t', 'Dorian Portillo')	0	0	0	0	611	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('slugb0t@Dorians-MacBook-Pro.local', 'wheresdorian@gmail.com', '50216901+slugb0t@users.noreply.github.com')	('slugb0t', 'Dorian Portillo')	0	0	0	0	611	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('50451055+PierreLeMerre@users.noreply.github.com',)	('Pierre Le Merre',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('codycbakerphd@gmail.com', '51133164+CodyCBakerPhD@users.noreply.github.com', 'cbaker9@nd.edu', 'cody.c.baker.phd@gmail.com')	('CodyCBakerPhD', 'Cody Baker', 'codycbakerphd', 'Blood Raven')	12	1	72	1589	868	49	0	13	0	0	6	1	0	0	0	0	0	0	0	3626	0	0
+('cbaker9@nd.edu', '51133164+CodyCBakerPhD@users.noreply.github.com', 'cody.c.baker.phd@gmail.com', 'codycbakerphd@gmail.com')	('Blood Raven', 'CodyCBakerPhD', 'codycbakerphd', 'Cody Baker')	12	1	72	1589	868	49	0	13	0	0	6	1	0	0	0	0	0	0	0	3626	0	0
 ('51376595+lgoirandlopez@users.noreply.github.com',)	('lgoirandlopez',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('SMestern@uwo.ca', '52610944+smestern@users.noreply.github.com')	('smestern',)	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('54951034+d-sot@users.noreply.github.com',)	('d-sot',)	0	0	2	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0
-('55453048+alessandratrapani@users.noreply.github.com', 'alessandramaria.trapani@polimi.it')	('Alessandra Trapani',)	0	0	0	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0
+('alessandramaria.trapani@polimi.it', '55453048+alessandratrapani@users.noreply.github.com')	('Alessandra Trapani',)	0	0	0	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0
 ('58545063+rightbower@users.noreply.github.com',)	('Pamela Baker',)	0	0	0	0	0	15	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('58596630+sourcery-ai[bot]@users.noreply.github.com',)	('sourcery-ai[bot]',)	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('64020372+DSegebarth@users.noreply.github.com',)	('DSegebarth',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -44,15 +44,15 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('8163576+dipterix@users.noreply.github.com',)	('Dipterix Wang',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('8172375+bvhpatel@users.noreply.github.com', 'b.patel@berkeley.edu')	('Bhavesh Patel', 'Bhavesh', 'bvhpatel')	0	0	0	0	698	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('87288871+stradaa@users.noreply.github.com',)	('Alex Estrada',)	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('91559232+fairdataihub-bot@users.noreply.github.com', 'fairdataihub@gmail.com')	('fairdataihub-bot',)	0	0	0	0	855	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('fairdataihub@gmail.com', '91559232+fairdataihub-bot@users.noreply.github.com')	('fairdataihub-bot',)	0	0	0	0	855	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('AJTritt@lbl.gov', 'ajtritt@lbl.gov')	('Andrew Tritt',)	1958	0	1	0	0	19	0	136	0	0	714	0	43	0	0	0	1	0	0	0	0	0
 ('Constantinos.Eleftheriou@ed.ac.uk',)	('Constantinos Eleftheriou',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('HenrySchreinerIII@gmail.com',)	('Henry Schreiner',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
-('jacobcs@zoho.com', 'JacobiClark@users.noreply.github.com')	('JacobiClark', 'JacobDClark', 'Jacob Clark', 'unknown')	0	0	0	0	1171	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('NileGraddis@Gmail.com', 'nilegraddis@gmail.com')	('NileGraddis', 'nile graddis', 'nilegraddis')	47	0	3	0	0	14	0	0	0	0	12	0	0	2	0	0	0	0	0	0	0	0
+('JacobiClark@users.noreply.github.com', 'jacobcs@zoho.com')	('unknown', 'Jacob Clark', 'JacobiClark', 'JacobDClark')	0	0	0	0	1171	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('nilegraddis@gmail.com', 'NileGraddis@Gmail.com')	('NileGraddis', 'nilegraddis', 'nile graddis')	47	0	3	0	0	14	0	0	0	0	12	0	0	2	0	0	0	0	0	0	0	0
 ('Sylvain.Takerkart@univ-amu.fr',)	('Sylvain Takerkart',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('ZeitgeberH@users.noreply.github.com',)	('Zeta',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('aaron.marroquin96@gmail.com', 'aaron@Sanjays-Mac-mini.local', 'aaronm-2112@users.noreply.github.com')	('Aaron Marroquin', 'Aaron', 'aaronm-2112')	0	0	0	0	1626	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('aaron@Sanjays-Mac-mini.local', 'aaron.marroquin96@gmail.com', 'aaronm-2112@users.noreply.github.com')	('aaronm-2112', 'Aaron Marroquin', 'Aaron')	0	0	0	0	1626	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('abigail_dichter@brown.edu',)	('Abby Dichter',)	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('agoodm@users.noreply.github.com',)	('Alex Goodman',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('akshay.x.jaggi@gmail.com',)	('Akshay Jaggi',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -63,18 +63,18 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('armin.najarpour@gmail.com',)	('Armin Najarpour Foroushani',)	0	0	46	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('arokem@gmail.com',)	('arokem', 'Ariel Rokem')	3	0	0	0	0	3	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0
 ('bahanonu@alum.mit.edu',)	('Biafra Ahanonu',)	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('ben.dichter@gmail.com',)	"('Ben Dichter', ""!git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`"", 'bendichter')"	421	185	345	274	5	215	103	85	9	4	188	4	3	23	11	9	4	2	0	864	0	0
+('ben.dichter@gmail.com',)	"('Ben Dichter', 'bendichter', ""!git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`"")"	421	185	345	274	5	215	103	85	9	4	188	4	3	23	11	9	4	2	0	864	0	0
 ('ben.hardcastle@alleninstitute.org',)	('Ben Hardcastle',)	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('benjaminrk@gmail.com',)	('Min RK',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	28	0	0	0
 ('borde@inf.u-szeged.hu',)	('Borde Sandor',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('brianhhu@users.noreply.github.com',)	('Brian H. Hu',)	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('bui.jennifert@gmail.com',)	('buijennifer',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
-('carlo.dri@gmail.com', 'carlodri@users.noreply.github.com')	('Carlo',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0
-('cechavarria60@gmail.com', 'cechavarria@g.harvard.edu', 'cesar@Cesars-MacBook-Pro-2.local')	('cechava',)	0	22	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('carlodri@users.noreply.github.com', 'carlo.dri@gmail.com')	('Carlo',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0
+('cesar@Cesars-MacBook-Pro-2.local', 'cechavarria@g.harvard.edu', 'cechavarria60@gmail.com')	('cechava',)	0	22	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('charlesguan94@gmail.com',)	('charles',)	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('tjd@alum.mit.edu', 'cheakamus@gmail.com')	('Tom Davidson',)	21	0	0	0	0	11	0	2	0	0	2	0	0	0	0	0	0	0	0	0	0	0
 ('chrisburr@users.noreply.github.com',)	('Chris Burr',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
-('cjwright4242@gmail.com', 'cjwright4242gh@gmail.com')	('Christopher J. Wright', 'christopher')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	90	0	0	0
+('cjwright4242gh@gmail.com', 'cjwright4242@gmail.com')	('christopher', 'Christopher J. Wright')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	90	0	0	0
 ('claudia.friedsam@gmail.com',)	('friedsam', 'Claudia')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0
 ('code@musicinmybrain.net',)	('Ben Beasley',)	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
 ('colleenjgillon@hotmail.com',)	('colleenjg',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -91,12 +91,12 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('deepti.mittal12@gmail.com',)	('Deepti Mittal',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('derekhoward@gmail.com',)	('Derek',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('dev2@devs-MacBook-Pro.local',)	('dev2',)	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('dev@BPatels-MacBook-Pro.local', 'dev@devs-MacBook-Pro.local')	('dev',)	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('doruk.ozturk@kitware.com', 'dorukozturk@users.noreply.github.com')	('Doruk Ozturk', 'dorukozturk')	108	0	0	0	0	1	0	1	0	0	97	0	0	0	0	0	0	0	0	0	0	0
+('dev@devs-MacBook-Pro.local', 'dev@BPatels-MacBook-Pro.local')	('dev',)	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('dorukozturk@users.noreply.github.com', 'doruk.ozturk@kitware.com')	('dorukozturk', 'Doruk Ozturk')	108	0	0	0	0	1	0	1	0	0	97	0	0	0	0	0	0	0	0	0	0	0
 ('dougal@gmail.com',)	('Dougal J. Sutherland',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	39	0	0	0
 ('duncan.macleod@ligo.org',)	('Duncan Macleod',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
-('edeno@users.noreply.github.com', 'edeno@bu.edu')	('Eric Denovellis',)	0	0	0	0	0	4	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
-('edill@anaconda.com', 'thedizzle@gmail.com', 'edill@bnl.gov')	('Eric Dill',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0
+('edeno@bu.edu', 'edeno@users.noreply.github.com')	('Eric Denovellis',)	0	0	0	0	0	4	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+('edill@anaconda.com', 'edill@bnl.gov', 'thedizzle@gmail.com')	('Eric Dill',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0
 ('efinkel88@gmail.com',)	('efinkel',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('ehennestad@gmail.com',)	('ehennestad',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('elyall@berkeley.edu',)	('Evan Lyall',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -111,14 +111,14 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('gqmelo@gmail.com',)	('Guilherme Quentel Melo',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('granger.adam@gmail.com',)	('ajgranger',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('guillaume.viejo@gmail.com',)	('Guillaume Viejo',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('h.mayorquin@gmail.com',)	('Heberto Mayorquin', 'h-mayorquin', 'Heberto')	1	0	6	7	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1129	0	0
+('h.mayorquin@gmail.com',)	('h-mayorquin', 'Heberto', 'Heberto Mayorquin')	1	0	6	7	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1129	0	0
 ('hajapy@users.noreply.github.com',)	('hajapy',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('helmer@nmr.mgh.harvard.edu',)	('Karl Helmer',)	0	0	0	0	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('ikhramts@users.noreply.github.com',)	('Iouri Khramtsov',)	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('isuruf@gmail.com', 'isuru.11@cse.mrt.ac.lk')	('Isuru Fernando',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	319	0	0	0
 ('j.p.cooper@ucl.ac.uk',)	('Jonathan Cooper',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11
 ('jacob@Sanjays-Mac-mini.local',)	('Jacob',)	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('sanjays344@mail.fresnostate.edu',)	('unknown', 'Sanjay Soundarajan', 'megasanjay')	0	0	0	0	539	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('sanjays344@mail.fresnostate.edu',)	('Sanjay Soundarajan', 'unknown', 'megasanjay')	0	0	0	0	539	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('jakirkham@gmail.com',)	('jakirkham',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	136	0	0	0
 ('janssen@mpie.de', 'jan-janssen@users.noreply.github.com')	('Jan Janßen',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
 ('jasc@gmx.net',)	('Jan Schulz',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0
@@ -127,7 +127,7 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('jchris.fillionr@kitware.com',)	('Jean-Christophe Fillion-Robin',)	105	3	0	0	0	76	0	1	0	0	84	0	0	47	0	37	0	0	0	0	0	0
 ('jdblischak@gmail.com',)	('John Blischak',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
 ('jdelahanty@salk.edu',)	('Jeremy Delahanty',)	0	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('jeff@teeters.us',)	('Jeff Teeters', 'jeff Teeters', 'jeffteeters')	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	64
+('jeff@teeters.us',)	('jeffteeters', 'jeff Teeters', 'Jeff Teeters')	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	64
 ('jens-k@users.noreply.github.com',)	('Jens K',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('jerem.forest@gmail.com',)	('Jeremy Forest',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('jeremy.magland@gmail.com',)	('Jeremy Magland',)	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -141,12 +141,12 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('julia.sprenger@rwth-aachen.de',)	('Julia Sprenger',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	37	0	0
 ('julian.rueth@fsfe.org',)	('Julian Rüth',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
 ('justin.calamari@gmail.com',)	('Justin Calamari',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
-('justin.kiggins@gmail.com', 'justink@alleninstitute.org')	('Justin Kiggins',)	2	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+('justink@alleninstitute.org', 'justin.kiggins@gmail.com')	('Justin Kiggins',)	2	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
 ('k-dominik@users.noreply.github.com',)	('Dominik Kutra',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
 ('kaeldai@users.noreply.github.com',)	('Kael Dai',)	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('karen.lavi@gmail.com',)	('karnitas',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('kcanamgal@foxmail.com',)	('refraction-ray',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
-('kevinalexbrown@gmail.com',)	('ls', 'kevinalexbrown', 'Kevin')	4	0	0	0	0	5	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+('kevinalexbrown@gmail.com',)	('ls', 'Kevin', 'kevinalexbrown')	4	0	0	0	0	5	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
 ('kirkhamj@janelia.hhmi.org',)	('John Kirkham',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	273	0	0	0
 ('knasiwtis@hotmail.com',)	('Konstantinos',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('krischer@geophysik.uni-muenchen.de',)	('Lion Krischer',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
@@ -156,13 +156,13 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('loic.gouarin@gmail.com',)	('gouarin',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('looooo@users.noreply.github.com',)	('lorenz',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
 ('luiz_tauffer@hotmail.com', 'luiz_tauffer@otmail.com')	('Luiz Tauffer', 'luiztauffer', 'luiz')	0	0	127	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	490	0	0
-('luke.campagnola@gmail.com', 'lukec@alleninstitute.org')	('Luke Campagnola',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('lukec@alleninstitute.org', 'luke.campagnola@gmail.com')	('Luke Campagnola',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('lvsltz-g@yahoo.com',)	('Liviu S',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('lydian@alleninstitute.org',)	('Lydia Ng',)	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('maamelara@gmail.com',)	('Mario Melara', 'Mario')	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('maamelara@gmail.com',)	('Mario', 'Mario Melara')	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('mail@matthias-kastner.de',)	('matthias',)	3	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0
 ('marcel.bargull@udo.edu', 'mbargull@users.noreply.github.com')	('Marcel Bargull',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	6	0	0	0
-('marius.vanniekerk@maxpoint.com', 'marius.v.niekerk@gmail.com')	('Marius van Niekerk', 'mariusvniekerk', 'Marius Van Niekerk')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	171	0	0	0
+('marius.vanniekerk@maxpoint.com', 'marius.v.niekerk@gmail.com')	('Marius van Niekerk', 'Marius Van Niekerk', 'mariusvniekerk')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	171	0	0	0
 ('mark.cafaro@mathworks.com',)	('Mark Cafaro',)	0	17	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('mark.harfouche@gmail.com',)	('Mark Harfouche',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	11	0	0	0
 ('matt.mccormick@kitware.com', 'matt@mmmccormick.com')	('Matt McCormick',)	0	0	9	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
@@ -170,13 +170,13 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('matteo.cantarelli@gmail.com',)	('Matteo Cantarelli',)	0	0	0	0	0	24	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('matthias.kastner@byte-physics.de',)	('Matthias Kastner',)	8	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0
 ('mattwcraig@gmail.com',)	('Matthew Craig', 'Matt Craig')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	0
-('mavaylon@MacBook-Pro.local', 'mavaylon1@berkeley.edu')	('mavaylon1', 'Matthew Avaylon')	22	2	0	0	0	2	1	2	0	0	39	27	20	5	7	0	0	0	0	0	0	0
+('mavaylon@MacBook-Pro.local', 'mavaylon1@berkeley.edu')	('Matthew Avaylon', 'mavaylon1')	22	2	0	0	0	2	1	2	0	0	39	27	20	5	7	0	0	0	0	0	0	0
 ('max_linke@gmx.de',)	('Max Linke',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
 ('megasanjay@users.noreply.github.com',)	('megasanjay',)	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('megies@users.noreply.github.com',)	('Tobias Megies',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
 ('melinda.y.song@gmail.com',)	('melsyt',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('melund@gmail.com',)	('Morten Enemark Lund',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
-('michael.grauer@kitware.com',)	('mgrauer', 'Michael Grauer', 'Mike Grauer')	4	0	0	0	0	31	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
+('michael.grauer@kitware.com',)	('Michael Grauer', 'mgrauer', 'Mike Grauer')	4	0	0	0	0	31	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
 ('michael.r.scheid@gmail.com',)	('Michael Scheid',)	0	0	2	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('michael.wulf@gmail.com',)	('Michael Wulf',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('mohebial@users.noreply.github.com',)	('Ali Mohebi',)	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -184,27 +184,27 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('msarahan@gmail.com',)	('Mike Sarahan', 'Michael Sarahan')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	37	0	0	0
 ('msit@berkeley.edu',)	('Matthew Sit',)	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('myhannahchoi@gmail.com',)	('Hannah Choi',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('nclack@gmail.com', 'nathan@vidriotech.com')	('Nathan Clack',)	0	12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('nathan@vidriotech.com', 'nclack@gmail.com')	('Nathan Clack',)	0	12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('neurodatawithoutborders@googlegroups.com',)	('nwb-schema Upstream',)	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('neurosutras@users.noreply.github.com',)	('Aaron D. Milstein',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('ngoldbau@illinois.edu',)	('Nathan Goldbaum',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
-('nicain.seattle@gmail.com', 'nicholasc@alleninstitute.org')	('nicain', 'nicholasc')	69	0	1	0	0	12	0	1	0	0	38	0	0	4	0	0	0	0	0	0	0	0
+('nicain.seattle@gmail.com', 'nicholasc@alleninstitute.org')	('nicholasc', 'nicain')	69	0	1	0	0	12	0	1	0	0	38	0	0	4	0	0	0	0	0	0	0	0
 ('nick.bollweg@gmail.com',)	('Nicholas Bollweg',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('nicoddemus@gmail.com',)	('Bruno Oliveira',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
 ('nileg@alleninstitute.org',)	('nileg',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('nnadeau@users.noreply.github.com',)	('Nicholas Nadeau, P.Eng., AVS',)	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
 ('nwb-extensions-bot@gmail.com',)	('NWB Extensions Bot',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	17	0	2	0	0	0
-('ocefpaf@gmail.com',)	('Filipe Fernandes', 'ocefpaf', 'Filipe')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	87	0	0	0
+('ocefpaf@gmail.com',)	('ocefpaf', 'Filipe', 'Filipe Fernandes')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	87	0	0	0
 ('oruebel@lbl.gov', 'oruebel@users.noreply.github.com')	('Oliver Ruebel',)	321	4	0	5	0	413	111	439	0	190	191	67	6	97	0	5	1	17	0	0	0	0
 ('p.gleeson@gmail.com',)	('Padraig Gleeson',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('pelson.pub@gmail.com',)	('Phil Elson', 'pelson')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	238	0	0	0
 ('perkins.jed@gmail.com',)	('Jed Perkins',)	5	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0
 ('peter.killick@metoffice.gov.uk',)	('Peter Killick',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('peter@newton.cx',)	('Peter Williams',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	0
-('prevosto@mit.edu', 'vincent.prevosto@duke.edu')	('Vincent Prevosto',)	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+('vincent.prevosto@duke.edu', 'prevosto@mit.edu')	('Vincent Prevosto',)	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
 ('psodre@gmail.com',)	('Patrick Sodré',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10	0	0	0
 ('rhattersley@gmail.com',)	('Richard Hattersley',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
-('rly@lbl.gov',)	('rly', 'Ryan Ly')	203	22	2	38	66	324	42	102	11	4	312	11	44	40	7	189	52	24	42	0	0	0
+('rly@lbl.gov',)	('Ryan Ly', 'rly')	203	22	2	38	66	324	42	102	11	4	312	11	44	40	7	189	52	24	42	0	0	0
 ('rmay31@gmail.com',)	('Ryan May',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
 ('roman.huszar.17@dartmouth.edu',)	('rhuszar',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('rory.kirchner@gmail.com',)	('roryk',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
@@ -222,7 +222,7 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('stripat3@gmail.com',)	('Shreejoy Tripathy',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('sumner.norman@gmail.com',)	('Sumner L Norman',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('sylvia.schroeder@ucl.ac.uk',)	('Sylvia Schröder',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('t-b@users.noreply.github.com', 'thomas.braun@byte-physics.de')	('Thomas Braun',)	61	0	0	0	0	20	0	3	0	0	19	0	1	0	0	3	0	0	0	0	0	1
+('thomas.braun@byte-physics.de', 't-b@users.noreply.github.com')	('Thomas Braun',)	61	0	0	0	0	20	0	3	0	0	19	0	1	0	0	3	0	0	0	0	0	1
 ('tdonoghue.research@gmail.com',)	('Tom', 'Tom Donoghue')	5	0	18	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('tgbugs@gmail.com',)	('Tom Gillespie',)	0	0	0	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('thomas.robitaille@gmail.com',)	('Thomas Robitaille',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
@@ -230,9 +230,9 @@ email	name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overvie
 ('tom.augspurger88@gmail.com',)	('Tom Augspurger',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
 ('tomas.hrnciar@me.com',)	('Tomáš Hrnčiar',)	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
 ('tony@kelman.net',)	('Tony Kelman',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0
-('tramngo1603@gmail.com',)	('Tram Kate Ngo', 'Tram Ngo')	0	0	0	0	1267	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('tramngo1603@gmail.com',)	('Tram Ngo', 'Tram Kate Ngo')	0	0	0	0	1267	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('umayaml@vm504.int.janelia.org',)	('Lowell Umayam',)	2	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
-('xhochy@users.noreply.github.com', 'uwe.korn@quantco.com')	('Uwe L. Korn',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
+('uwe.korn@quantco.com', 'xhochy@users.noreply.github.com')	('Uwe L. Korn',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('vbaratham@gmail.com',)	('Vyassa Baratham',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('vijayi@ah-vijayi.dhcp.mathworks.com',)	('vijayi',)	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('vijayi@mathworks.com',)	('Vijay Iyer',)	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
