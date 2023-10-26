@@ -658,8 +658,9 @@ class GitHubRepoInfo:
             # cache the results
             if write_cache:
                 print("saving %s" % cache_filename)  # noqa T001
+                yaml_dumper = yaml.YAML(typ='rt', pure=True)
                 with open(cache_filename, 'w') as outfile:
-                    yaml.dump(release_timelines, outfile)
+                    yaml_dumper.dump(release_timelines, outfile)
         return release_timelines
 
     def get_releases(self, use_cache=True):
