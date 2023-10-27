@@ -9,6 +9,9 @@ import shutil
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from typing import Union
+import subprocess
+from io import StringIO
 
 
 class GitCodeStats:
@@ -38,8 +41,10 @@ class GitCodeStats:
     :ivar cloc_stats: Dict with the CLOC statistics
     :ivar commit_stats: Dict with the commit statistics.
     :ivar summary_stats: Dict with time-aligned summary statistics for all repos. The values of the dict
-                         are pandas.DataFrame objects and the keys are:
-
+                         are pandas.DataFrame objects and the keys are strings with the statistic type,
+                         i.e., 'sizes', 'blank', 'codes', 'comment', 'nfiles'
+    :ivar contributors: Pandas dataframe wit contributors to the various repos determined via
+                        `git shortlog --summary --numbered --email`.
 
     """
     def __init__(self,
@@ -56,9 +61,10 @@ class GitCodeStats:
         self.cache_file_cloc = os.path.join(self.output_dir, 'cloc_stats.yaml')
         self.cache_file_commits = os.path.join(self.output_dir, 'commit_stats.yaml')
         self.cache_git_paths = os.path.join(self.output_dir, 'git_paths.yaml')
+        self.cache_contributors = os.path.join(self.output_dir, 'contributors.tsv')
         self.commit_stats = None
         self.cloc_stats = None
-        self.release_timelines = None
+        self.contributors = None
 
     @staticmethod
     def from_nwb(
@@ -115,8 +121,12 @@ class GitCodeStats:
                 output_dir=cache_dir,
                 git_paths={k: v.github_path for k, v in all_nwb_repos.items()}
             )
+            # Define --since parameter to avoid inclusion of contributors before a repo started (e.g., for forks)
+            contributor_params = {k: ("--since " + v.startdate.isoformat()) if v.startdate is not None else None
+                                  for k, v in all_nwb_repos.items()}
             git_code_stats.compute_code_stats(cloc_path=cloc_path,
-                                              clean_source_dir=clean_source_dir)
+                                              clean_source_dir=clean_source_dir,
+                                              contributor_params=contributor_params)
             if write_cache:
                 git_code_stats.write_to_cache()
 
@@ -156,14 +166,17 @@ class GitCodeStats:
         """Save the stats to YAML"""
         print("Caching results...")  # noqa T001
         print("saving %s" % self.cache_file_cloc)  # noqa T001
+        yaml_dumper = yaml.YAML(typ='safe', pure=True)
         with open(self.cache_file_cloc, 'w') as outfile:
-            yaml.dump(self.cloc_stats, outfile)
+            yaml_dumper.dump(self.cloc_stats, outfile)
         print("saving  %s" % self.cache_file_commits)  # noqa T001
         with open(self.cache_file_commits, 'w') as outfile:
-            yaml.dump(self.commit_stats, outfile)
+            yaml_dumper.dump(self.commit_stats, outfile)
         print("saving %s" % self.cache_git_paths)  # noqa T001
         with open(self.cache_git_paths, 'w') as outfile:
-            yaml.dump(self.git_paths, outfile)
+            yaml_dumper.dump(self.git_paths, outfile)
+        print("saving %s" %  self.cache_contributors)  # noqa T001
+        self.contributors.to_csv(self.cache_contributors, sep="\t", index=False)
 
     @staticmethod
     def from_cache(output_dir):
@@ -184,21 +197,25 @@ class GitCodeStats:
             print("Loading cached results: %s" % re.cache_git_paths)  # noqa T001
             with open(re.cache_git_paths) as f:
                 re.git_paths = yaml_safe_loader.load(f)
+            print("Loading cached results: %s" % re.cache_contributors)  # noqa T001
+            re.contributors = pd.read_csv(re.cache_contributors, header=[0,], sep="\t")
             return re
         raise ValueError("No cache available at %s" % output_dir)
 
     @staticmethod
     def cached(output_dir):
-        """Check if a cached version of this class exists at output_dir"""
+        """Check if a complete cached version of this class exists at output_dir"""
         temp = GitCodeStats(output_dir)
         return (os.path.exists(temp.cache_file_cloc) and
                 os.path.exists(temp.cache_file_commits) and
-                os.path.exists(temp.cache_git_paths))
+                os.path.exists(temp.cache_git_paths) and
+                os.path.exists(temp.cache_contributors))
 
     def compute_code_stats(
-            self,
-            cloc_path: str,
-            clean_source_dir: bool = False
+         self,
+         cloc_path: str,
+         clean_source_dir: bool = False,
+         contributor_params: dict = None
     ):
         """
         Compute code statistics suing CLOC.
@@ -211,12 +228,11 @@ class GitCodeStats:
         WARNING: This function calls self.clean_outdirs. Any previously cached results will be lost!
 
         :param cloc_path: Path to the cloc command for running cloc stats
-        :param load_cached_results: Boolean indicating whether results should be loaded from cache if possible or
-                                    if the cache should be cleaned and results recomputed. NOTE: Setting to false
-                                    will lead to calling clean_outdir to clean up results.
-        :type load_cached_results: bool
         :param clean_source_dir: Bool indicating whether to remove self.source_dir when finished
-        :return: None. The function initializes self.commit_stats and self.cloc_stats
+        :param contributor_params: dict of string indicating additional command line parameters to pass to
+                                  `git shortlog`. E.g., `--since="3 years"`. Similarly we may
+                                  specify --since, --after, --before and --until.
+        :return: None. The function initializes self.commit_stats, self.cloc_stats, and self.contributors
         """
         # Clean and create output directory
         self.clean_outdirs(output_dir=self.output_dir,
@@ -224,6 +240,18 @@ class GitCodeStats:
         # Clone all repos
         print("Cloning all repos...")  # noqa T001
         git_repos = self.clone_repos(repos=self.git_paths, source_dir=self.source_dir)
+
+        # Compute list of contributors for all the repos
+        # We must do this first after cloning the repos since computing cloc checks out the repo in different states
+        print("Compute contributors...") # noqa T001
+        repo_contributors = {
+            name: GitCodeStats.get_contributors(
+                repo=repo,
+                contributor_params=contributor_params.get(os.path.basename(repo.working_tree_dir.split("/")[-1]), None))
+            for name, repo in git_repos.items()}
+        self.contributors = GitCodeStats.merge_contributors(data_frames=repo_contributors)
+        print("", flush=True) # Flush to make sure prints are shown in order # noqa T001
+
         # Compute CLOC and Commit statistics for all repos
         self.commit_stats = {}
         self.cloc_stats = {}
@@ -235,7 +263,7 @@ class GitCodeStats:
                 output_dir=self.output_dir)
             self.commit_stats[name] = commit_res
             self.cloc_stats[name] = cloc_res
-        print("Clean code source dir %s ..." % self.source_dir)
+        print("Clean code source dir %s ..." % self.source_dir) # noqa T001
         if clean_source_dir:
             if os.path.exists(self.source_dir):
                 shutil.rmtree(self.source_dir)
@@ -452,10 +480,17 @@ class GitCodeStats:
         return res
 
     @staticmethod
-    def git_repo_stats(repo, cloc_path, output_dir):
+    def git_repo_stats(repo: git.repo.base.Repo,
+                       cloc_path: str,
+                       output_dir: str):
         """
+        Compute cloc statistics for the given repo.
+
+        Run cloc only for the last commit on each day to avoid excessive runs
+
         :param repo: The git repository to process
-        :type repo: git.repo.base.Repo
+        :param cloc_path: Path to run cloc on the command line
+        :param output_dir: Path to the directory where outputs are being stored
 
         :returns: The function returns 2 elements, commit_stats and cloc_stats.
                   commit_stats is a list of dicts with information about all commits.
@@ -498,3 +533,99 @@ class GitCodeStats:
             # drop the commit from the dict to make sure we can save things in YAML
             commit.pop('commit', None)
         return re_commit_stats, re_cloc_stats
+
+    @staticmethod
+    def get_contributors(repo: Union[git.repo.base.Repo, str],
+                         contributor_params: str = None):
+        """
+        Compute list of contributors for the given repo using  `git shortlog --summary --numbered --email`
+
+        :param repo: The git repository to process
+        :param contributor_params: String indicating additional command line parameters to pass to
+                                  `git shortlog`. E.g., `--since="3 years"`. Similarly we may
+                                  specify --since, --after, --before and --until.
+
+        :return Pandas dataframe with the name, email, and number of contributions to the repo
+        """
+        src_dir = repo if isinstance(repo, str) else repo.working_dir
+        cli_command = "git log | git shortlog --summary --numbered --email"
+        if contributor_params is not None:
+            cli_command += " " + contributor_params
+        print(f"Get contributors: {cli_command}  ({src_dir})")
+        result = subprocess.run(
+            [cli_command, ""],
+            capture_output=True,
+            text=True,
+            cwd=src_dir,
+            shell=True)
+        result_text = result.stdout
+
+        result_text = result_text.replace("<", "\t").replace(">", "")
+        # parse the result
+        result_text_io = StringIO(result_text)
+        result_df = pd.read_csv(result_text_io,
+                                sep="\t",
+                                header=None,
+                                names=["commits", "name", "email"])
+        # remove trailing whitespaces from names
+        result_df["name"] = [n.rstrip(" ") for n in result_df["name"]]
+        return result_df[["name", "email", "commits"]]
+
+    @staticmethod
+    def merge_contributors(data_frames: dict,
+                           merge_duplicates: bool = True):
+        """
+        Take dict of dataframes generated by `GitCodeStats.get_contributors` and merge them into a single dataframe
+
+        :param data_frames: Dict of dataframes where the keys are the names of repos
+        :param merge_duplicates: Attempt to detect and merge duplicate contributors by name and email
+        :return: Combined pandas dataframe
+        """
+        result = None
+        for repo_name, df in data_frames.items():
+            df = df.rename(columns={"name": "name", "email": "email", "commits": repo_name})
+            if result is None:
+                result = df
+            else:
+                result = result.merge(df,
+                                      how='outer',
+                                      on=['name', 'email'])
+        # pd.merge turns the columns for the commits to floats and add NaN values
+        # Replace the NaN values with 0 and turn the columns with commit counts back to int
+        result = result.fillna(0).astype({repo_name: int for repo_name in data_frames.keys()})
+        if merge_duplicates:
+            # Merge contributors with the same name
+            grouped = result.groupby(["email"])  # merge with same email
+            filtered = grouped.sum()  # Add up the contributions
+            names = grouped.agg({"name": tuple})  # keep all names
+            filtered["name"] = names
+            filtered.reset_index(inplace=True)
+            # Merge contributors with the same email
+            # If someone has both multiple emails and names then simply grouping by email name won't work
+            # because we may already have multiple names at this point. Because of this we here compute
+            # new column group_col where we compare all names of a row against all names of previous rows
+            # and asign the index of the row that matched to then group by that column to merge name duplicates
+            group_col = []
+            for index, row in filtered.iterrows():
+                names = row["name"]
+                match = -1
+                for index2, row2 in filtered.iterrows():
+                    if index2 >= index or match >= 0:
+                        break
+                    names2 = row2["name"]
+                    for n in names:
+                        if np.any(np.array(names2) == n):
+                            match = index2
+                group_col.append(index if match < 0 else match)
+            filtered['name_index'] = group_col
+            grouped = filtered.groupby(["name_index"])  # group to find rows with matching names
+            filtered = grouped.sum()   # sum up contributions
+            filtered["email"] = grouped.agg({"email": tuple})
+            filtered.reset_index(inplace=True, drop=True)  # remove the `name_index` column we added for grouping
+            # Remove duplicate emails and names
+            filtered["name"] = [tuple(set(names)) for names in filtered["name"]]
+            filtered["email"] = [tuple(set(emails)) for emails in filtered["email"]]
+            # Update the final result
+            result = filtered
+
+        return result

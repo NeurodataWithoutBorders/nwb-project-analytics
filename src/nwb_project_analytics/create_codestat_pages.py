@@ -2,8 +2,11 @@
 import os
 import shutil
 from datetime import datetime
+
+import pandas as pd
 from matplotlib import pyplot as plt
 from collections import OrderedDict
+from ast import literal_eval as make_tuple
 
 from nwb_project_analytics.codestats import GitCodeStats
 from nwb_project_analytics.gitstats import NWBGitInfo, GitRepo, GitHubRepoInfo
@@ -195,6 +198,7 @@ def __create_nwb_codestat_summary_rst(
         loc_summary_figure: RSTFigure = None,
         release_timeline_figure: RSTFigure = None,
         codecov_nwb_summary_figure: RSTFigure = None,
+        contributors: pd.DataFrame = None,
         print_status: bool = True):
     """
     Render the RST document with the plots of the NWB summary
@@ -222,7 +226,43 @@ def __create_nwb_codestat_summary_rst(
     if codecov_nwb_summary_figure is not None:
         codestats_rst.add_subsection("Test Coverage: NWB APIs")
         codestats_rst.add_figure(codecov_nwb_summary_figure)
+
+    # Add link to the contributors
+    if contributors is not None:
+        codestats_rst.add_subsection("Contributors")
+        codestats_rst.add_text(
+            "For a listing of all contributors to the various NWB Git repositories see the `contributors.tsv "
+            "<https://github.com/NeurodataWithoutBorders/nwb-project-analytics/blob/main/data/contributors.tsv>`_ "
+            "file as part of the `nwb-project-analytics "
+            "<https://github.com/NeurodataWithoutBorders/nwb-project-analytics>`_ "
+            "Git repository. \n\n")
+        codestats_rst.add_text(__contributors_to_rst_list(contributors))
+
     return codestats_rst
+
+
+def __contributors_to_rst_list(contributors: pd.DataFrame):
+    """
+    Internal helper function used to convert the DataFrame of  contributors to an RST list
+    :param contributors: DataFrame of  contributors from `GitCodeStats.contributors`
+    :return: String with the RST list
+    """
+    contributors['Total'] = contributors.iloc[:,2:].sum(axis=1)
+    contributors.sort_values(by=['Total'], ascending=False, inplace=True)
+    rstlist = ""
+    for index, row in contributors.iterrows():
+        names = make_tuple(row['name']) if isinstance(row['name'], str) else row['name']
+        main_name = names [0]
+        aliases = ""
+        if len(names ) > 1:
+            names_with_spaces = [n for n in names  if " " in n]
+            names_with_spaces.sort()
+            if len(names_with_spaces) > 0:
+                main_name = names_with_spaces[0]
+            aliases = " *(a.k.a. " + ", ".join([n for n in names  if n != main_name]) + ")*"
+        contribs = ", ".join([f"{code}: {commits}" for code, commits in row[2:-1].items() if commits > 0])
+        rstlist += f"- **{main_name}**{aliases} : {contribs}\n"
+    return rstlist
 
 
 def __create_tool_codestat_pages(
@@ -444,6 +484,7 @@ def create_codestat_pages(out_dir: str,
         loc_summary_figure=loc_summary_figure,
         release_timeline_figure=release_timeline_figure,
         codecov_nwb_summary_figure=codecov_nwb_summary_figure,
+        contributors=git_code_stats.contributors,
         print_status=print_status)
     # Write the summary RST documents
     codestats_rst.write(os.path.join(out_dir, "code_stats_main.rst"))

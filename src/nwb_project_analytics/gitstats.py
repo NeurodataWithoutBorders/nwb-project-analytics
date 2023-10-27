@@ -260,7 +260,7 @@ class GitRepos(OrderedDict):
 
     @staticmethod
     def merge(o1, o2):
-        """Merger two GitRepo dicts and return a new GitRepos dict with the combined items"""
+        """Merge two GitRepo dicts and return a new GitRepos dict with the combined items"""
         return GitRepos(list(o1.items()) + list(o2.items()))
 
 
@@ -325,7 +325,6 @@ class NWBGitInfo:
     """
     List of early releases that are missing a tag on GitHub
     """
-
     GIT_REPOS = GitRepos(
         [("PyNWB",
           GitRepo(
@@ -347,7 +346,7 @@ class NWBGitInfo:
               repo="nwb-jupyter-widgets",
               mainbranch="master",
               docs=None,
-              logo="https://user-images.githubusercontent.com/844306/254117081-f20b8c26-79c7-4c1c-a3b5-b49ecf8cce5d.png")),
+              logo="https://user-images.githubusercontent.com/844306/254117081-f20b8c26-79c7-4c1c-a3b5-b49ecf8cce5d.png")),  # noqa E501
          ("NWBInspector",
           GitRepo(
               owner="NeurodataWithoutBorders",
@@ -440,7 +439,7 @@ class NWBGitInfo:
               owner="nwb-extensions",
               repo="ndx-template",
               mainbranch="main",
-              docs="https://nwb-overview.readthedocs.io/en/latest/extensions_tutorial/2_create_extension_spec_walkthrough.html",
+              docs="https://nwb-overview.readthedocs.io/en/latest/extensions_tutorial/2_create_extension_spec_walkthrough.html",  # noqa E501
               logo=None)),
          ("NDX_Staged_Extensions",
           GitRepo(
@@ -605,7 +604,7 @@ class GitHubRepoInfo:
             with open(cache_filename) as f:
                 with warnings.catch_warnings():
                     warnings.simplefilter('ignore', yaml.error.UnsafeLoaderWarning)
-                    yaml_loader = yaml.YAML(typ='rt') # using 'rt' instead of 'safe' to allow loading of tuple
+                    yaml_loader = yaml.YAML(typ='rt')  # using 'rt' instead of 'safe' to allow loading of tuple
                     release_timelines = yaml_loader.load(f)
         else:
             # Compute the release timeline
@@ -616,8 +615,9 @@ class GitHubRepoInfo:
             # cache the results
             if write_cache:
                 print("saving %s" % cache_filename)  # noqa T001
+                yaml_dumper = yaml.YAML(typ='rt', pure=True)
                 with open(cache_filename, 'w') as outfile:
-                    yaml.dump(release_timelines, outfile)
+                    yaml_dumper.dump(release_timelines, outfile)
         return release_timelines
 
     def get_releases(self, use_cache=True):
