@@ -247,20 +247,21 @@ def __contributors_to_rst_list(contributors: pd.DataFrame):
     :param contributors: DataFrame of  contributors from `GitCodeStats.contributors`
     :return: String with the RST list
     """
-    contributors['Total'] = contributors.iloc[:,2:].sum(axis=1)
+    start_col = 2 if "email" in contributors.columns else 1
+    contributors['Total'] = contributors.iloc[:, start_col:].sum(axis=1)
     contributors.sort_values(by=['Total'], ascending=False, inplace=True)
     rstlist = ""
     for index, row in contributors.iterrows():
         names = make_tuple(row['name']) if isinstance(row['name'], str) else row['name']
-        main_name = names [0]
+        main_name = names[0]
         aliases = ""
-        if len(names ) > 1:
-            names_with_spaces = [n for n in names  if " " in n]
+        if len(names) > 1:
+            names_with_spaces = [n for n in names if " " in n]
             names_with_spaces.sort()
             if len(names_with_spaces) > 0:
                 main_name = names_with_spaces[0]
-            aliases = " *(a.k.a. " + ", ".join([n for n in names  if n != main_name]) + ")*"
-        contribs = ", ".join([f"{code}: {commits}" for code, commits in row[2:-1].items() if commits > 0])
+            aliases = " *(a.k.a. " + ", ".join([n for n in names if n != main_name]) + ")*"
+        contribs = ", ".join([f"{code}: {commits}" for code, commits in row[start_col:-1].items() if commits > 0])
         rstlist += f"- **{main_name}**{aliases} : {contribs}\n"
     return rstlist
 
@@ -312,6 +313,7 @@ def create_codestat_pages(out_dir: str,
                           cloc_path: str = "cloc",
                           load_cached_results: bool = True,
                           cache_results: bool = True,
+                          cache_contributor_emails: bool = False,
                           start_date: datetime = None,
                           end_date: datetime = None,
                           print_status: bool = True):
@@ -323,6 +325,7 @@ def create_codestat_pages(out_dir: str,
     :param cloc_path: Path to the cloc tool if not callable directly via "cloc"
     :param load_cached_results: Load code statists from data_dir if available
     :param cache_results: Save code statistic results to data_dir
+    :param cache_contributor_emails: Save the emails of contributors in the cached TSV file
     :param start_date: Datetime object with the star tdate for plots. If None then
                        NWBGitInfo.NWB2_START_DATE will be used as default.
     :param end_date: Datetime object with the end date for plots. If None then
@@ -344,6 +347,7 @@ def create_codestat_pages(out_dir: str,
         end_date=end_date,
         read_cache=load_cached_results,
         write_cache=cache_results,
+        cache_contributor_emails=cache_contributor_emails,
         clean_source_dir=True
     )
     release_timelines = GitHubRepoInfo.releases_from_nwb(

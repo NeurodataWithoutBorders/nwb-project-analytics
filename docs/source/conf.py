@@ -48,7 +48,7 @@ autodoc_member_order = 'bysource'
 # -- Project information -----------------------------------------------------
 
 project = 'nwb-project-analytics'
-copyright = '2022, NWB Project Analytics'
+copyright = '2023, NWB Project Analytics'
 author = 'Oliver Ruebel'
 
 # The short X.Y version.
@@ -166,6 +166,9 @@ def skip(app, what, name, obj, skip, options):
         return False
     return skip
 
+# Compute analytics and cache
+cache_contributor_emails = False   # Save the emails of contributors in the contributors.tsv cache
+
 def setup(app):
     app.connect('builder-inited', run_apidoc)
     # app.add_css_file("theme_overrides.css")
@@ -191,6 +194,7 @@ def setup(app):
             cloc_path="cloc",
             load_cached_results=True,
             cache_results=True,
+            cache_contributor_emails=cache_contributor_emails,
             start_date=None,
             end_date=None,
             print_status=True)
