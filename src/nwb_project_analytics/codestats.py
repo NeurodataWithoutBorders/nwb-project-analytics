@@ -44,7 +44,11 @@ class GitCodeStats:
                          are pandas.DataFrame objects and the keys are strings with the statistic type,
                          i.e., 'sizes', 'blank', 'codes', 'comment', 'nfiles'
     :ivar contributors: Pandas dataframe wit contributors to the various repos determined via
-                        `git shortlog --summary --numbered --email`.
+                        `get_contributors` and `merge_contributors`. NOTE: During calculation this will include
+                        the 'email' column with the emails corresponding to the 'name' of the user. However,
+                        when loading from cache the email column may not be available as a user may chose to not
+                        cache the email column, e.g., due to privacy concerns (even though the information is
+                        usually compiled from Git logs of public code repositories)
 
     """
     def __init__(self,
@@ -164,7 +168,8 @@ class GitCodeStats:
 
         return git_code_stats, summary_stats, per_repo_lang_stats, languages_used_all
 
-    def write_to_cache(self, cache_contributor_emails:bool = False):
+    def write_to_cache(self,
+                       cache_contributor_emails: bool = False):
         """
         Save the stats to YAML and contributors to TSV.
 
@@ -187,7 +192,10 @@ class GitCodeStats:
         print("saving %s" %  self.cache_contributors)  # noqa T001
         contrib_to_cache = (self.contributors
                             if cache_contributor_emails
-                            else self.contributors.drop(['email'], inplace=False))
+                            else self.contributors.drop("email",
+                                                        inplace=False,
+                                                        errors='ignore')
+                            )
         contrib_to_cache.to_csv(self.cache_contributors, sep="\t", index=False)
 
     @staticmethod

@@ -247,20 +247,20 @@ def __contributors_to_rst_list(contributors: pd.DataFrame):
     :param contributors: DataFrame of  contributors from `GitCodeStats.contributors`
     :return: String with the RST list
     """
-    contributors['Total'] = contributors.iloc[:,2:].sum(axis=1)
+    start_col = 2 if "email" in contributors.columns else 1
+    contributors['Total'] = contributors.iloc[:, start_col:].sum(axis=1)
     contributors.sort_values(by=['Total'], ascending=False, inplace=True)
     rstlist = ""
-    start_col = 2 if "email" in contributors.columns else 1
     for index, row in contributors.iterrows():
         names = make_tuple(row['name']) if isinstance(row['name'], str) else row['name']
-        main_name = names [0]
+        main_name = names[0]
         aliases = ""
-        if len(names ) > 1:
-            names_with_spaces = [n for n in names  if " " in n]
+        if len(names) > 1:
+            names_with_spaces = [n for n in names if " " in n]
             names_with_spaces.sort()
             if len(names_with_spaces) > 0:
                 main_name = names_with_spaces[0]
-            aliases = " *(a.k.a. " + ", ".join([n for n in names  if n != main_name]) + ")*"
+            aliases = " *(a.k.a. " + ", ".join([n for n in names if n != main_name]) + ")*"
         contribs = ", ".join([f"{code}: {commits}" for code, commits in row[start_col:-1].items() if commits > 0])
         rstlist += f"- **{main_name}**{aliases} : {contribs}\n"
     return rstlist
