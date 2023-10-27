@@ -190,12 +190,14 @@ class GitCodeStats:
         with open(self.cache_git_paths, 'w') as outfile:
             yaml_dumper.dump(self.git_paths, outfile)
         print("saving %s" %  self.cache_contributors)  # noqa T001
-        contrib_to_cache = (self.contributors
-                            if cache_contributor_emails
-                            else self.contributors.drop("email",
-                                                        inplace=False,
-                                                        errors='ignore')
-                            )
+        contrib_to_cache = (
+            self.contributors
+            if cache_contributor_emails
+            else self.contributors.drop("email",
+                                        inplace=False,
+                                        axis=1,  # drop column
+                                        errors='ignore')  # ignore in case this is called for file loaded from cache
+        )
         contrib_to_cache.to_csv(self.cache_contributors, sep="\t", index=False)
 
     @staticmethod
