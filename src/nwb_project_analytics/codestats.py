@@ -551,6 +551,7 @@ class GitCodeStats:
         cli_command = "git log | git shortlog --summary --numbered --email"
         if contributor_params is not None:
             cli_command += " " + contributor_params
+        print(f"Get contributors: {cli_command}  ({src_dir})")
         result = subprocess.run(
             [cli_command, ""],
             capture_output=True,
