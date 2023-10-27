@@ -74,6 +74,7 @@ class GitCodeStats:
             end_date: datetime = None,
             read_cache: bool = True,
             write_cache: bool = True,
+            cache_contributor_emails: bool = False,
             clean_source_dir: bool = True
     ):
         """
@@ -99,6 +100,7 @@ class GitCodeStats:
                            loaded without checking results (e.g., whether results
                            in the cache are complete and up-to-date).
         :param write_cache: Bool indicating whether to write the results to the cache.
+        :param cache_contributor_emails: Save the emails of contributors in the cached TSV file
         :param clean_source_dir: Bool indicating whether to remove self.source_dir when finished
                            computing the code stats. This argument only takes effect when
                            code statistics are computed (i.e., not when data is loaded from cache)
@@ -128,7 +130,7 @@ class GitCodeStats:
                                               clean_source_dir=clean_source_dir,
                                               contributor_params=contributor_params)
             if write_cache:
-                git_code_stats.write_to_cache()
+                git_code_stats.write_to_cache(cache_contributor_emails=cache_contributor_emails)
 
         # Define our reference date range depending on whether we include NWB 1 in the plots or not
         date_range = pd.date_range(
@@ -162,8 +164,15 @@ class GitCodeStats:
 
         return git_code_stats, summary_stats, per_repo_lang_stats, languages_used_all
 
-    def write_to_cache(self):
-        """Save the stats to YAML"""
+    def write_to_cache(self, cache_contributor_emails:bool = False):
+        """
+        Save the stats to YAML and contributors to TSV.
+
+        Results will be saves to the self.cache_file_cloc, self.cloc_stats,
+        self.cache_file_commits, self.cache_git_paths, and self.cache_contributors paths
+
+        :param cache_contributor_emails: Save the emails of contributors in the cached TSV file
+        """
         print("Caching results...")  # noqa T001
         print("saving %s" % self.cache_file_cloc)  # noqa T001
         yaml_dumper = yaml.YAML(typ='safe', pure=True)
@@ -176,7 +185,10 @@ class GitCodeStats:
         with open(self.cache_git_paths, 'w') as outfile:
             yaml_dumper.dump(self.git_paths, outfile)
         print("saving %s" %  self.cache_contributors)  # noqa T001
-        self.contributors.to_csv(self.cache_contributors, sep="\t", index=False)
+        contrib_to_cache = (self.contributors
+                            if cache_contributor_emails
+                            else self.contributors.drop(['email'], inplace=False))
+        contrib_to_cache.to_csv(self.cache_contributors, sep="\t", index=False)
 
     @staticmethod
     def from_cache(output_dir):
@@ -548,9 +560,8 @@ class GitCodeStats:
         :return Pandas dataframe with the name, email, and number of contributions to the repo
         """
         src_dir = repo if isinstance(repo, str) else repo.working_dir
-        cli_command = "git log | git shortlog --summary --numbered --email"
-        if contributor_params is not None:
-            cli_command += " " + contributor_params
+        param = contributor_params if contributor_params is not None else ""
+        cli_command = f"git log {param} | git shortlog --summary --numbered --email"
         print(f"Get contributors: {cli_command}  ({src_dir})")
         result = subprocess.run(
             [cli_command, ""],
