@@ -195,7 +195,8 @@ class GitRepo(NamedTuple):
         for issue in vals:
             curr_row = {k: getattr(issue, k) for k in issue_attrs}
             curr_row["issue"] = issue
-            curr_row["response_time"] = pd.NaT
+            if curr_row["closed_at"] is None:
+                curr_row["closed_at"] = pd.NaT
             curr_row["user_login"] = curr_row["user"].login
             curr_row["is_enhancement"] = np.any([label.name == "enhancement"
                                                  for label in curr_row["labels"]]).astype("bool")
@@ -204,6 +205,7 @@ class GitRepo(NamedTuple):
             curr_row["response_time"] = self.compute_issue_time_of_first_response(issue)
             curr_row["time_to_response"] = pd.to_timedelta(curr_row["response_time"] - curr_row["created_at"])
             curr_row["days_to_response"] = curr_row["time_to_response"] / np.timedelta64(1, "D")
+            
             curr_df = pd.concat([curr_df, pd.DataFrame([curr_row])], axis=0, join="outer", ignore_index=True)
         return curr_df
 
@@ -500,7 +502,17 @@ class NWBGitInfo:
         """
         return GitRepos([(k, cls.GIT_REPOS[k]) for k in ["PyNWB", "HDMF", "MatNWB", "NWB_Schema"]])
 
-    CORE_DEVELOPERS = ["rly", "bendichter", "oruebel", "ajtritt", "ln-vidrio", "mavaylon1", "CodyCBakerPhD"]
+    CORE_DEVELOPERS = [
+        "rly", 
+        "bendichter", 
+        "oruebel", 
+        "ajtritt", 
+        "ln-vidrio", 
+        "mavaylon1", 
+        "CodyCBakerPhD", 
+        "stephprince",
+        "lawrence-mbf",
+    ]
     """
     List of names of the core developers of NWB overall. These are used, e.g., when analyzing issue stats as
     core developer issues should not count against user issues.
