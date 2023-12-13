@@ -512,6 +512,10 @@ class NWBGitInfo:
         "CodyCBakerPhD", 
         "stephprince",
         "lawrence-mbf",
+        "dependabot[bot]",
+        "nwb-bot",
+        "hdmf-bot",
+        "pre-commit-ci[bot]",
     ]
     """
     List of names of the core developers of NWB overall. These are used, e.g., when analyzing issue stats as
