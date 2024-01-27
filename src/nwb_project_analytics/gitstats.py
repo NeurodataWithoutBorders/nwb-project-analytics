@@ -205,7 +205,7 @@ class GitRepo(NamedTuple):
             curr_row["response_time"] = self.compute_issue_time_of_first_response(issue)
             curr_row["time_to_response"] = pd.to_timedelta(curr_row["response_time"] - curr_row["created_at"])
             curr_row["days_to_response"] = curr_row["time_to_response"] / np.timedelta64(1, "D")
-            
+
             curr_df = pd.concat([curr_df, pd.DataFrame([curr_row])], axis=0, join="outer", ignore_index=True)
         return curr_df
 
@@ -372,6 +372,13 @@ class NWBGitInfo:
               mainbranch="main",
               docs="https://neurodatawithoutborders.github.io/nwb_hackathons/",
               logo=None)),
+         ("NWB_Benchmarks",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb_benchmarks",
+              mainbranch="main",
+              docs=None,
+              logo=None)),
          ("NWB_Overview",
           GitRepo(
               owner="NeurodataWithoutBorders",
@@ -503,13 +510,13 @@ class NWBGitInfo:
         return GitRepos([(k, cls.GIT_REPOS[k]) for k in ["PyNWB", "HDMF", "MatNWB", "NWB_Schema"]])
 
     CORE_DEVELOPERS = [
-        "rly", 
-        "bendichter", 
-        "oruebel", 
-        "ajtritt", 
-        "ln-vidrio", 
-        "mavaylon1", 
-        "CodyCBakerPhD", 
+        "rly",
+        "bendichter",
+        "oruebel",
+        "ajtritt",
+        "ln-vidrio",
+        "mavaylon1",
+        "CodyCBakerPhD",
         "stephprince",
         "lawrence-mbf",
         "dependabot[bot]",
