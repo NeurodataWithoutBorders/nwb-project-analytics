@@ -405,7 +405,7 @@ class NWBGitInfo:
               owner="NeurodataWithoutBorders",
               repo="nwb-project-analytics",
               mainbranch="main",
-              docs="https://github.com/NeurodataWithoutBorders/nwb-project-analytics#readme",
+              docs="https://github.com/NeurodataWithoutBorders/nwb-project-analytics",
               logo=None)),
          ("HDMF",
           GitRepo(
