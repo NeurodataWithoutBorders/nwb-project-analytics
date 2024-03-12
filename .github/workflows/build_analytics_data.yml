@@ -46,6 +46,7 @@ jobs:
       # Commit all changed files back to the repository
       - name: Push changes back to repo
         uses: stefanzweifel/git-auto-commit-action@v4
+        if: github.ref == 'refs/heads/main'
         with:
           file_pattern: 'data/*.yaml data/*.tsv'
           commit_message: "Automatic update of the code statistics YAML files"
