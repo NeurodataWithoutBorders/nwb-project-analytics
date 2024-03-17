@@ -7,8 +7,8 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('jeylau',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Nand Chandravadia',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Steffen Bürgers',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
-('NWB Bot',)	0	0	0	0	0	0	0	0	0	223	0	0	0	0	0	0	0	0	0	0	0	0
-('Lawrence Niu', 'lawrence', 'Lawrence')	0	916	0	0	0	0	20	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('NWB Bot',)	0	0	0	0	0	0	0	0	0	224	0	0	0	0	0	0	0	0	0	0	0	0
+('lawrence', 'Lawrence Niu', 'Lawrence')	0	916	0	0	0	0	20	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('ln-vidrio',)	0	128	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('bergjim',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('nicthib',)	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -28,7 +28,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('Simon Ball',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7	0	0
 ('dependabot[bot]',)	1	0	0	2	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	5	0	0
 ('Pierre Le Merre',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('Blood Raven', 'CodyCBakerPhD', 'codycbakerphd', 'Cody Baker')	12	1	72	1617	1039	50	0	14	0	0	8	1	0	0	0	0	0	0	0	3898	0	0
+('Blood Raven', 'Cody Baker', 'codycbakerphd', 'CodyCBakerPhD')	12	1	72	1617	1039	50	0	14	0	0	8	1	0	0	0	0	0	0	0	3898	0	0
 ('lgoirandlopez',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('smestern',)	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('d-sot',)	0	0	2	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0
@@ -48,7 +48,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('Chris Brozdowski',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Constantinos Eleftheriou',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Henry Schreiner',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
-('nilegraddis', 'nile graddis', 'NileGraddis')	47	0	3	0	0	14	0	0	0	0	1	0	0	2	0	0	0	0	0	0	0	0
+('NileGraddis', 'nile graddis', 'nilegraddis')	47	0	3	0	0	14	0	0	0	0	1	0	0	2	0	0	0	0	0	0	0	0
 ('Sylvain Takerkart',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Zeta',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Abby Dichter',)	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -61,7 +61,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('Armin Najarpour Foroushani',)	0	0	46	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Ariel Rokem', 'arokem')	3	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Biafra Ahanonu',)	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-"(""!git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`"", 'Ben Dichter', 'bendichter')"	428	186	345	274	7	245	114	85	9	4	81	4	3	23	12	9	4	2	0	928	0	0
+"('Ben Dichter', ""!git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`"", 'bendichter')"	428	186	345	274	7	245	114	85	9	4	81	4	3	23	12	9	4	2	0	928	0	0
 ('Ben Hardcastle',)	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Min RK',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('Borde Sandor',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -98,7 +98,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('John T. Wodder II',)	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('ajgranger',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Guillaume Viejo',)	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('h-mayorquin', 'Heberto Mayorquin', 'Heberto')	5	0	6	7	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1242	0	0
+('h-mayorquin', 'Heberto', 'Heberto Mayorquin')	5	0	6	7	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1242	0	0
 ('hajapy',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0
 ('Iouri Khramtsov',)	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Isuru Fernando',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	56	0	0	0
@@ -107,7 +107,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('Jay R Bolton',)	8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Jean-Christophe Fillion-Robin',)	105	3	0	0	0	76	0	1	0	0	0	0	0	47	0	37	0	0	0	0	0	0
 ('Jeremy Delahanty',)	0	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('jeff Teeters', 'Jeff Teeters', 'jeffteeters')	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	64
+('jeffteeters', 'Jeff Teeters', 'jeff Teeters')	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	64
 ('Jens K',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Jeremy Forest',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Jeremy Magland',)	1	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	24	0	0
@@ -126,7 +126,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('Kyu Hyun Lee',)	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Paul LaFosse',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
 ('Mikkel Elle Lepperød',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-('luiztauffer', 'Luiz Tauffer', 'luiz')	0	0	128	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	491	0	0
+('luiz', 'Luiz Tauffer', 'luiztauffer')	0	0	128	0	0	0	0	0	0	0	0	0	0	0	0	0	4	0	0	491	0	0
 ('Luke Campagnola',)	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Liviu S',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Lydia Ng',)	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -156,7 +156,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('nileg',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Nicholas Nadeau, P.Eng., AVS',)	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('NWB Extensions Bot',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	20	0	2	0	0	0
-('Filipe', 'Filipe Fernandes')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0
+('Filipe Fernandes', 'Filipe')	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	9	0	0	0
 ('Oliver Ruebel',)	323	4	1	5	0	429	120	439	0	194	80	72	6	97	0	6	1	17	0	0	0	0
 ('Padraig Gleeson',)	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Paul Adkisson',)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0
@@ -175,7 +175,7 @@ name	PyNWB	MatNWB	NWBWidgets	NWBInspector	NWB_GUIDE	Hackathons	NWB_Overview	NWB_
 ('Sumner L Norman',)	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Sylvia Schröder',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Thomas Braun',)	61	0	0	0	0	20	0	3	0	0	8	0	1	0	0	3	0	0	0	0	0	1
-('Tom Donoghue', 'Tom')	5	0	18	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+('Tom', 'Tom Donoghue')	5	0	18	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Tom Gillespie',)	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Eric Thomson',)	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ('Tomáš Hrnčiar',)	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
