@@ -372,6 +372,13 @@ class NWBGitInfo:
               mainbranch="main",
               docs="https://neurodatawithoutborders.github.io/nwb_hackathons/",
               logo=None)),
+         ("NWB_Benchmarks",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="nwb_benchmarks",
+              mainbranch="main",
+              docs=None,
+              logo=None)),
          ("NWB_Overview",
           GitRepo(
               owner="NeurodataWithoutBorders",
