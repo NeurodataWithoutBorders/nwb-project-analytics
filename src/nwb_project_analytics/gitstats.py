@@ -363,7 +363,7 @@ class NWBGitInfo:
               mainbranch="main",
               docs="https://github.com/NeurodataWithoutBorders/nwb-guide",
               logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwb-guide"
-                   "/main/src/renderer/assets/img/logo-guide-draft-transparent-tight.png",
+                   "/main/docs/assets/logo-guide-draft-transparent-tight.png",
               startdate=NWB_GUIDE_START_DATE)),
          ("Hackathons",
           GitRepo(
