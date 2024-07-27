@@ -211,7 +211,7 @@ class DANDIStats:
         fig, ax = plt.subplots(figsize=(3, 3))
         ax = logsize.plot.hist(bins=20, ax=ax)
         ax.set_xticks([3, 6, 9, 12, 15])
-        ax.set_xticklabels(["KB", "MB", "GB", "TB", "PT"])
+        ax.set_xticklabels(["KB", "MB", "GB", "TB", "PB"])
         ax.set_xlabel("Total Dandiset size")
         ax.set_ylabel("# of NWB Dandisets")
         plt.grid(True, which='both', axis='both', color='gray', linestyle='--', linewidth=0.75, zorder=0)
