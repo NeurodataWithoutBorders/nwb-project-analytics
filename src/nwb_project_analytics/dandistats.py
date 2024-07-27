@@ -141,9 +141,9 @@ class DANDIStats:
             dandistats_df["species"] = dandistats_df["species"].replace(key, val)
 
         if write_cache:
-           if print_status:
+            if print_status:
                 PrintHelper.print("SAVING DANDI NWB statistics to %s" % cache_filename, PrintHelper.BOLD)
-           dandistats_df.to_csv(cache_filename, sep="\t")
+            dandistats_df.to_csv(cache_filename, sep="\t")
 
         return dandistats_df
 
@@ -236,7 +236,10 @@ class DANDIStats:
 
         dates = dandistats_df['created']
         dates = mpl_dates.date2num(dates)
-        ax.plot(dates, np.arange(len(dandistats_df)), '-k.')
+        ax.plot(dates,
+                np.arange(len(dandistats_df)),
+                '-k.',
+                linewidth=0.5)
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_ylabel('# of NWB Dandisets')
@@ -267,7 +270,8 @@ class DANDIStats:
         dates = mpl_dates.date2num(dandistats_df['modified'][order])
         ax.plot(dates,
                 dandistats_df['size'][order].cumsum() / 10 ** 12,
-                '-k.')
+                '-k.',
+                linewidth=0.5)
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_xlabel("Date")
@@ -296,7 +300,10 @@ class DANDIStats:
         fig, ax = plt.subplots(figsize=(4, 3))
         order = np.argsort(dandistats_df['modified'])
         dates = mpl_dates.date2num(dandistats_df['modified'][order])
-        ax.plot(dates, dandistats_df['numberOfFiles'][order].cumsum(), '-k.')
+        ax.plot(dates,
+                dandistats_df['numberOfFiles'][order].cumsum(),
+                '-k.',
+                linewidth=0.5)
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_xlabel("Date")
