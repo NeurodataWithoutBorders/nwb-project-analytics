@@ -20,6 +20,11 @@ NWB Software Analytics
 
 .. toctree::
    :maxdepth: 2
+
+   code_stat_pages/dandi_nwb_stats.rst
+
+.. toctree::
+   :maxdepth: 2
    :caption: Analytics API:
 
    nwb_project_analytics
