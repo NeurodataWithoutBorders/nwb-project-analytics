@@ -15,6 +15,7 @@ import os
 import sys
 import sphinx_rtd_theme
 from nwb_project_analytics.create_codestat_pages import create_codestat_pages
+from nwb_project_analytics.dandistats import DANDIStats
 from nwb_project_analytics._version import get_versions
 
 
@@ -200,5 +201,17 @@ def setup(app):
             print_status=True)
     else:
         print("\033[1mSKIPPING: create_codestat_pages... \033[0m done  "
-              "(the existing code_stat_pages up-to-date with the data cache)")
+              "(the existing code_stat_pages are up-to-date with the data cache)")
+
+    if update_code_stat_pages:
+        DANDIStats.create_dandistats_pages(
+            out_dir=code_stat_pages_dir,
+            data_dir=code_stat_data_dir,
+            load_cached_results=True,
+            cache_results=True,
+            print_status=True
+        )
+    else:
+        print("\033[1mSKIPPING: create_dandistats_pages... \033[0m done  "
+              "(the existing dandistats_pages are up-to-date with the data cache)")
 
