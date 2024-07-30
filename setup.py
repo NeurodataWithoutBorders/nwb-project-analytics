@@ -27,7 +27,8 @@ reqs = [
     'tqdm',
     'requests',
     'hdmf-docutils',
-    'cloc'
+    'cloc',
+    'dandi'
 ]
 print(reqs)
 
