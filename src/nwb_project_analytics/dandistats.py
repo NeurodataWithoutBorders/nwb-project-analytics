@@ -12,6 +12,7 @@ from matplotlib import pyplot as plt
 from matplotlib import dates as mpl_dates
 from hdmf_docutils.doctools.output import PrintHelper
 from hdmf_docutils.doctools.rst import RSTDocument, RSTFigure
+import datetime
 
 
 class DANDIStats:
@@ -242,7 +243,7 @@ class DANDIStats:
                 linewidth=0.5)
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
-        ax.set_ylabel('# of NWB Dandisets')
+        ax.set_ylabel('# of NWB dandisets')
         ax.set_xlabel("Date created")
         # Formatting the x-axis to show dates correctly
         plt.gca().xaxis.set_major_locator(mpl_dates.DayLocator(interval=180))
@@ -275,7 +276,7 @@ class DANDIStats:
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_xlabel("Date")
-        _ = ax.set_ylabel("TB of NWB on the archive")
+        _ = ax.set_ylabel("TB of NWB data on Dandi")
         # Formatting the x-axis to show dates correctly
         plt.gca().xaxis.set_major_locator(mpl_dates.DayLocator(interval=180))
         plt.gca().xaxis.set_major_formatter(mpl_dates.DateFormatter('%Y-%m-%d'))
@@ -307,7 +308,7 @@ class DANDIStats:
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_xlabel("Date")
-        _ = ax.set_ylabel("# NWB files on the archive")
+        _ = ax.set_ylabel("# files in NWB dandisets")
         # Formatting the x-axis to show dates correctly
         plt.gca().xaxis.set_major_locator(mpl_dates.DayLocator(interval=180))
         plt.gca().xaxis.set_major_formatter(mpl_dates.DateFormatter('%Y-%m-%d'))
@@ -340,14 +341,22 @@ class DANDIStats:
                                                     read_cache=load_cached_results,
                                                     write_cache=cache_results,
                                                     print_status=print_status)
-        dandistat_figures = []
+
+        current_datetime = datetime.datetime.now()
+        formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
         # Render all the figures
         if print_status:
             PrintHelper.print("CREATING DANDI NWB figures and rst", PrintHelper.BOLD)
+        dandistat_figures = []
         dandistats_rst = RSTDocument()
         dandistats_rst.add_label("dandi-statistics")
         dandistats_rst.add_section("DANDI: NWB Data Statistics")
+        dandistats_rst.add_text(dandistats_rst.newline)
+        dandistats_rst.add_text(dandistats_rst.newline)
+        dandistats_rst.add_text(f"Plots rendered on: {formatted_datetime}")
+        dandistats_rst.add_text(dandistats_rst.newline)
+        dandistats_rst.add_text(dandistats_rst.newline)
         dandistats_rst.add_subsection("NWB data on DANDI over time")
         # Figure 1
         count_figpath = os.path.join(out_dir, 'nwb_dandiset_count_by_date.png')
