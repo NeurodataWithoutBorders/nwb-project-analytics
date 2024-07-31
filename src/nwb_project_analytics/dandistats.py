@@ -329,7 +329,7 @@ class DANDIStats:
                                 cache_results: bool = True,
                                 print_status: bool = True):
         """
-        Render all pages and figures related to the dandi nwb statistics
+        Render all pages and figures related to the DANDI NWB statistics
 
         :param out_dir: Directory where the RST and image files should be saved to
         :param data_dir: Directory where the data for the code statistics should be cached
@@ -365,7 +365,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(count_figpath),
-                alt="Number of NWB dandisets over time",
+                alt="Number of NWB Dandisets over time",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -376,7 +376,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(sizebytime_figpath),
-                alt="Size of NWB dandisets by date",
+                alt="Size of NWB Dandisets by date",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -387,7 +387,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(nwb_count_figpath),
-                alt="Number of NWB files in dandisets over time",
+                alt="Number of NWB files in Dandisets over time",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -399,7 +399,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(species_figpath),
-                alt="Distribution of species in NWB dandisets",
+                alt="Distribution of species in NWB Dandisets",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -410,7 +410,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(modality_figpath),
-                alt="NWB dandisets modality distribution",
+                alt="NWB Dandisets modality distribution",
                 width="50%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -421,7 +421,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(size_figpath),
-                alt="NWB dandisets size distribution",
+                alt="NWB Dandisets size distribution",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
