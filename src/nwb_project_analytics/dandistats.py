@@ -12,6 +12,7 @@ from matplotlib import pyplot as plt
 from matplotlib import dates as mpl_dates
 from hdmf_docutils.doctools.output import PrintHelper
 from hdmf_docutils.doctools.rst import RSTDocument, RSTFigure
+import datetime
 
 
 class DANDIStats:
@@ -275,7 +276,7 @@ class DANDIStats:
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_xlabel("Date")
-        _ = ax.set_ylabel("TB of NWB on the archive")
+        _ = ax.set_ylabel("TB of NWB data on DANDI")
         # Formatting the x-axis to show dates correctly
         plt.gca().xaxis.set_major_locator(mpl_dates.DayLocator(interval=180))
         plt.gca().xaxis.set_major_formatter(mpl_dates.DateFormatter('%Y-%m-%d'))
@@ -307,7 +308,7 @@ class DANDIStats:
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
         ax.set_xlabel("Date")
-        _ = ax.set_ylabel("# NWB files on the archive")
+        _ = ax.set_ylabel("# files in NWB Dandisets")
         # Formatting the x-axis to show dates correctly
         plt.gca().xaxis.set_major_locator(mpl_dates.DayLocator(interval=180))
         plt.gca().xaxis.set_major_formatter(mpl_dates.DateFormatter('%Y-%m-%d'))
@@ -328,7 +329,7 @@ class DANDIStats:
                                 cache_results: bool = True,
                                 print_status: bool = True):
         """
-        Render all pages and figures related to the dandi nwb statistics
+        Render all pages and figures related to the DANDI NWB statistics
 
         :param out_dir: Directory where the RST and image files should be saved to
         :param data_dir: Directory where the data for the code statistics should be cached
@@ -340,14 +341,22 @@ class DANDIStats:
                                                     read_cache=load_cached_results,
                                                     write_cache=cache_results,
                                                     print_status=print_status)
-        dandistat_figures = []
+
+        current_datetime = datetime.datetime.now()
+        formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
         # Render all the figures
         if print_status:
             PrintHelper.print("CREATING DANDI NWB figures and rst", PrintHelper.BOLD)
+        dandistat_figures = []
         dandistats_rst = RSTDocument()
         dandistats_rst.add_label("dandi-statistics")
         dandistats_rst.add_section("DANDI: NWB Data Statistics")
+        dandistats_rst.add_text(dandistats_rst.newline)
+        dandistats_rst.add_text(dandistats_rst.newline)
+        dandistats_rst.add_text(f"Plots rendered on: {formatted_datetime}")
+        dandistats_rst.add_text(dandistats_rst.newline)
+        dandistats_rst.add_text(dandistats_rst.newline)
         dandistats_rst.add_subsection("NWB data on DANDI over time")
         # Figure 1
         count_figpath = os.path.join(out_dir, 'nwb_dandiset_count_by_date.png')
@@ -356,7 +365,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(count_figpath),
-                alt="Number of NWB dandisets over time",
+                alt="Number of NWB Dandisets over time",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -367,7 +376,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(sizebytime_figpath),
-                alt="Size of NWB dandisets by date",
+                alt="Size of NWB Dandisets by date",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -378,7 +387,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(nwb_count_figpath),
-                alt="Number of NWB files in dandisets over time",
+                alt="Number of NWB files in Dandisets over time",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -390,7 +399,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(species_figpath),
-                alt="Distribution of species in NWB dandisets",
+                alt="Distribution of species in NWB Dandisets",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -401,7 +410,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(modality_figpath),
-                alt="NWB dandisets modality distribution",
+                alt="NWB Dandisets modality distribution",
                 width="50%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
@@ -412,7 +421,7 @@ class DANDIStats:
         dandistat_figures.append(
             RSTFigure(
                 image_path=os.path.basename(size_figpath),
-                alt="NWB dandisets size distribution",
+                alt="NWB Dandisets size distribution",
                 width="100%")
         )
         dandistats_rst.add_figure(figure=dandistat_figures[-1])
