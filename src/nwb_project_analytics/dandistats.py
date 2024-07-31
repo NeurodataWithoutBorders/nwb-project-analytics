@@ -243,7 +243,7 @@ class DANDIStats:
                 linewidth=0.5)
         for label in ax.get_xticklabels(which='major'):
             label.set(rotation=30, horizontalalignment='right')
-        ax.set_ylabel('# of NWB dandisets')
+        ax.set_ylabel('# of NWB Dandisets')
         ax.set_xlabel("Date created")
         # Formatting the x-axis to show dates correctly
         plt.gca().xaxis.set_major_locator(mpl_dates.DayLocator(interval=180))
