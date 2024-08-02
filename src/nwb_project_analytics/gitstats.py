@@ -407,6 +407,13 @@ class NWBGitInfo:
               mainbranch="main",
               docs="https://github.com/NeurodataWithoutBorders/nwb-project-analytics",
               logo=None)),
+         ("AqNWB",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="aqnwb",
+              mainbranch="main",
+              docs=None,
+              logo=None)),
          ("HDMF",
           GitRepo(
               owner="hdmf-dev",
