@@ -377,7 +377,7 @@ class NWBGitInfo:
               owner="NeurodataWithoutBorders",
               repo="nwb_benchmarks",
               mainbranch="main",
-              docs=None,
+              docs="https://nwb-benchmarks.readthedocs.io",
               logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/nwb_benchmarks"
                    "/main/docs/assets/logo_nwb_benchmarks.png")),
          ("NWB_Overview",
@@ -413,8 +413,9 @@ class NWBGitInfo:
               owner="NeurodataWithoutBorders",
               repo="aqnwb",
               mainbranch="main",
-              docs=None,
-              logo=None)),
+              docs="https://neurodatawithoutborders.github.io/aqnwb",
+              logo="https://raw.githubusercontent.com/NeurodataWithoutBorders/"
+                   "aqnwb/main/resources/logo/aqnwb-logo.png")),
          ("LINDI",
           GitRepo(
               owner="NeurodataWithoutBorders",
