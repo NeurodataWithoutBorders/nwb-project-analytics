@@ -538,6 +538,7 @@ class NWBGitInfo:
         "dependabot[bot]",
         "nwb-bot",
         "hdmf-bot",
+        "ehennestad",
         "pre-commit-ci[bot]",
     ]
     """
