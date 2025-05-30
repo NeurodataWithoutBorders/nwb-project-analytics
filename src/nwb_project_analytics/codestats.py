@@ -491,7 +491,12 @@ class GitCodeStats:
         Run CLOC on the given srcdir, save the results to outdir, and return the parsed
         results.
         """
-        command = "%s --yaml --report-file=%s %s" % (cloc_path, out_file, src_dir)
+        # Check if this is the nwb-project-analytics repository and exclude data directory
+        repo_name = os.path.basename(src_dir)
+        if repo_name == "nwb-project-analytics":
+            command = "%s --yaml --report-file=%s --exclude-dir=data %s" % (cloc_path, out_file, src_dir)
+        else:
+            command = "%s --yaml --report-file=%s %s" % (cloc_path, out_file, src_dir)
         try:
             os.system(command)
             yaml_safe_loader = yaml.YAML(typ='safe', pure=True)
