@@ -148,3 +148,6 @@ dmypy.json
 .pyre/
 
 .DS_Store
+
+# Version
+_version.py

@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nwb_project_analytics"
+dynamic = ["version"]
+description = "A package with functionality for monitoring the NWB project"
+readme = "README.rst"
+license = {text = "BSD"}
+authors = [
+    {name = "Oliver Ruebel", email = "oruebel@lbl.gov"}
+]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: BSD License",
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: Unix",
+    "Topic :: Scientific/Engineering :: Medical Science Apps."
+]
+keywords = [
+    "python",
+    "cross-platform",
+    "open-data",
+    "data-format",
+    "open-source",
+    "open-science",
+    "reproducible-research"
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "ruamel.yaml",
+    "GitPython",
+    "PyGithub",
+    "setuptools",
+    "matplotlib",
+    "tqdm",
+    "requests",
+    "hdmf-docutils",
+    "cloc",
+    "dandi"
+]
+
+[project.optional-dependencies]
+# documentation dependencies
+docs = [
+    "matplotlib",
+    "sphinx>=4",  # improved support for docutils>=0.17
+    "sphinx_rtd_theme>=1",  # <1 does not work with docutils>=0.17
+    "sphinx-gallery",
+    "sphinx-copybutton",
+    "sphinx-tabs",
+]
+
+[project.urls]
+Homepage = "https://github.com/NeurodataWithoutBorders/nwb-project-analytics"
+Repository = "https://github.com/NeurodataWithoutBorders/nwb-project-analytics"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/nwb_project_analytics/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nwb_project_analytics"]
+
+[tool.ruff]
+lint.select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "T100",  # debugger
+    "T201",  # print statements
+    "T203",  # pprint statements
+]
+line-length = 120
+
+[tool.ruff.lint.mccabe]
+max-complexity = 17

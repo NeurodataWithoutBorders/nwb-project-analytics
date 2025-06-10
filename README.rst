@@ -19,7 +19,7 @@ All main NWB analytics are compiled automatically when building the ``docs``
 
 .. code-block:: bash:
 
-    conda create --name nwb_analytics_env python=3.8
+    conda create --name nwb_analytics_env python=3.13
     conda activate nwb_analytics_env
 
 2. Install ``cloc`` (see `here <https://github.com/AlDanial/cloc#install-via-package-manager>`_)
@@ -31,8 +31,7 @@ All main NWB analytics are compiled automatically when building the ``docs``
 
     git clone https://github.com/NeurodataWithoutBorders/nwb-project-analytics.git
     cd nwb-project-analytics
-    pip install -r requirements.txt -r requirements-doc.txt
-    pip install -e .
+    pip install -e ".[docs]"
 
 4. Build the docs
 
