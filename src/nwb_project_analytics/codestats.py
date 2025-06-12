@@ -493,7 +493,7 @@ class GitCodeStats:
         """
         # Check if this is the nwb-project-analytics repository and exclude data directory
         repo_name = os.path.basename(src_dir)
-        if repo_name == "nwb-project-analytics":
+        if repo_name == "NWB_Project_Analytics":
             command = "%s --yaml --report-file=%s --exclude-dir=data %s" % (cloc_path, out_file, src_dir)
         else:
             command = "%s --yaml --report-file=%s %s" % (cloc_path, out_file, src_dir)
