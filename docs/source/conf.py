@@ -16,7 +16,7 @@ import sys
 import sphinx_rtd_theme
 from nwb_project_analytics.create_codestat_pages import create_codestat_pages
 from nwb_project_analytics.dandistats import DANDIStats
-from nwb_project_analytics._version import get_versions
+from nwb_project_analytics import __version__
 
 
 # sys.path.insert(0, os.path.abspath('.'))
@@ -53,9 +53,9 @@ copyright = '2023, NWB Project Analytics'
 author = 'Oliver Ruebel'
 
 # The short X.Y version.
-version = '{}'.format(get_versions()['version'])
+version = __version__
 # The full version, including alpha/beta/rc tags.
-release = '{}'.format(get_versions()['version'])
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -109,7 +109,6 @@ sphinx_tabs_valid_builders = ['linkcheck']
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -125,7 +124,6 @@ html_theme_options = {
     # 'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
     # 'analytics_anonymize_ip': False,
     'logo_only': False,  # Only show the NWB logo without the documentation title
-    'display_version': True,  # show the version of the docs
     'prev_next_buttons_location': 'bottom',  # Show previous/next button at the bottom
     'style_external_links': True,  # Add marker to indicate external links
     'vcs_pageview_mode': '',

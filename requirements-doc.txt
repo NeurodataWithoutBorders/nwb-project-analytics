@@ -1,7 +1,0 @@
-# dependencies to generate the documentation for HDMF
-matplotlib
-sphinx>=4  # improved support for docutils>=0.17
-sphinx_rtd_theme>=1  # <1 does not work with docutils>=0.17
-sphinx-copybutton
-sphinx_rtd_theme
-sphinx-tabs
