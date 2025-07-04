@@ -387,6 +387,13 @@ class NWBGitInfo:
               mainbranch="main",
               docs="https://nwb-overview.readthedocs.io",
               logo=None)),
+         ("NWB.org",
+          GitRepo(
+              owner="NeurodataWithoutBorders",
+              repo="neurodatawithoutborders.github.io",
+              mainbranch="main",
+              docs="https://nwb.org/",
+              logo=None)),
          ("NWB_Schema",
           GitRepo(
               owner="NeurodataWithoutBorders",
