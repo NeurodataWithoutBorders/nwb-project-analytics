@@ -161,7 +161,7 @@ class GitCodeStats:
             if repo_startdate is not None:
                 # Set all LOC values prior to the given date to 0
                 for k in summary_stats.keys():
-                    summary_stats[k][repo_key][:repo_startdate] = 0
+                    summary_stats[k].loc[:repo_startdate, repo_key] = 0
                 # also update the per-language stats for the repo
                 datemask = (per_repo_lang_stats[repo_key].index < repo_startdate)
                 per_repo_lang_stats[repo_key].loc[datemask] = 0
