@@ -1,11 +1,11 @@
-﻿origin,RFA-NS-23-026 strategy or event management list,internal U24 list,internal U24 list,nwb-overview PR history,Ryan list,deVries et al. 2023
-year,event registrants,tool consultations,user consultations,community tools,data reuse publications,Allen reuse publications
-2017,30,0,0,0,0,6
-2018,60,0,0,1,0,8
-2019,86,0,0,1,0,3
-2020,607,0,0,3,0,19
-2021,251,8,27,3,3,39
-2022,436,11,22,8,3,28
-2023,420,12,28,11,18,nan
-2024,527,10,16,3,27,nan
-2025,427,3,2,5,14,nan
+﻿origin,RFA-NS-23-026 strategy or event management list,internal U24 list,internal U24 list,nwb-overview PR history,Ryan list
+year,event registrants,tool consultations,user consultations,community tools,data reuse publications
+2017,30,0,0,0,6
+2018,60,0,0,1,8
+2019,86,0,0,1,8
+2020,607,0,0,3,11
+2021,251,8,27,3,49
+2022,436,11,22,8,31
+2023,420,12,28,11,50
+2024,527,10,16,3,50
+2025,458,3,2,5,18
