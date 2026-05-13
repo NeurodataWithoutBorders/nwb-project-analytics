@@ -356,7 +356,7 @@ class DANDIStats:
         dandistats_rst.add_text(dandistats_rst.newline)
         dandistats_rst.add_text(f"Plots rendered on: {formatted_datetime}")
         dandistats_rst.add_text(dandistats_rst.newline)
-        dandistats_rst.add_text("For more statistics on individual DANDI datasets see the `Dandiset Access Summaries  <https://dandi.github.io/access-page/>`_ website.")
+        dandistats_rst.add_text("For more statistics on individual DANDI datasets see the `Dandiset Usage Summaries  <https://usage.dandiarchive.org/>`_ website.")
         dandistats_rst.add_text(dandistats_rst.newline)
         dandistats_rst.add_text(dandistats_rst.newline)
         dandistats_rst.add_subsection("NWB data on DANDI over time")
