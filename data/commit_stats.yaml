@@ -81933,6 +81933,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    1e77614cf04c8a91088bd512d4a910b186d78bc8, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Jul 24 07:12:44 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     8bef502e508dc9f1e0fe840f8aecb0a4cf383bbb, summary: Automatic update of the 
     code statistics YAML files, time: Thu Jul 23 06:52:08 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88738,6 +88741,13 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    3b3465a45a3c7b5a191c80b16189775a4891e95a, summary: Add time_unit to 
+    CSVFiberPhotometryInterface (#1820), time: Fri Jul 24 18:33:50 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    35cd8a4e166bf69fd454927f3a1a82c00542f964, summary: Add NPMEventsInterface 
+    for discrete events from Neurophotometrics (#1757), time: Fri Jul 24 
+    16:53:31 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     57560f16e691a76f226d7f520220e8d91737e166, summary: Unify the 
     container-selection parameter under `parent_container` (#1760), time: Fri 
@@ -116301,6 +116311,12 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    eb08f1463f7b178011ba82270905cc484ba98818, summary: Prepare for release of 
+    PyNWB 4.1.0 (#2226), time: Fri Jul 24 22:48:06 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    fef4098da897d011cacae6ae20f1b20aec8b9055, summary: Work around HDF5 ros3 
+    shutdown deadlock on Windows CI (#2229), time: Fri Jul 24 19:01:24 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     f3073cc6acd4e817f646743da87f04bf6e59970b, summary: Use the gh CLI and PyPI 
     trusted publishing for releases (#2225), time: Thu Jul 23 05:23:10 2026}
