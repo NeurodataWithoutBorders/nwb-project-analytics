@@ -81933,6 +81933,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    ea035359e4f8732279b5978ded2853085e2305b8, summary: Automatic update of the 
+    code statistics YAML files, time: Sat Jul 25 07:03:56 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     1e77614cf04c8a91088bd512d4a910b186d78bc8, summary: Automatic update of the 
     code statistics YAML files, time: Fri Jul 24 07:12:44 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88741,6 +88744,23 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    bba50ba06730a2b27179ce58234d88fd47c50202, summary: Add durative event 
+    support to DoricEventsInterface (#1821), time: Sun Jul 26 01:02:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0ce5d71f6124eb8b1568c53bf60d068298201207, summary: Relax zero event case in 
+    `BaseEventsInterface` (#1813), time: Sat Jul 25 18:05:41 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    75d0b34b4b1f8711b5e44ff30335b8ee912a7c05, summary: Relax two over-strict 
+    required fields in fiber photometry metadata (#1807), time: Sat Jul 25 
+    18:04:58 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1aa35a0ef256558081bb0515d9d53bd58344b063, summary: Test Update EMBER sandbox
+    URL (#1818), time: Sat Jul 25 18:03:40 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    70564e479d1adcf2d9d4ac4a2a8d8d2dc9e09c4d, summary: Add 
+    DoricCSVEventsInterface for discrete events from Doric Neuroscience Studio 
+    CSV exports (#1817), time: Sat Jul 25 17:32:48 2026}
 - {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
     3b3465a45a3c7b5a191c80b16189775a4891e95a, summary: Add time_unit to 
     CSVFiberPhotometryInterface (#1820), time: Fri Jul 24 18:33:50 2026}
