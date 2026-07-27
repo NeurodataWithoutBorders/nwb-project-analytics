@@ -81933,6 +81933,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    4cb08474296d6bd475722ce346f4496da8e10fce, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Jul 26 07:10:49 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     ea035359e4f8732279b5978ded2853085e2305b8, summary: Automatic update of the 
     code statistics YAML files, time: Sat Jul 25 07:03:56 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
