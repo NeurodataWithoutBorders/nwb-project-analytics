@@ -17375,6 +17375,26 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    f690e8293546b70c42dd956812b75e9a0f2b16b1, summary: Unnamed group mixin 
+    improvements (#784), time: Tue Jul 28 17:26:43 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    c6cbb513d2cdd181d8a4ab2788cc58ef67794010, summary: 'Fix: `toTable` adds category
+    tables when NWB table is an `AlignedDynamicTable` (#834)', time: Tue Jul 28 
+    14:09:51 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    c20853d6531064aea059053cf526b172a9d61434, summary: Fix bugs in documentation
+    build (#849), time: Tue Jul 28 14:07:29 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    e03c704fb3bc0b0d0d99e54dd2698fcf4e318eda, summary: Defer BoundPipe append 
+    warnings and fix append-axis inference (#851), time: Tue Jul 28 14:06:03 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    370842e167a6d2b60b1fd79aff9c8afadd608003, summary: Make embedded-spec 
+    read/write backend-agnostic (#848), time: Tue Jul 28 13:38:19 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    be8b489303d8a3896efc69da71023c82d64f5a1e, summary: 'fix: ignore non-version entries
+    when finding latest schema version (#854)', time: Tue Jul 28 13:35:19 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     2ee6a6b8063fac39a47fa375394b325ccc2d6bea, summary: 'fix(io): export reference
     datasets with a leading null reference (#852)', time: Mon Jul  6 19:47:20 
     2026}
@@ -81933,6 +81953,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    19a6ffa63a2850188e62a23d5e18e0dc4b3450fc, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Jul 28 07:06:44 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     b0ae967a622f40430b9256380077b98db940247b, summary: Automatic update of the 
     code statistics YAML files, time: Mon Jul 27 07:18:34 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88750,6 +88773,29 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    49578ea8501fb944e1ab0eb0e79e0d67706a20e2, summary: Point the TDT events 
+    gallery and photometry test at gin data (#1834), time: Wed Jul 29 03:18:20 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    78107bd0d179e10dd89f97f375d0e45c7245284b, summary: Write the sweeps of an 
+    icephys conversion as a `TimeIntervals` table (#1833), time: Wed Jul 29 
+    00:55:25 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    5e98e375bd702933c5e48c5c1da20e8b531081cd, summary: Extend 
+    CSVFiberPhotometryInterface's column demux for multi-value labels and 
+    startup rows (#1830), time: Wed Jul 29 00:23:52 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    00f0c2ef3fd063beebacc939fb7e481299cba06d, summary: 'Fix dallies: fold multi-file
+    CSV fiber photometry gallery page into the CSV page (#1827)', time: Tue Jul 
+    28 20:29:03 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3958c2ff9440103fa8eebddf0a8be456010c2b38, summary: Finish the 
+    device-registry migration and build nested sub-objects generically (#1829), 
+    time: Tue Jul 28 19:50:26 2026}
+- {author: Stan Bot, committer: GitHub, hexsha: 
+    9d29eba20ae0db1f5b17b4f7438dc9a5ac685e3a, summary: 'fix: reject duplicate device
+    registry names (#1824)', time: Tue Jul 28 15:04:09 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     bba50ba06730a2b27179ce58234d88fd47c50202, summary: Add durative event 
     support to DoricEventsInterface (#1821), time: Sun Jul 26 01:02:00 2026}
