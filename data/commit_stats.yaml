@@ -2085,6 +2085,10 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    4a8967fe81e0e6045bd3b47ca6ff791a80c30769, summary: Avoid Zarr-to-HDF5 export
+    deadlock and make the IO finalizer non-blocking (#1547), time: Thu Jul 30 
+    21:23:56 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     98f19e86729ae30d788e290b4d70d0ef1b6e7447, summary: Fix indexing an empty 
     DynamicTableRegion selection in memory (#1549), time: Thu Jul 30 04:27:19 
@@ -81973,6 +81977,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    7920283885af9b18d121eebcf3056a76ea3806c8, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Jul 30 07:01:29 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     81471a380c1a59f168b2a12eac3be432518ec3fa, summary: Automatic update of the 
     code statistics YAML files, time: Wed Jul 29 07:09:38 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88796,6 +88803,16 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    fad4f3bc21998276a18450b73977ad65ce736ff9, summary: ' Add `BrukerTiffImagingInterface`
+    (#1804)', time: Thu Jul 30 16:09:13 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2ac30ba23b3d723755b768fda654ffbcb691dd7b, summary: Add `metadata_key` 
+    developer documentation (#1822), time: Thu Jul 30 16:07:56 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    94150cb95f5d6f36f1e7300931cbcfe89dda4f13, summary: Allow writing units with 
+    no electrodes to a units table that already has an electrodes column (#1832),
+  time: Thu Jul 30 15:02:40 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     debfa59db2d719f53804f71669b9f1d1a7749cb0, summary: Document the role of 
     `column_name` when event types are pooled into one EventsTable (#1831), time: 
@@ -116432,6 +116449,10 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    2eab605bc576d8afbbbe87b35b32d6978faff0dc, summary: Keep wide DataFrames in 
+    the tutorials inside the content column (#2236), time: Thu Jul 30 20:24:14 
+    2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     eb08f1463f7b178011ba82270905cc484ba98818, summary: Prepare for release of 
     PyNWB 4.1.0 (#2226), time: Fri Jul 24 22:48:06 2026}
