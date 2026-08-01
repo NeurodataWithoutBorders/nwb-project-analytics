@@ -81977,6 +81977,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    e9fa47511d15590b4c6de904bf59a6f0a0a8e166, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Jul 31 07:13:54 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     7920283885af9b18d121eebcf3056a76ea3806c8, summary: Automatic update of the 
     code statistics YAML files, time: Thu Jul 30 07:01:29 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -85911,6 +85914,9 @@ NWB_Project_Analytics:
     4d1932fbbac8ab4f5c81574296b6c85e9076521e, summary: Initial commit, time: Tue
     Nov  3 18:08:55 2020}
 NWB_Schema:
+- {author: Stan Bot, committer: GitHub, hexsha: 
+    cff37d3140db777b6cbe10ddb920b00766d0da9e, summary: Make waveform units 
+    configurable (#707), time: Fri Jul 31 23:59:42 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
     db9e52ac0b9ef7af029ce57dc5fccb58ea3afcf8, summary: Standardize core schema 
     documentation style (#704), time: Fri Jul  3 19:22:37 2026}
@@ -88803,6 +88809,57 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    26bb653b2111443e40f77d6dbee916f3ea204bd7, summary: 'Decide icephys simultaneity
+    on time, and let `stimulus_type` be optional (#1852)', time: Sat Aug  1 
+    04:06:05 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    da2f9eb2c45a1ea8eb6480899d8fe58fc2f53d4a, summary: Route `metadata_key` 
+    through the ecephys converters (#1850), time: Sat Aug  1 04:04:59 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    f9289e9e64f24050ede94d0fda742fa04afe1b6d, summary: Migrate the Miniscope 
+    converter to dict-based metadata (#1849), time: Sat Aug  1 03:12:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    78e02902c155009bd04fa9ea0cfe4553c5a506fc, summary: Build the Miniscope 
+    device through the unified device registry (#1847), time: Sat Aug  1 
+    02:19:52 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a913233dbe89dea331baab281e0d79c2dad0f956, summary: Add `metadata_key` to the
+    remaining recording interfaces that have no provenance to migrate (#1848), 
+    time: Sat Aug  1 02:18:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    50f67b9b2724ce8df7991fb8d4960fa4be2da037, summary: Add a 
+    `data_representation` option to write recordings with heterogeneous 
+    per-channel offsets (#1814), time: Sat Aug  1 01:29:57 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    82b63fcf924f6d31dde11ce5fa9fb961b0130913, summary: Stop the metadata schemas
+    requiring Subject fields that NWB does not (#1845), time: Fri Jul 31 
+    22:45:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6570f3043751f40ee0adfe1402d3246197368421, summary: Add `metadata_key` to the
+    recording interfaces that have no provenance to migrate (#1844), time: Fri 
+    Jul 31 22:45:07 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    c9854bb94d9016489a76d1b9977797fc44a2aa60, summary: Migrate the Open Ephys 
+    recording interfaces to the dict-based metadata format (#1843), time: Fri 
+    Jul 31 22:45:07 2026}
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    2f09be0e5be4de463ebe02d168d95671f91f7ead, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1826)', time: Fri Jul 31 20:41:37 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e8f1943bf391549cc7479fa036a91f4f129301e7, summary: Migrate 
+    `BrukerTiffImagingInterface` to the unified extractor and dict-based 
+    metadata (#1773), time: Fri Jul 31 20:41:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1189224e357025211877a2f733de16b8904f52d1, summary: Migrate 
+    `SpikeGLXRecordingInterface` to the dict-based metadata format (#1816), time: 
+    Fri Jul 31 19:22:39 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d4f740a98ab8622e598b7dfc0e23f1b071b6c678, summary: Fix the daily dev 
+    workflows (#1828), time: Fri Jul 31 17:51:44 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    e706c8cb9273edb42ed32e7392bb8a1842b58cea, summary: Stop `_GuppyInterface` 
+    from deriving a `session_start_time` (#1840), time: Fri Jul 31 14:32:17 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     fad4f3bc21998276a18450b73977ad65ce736ff9, summary: ' Add `BrukerTiffImagingInterface`
     (#1804)', time: Thu Jul 30 16:09:13 2026}
@@ -116449,6 +116506,12 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Hugo, committer: GitHub, hexsha: 
+    5101a86519a09f8d087d1b892c08a88cae7782b5, summary: Fix mock_DeviceModel 
+    defaulting manufacturer to None (#2232), time: Sat Aug  1 01:52:29 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3eb4348fcf1776b8d6feb3f98c85df34be4d6039, summary: Read files whose dates 
+    carry a sub-minute UTC offset (#2230), time: Fri Jul 31 20:50:27 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     2eab605bc576d8afbbbe87b35b32d6978faff0dc, summary: Keep wide DataFrames in 
     the tutorials inside the content column (#2236), time: Thu Jul 30 20:24:14 
