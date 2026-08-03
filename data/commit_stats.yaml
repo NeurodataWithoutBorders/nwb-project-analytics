@@ -81977,6 +81977,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    921da436c18949c968aab11466ac27856c1399ac, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Aug  2 07:10:10 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     3a146c8cb16c693fb976c229dc2e6dd1c371ebf7, summary: Automatic update of the 
     code statistics YAML files, time: Sat Aug  1 07:08:00 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88812,6 +88815,40 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d78d7291879a8f16959f834719f9183d9f52c4e9, summary: Add digital events 
+    support to IntanConverter (#1819), time: Mon Aug  3 03:45:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9877815570c225cdf1e7d68550e236f43553584d, summary: Add support for Intan 
+    events (#1812), time: Mon Aug  3 02:58:18 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3424d8b75d6dc54897892d1c10ae97083f9a7cd9, summary: Declare the modality 
+    metadata blocks in the schema (#1873), time: Mon Aug  3 01:52:27 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d7683afa3eb2e0fac6f984f8b91c264631ee2ce0, summary: Write the dict-based 
+    metadata format by default inside NeuroConv (#1853), time: Sun Aug  2 
+    21:13:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7281ad01795b9febf3830cad7f0c32c9db55b828, summary: Update SpikeGLX NIDQ 
+    digital events to  `EventsTable` (#1842), time: Sun Aug  2 20:32:39 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    61843cfd7d1235294660748c2f44507a32c9863a, summary: Fix the ophys dict 
+    metadata path (#1872), time: Sun Aug  2 15:48:48 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0f9dfa7a49de0327d448635623319def8d8cf9fa, summary: Migrate the analog and 
+    sync interfaces to the metadata dict pattern (#1870), time: Sun Aug  2 
+    07:48:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    bdea304f62e7849604f2aec5c40d1a61d3843ffc, summary: 'Ignore the two warning categories
+    no caller can act on, and make our own EncodingWarnings an error (#1869)', 
+    time: Sun Aug  2 07:24:32 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    60932102b8c270be5aa3656273010b5f23618e76, summary: Add the shared machinery 
+    for signal-encoded events (#1825), time: Sun Aug  2 06:54:16 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7daa4dda05c91d82ca6b71d8ffae2c2ed6257995, summary: 'Route validation by metadata
+    format, and declare the device registries (#1868)', time: Sun Aug  2 
+    06:27:59 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     f29d1ea83b6f0b942728df6dbcdbf77ddff7f013, summary: 'Decide the metadata format
     per block, not per dictionary (#1867)', time: Sun Aug  2 05:41:07 2026}
