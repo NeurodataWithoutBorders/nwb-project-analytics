@@ -29470,6 +29470,20 @@ NDX_Template:
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
 - {author: Ben Dichter, committer: GitHub, hexsha: 
+    636d3ee0d9ab0b89bd08fff96315a63c8207813b, summary: 'Merge pull request #174 from
+    NeurodataWithoutBorders/add-carter-peene-instructor', time: Tue Aug  4 
+    20:31:55 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    5cecce73049f87abd9cd11a751d9edd1f7fefd47, summary: Add Carter Peene to the 
+    NeuroDataReHack 2027 instructors, time: Tue Aug  4 19:22:55 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    e18fc61aef4c7b621553b8f4ae444347069ee5d8, summary: 'Merge pull request #173 from
+    NeurodataWithoutBorders/add-2027-instructors', time: Tue Aug  4 19:03:53 
+    2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    678b9de67d890db986d41485642070cbd88b26e9, summary: 'Add instructor names, affiliations,
+    and photos for NeuroDataReHack 2027', time: Tue Aug  4 18:45:41 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
     509182b52f0bdd64e84a712539b3e065c8714529, summary: 'Merge pull request #172 from
     NeurodataWithoutBorders/ndrh-2026-report', time: Mon Aug  3 20:18:02 2026}
 - {author: Ben Dichter, committer: Ben Dichter, hexsha: 
@@ -81982,6 +81996,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    56a2790b55e5a5bfa6df360a0ab4a3090030094a, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Aug  4 07:07:46 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     fcdd4a1b228ab40a30cc4d9a3be5404204416f72, summary: Automatic update of the 
     code statistics YAML files, time: Mon Aug  3 07:12:23 2026}
