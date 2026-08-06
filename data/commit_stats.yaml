@@ -2085,6 +2085,10 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: 'dependabot[bot]', committer: GitHub, hexsha: 
+    61368e1d8cdddf294e5c670b972c5a2711212639, summary: Bump 
+    pypa/gh-action-pypi-publish from 1.14.1 to 1.14.2 (#1558), time: Thu Aug  6 
+    04:30:23 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     4a8967fe81e0e6045bd3b47ca6ff791a80c30769, summary: Avoid Zarr-to-HDF5 export
     deadlock and make the IO finalizer non-blocking (#1547), time: Thu Jul 30 
@@ -81997,6 +82001,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    b4e87336db65a5fc7f4447e05b9969c58e0d5b56, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Aug  5 07:08:26 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     56a2790b55e5a5bfa6df360a0ab4a3090030094a, summary: Automatic update of the 
     code statistics YAML files, time: Tue Aug  4 07:07:46 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88841,6 +88848,12 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    7e3e6b9ca5fe5c767fe915dbd841198a1405cf03, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1875)', time: Wed Aug  5 17:43:47 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    b3cf61c9785fcea0032c19dddde390eee168e0c5, summary: GuppyConverter (#1783), 
+    time: Wed Aug  5 17:41:33 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     d78d7291879a8f16959f834719f9183d9f52c4e9, summary: Add digital events 
     support to IntanConverter (#1819), time: Mon Aug  3 03:45:55 2026}
