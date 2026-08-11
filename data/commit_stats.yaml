@@ -82001,6 +82001,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    5b38b180098c314ce90c697f8b03703d26871142, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Aug 10 06:41:49 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     d78f6ae88284b38a3f0d08391757c6a8ece9d89e, summary: Automatic update of the 
     code statistics YAML files, time: Sun Aug  9 06:34:55 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -85965,6 +85968,10 @@ NWB_Project_Analytics:
     4d1932fbbac8ab4f5c81574296b6c85e9076521e, summary: Initial commit, time: Tue
     Nov  3 18:08:55 2020}
 NWB_Schema:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d4bd08ebd4d3b0a310d8a59bfb3b44a74ebd5815, summary: Add optional 
+    `time_before_peak_in_ms` to `waveform_mean` and `waveform_sd` (#709), time: 
+    Tue Aug 11 00:25:32 2026}
 - {author: Stan Bot, committer: GitHub, hexsha: 
     cff37d3140db777b6cbe10ddb920b00766d0da9e, summary: Make waveform units 
     configurable (#707), time: Fri Jul 31 23:59:42 2026}
