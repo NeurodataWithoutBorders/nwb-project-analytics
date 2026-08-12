@@ -2085,6 +2085,9 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    dd22f161863ab56bbd978a1d825916c307f6e47a, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1555)', time: Tue Aug 11 21:03:30 2026}
 - {author: 'dependabot[bot]', committer: GitHub, hexsha: 
     61368e1d8cdddf294e5c670b972c5a2711212639, summary: Bump 
     pypa/gh-action-pypi-publish from 1.14.1 to 1.14.2 (#1558), time: Thu Aug  6 
@@ -82001,6 +82004,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    27ed8b317574f57befe2cb4deb8609ff2cc7d29a, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Aug 11 06:35:58 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     5b38b180098c314ce90c697f8b03703d26871142, summary: Automatic update of the 
     code statistics YAML files, time: Mon Aug 10 06:41:49 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88867,6 +88873,53 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e1eacdf9b60771be2ad6aa7fcfc7937f33649bcc, summary: Write down the rule for a
+    metadata entry that names no device (#1896), time: Wed Aug 12 03:36:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9cafe5255faa43a68c69ae54d5ac14f4e7f705b4, summary: Device writers get the 
+    caller's whole metadata instead of a cut-down copy (#1893), time: Wed Aug 12
+    02:52:18 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    58fee544c17e35f3230f0b70efaf1b5eab1caeb6, summary: Improve the guidance for 
+    heterogeneous offsets (#1890), time: Wed Aug 12 00:52:15 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a31348120cc866f809911eac644d9073ba6b8e4e, summary: Add how-to for annotating  
+    fiber metadata annotation in fiber-photometry interfaces  (#1806), time: Wed
+    Aug 12 00:01:27 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    aec83a6e706fe0b42a9165e45432fc441db496c6, summary: Prepare for v0.10.0rc1, 
+    time: Tue Aug 11 20:17:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    76b0e5020776b351ddd5f0239d60aa0484bf9eb1, summary: 'Describe the recording, not
+    the source layout, in `MockFiberPhotometryInterface` (#1889)', time: Tue Aug
+    11 20:07:30 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    683aeb3e8c45b358f5b2286442f6e5655d45b06a, summary: The conversion gallery 
+    states which extra each page needs (#1887), time: Tue Aug 11 20:04:00 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    3e7f970ba5fb48e817a943d1eb96d449d4325ba6, summary: Support GuPPy sessions 
+    whose events come from several formats (#1879), time: Tue Aug 11 19:46:19 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1cb265edab65e1dd96d508da27b405d9c2f898de, summary: Update the CI actions 
+    that still target Node 20 (#1885), time: Tue Aug 11 17:50:15 2026}
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    6ed1291fa9bc9f1efed0f7aa4a3bbd05d662bab3, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1882)', time: Tue Aug 11 17:19:16 2026}
+- {author: Axel.Cffrd.Dnty, committer: GitHub, hexsha: 
+    c65b5514c3fea1cd2123ed46d0885f3e6f1bea1d, summary: 'Fix the spike2 extra: the
+    sonpy marker can never be satisfied (#1855)', time: Tue Aug 11 17:17:11 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    480c1b0279cdb4d6322338b002cff9940d4f4e7a, summary: 'Metadata migration: backwards
+    compatability (#1874)', time: Tue Aug 11 17:14:47 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    84ea28a45dd1dba786c959fd5ed543d3a7cbc555, summary: 'Support Standalone GuppyInterface
+    for NWB-in, NWB-out in Guppy (#1880)', time: Tue Aug 11 15:24:13 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    49e3b388f6faa913eed845c64959e103d0938f3c, summary: Only write the fiber 
+    photometry devices a table row references (#1883), time: Tue Aug 11 14:56:15
+    2026}
 - {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
     7e3e6b9ca5fe5c767fe915dbd841198a1405cf03, summary: '[pre-commit.ci] pre-commit
     autoupdate (#1875)', time: Wed Aug  5 17:43:47 2026}
@@ -116657,6 +116710,13 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6285dd8caf732cfe86395d07c9d0f7f8440a6e4f, summary: Fix `NWBData` shadowing 
+    the data attribute it inherits from `Data` (#2233), time: Wed Aug 12 
+    03:58:30 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    5942a7f54d12cde89dd74f15f381ae9765271cc0, summary: Make Units.waveform_unit 
+    configurable (#2237), time: Tue Aug 11 20:06:18 2026}
 - {author: Hugo, committer: GitHub, hexsha: 
     5101a86519a09f8d087d1b892c08a88cae7782b5, summary: Fix mock_DeviceModel 
     defaulting manufacturer to None (#2232), time: Sat Aug  1 01:52:29 2026}
