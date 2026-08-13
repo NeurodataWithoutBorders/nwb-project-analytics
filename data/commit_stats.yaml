@@ -1,4 +1,50 @@
 AqNWB:
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    83f29f1412a65c2e820726e453a82090b8c7ce87, summary: 'Fix comments from #319', 
+    time: Wed Aug 12 21:19:04 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    485af2320985fdb8fcd3b91685e4e66c825c6e9b, summary: 'Merge pull request #319 from
+    NeurodataWithoutBorders/copilot/fix-hdmf-string-decoding', time: Wed Aug 12 
+    21:07:37 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    0c52d8abcba364fb05c00d9d01f1582611ac9de9, summary: Remove added blank line, 
+    time: Wed Aug 12 04:14:52 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    8f851d3ca81d395e06101763b040a07785ddd996, summary: Fix changelog entry, time: 
+    Wed Aug 12 04:14:32 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    2fd382a4d316b5d8d67962132fe644980256936a, summary: Apply suggestion from 
+    @rly, time: Wed Aug 12 04:13:56 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    79041cc79cd778507ab30e0bb9b0447d4f03ddec, summary: Fix double-ownership 
+    StrType construction in tests, time: Tue Aug 11 15:45:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    280b10b0f68df7b133c9e6a54417b9bf7743a067, summary: Update changelog, time: 
+    Tue Aug 11 15:27:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6c2948418801d9e0c035e28ba94232dbac8508fa, summary: Fix windows tests, time: 
+    Tue Aug 11 15:25:34 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    033644e230acfa4066f09921fc0a84053b1a8de6, summary: Fix linter, time: Tue Aug
+    11 15:16:56 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    07af0865c743d2605942120ed596a34f62f1eda0, summary: Remove redundant break 
+    statements, time: Tue Aug 11 15:15:13 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    00007e06dab76a961d49a66fd0eba142a702bdd0, summary: Apply suggestions from 
+    code review, time: Tue Aug 11 15:08:27 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    c81a3572dc27ba3be6c3cb7e54e88229b230c6f7, summary: Apply suggestion from 
+    @oruebel, time: Tue Aug 11 14:24:44 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    0b7f001afa29a7dea2bca3db5e646c84e673fa34, summary: Refactor HDF5 string 
+    attribute type creation to use helper APIs, time: Tue Aug 11 14:23:18 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    ffb11924f9a3bdc3d28fed6bdeef72c30174cc38, summary: 'fix: write HDF5 string types
+    with UTF-8 character set', time: Tue Aug 11 14:10:20 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    50a201701f8d68de6af4000c56994087c48d08a8, summary: Initial plan, time: Tue 
+    Aug 11 14:04:59 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     6571d661721fcf7778763366eae954cdd6db65db, summary: Fix UTC 
     daylight-savings-time offset issue. -  authored by @cboulay, time: Fri May  
@@ -82004,6 +82050,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    e5c43edf2ed9d6bd0baed58ea6a07c423669c56c, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Aug 12 06:39:35 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     27ed8b317574f57befe2cb4deb8609ff2cc7d29a, summary: Automatic update of the 
     code statistics YAML files, time: Tue Aug 11 06:35:58 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88873,6 +88922,42 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    a1f56a0e266f7f11a4cb7423d38c26afd715586c, summary: Walk the NWB file for its
+    objects instead of reading a cached dict (#1910), time: Thu Aug 13 04:44:29 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a3b930eeed1794cd00ccc15439a9d5df9c685517, summary: Stop the link checker 
+    following two hosts that fail it (#1912), time: Wed Aug 12 21:38:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0e7255ea19cfad366ded9b2a96b59924c41dda57, summary: Repair the ScanImage 
+    interface's discovery methods and the non-iterative volumetric write (#1908),
+  time: Wed Aug 12 21:19:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ad372e1545b66df7303bbda906ca85f4e9a87932, summary: 'Document converting many sessions
+    into a dataset, and point at  `nwb2bids` (#1906)', time: Wed Aug 12 21:17:37
+    2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    ae9bbbfc267298eed78afc9ecdef283955a4df16, summary: Build a read NWBFile with
+    the manager that read it (#1904), time: Wed Aug 12 18:30:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6b26933dfef4d81869e873fb45ad0ebc87a5089c, summary: Convert a whole Suite2p 
+    output folder with `Suite2pConverter` (#1902), time: Wed Aug 12 17:50:06 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    06f2defb9f95717a9b36fc40a12d3c85604dc86c, summary: Write the Neuropixels 
+    probe identity as a `Device` and a `DeviceModel` (#1895), time: Wed Aug 12 
+    09:31:49 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7a7ef75624e761a69f5f0242dc6cd67db21c5ad8, summary: Read an EDF file whose 
+    signals were not all sampled at the same rate (#1892), time: Wed Aug 12 
+    09:13:47 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    524348a7401e0a34dfc9cb50239f0ba83b0aa379, summary: Name Intan electrode 
+    groups after their headstage port (#1897), time: Wed Aug 12 06:20:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    209242af7941a47a5268dfa8f3a88bfe45504f34, summary: '`physical_units` writes float
+    values through the default iterator (#1894)', time: Wed Aug 12 06:17:36 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     e1eacdf9b60771be2ad6aa7fcfc7937f33649bcc, summary: Write down the rule for a
     metadata entry that names no device (#1896), time: Wed Aug 12 03:36:42 2026}
