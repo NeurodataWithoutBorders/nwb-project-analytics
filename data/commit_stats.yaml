@@ -1,4 +1,28 @@
 AqNWB:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    c092a77bdc5a3d384cd8346b6fc4736ed47b888c, summary: 'Merge pull request #307 from
+    NeurodataWithoutBorders/add_ros3', time: Thu Aug 13 13:58:29 2026}
+- {author: rly, committer: rly, hexsha: 6d4dd9a174f9bc0a53a5db8af8dac92ea7f4762b,
+  summary: Reword findObject comments to avoid a codespell false positive, time: 
+    Thu Aug 13 13:27:21 2026}
+- {author: rly, committer: rly, hexsha: ad52b748cdcae05293ac5096beb4887bc792d0ca,
+  summary: Fix doc/CMakeLists mismatch and comment nits, time: Thu Aug 13 
+    13:17:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a404f2d4754b4b66ec7d1a931dd3d276f6855cc5, summary: Clarify docstring for 
+    findObjects, time: Thu Aug 13 04:44:12 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    83d1be619bc2c38e515c53699d145ad3bee6e69f, summary: Update remfile to fix 
+    gittag, time: Thu Aug 13 04:32:56 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    77b71bba7540b1792f6c505cea634b43972f752f, summary: Merge branch 'main' into 
+    add_ros3, time: Thu Aug 13 04:24:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    68b7e43d0177f6163771a7c501761c9d90d3539e, summary: Update date in changelog, 
+    time: Thu Aug 13 04:20:36 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    f7f2087e360754721ee6745eb6bb6a18468ef26d, summary: Update CHANGELOG.md, time: 
+    Thu Aug 13 04:12:17 2026}
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
     83f29f1412a65c2e820726e453a82090b8c7ce87, summary: 'Fix comments from #319', 
     time: Wed Aug 12 21:19:04 2026}
@@ -15,6 +39,9 @@ AqNWB:
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     2fd382a4d316b5d8d67962132fe644980256936a, summary: Apply suggestion from 
     @rly, time: Wed Aug 12 04:13:56 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    66b914df6e4fa755e689f5d0ff096c14925c1a0a, summary: Fix truncated comment 
+    from autofix, time: Tue Aug 11 21:01:16 2026}
 - {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
     79041cc79cd778507ab30e0bb9b0447d4f03ddec, summary: Fix double-ownership 
     StrType construction in tests, time: Tue Aug 11 15:45:29 2026}
@@ -45,6 +72,247 @@ AqNWB:
 - {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
     50a201701f8d68de6af4000c56994087c48d08a8, summary: Initial plan, time: Tue 
     Aug 11 14:04:59 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0ad42a1df5216b599eaefbfec478bc690f103d79, summary: Remove redundant HDF5 
+    include export workaround , time: Tue Aug 11 04:43:01 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a21463fdd29809b0072a19897abedbfce6c91832, summary: Fix linter error, time: 
+    Tue Aug 11 04:35:12 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    633dab3711a0f805257216e47ff71182a7a3441b, summary: Merge branch 'add_ros3' 
+    of https://github.com/NeurodataWithoutBorders/aqnwb into add_ros3, time: Tue
+    Aug 11 04:33:54 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3586d297d9253b731a033d87478db9e27f09272b, summary: Check readOnly can't 
+    modify objects, time: Tue Aug 11 04:33:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b495ceb3f7fce75bf5aaf591c72966a923bf9995, summary: Fix inline comment, time: 
+    Tue Aug 11 04:32:09 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    d30d6316893cdc9abc697e91b106e5a991fd57b6, summary: Potential fix for pull 
+    request finding, time: Tue Aug 11 04:29:30 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    3b81b4325350bc4e657c5d0d736afc00682e0571, summary: Potential fix for pull 
+    request finding, time: Tue Aug 11 04:28:43 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9d77adba94ef7bf564bdff7578c08d71a39bd2ce, summary: Merge branch 'add_ros3' 
+    of https://github.com/NeurodataWithoutBorders/aqnwb into add_ros3, time: Tue
+    Aug 11 04:25:36 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7158cd41de05c29a13cd7f764e4df1e151f7a37f, summary: Fixed BaseIO::findOpnjte 
+    to sort children by name for deterministic search order, time: Tue Aug 11 
+    04:25:29 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    732f9afc01918d8f4d16ed15af3d6eacf205b04d, summary: Update 
+    src/io/hdf5/HDF5IO.cpp, time: Tue Aug 11 04:14:20 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c20cf4569b5464b590c8d44c94c40ffb893658d4, summary: Address comments related 
+    to the demo/remote_read_benchmark, time: Tue Aug 11 04:09:02 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1eb72a46bfab2aa6a0437025af9e9e5c88443ead, summary: Udpate changelog to add 
+    missing attribution, time: Tue Aug 11 03:54:54 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7402a83e17c237a39039badb2bf4f646b8ec1e94, summary: 'Changlog, update name of ros3_benchmark',
+  time: Tue Aug 11 03:52:38 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2a19413ee6c2cfcefeacdb2c2d009b1cb3a65e1b, summary: Clarify remfile install 
+    docs, time: Tue Aug 11 03:49:12 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    e3cf6d27441e1a4bcc55d59e246475fa98673f08, summary: Fix openS3 and openRemote
+    to fail when I/O is already opened, time: Tue Aug 11 03:38:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5b1a6636637a06e45408989c2e4ead75dcd0128a, summary: Fix error capture in 
+    openS3 and openRemote, time: Tue Aug 11 03:32:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c0d5cc0b9f24370483338be2ae4dbd92ffd5d565, summary: Add 
+    test_remfile_read_example.cpp to unit test build, time: Tue Aug 11 03:21:43 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4723565c1ee7a6e688d65cb6b5b0bdc0a89d61c7, summary: Fix demo build which was 
+    not updated when renaming the ros3_benchmark, time: Fri Jul 24 22:39:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7cb6b2dc8808e345f53a67e3c0c50869349da279, summary: renamed ros3_benchmark to
+    remote_read_benchmark, time: Fri Jul 24 22:30:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6ced8646d22116430a6545e12cd4d00860cd582a, summary: Fix old-style case in 
+    unit test, time: Fri Jul 24 21:46:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0896d0d0abb2a268549374b5b1b4a0978aa9bd7c, summary: Change remfile gittag to 
+    main, time: Fri Jul 24 21:40:15 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    88aeda158ee6b83c52dd1c9b3ce2b67680d29163, summary: Apply suggestion from 
+    @oruebel, time: Fri Jul 24 21:30:45 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    80c5893acd8f96cbb058bc845974906fc361cf4c, summary: 'Merge pull request #308 from
+    NeurodataWithoutBorders/add_ros3_benchmark_demo', time: Fri Jul 17 04:05:58 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    47548c1b96ad80c3801d4cf843df7cc5ba024ab4, summary: Fix spelling error, time: 
+    Fri Jul 17 04:05:09 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c9781c8f16ad2ce4f02627ef95ce3b3d168b3d1a, summary: Fix spelling error, time: 
+    Fri Jul 17 04:04:19 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7dc09d132d75c4cd41a20262c96ce19db56ce319, summary: Updated changelog to 
+    group and clarify remote read changes, time: Fri Jul 17 04:01:11 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    d39f4341d4a2e11bf4129cf3997b7ddc87dedca3, summary: 'Merge pull request #309 from
+    NeurodataWithoutBorders/add_remfile_vfd', time: Fri Jul 17 02:44:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    22f3fea299138ba7ca416e0a97a520776b9c4971, summary: Fix spelling in docs and 
+    move build warning on reads3.dox, time: Fri Jul 17 02:37:00 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    62e80c39606f96e1d71c41f49e2375a3555502ff, summary: Fix demo workflow to 
+    enable remfile, time: Fri Jul 17 02:24:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4c15f036dc502bda3938d4da57bf59e22788151b, summary: Clarify remote read docs, 
+    time: Fri Jul 17 02:22:37 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    92e5eff99c51e862759976362cf65c8b35439d76, summary: Added remfile example to 
+    docs, time: Fri Jul 17 02:05:12 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b37ee6578574ec168f1f85f1c016853c63d75307, summary: Enable remfile in unit 
+    tests, time: Fri Jul 17 02:04:55 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cf474cc0ca436c6642c31092c21cb050635c0537, summary: Change default to not 
+    enable remfile by default, time: Fri Jul 17 02:04:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d0e6295599540c0a1787e6346484208a8fa07f60, summary: Add basic unittesst for 
+    remfile read, time: Thu Jul 16 20:16:53 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    0a22d235e3373e354406b40e9316544a14f7b1db, summary: Merge branch 
+    'add_ros3_benchmark_demo' into add_remfile_vfd, time: Thu Jul 16 19:18:18 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    9e3e257f55045f34ac47c52221880a16ab4d1a7c, summary: Merge branch 'add_ros3' 
+    into add_ros3_benchmark_demo, time: Thu Jul 16 19:15:05 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4239eb3bdf693fa7db4ac56d4849ca222136a4e1, summary: Remove bad fix for 
+    in-source build of HDF5, time: Thu Jul 16 19:13:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    157829e4e729b6cafabb78da9f0b86ae932660ff, summary: Remove bad fix for 
+    in-source build of HDF5, time: Thu Jul 16 19:11:25 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d732cbe8138fa9c1e174bb38df284e662d4ea6fb, summary: Clean up 
+    HDF5IO::findObject, time: Thu Jul 16 18:43:46 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3b863bb96a53398158a396720efc2a6af90741cb, summary: Remove redundant 
+    objectExist checks in the BaseIO::findObject implementation, time: Thu Jul 
+    16 15:48:37 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    da7f55da2ee1f2181da2bc76dcfea4a7269d4ce7, summary: Remove extra empty line, 
+    time: Thu Jul 16 15:44:14 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b054384d43e9b40ec5883c189fb2daaa8ec98626, summary: Add propoer docs for 
+    demo/ros3_benchmark/main.cpp, time: Thu Jul 16 15:08:10 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    05a537f9b4df67c32fee6048329e36952dc2edfe, summary: Add type hints and 
+    parameter docs to python benchmark script, time: Thu Jul 16 15:00:23 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    ac0a319a2998ab8e3a58c565b5b4ddbf23146824, summary: Merge branch 
+    'add_ros3_benchmark_demo' into add_remfile_vfd, time: Wed Jul 15 20:14:18 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    f8d020aa701ba1d4f88cac34231a5ac413829000, summary: Merge branch 'add_ros3' 
+    into add_ros3_benchmark_demo, time: Wed Jul 15 20:13:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    670011b3a4cd674a89ba49f7a58f26dafb91c0d7, summary: Replace std::strncpy with
+    std::memcpy to avoid Windows build errors, time: Wed Jul 15 19:42:28 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    eb3d8fd231b80db7eed2814461181ec3bd034698, summary: Merge branch 
+    'add_ros3_benchmark_demo' into add_remfile_vfd, time: Wed Jul 15 19:02:35 
+    2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    c9f1753b34006d52b67e4e4f63b750a9c33ed016, summary: Update 
+    docs/pages/userdocs/reads3.dox, time: Wed Jul 15 18:52:03 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    e5803b5a51c05fdf445ad7869c0c1325704fc66b, summary: Bump remfile-cpp pin to 
+    v0.1.2, time: Tue Jul 14 17:31:14 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4cd167dbbf6af6aee64e3a60b5d8bd9c6530264a, summary: Fix Ubuntu build by 
+    supporting H5_VERSION 1.12 iH5OVisit semantics, time: Tue Jul 14 16:27:24 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    fb75f4181eb9d55197cd08222590cc35e3d8fab2, summary: Add HDF5IO::findObject to
+    improve performance of the search, time: Tue Jul 14 16:19:33 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    6982d3352024d60433a45cf505332ba8166c056d, summary: Bump remfile-cpp pin to 
+    v0.1.1, time: Tue Jul 14 16:13:57 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    8b4e8c4e41a8baaae7b1f4bc7d5d1133d551ae06, summary: Point remfile dependency 
+    at catalystneuro/remfile-cpp v0.1.0, time: Tue Jul 14 15:49:36 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    84991a0b7fbdea682024f8cd197ae7112710826b, summary: Add remfile VFD support 
+    for reading remote files over HTTP(S), time: Tue Jul 14 15:29:51 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0e5cff6582385880dc9184126ae4cb75b4841510, summary: clean up benchmark 
+    example SizeArray usage, time: Tue Jul 14 03:31:39 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    68296ea88db3e895afc98c61368849f414720ef9, summary: Remove commented code 
+    from demo, time: Tue Jul 14 02:12:04 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    f6d975ec5811b318e6bdc435ea0122651a3e5600, summary: Updated changelog, time: 
+    Tue Jul 14 01:51:28 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c507ebd04899ecdee8ac8785bc53d1d70fd72352, summary: Add unit tests for the 
+    the new BaseIO::findObject and RegisteredType::findOwnedObject functions, 
+    time: Tue Jul 14 01:43:48 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8ef78d6bfaf7ff7471254c2640ead7a5971bcae8, summary: Added new 
+    BaseIO::findObject and RegisteredType::findOwnedObject methods to make 
+    search by name easier, time: Tue Jul 14 01:23:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    578fa5324c35991c75c1f90b3fd2553febf32d15, summary: Add option to froce 
+    remfile in ros3 python benchmark, time: Tue Jul 14 00:42:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    00179f77028235efb93a64dbebbfd1f870fb4bda, summary: Add missing package for 
+    python, time: Mon Jul 13 22:45:30 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    571ef5b243806143d59174aab09cfbb28d973148, summary: Attempt to fix demo 
+    workflow, time: Mon Jul 13 22:34:25 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7b7ed8ab40a68a8749546f820d9d98a20f1bca72, summary: Add python benmark to 
+    demo, time: Mon Jul 13 19:20:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ea8af55ad26427f15beabc4432e84e12a72e9713, summary: Add python script for 
+    benchmark, time: Mon Jul 13 18:40:48 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cb8c8284b6d7d24af8056fa42c709919a4fd03d0, summary: Change build-demo.yml to 
+    use ubuntu instead of macos for easier ROS3 install, time: Mon Jul 13 
+    16:30:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ca345fa30268d3d22fabcc88372d7b56012f8548, summary: Add ros3 demo to the 
+    github build, time: Mon Jul 13 15:54:36 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    963092cefeecf473fe1eb756e02c99c1000c1274, summary: Add docs for the demo, 
+    time: Mon Jul 13 15:54:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5d01fad35c8cf11239372b615bac68fa769f5628, summary: add draft ROS3 benchmark 
+    app, time: Mon Jul 13 14:50:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    f634ed28c6a63ff8c65a8452ef72034d76ff277a, summary: Update example tp use 
+    findOwnedTypes instead, time: Mon Jul 13 14:03:39 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bf40da89a5cfe08cdca68e11376ad3c00ce56e5f, summary: Fix windows CI, time: Mon
+    Jul 13 06:55:06 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ced3d4e8460b724fb57845f0078b6e231730c7ec, summary: Fix linter errors, time: 
+    Mon Jul 13 06:37:14 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2c1a6dd321577cae891679328aed1092b931e976, summary: Renamed HDF5IO::openS3 
+    and added user tutorial page, time: Mon Jul 13 06:36:12 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a2dfcec453db68e241ed0a076974326367de9305, summary: Fix linter, time: Mon Jul
+    13 05:14:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d8de75cfa9d538cdc1c815b46d352f0c121cc33e, summary: Add missing std include, 
+    time: Mon Jul 13 05:13:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a694d11477acad3681b21182b4def1e2721fc076, summary: Fix bug in 
+    HDF5IO::canModifyObjects to work with ROS3, time: Mon Jul 13 04:55:51 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b7ee9f1928a83f5ca6731e0509e36dd63761a478, summary: Inital implementation of 
+    ROS3 S3 read, time: Mon Jul 13 04:43:45 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     6571d661721fcf7778763366eae954cdd6db65db, summary: Fix UTC 
     daylight-savings-time offset issue. -  authored by @cboulay, time: Fri May  
@@ -82050,6 +82318,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    ab57bb2cf5abd2e9641d24fa9617c977d78a715d, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Aug 13 06:40:31 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     e5c43edf2ed9d6bd0baed58ea6a07c423669c56c, summary: Automatic update of the 
     code statistics YAML files, time: Wed Aug 12 06:39:35 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -88922,6 +89193,18 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d998bc9409847994f9fb9f16f00654e8c0151748, summary: Implement 
+    `get_metadata_template()` for fiber photometry (#1911), time: Thu Aug 13 
+    18:01:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4a367c12919e9b11e8f78aed5895b44986372644, summary: Convert every channel of 
+    a ScanImage or Thor acquisition in one call (#1913), time: Thu Aug 13 
+    06:30:27 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1da2ce6106b3ce342374fc659f39b903751d4d2d, summary: Add `shift_times` to 
+    events interfaces for gross temporal alignment (#1795), time: Thu Aug 13 
+    05:49:51 2026}
 - {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
     a1f56a0e266f7f11a4cb7423d38c26afd715586c, summary: Walk the NWB file for its
     objects instead of reading a cached dict (#1910), time: Thu Aug 13 04:44:29 
