@@ -82318,6 +82318,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    4e2423ff962c0ec60f1e7e432a0a88a74d0df6c9, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Aug 14 06:43:27 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     ab57bb2cf5abd2e9641d24fa9617c977d78a715d, summary: Automatic update of the 
     code statistics YAML files, time: Thu Aug 13 06:40:31 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89193,6 +89196,10 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Szonja Weigl, committer: GitHub, hexsha: 
+    59635e2520ed10e3d016bb76dd1cc72cfdac7780, summary: Add `parent_container` to
+    `BaseFiberPhotometryInterface.add_to_nwbfile` (#1915), time: Fri Aug 14 
+    13:49:02 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     d998bc9409847994f9fb9f16f00654e8c0151748, summary: Implement 
     `get_metadata_template()` for fiber photometry (#1911), time: Thu Aug 13 
