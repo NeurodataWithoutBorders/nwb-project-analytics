@@ -82318,6 +82318,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    a468ec98f78093ecb708d20f984a5367630a411c, summary: Automatic update of the 
+    code statistics YAML files, time: Sat Aug 15 06:03:55 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     4e2423ff962c0ec60f1e7e432a0a88a74d0df6c9, summary: Automatic update of the 
     code statistics YAML files, time: Fri Aug 14 06:43:27 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89196,6 +89199,12 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b116f85e0e3f85af4aee37572e6b8922a0787c1c, summary: Compute `starting_frames`
+    from the video files (#1924), time: Sat Aug 15 20:57:15 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6b51b9ebf9b24ce4c243c31654a9fce08b672739, summary: Make row-by-row table 
+    writing linear in the number of rows (#1920), time: Sat Aug 15 15:54:47 2026}
 - {author: Szonja Weigl, committer: GitHub, hexsha: 
     59635e2520ed10e3d016bb76dd1cc72cfdac7780, summary: Add `parent_container` to
     `BaseFiberPhotometryInterface.add_to_nwbfile` (#1915), time: Fri Aug 14 
