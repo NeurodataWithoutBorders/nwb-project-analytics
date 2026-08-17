@@ -82318,6 +82318,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    11dcb95014b31a9a7e334f075daf217b7ecce2ef, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Aug 16 05:59:58 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     a468ec98f78093ecb708d20f984a5367630a411c, summary: Automatic update of the 
     code statistics YAML files, time: Sat Aug 15 06:03:55 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89199,6 +89202,17 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    50f2a4c5e509c90b9c7013bcfa0a57928fd0fb41, summary: 'Write the rate the timestamps
+    measure, not the nominal one (#1926)', time: Mon Aug 17 00:46:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3fc0c609dc7d173f62aa094fb8a305a33d4bc97a, summary: Decide regularity by how 
+    far a rate would actually move each sample (#1925), time: Mon Aug 17 
+    00:24:51 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5ab3162c8ec29be7302244b53abf0184c45496ae, summary: Add 
+    `saved_files_are_split` to `IntanDigitalInterface` (#1891), time: Sun Aug 16
+    22:31:41 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     b116f85e0e3f85af4aee37572e6b8922a0787c1c, summary: Compute `starting_frames`
     from the video files (#1924), time: Sat Aug 15 20:57:15 2026}
