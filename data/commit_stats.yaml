@@ -82318,6 +82318,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    52e7c9c88a6a28736ee776e8a9e0f1fbe4816479, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Aug 17 06:22:37 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     11dcb95014b31a9a7e334f075daf217b7ecce2ef, summary: Automatic update of the 
     code statistics YAML files, time: Sun Aug 16 05:59:58 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89202,6 +89205,69 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    1cc6a480b73c83ed2c8d30c6aad6a30432688a2c, summary: Prepare changelog for 
+    release, time: Tue Aug 18 05:10:07 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8d5cb161cbe0bd9c4d4a356d83916190acac7542, summary: Remove the 
+    `channel_names` shim from the recording interface base (#1943), time: Tue 
+    Aug 18 05:07:37 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    330dfca3cc7ec9a4c739b9cdfd8d00e59cc11066, summary: Document how to extract 
+    events from a sampled signal (#1942), time: Mon Aug 17 22:57:30 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    c505d4a710bd6c441f800b98154e26b36bbc4763, summary: Implement 
+    `get_metadata_template()` for ophys (#1939), time: Mon Aug 17 22:39:06 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8fd64a6289936f1fea2642ad267a7b2aceb55d13, summary: Deprecate `es_key` in 
+    favor of `metadata_key` (#1941), time: Mon Aug 17 22:32:12 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    70b85074c72b57f904390f19e9c53beec1c7d3fc, summary: Warn when metadata 
+    arrives in the old list-based format (#1935), time: Mon Aug 17 21:35:21 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e75ec9d6e4a8022be9a56b81a86ce16d8390b5e6, summary: Require explicit timing 
+    in `DeepLabCutInterface` instead of writing frame indices as seconds (#1937),
+  time: Mon Aug 17 21:06:11 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1f6a4d96bef499ec7c803241310eff1b664c4622, summary: Flip `get_metadata()` to 
+    the dict-based format by default (#1934), time: Mon Aug 17 20:55:17 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    307fb3e80e2fa69f5c36a71a6206217966c47bec, summary: Delay the v0.10.0 
+    deprecation deadlines to February 2027 (#1936), time: Mon Aug 17 19:51:48 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    33a7344beb2d674af29f45379864d69574366be9, summary: Group the fiber 
+    photometry installation extras as their own modality (#1933), time: Mon Aug 
+    17 19:04:12 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8a43d76b0ab0267ddc3a46965289741a1274c4bf, summary: Deprecate `AbfInterface` 
+    in favor of `AxonIntracellularInterface` (#1932), time: Mon Aug 17 18:31:31 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a71d2c9aaf458da544683fa8a9d68f916cf1024e, summary: Read a configured event 
+    type's times back off an events interface (#1931), time: Mon Aug 17 18:00:18
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    db67ace7adfe87592b642880d60b4aa55b4fcf3a, summary: Migrate 
+    `LightningPoseDataInterface` to the dict-based metadata format (#1927), time: 
+    Mon Aug 17 17:38:21 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    b52953182ce622db8f0b529a7c1844d398d389ca, summary: update changelog, time: 
+    Mon Aug 17 06:49:58 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    d2e06c2cca0a3d927ce8ee282041eb1ec0530e10, summary: pre-release 2, time: Mon 
+    Aug 17 06:46:22 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7823dba6c547e36e72ea3a36756998adcf50a02d, summary: Pin the SpikeGLX 
+    converters' dict-based metadata and name the old-format tests for what they 
+    are (#1930), time: Mon Aug 17 06:43:05 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7699665b348b53805312d6b1c4da39f794481b1b, summary: Fix EDF subject metadata 
+    extraction (#1929), time: Mon Aug 17 06:28:54 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0b107d7e126256bab049c2ee22cdbd697cbf86c2, summary: Forward 
+    `use_new_metadata_format` instead of relying on the default (#1928), time: 
+    Mon Aug 17 05:53:29 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     50f2a4c5e509c90b9c7013bcfa0a57928fd0fb41, summary: 'Write the rate the timestamps
     measure, not the nominal one (#1926)', time: Mon Aug 17 00:46:14 2026}
