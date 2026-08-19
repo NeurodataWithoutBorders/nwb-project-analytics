@@ -2400,6 +2400,12 @@ AqNWB:
     Feb  1 01:18:07 2024}
 HDMF:
 - {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    0c730c00dc21578ea65b6706cc71ffdc4a65e2ed, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1560)', time: Wed Aug 19 04:29:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    683445023991e5f9be238e857db3eecd0e48a573, summary: Make the ragged check in 
+    `DynamicTable.add_row` incremental (#1561), time: Wed Aug 19 04:25:15 2026}
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
     dd22f161863ab56bbd978a1d825916c307f6e47a, summary: '[pre-commit.ci] pre-commit
     autoupdate (#1555)', time: Tue Aug 11 21:03:30 2026}
 - {author: 'dependabot[bot]', committer: GitHub, hexsha: 
@@ -82318,6 +82324,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    52cb7adcbc6d3eb601edeb916245d379d56d73b1, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Aug 18 06:21:58 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     52e7c9c88a6a28736ee776e8a9e0f1fbe4816479, summary: Automatic update of the 
     code statistics YAML files, time: Mon Aug 17 06:22:37 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89205,6 +89214,54 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2280fc6073fb40fb182e6b4787cd53c77010fcd6, summary: Cover appending to a Zarr
+    file in tests (#1955), time: Wed Aug 19 03:55:01 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    f1b91c1b802c87c3e7aea9495c287413a41d9f9f, summary: 'Raise when a segmentation
+    holds no ROIs, traces or summary images (#1954)', time: Wed Aug 19 03:00:32 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    04135fa481d9391b5fbf8024214b9fdae4aab736, summary: Write every summary image
+    the segmentation extractor holds (#1953), time: Wed Aug 19 02:30:59 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e77b2bd896b1aec6a9f0f2e6eb4856445d42f57b, summary: Move 
+    `Device.manufacturer` to a linked `DeviceModel` in the ecephys interfaces 
+    (#1952), time: Wed Aug 19 02:02:40 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    664c0ade0aa3d7708b2a26964e9d5a62b3c64cb6, summary: Appending takes the 
+    backend from the file on disk (#1951), time: Wed Aug 19 01:23:09 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    14c6c04900763a2107f6fe1f2cd43401832c907b, summary: documentation 
+    improvements, time: Wed Aug 19 01:22:56 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5e42988225d17b77e3c83d98e9375806d82a4f28, summary: Shared writer for pose 
+    estimation (#1950), time: Wed Aug 19 00:48:06 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    35db89b68a24f9c79ade8ed7d10727bb3134cc38, summary: Remove warnings from the 
+    CI (#1949), time: Tue Aug 18 23:53:58 2026}
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    c92a8b014ae666686d926e5d84a4d690612df1f8, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1940)', time: Tue Aug 18 21:59:32 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    0d1d3df6a48a5bb1695352cf86642c3a654dd479, summary: Bump ruff to v0.16.3, 
+    time: Tue Aug 18 21:56:18 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    a108834a6d1d9cd483d621502b23ed362bcea584, summary: post release bump, time: 
+    Tue Aug 18 21:55:24 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7c96670c01c0c4afc50a11dc339122cffb299e55, summary: improve wine in the CI 
+    (#1948), time: Tue Aug 18 19:32:28 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e4de32093ae62b3c99992eb518343ea5bbba76a7, summary: Temporarily suppress 
+    SLEAP-IO on Intel macOS for the release (#1947), time: Tue Aug 18 18:45:16 
+    2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    563181578b27f06bd8799db6ed8fa85d8ea9715d, summary: changelog more updates, 
+    time: Tue Aug 18 07:19:18 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d9e6a3eb4604ce32859892ba85269c149ae659b8, summary: Show the install command 
+    on the Inscopix segmentation page (#1945), time: Tue Aug 18 05:39:31 2026}
 - {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
     1cc6a480b73c83ed2c8d30c6aad6a30432688a2c, summary: Prepare changelog for 
     release, time: Tue Aug 18 05:10:07 2026}
