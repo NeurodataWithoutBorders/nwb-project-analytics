@@ -2399,6 +2399,9 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    7c8d91c756c91f1146efb3635262267ccea1f0a0, summary: Prepare for release of 
+    HDMF 6.2.0 (#1562), time: Wed Aug 19 06:43:32 2026}
 - {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
     0c730c00dc21578ea65b6706cc71ffdc4a65e2ed, summary: '[pre-commit.ci] pre-commit
     autoupdate (#1560)', time: Wed Aug 19 04:29:31 2026}
@@ -82324,6 +82327,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    0be75731c60c400d0d08bd6adb1aa1a9d9c0dd81, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Aug 19 06:17:01 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     52cb7adcbc6d3eb601edeb916245d379d56d73b1, summary: Automatic update of the 
     code statistics YAML files, time: Tue Aug 18 06:21:58 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89214,6 +89220,39 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    bae01472acdb1a49382fb7e10ca1708c0b01b60e, summary: Add `shift_times` to the 
+    fiber photometry interfaces (#1919), time: Wed Aug 19 22:38:07 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0c4d21fac55fd22092e352fa8da0c0096edde7b0, summary: Make the keypoint-name 
+    hook private (#1966), time: Wed Aug 19 09:16:36 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    02f04f3b95809db39022c6f9aa79ebb6fb626847, summary: Migrate SLEAP onto the 
+    shared pose writer (#1965), time: Wed Aug 19 09:12:36 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6290377765b06da4e898ee3bcd11164ff49642c1, summary: Link the ImageSeries a 
+    pose container was tracked from (#1964), time: Wed Aug 19 08:45:40 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    13f4140305ff62bb723d1a67ce2f6f9beaae99d3, summary: Add a base pose 
+    estimation interface (#1963), time: Wed Aug 19 08:37:44 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7acc55ae8dc53f5108a29a742e29dec1a63757bd, summary: Give the subject its own 
+    helper (#1962), time: Wed Aug 19 07:56:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b08a56735cdb8fea514bb53e637372a067305265, summary: Apply the metadata 
+    principles to the pose writer (#1961), time: Wed Aug 19 07:47:26 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    bfe1656cc1e2db60f2e7a4da10a7b45f2dd490b9, summary: Share one base across the
+    interfaces that write a TimeSeries (#1960), time: Wed Aug 19 07:40:07 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8fcbd1e4ef3a5e830e8a3acce40bb399105d222f, summary: Do not write traces that 
+    hold only zeros (#1959), time: Wed Aug 19 06:32:35 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0e868012aa3881f6b254e3ebe2a2d7a14ad8a978, summary: Raise when a sorting 
+    holds no units (#1957), time: Wed Aug 19 06:12:24 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2f8c9e881734bfe5e215820a35693c8b005c8c06, summary: Clear the CI warnings 
+    that were ours to act on (#1958), time: Wed Aug 19 05:46:04 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     2280fc6073fb40fb182e6b4787cd53c77010fcd6, summary: Cover appending to a Zarr
     file in tests (#1955), time: Wed Aug 19 03:55:01 2026}
