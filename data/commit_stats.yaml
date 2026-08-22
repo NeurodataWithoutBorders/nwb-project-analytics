@@ -82327,6 +82327,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    303dd82c015bb2924478791a6512633386bdf4f9, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Aug 20 06:22:21 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     0be75731c60c400d0d08bd6adb1aa1a9d9c0dd81, summary: Automatic update of the 
     code statistics YAML files, time: Wed Aug 19 06:17:01 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -86321,6 +86324,9 @@ NWB_Project_Analytics:
     4d1932fbbac8ab4f5c81574296b6c85e9076521e, summary: Initial commit, time: Tue
     Nov  3 18:08:55 2020}
 NWB_Schema:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    3ada52e0152847c937e168fd9565d95b37582112, summary: Prepare 2.11.0 release 
+    (#710), time: Fri Aug 21 19:25:58 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     d4bd08ebd4d3b0a310d8a59bfb3b44a74ebd5815, summary: Add optional 
     `time_before_peak_in_ms` to `waveform_mean` and `waveform_sd` (#709), time: 
@@ -89220,6 +89226,31 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4ec28efa62d8ba3b02600286535b91ca31c8c97c, summary: Run the encoding check 
+    locally by moving the xdist flags into `addopts` (#1973), time: Fri Aug 21 
+    03:20:18 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    02427a63bf7df8876ec13103a8f0ce1dbe406855, summary: Add a shared base writer 
+    for modern icephys interfaces (#1972), time: Fri Aug 21 03:20:10 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4f99c1fc4985d50bad0c4736a82d419eedf72cb6, summary: Record the conversion's 
+    provenance in `general/source_script` (#1971), time: Fri Aug 21 01:47:57 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d4183f196a6e02313663533c0f10ba61e5385799, summary: Fix conversion options 
+    for a converter nested inside another converter (#1970), time: Thu Aug 20 
+    20:52:35 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    009a1454b52c1fe472913cafe5b6657209045a4d, summary: Read the DeepLabCut 
+    skeleton from the project config (#1969), time: Thu Aug 20 18:02:57 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2ef74c54c8355b7489cb50e3f695427b97cf514f, summary: Add a how-to for 
+    annotating pose estimation metadata (#1967), time: Thu Aug 20 16:38:23 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1ca4a1a338a01ec36cfa43c9ffc3e8a91002fd89, summary: Add `set_times` and 
+    `remap_times` to the fiber photometry interfaces (#1922), time: Thu Aug 20 
+    16:35:34 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     bae01472acdb1a49382fb7e10ca1708c0b01b60e, summary: Add `shift_times` to the 
     fiber photometry interfaces (#1919), time: Wed Aug 19 22:38:07 2026}
