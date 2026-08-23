@@ -17729,6 +17729,9 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    a9c6ed7175f64c17106243a0e32c6f4342b91c74, summary: 'CI/test: restore ContainerDisplayMode
+    preference state via fixture (#862)', time: Sun Aug 23 04:53:32 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     f690e8293546b70c42dd956812b75e9a0f2b16b1, summary: Unnamed group mixin 
     improvements (#784), time: Tue Jul 28 17:26:43 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
@@ -82326,6 +82329,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    281569269d48249132a9501e15437b31794b0b17, summary: Automatic update of the 
+    code statistics YAML files, time: Sat Aug 22 06:18:21 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     303dd82c015bb2924478791a6512633386bdf4f9, summary: Automatic update of the 
     code statistics YAML files, time: Thu Aug 20 06:22:21 2026}
