@@ -17729,6 +17729,12 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    eb87750ed9932b1b5bc434210b1ebe0d51b36a66, summary: Add support for 
+    persistent object ids (#860), time: Sun Aug 23 04:53:33 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    bef155cbdb40c96474ce6271d4962aa0120f3db6, summary: 'fix: raise error from inspectNwbFile
+    when PyNWB cannot read the file (#861)', time: Sun Aug 23 04:53:33 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     a9c6ed7175f64c17106243a0e32c6f4342b91c74, summary: 'CI/test: restore ContainerDisplayMode
     preference state via fixture (#862)', time: Sun Aug 23 04:53:32 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
@@ -82329,6 +82335,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    b2fb4024d82a0ab4175bc8466a2e5f29d5ff0f9b, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Aug 23 06:18:48 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     281569269d48249132a9501e15437b31794b0b17, summary: Automatic update of the 
     code statistics YAML files, time: Sat Aug 22 06:18:21 2026}
