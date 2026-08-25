@@ -17729,6 +17729,10 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    382d71c09f6c7358ca696721f5954fd1ea20d4d0, summary: Share MATLAB cache across
+    draft PRs and fix the release test matrix (#864), time: Mon Aug 24 13:52:35 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     eb87750ed9932b1b5bc434210b1ebe0d51b36a66, summary: Add support for 
     persistent object ids (#860), time: Sun Aug 23 04:53:33 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
@@ -82336,6 +82340,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    eba445f9f115dbe161d3474c6ed70b8310eb9118, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Aug 24 06:26:14 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     b2fb4024d82a0ab4175bc8466a2e5f29d5ff0f9b, summary: Automatic update of the 
     code statistics YAML files, time: Sun Aug 23 06:18:48 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -117316,6 +117323,9 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    b3d8d2935a68cd27c4e61d26038bd276626c964d, summary: Update nwb-schema to 
+    2.11.0 and require HDMF 6.2.0 (#2244), time: Mon Aug 24 16:22:33 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     6285dd8caf732cfe86395d07c9d0f7f8440a6e4f, summary: Fix `NWBData` shadowing 
     the data attribute it inherits from `Data` (#2233), time: Wed Aug 12 
