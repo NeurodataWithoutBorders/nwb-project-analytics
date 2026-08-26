@@ -17729,6 +17729,13 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    254283b3b1bf493ea9bcb2a9f6a7c042177fa8f2, summary: 'refactor(dynamictable): derive
+    schema-defined column routing from the schema (#858)', time: Tue Aug 25 
+    14:07:38 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    2cd6964c82114ec4ed40cacaf7fb514667ac1e15, summary: Route links through the 
+    backend reader and writer interfaces (#866), time: Tue Aug 25 14:05:55 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     382d71c09f6c7358ca696721f5954fd1ea20d4d0, summary: Share MATLAB cache across
     draft PRs and fix the release test matrix (#864), time: Mon Aug 24 13:52:35 
     2026}
@@ -82340,6 +82347,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    83faee47392c4ebbddd5578b42b49aa3945d547a, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Aug 25 06:04:29 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     eba445f9f115dbe161d3474c6ed70b8310eb9118, summary: Automatic update of the 
     code statistics YAML files, time: Mon Aug 24 06:26:14 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89248,6 +89258,39 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    56b7c9c37d0810a5c4b03d845961d9c410711a00, summary: Fix dev-dallies (#1988), 
+    time: Wed Aug 26 03:43:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    062e62731d8b73655c058c55d59bac248c48f07f, summary: Fix flaky live service 
+    test (#1986), time: Wed Aug 26 02:59:20 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    11e7f9f3f99cf63a6bb914decf2d8b0b44c2ec96, summary: Tidy three things in the 
+    dataset IO configuration models (#1985), time: Wed Aug 26 01:20:29 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    3262fc8a1876b5849f9ecc1c0d260c6179e3be9c, summary: "Read GuPPy's spontaneous mode,
+    where transients stand in for events (#1976)", time: Wed Aug 26 00:06:27 
+    2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    bf2f53df01bb02ad3e948a8e1f8ecc6699f4df42, summary: Write GuPPy's binned 
+    metrics and behavioral covariates (#1975), time: Tue Aug 25 23:23:53 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3f5da49d09e5e00a4799699a52efd7e5025ed940, summary: Fix Dallies (#1983), time: 
+    Tue Aug 25 23:10:48 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9758bcf8bf1843df8bf3c55a5547b5cdea2f95fd, summary: Raise when a video's 
+    timestamps do not number one per frame (#1982), time: Tue Aug 25 22:56:40 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    114bb33566f3568fd61a7b24a214036c45362972, summary: Add a mock external video
+    interface (#1981), time: Tue Aug 25 22:06:23 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b35a851758d91a4da60e5461b5606d88d87852d0, summary: Make the backend 
+    configuration tests cheap to run and cheap to change (#1980), time: Tue Aug 
+    25 21:36:34 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    f63926147829a3adc1d49ba5a40548d501627533, summary: Write GuPPy's tonic 
+    analysis outputs as GuppyTonicEpochs (#1974), time: Tue Aug 25 21:06:53 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     4ec28efa62d8ba3b02600286535b91ca31c8c97c, summary: Run the encoding check 
     locally by moving the xdist flags into `addopts` (#1973), time: Fri Aug 21 
@@ -117323,6 +117366,18 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ff2e9dc5d1aa142c613579dbb4801f9bb627b1f7, summary: Fix 
+    `TimeSeriesReference.timestamps` for series that store `starting_time` and 
+    `rate` (#2245), time: Tue Aug 25 21:23:31 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    7ea33bbc6a32a22740fb2870ef910caa9e6e06d8, summary: Accept zarr arrays in 
+    array-valued fields and when determining data lengths (#2235), time: Tue Aug
+    25 18:19:23 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    ac143eef44ac83e906753f87ddda112ddc07763b, summary: Add model and 
+    serial_number parameters to mock_Device (#2238), time: Tue Aug 25 18:02:48 
+    2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     b3d8d2935a68cd27c4e61d26038bd276626c964d, summary: Update nwb-schema to 
     2.11.0 and require HDMF 6.2.0 (#2244), time: Mon Aug 24 16:22:33 2026}
