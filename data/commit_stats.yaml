@@ -17729,6 +17729,20 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    51e3e32c05d91ada948e7c4cd843723bdaf53e49, summary: 'refactor(tests): rename test
+    dependency tags to a Requires prefix (#874)', time: Wed Aug 26 14:13:23 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    25c3c34d560f015b61ba6853dab20f3656e50ab3, summary: 'CI: run TutorialTest against
+    the pynwb and nwbinspector dev branches (#873)', time: Wed Aug 26 14:13:23 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    c567549e8320422f6c5c766337bba110645f6d76, summary: 'fix(links): resolve relative
+    external-link targets against the linking file (#871)', time: Wed Aug 26 
+    13:45:41 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    db718aa5395c807f8ac99baecc110d42edbfd26c, summary: 'ci: pin pynwb and nwbinspector
+    in a versioned requirements file (#872)', time: Wed Aug 26 12:34:01 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     254283b3b1bf493ea9bcb2a9f6a7c042177fa8f2, summary: 'refactor(dynamictable): derive
     schema-defined column routing from the schema (#858)', time: Tue Aug 25 
     14:07:38 2026}
@@ -82347,6 +82361,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    e59e757dcaf7c1c05b455882b7b072142b2c1d06, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Aug 26 06:12:48 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     83faee47392c4ebbddd5578b42b49aa3945d547a, summary: Automatic update of the 
     code statistics YAML files, time: Tue Aug 25 06:04:29 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89258,6 +89275,17 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1211fc87ad397285dce8c85477e0d940bb582b17, summary: Write the corrections a 
+    person makes when proofreading a SLEAP file (#1990), time: Wed Aug 26 
+    22:57:57 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    efa86b777dbea68187120a1fe165f2f985665924, summary: Add the pose estimation 
+    metadata template (#1968), time: Wed Aug 26 14:51:33 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    29514f04981b6ce180b490189c55f5e1793e5a10, summary: Add a pose estimation 
+    metadata structure page to the developer guide (#1989), time: Wed Aug 26 
+    06:18:26 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     56b7c9c37d0810a5c4b03d845961d9c410711a00, summary: Fix dev-dallies (#1988), 
     time: Wed Aug 26 03:43:14 2026}
@@ -117366,6 +117394,14 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    a4f0c964d664709e4e48811ddcba971f303c3f9b, summary: 'Accept num_samples in OpticalSeries,
+    OnePhotonSeries, and TwoPhotonSeries (#2248)', time: Thu Aug 27 02:13:57 
+    2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    7249083811435862bf35e7912d6b11319bf176d9, summary: Derive 
+    ImageSeries.num_samples from timestamps for external-file series (#2250), 
+    time: Thu Aug 27 00:30:25 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     ff2e9dc5d1aa142c613579dbb4801f9bb627b1f7, summary: Fix 
     `TimeSeriesReference.timestamps` for series that store `starting_time` and 
