@@ -17728,6 +17728,9 @@ LINDI:
     487980fc5b2e96179943080c420aaf1af78eead3, summary: Initial commit, time: Wed
     Mar 13 01:02:13 2024}
 MatNWB:
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    2880afcfbf7d188fb9ddbb0469c6df5b617a60d9, summary: 'ci: fix and harden the prepare
+    release workflow (#884)', time: Fri Aug 28 15:49:10 2026}
 - {author: Prepare release by ehennestad, committer: Prepare release by 
     ehennestad, hexsha: b35285a89205c1cdb0c7e7849131742b68941bd2, summary: 
     Update version number in Contents.m, time: Thu Aug 27 18:39:50 2026}
@@ -82371,6 +82374,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    2b49f6fd534a4e06f7a0349b36af530155011256, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Aug 28 08:27:00 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     be142fe3e70d2cde2f0c695ac931f77876a2c551, summary: Automatic update of the 
     code statistics YAML files, time: Thu Aug 27 08:44:45 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89288,6 +89294,19 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    99877ef37782c90fe7277d39b3ce95b5292a74d0, summary: Add a pyPhotometry 
+    converter (#1918), time: Sat Aug 29 04:12:43 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    aca1fdaa92c5e3f2fadb14d9fea61a03fd1e810b, summary: Add a pyPhotometry events
+    interface (#1916), time: Sat Aug 29 01:17:17 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    688a0f241d040f9cb3c13b660685ecaaafb6fc4f, summary: Add a pyPhotometry 
+    interface (#1905), time: Sat Aug 29 00:05:25 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    c19088c09053ef118dbe644f4f30b5d05d784178, summary: Report the tracks and 
+    instances a SLEAP file cannot convert (#1993), time: Fri Aug 28 22:22:01 
+    2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     d3dda90995041d189aefcf13317bfec618061665, summary: State the reference frame
     on each pose interface (#1991), time: Thu Aug 27 20:00:54 2026}
