@@ -2400,6 +2400,17 @@ AqNWB:
     Feb  1 01:18:07 2024}
 HDMF:
 - {author: Ryan Ly, committer: GitHub, hexsha: 
+    7c03ebf290e7dea84825a68aeb5661f9dbfdaac7, summary: Support 
+    `TermSetWrapper`-wrapped fields and term sequences in `add_ref_termset` 
+    (#1570), time: Sun Aug 30 01:21:13 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    65234636fea80f909991e2bfadcc90d5bb5038de, summary: Return an empty DataFrame
+    from `HERD.to_dataframe` when there are no references (#1567), time: Sun Aug
+    30 00:10:01 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    07d7c2db198d97cb9f9596b518596a794ff98bdd, summary: Work around HDF5 ros3 
+    shutdown deadlock on Windows CI (#1572), time: Sun Aug 30 00:05:26 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
     7c8d91c756c91f1146efb3635262267ccea1f0a0, summary: Prepare for release of 
     HDMF 6.2.0 (#1562), time: Wed Aug 19 06:43:32 2026}
 - {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
@@ -82374,6 +82385,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    4166e8a8e64baad47d156c6edc37fbb006693e65, summary: Automatic update of the 
+    code statistics YAML files, time: Sat Aug 29 06:13:28 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     2b49f6fd534a4e06f7a0349b36af530155011256, summary: Automatic update of the 
     code statistics YAML files, time: Fri Aug 28 08:27:00 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89294,6 +89308,9 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    14d4fe5e5b1686c6aba94e4cb4fad38319b1f45e, summary: Write images by reference
+    with ExternalImageInterface (#1987), time: Sat Aug 29 05:43:10 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     99877ef37782c90fe7277d39b3ce95b5292a74d0, summary: Add a pyPhotometry 
     converter (#1918), time: Sat Aug 29 04:12:43 2026}
@@ -117433,6 +117450,13 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    f378275375b1dfffed0d35e63a021f103c9ed45b, summary: Illustrate usage of 
+    add_ref_container in HERD tutorial (#2251), time: Sat Aug 29 07:35:09 2026}
+- {author: Chadwick Boulay, committer: GitHub, hexsha: 
+    d1ad5314d7820d27bb5db484fe4a953a948ef915, summary: 'Store FeatureExtraction.times
+    and Clustering.peak_over_rms as given, instead of copying them into a list (#2253)',
+  time: Sat Aug 29 05:36:23 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     a4f0c964d664709e4e48811ddcba971f303c3f9b, summary: 'Accept num_samples in OpticalSeries,
     OnePhotonSeries, and TwoPhotonSeries (#2248)', time: Thu Aug 27 02:13:57 
