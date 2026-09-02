@@ -82392,6 +82392,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    3b57c63352e039bff2217199e858c5c0bf02a3ca, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Sep  1 06:18:38 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     4b8af0de50db94c72c5ede42a0577d1db11bec8a, summary: Automatic update of the 
     code statistics YAML files, time: Mon Aug 31 05:54:42 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89321,6 +89324,45 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ef77f2ebab919245a09016363206c4add6d58e7c, summary: Read the EDF header's 
+    birthdate into `Subject.date_of_birth` (#1999), time: Wed Sep  2 05:06:21 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1a13e83cec635ec0ebfdd18f60dcfcafdd77454a, summary: Apply the shuffle filter 
+    to `timestamps` by default (#1984), time: Wed Sep  2 05:05:54 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    dde870a50d7587ca83658852d2f392386426dc82, summary: Add support for the HDF5 
+    shuffle filter (#1979), time: Wed Sep  2 02:22:04 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    dcf34fb1134c74b28929d539c922877b49c6225c, summary: Remove deprecations, time: 
+    Wed Sep  2 01:44:54 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    e5cd8701710c34facc5364d5c94fc565cc229f02, summary: pre-commit update, time: 
+    Wed Sep  2 01:40:17 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    c73c70ba49a4e93d94f77b19550e0c8cdcf3a8cb, summary: Remove the entry 
+    duplicated into the released v0.10.0 section, time: Wed Sep  2 01:38:57 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    b520640bbe462b573ded6a5dfb704aa60946fa3b, summary: post release bump, time: 
+    Wed Sep  2 01:37:25 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    65c2d4718efe3b896b2280e224ab7e89e78f7627, summary: Prepare for v0.10.1, time: 
+    Tue Sep  1 23:52:26 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    79348f2e20f0d8fa48089321639ad593a80bba7f, summary: Add deprecation policy 
+    and fix changelog, time: Tue Sep  1 23:47:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    94f1b32eb616d91e42acd4c437be7a86323391ba, summary: Add `BORISInterface` 
+    (#1996), time: Tue Sep  1 23:36:09 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3dcfe81cdacd2a13dc60146a013f1d1c389ec0a7, summary: Write a payload field 
+    holding several values per event as a ragged column (#1997), time: Tue Sep  
+    1 20:59:11 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a68eabc957d1d6ea384fc84ddbc16d2762b39387, summary: Accept every installed 
+    HDF5 compression filter instead of a list frozen in source (#1998), time: 
+    Tue Sep  1 20:27:14 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     c6ac86502a1be4e2e12adb2b3e4f48b0a97d74c0, summary: Add 
     MoseqKeyPointsInterface for keypoint-MoSeq output (#1995), time: Mon Aug 31 
