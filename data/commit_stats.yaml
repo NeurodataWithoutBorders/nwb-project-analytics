@@ -1,5 +1,487 @@
 AqNWB:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    6ad63334c684f1b610660ac5874d920bcaa13bba, summary: 'Merge pull request #300 from
+    NeurodataWithoutBorders/schema_2_10', time: Thu Sep  3 05:05:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7f7188205e6a872a9b1bbd2b394f9eec0bafc516, summary: Fix failing NWB inspector
+    test, time: Thu Sep  3 02:40:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    914f3ac33d86be7339bf1b2efede661b04c92db5, summary: Merge branch 
+    'schema_2_10' of https://github.com/NeurodataWithoutBorders/aqnwb into 
+    schema_2_10, time: Thu Sep  3 02:01:10 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b77a71698d39ff363637e43925cab2ee62f4cef6, summary: Fix DynamicTable::addRow 
+    allow multiple values only for indexed columns, time: Thu Sep  3 02:00:59 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    42897d3e0a7fa478849144f0416d3d87a24ec7ec, summary: Enhance 
+    isPathOrDescendant to handle root path, time: Thu Sep  3 01:57:57 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    85d3952b1f17049705ba6e5b86255be55e3cb5c7, summary: Fix CI build, time: Thu 
+    Sep  3 01:55:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6146179bc0b2a71d77ef852177fc89426d72ac0a, summary: Catch bad subject error 
+    in NWBFile::initialize, time: Thu Sep  3 01:16:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    477895aaa555f2a1d8c1a1cfdf24e485eec5b7fe, summary: Make column type 
+    validation stricter for all table types to check also dtype and shape in 
+    addition to name, time: Thu Sep  3 01:10:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    dc603d609d6942d8d14dfeeff9b87dab2230c42d, summary: 'Make EventsTable, TimestampVectorData,
+    and DurationVectorData consturctor protected', time: Thu Sep  3 00:49:12 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4426f06061eeefc592ac6ad3379128a92d15a547, summary: Make MeaningsTable 
+    constructor protected, time: Thu Sep  3 00:45:31 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    4a386b0bde26b63686276dc1be8ff5c53ed8f48e, summary: 'Merge pull request #325 from
+    NeurodataWithoutBorders/add_time_intervals', time: Thu Sep  3 00:10:13 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    71c97c318a0c54558ab0f8003cc54ac275835320, summary: 'Merge pull request #320 from
+    NeurodataWithoutBorders/copilot/make-subject-required-by-default', time: Thu
+    Sep  3 00:09:39 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8fcb5413d1ea5158f2241e633f0bcc5c6537b3b1, summary: Fix 
+     NWBFile::initialize()  docstring to clarify subject creation, time: Wed Sep  
+    2 21:59:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    51311910a236c0d02344027292d040ba0e28adb7, summary: Fix status checks in the 
+    Subject class, time: Wed Sep  2 21:49:09 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    616b39e8f319bf07bbf9642ca16cd1b4ecee0c7b, summary: 'Ensure cached registered objects
+    match their concrete on-disk type, keep', time: Wed Sep  2 21:37:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    59a97180826eb016d552467b054ea59d8acc4715, summary: Merge branch 
+    'add_time_intervals' into copilot/make-subject-required-by-default, time: 
+    Wed Sep  2 21:00:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bae5dda41ed9c00310a8f89edc99ed4a6b0ef983, summary: Updated 
+    VectorIndex::readIndexedCellValues to return the correct dtype vector for 
+    empty cells, time: Wed Sep  2 20:50:15 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    64ee4a623daa517f0f87933e6690fab9cd150334, summary: Update changelog, time: 
+    Wed Sep  2 20:22:01 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b37aba04b19d6f9db1259011f14c69ec9552c059, summary: Added missing unit tests 
+    for BaseDataType isCompatibleCellValue()  and  isCompatibleVector(), time: 
+    Wed Sep  2 20:15:06 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    62762d2810f45bc46dc3770e69eca9d5bd48a116, summary: Added 
+    BaseDataType::isCompatibleCellValue() and isCompatibleVector() for efficient
+    runtime check for data type matches to safeguard VectorData::appendData and 
+    appendBuffer, time: Wed Sep  2 20:12:32 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7c3630c117fb6ae7290a03339a3f50f4fadb3003, summary: Updated changelog, time: 
+    Wed Sep  2 19:53:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3af304285d0ec17fe0e51e0d068416f325780400, summary: 'Added isPathOrDescendant utility
+    to simplify path initalization checks for root groups, e.g, /events and /intervals',
+  time: Wed Sep  2 19:51:00 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    62d9bf922c0f247eeaa6e342f92e33cf7b59d2e7, summary: Refactor target attribute
+    initialization, time: Wed Sep  2 19:36:45 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    a4b1e969376c3472a16fe3aaa1351315c5a7e228, summary: Change property status 
+    check to use Status::Success, time: Wed Sep  2 19:34:45 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    3c78f8476098201a64a0e347555b1f2c19669d05, summary: Update CHANGELOG with new
+    features and tutorials, time: Wed Sep  2 19:32:28 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    87e15746dc867ffaba76549bbe69847f4271a2a5, summary: Fix spelling in docs and 
+    code formatting, time: Wed Sep  2 19:29:15 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    ef3846f267e8c768f25b285c04788d64ac7588d7, summary: Update readRows method 
+    parameters in documentation, time: Wed Sep  2 19:25:11 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    5b7943ae2560f78ee199bb8db2748b2ed60d6a06, summary: Clarify readRows usage in
+    comments, time: Wed Sep  2 19:22:55 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    8d9010e752a176702eb8cc7303e51d7e6bd1f8e6, summary: Fix spelling errors in 
+    time_intervals documentation, time: Wed Sep  2 19:22:18 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    7b84c44d4d55822854f21eaeb3cbc2fefda73889, summary: Revise CHANGELOG with 
+    migration and breaking changes, time: Wed Sep  2 19:18:38 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cdd6f44b101f8071edad6c1e1dee4151d0f70078, summary: Renamed 
+    NWBFile::createTimeIntervals to NWBFile::createTimeIntervalsInstance, time: 
+    Wed Sep  2 19:16:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    af0af17ab1ff7fa556140ab40084f59ac8254093, summary: add 
+    examples/testTimeIntervalsWorkflowExamples.cpp to test build, time: Wed Sep  
+    2 19:08:29 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    d89055e1484659f8ba8a097d1ba359375fea791f, summary: Update 
+    docs/pages/userdocs/events.dox, time: Wed Sep  2 19:05:02 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a19c381fa110b5b792480910dbc6c94a244d5403, summary: Test creating EventTable 
+    with default spec, time: Mon Aug 31 16:38:23 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    07deef156e25a42161cd303eca9c2d8b78b2a098, summary: Merge branch 
+    'add_time_intervals' into copilot/make-subject-required-by-default, time: 
+    Mon Aug 31 16:30:43 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b125ff56de84ffb59a676ba0767b52357948ce3b, summary: Fix linter, time: Mon Aug
+    31 16:29:33 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4fb365e9d514a0ccf3b39dcab423b9eeb0ee8599, summary: Merge branch 
+    'schema_2_10' into add_time_intervals, time: Mon Aug 31 16:27:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5f04cabe83bb3e0c16161782c35a9c0475abeb98, summary: Added 
+    DynamicTable::registerColumn to centralize logic for adding columns. Moved 
+    clearColumns logic into initialize to avoid confusion in use of 
+    configureDataObjects, time: Sun Aug 30 03:45:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8832f4f8486930ce4641ab5a6675fe6524d4502c, summary: Fix 
+    DynamicTable::loadConfiguredColumnsFromFile() to also restore the element 
+    identifiers to support append row after read, time: Sun Aug 30 01:08:59 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    03ce200c5c57878a7f45de3fa7b3933e3428e4a7, summary: Address stale 
+    DynamicTable::finalize comments and NWBFile::createEventsTableInstance 
+    approach, time: Sun Aug 30 01:01:22 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    ce7646ef48856bec83f6280f8de993d52368dae1, summary: Update 
+    src/nwb/event/DurationVectorData.hpp, time: Sun Aug 30 00:45:38 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    65073185c9a648e8d12a739d7208f01ef0f1f25c, summary: Fix placement of 
+    EventTable::createDefaultDataSpecs, time: Sun Aug 30 00:44:24 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    dd449bbf76844af6e825757eaeefaf1d0a23f85e, summary: Fix bad link in CHANGLEOG,
+  time: Sun Aug 30 00:39:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    907d4f91dad8a497e64c4ee8792ee5f559114112, summary: Update changelog to fix 
+    formatting, time: Sun Aug 23 08:20:09 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    35d2eafccb811bd356978c965677be23647d24d0, summary: Merge branch 
+    'add_time_intervals' into copilot/make-subject-required-by-default, time: 
+    Sun Aug 23 08:17:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    64cbf76aad68b7981c38ef2444916e623d36f7b5, summary: Merge branch 
+    'schema_2_10' into add_time_intervals, time: Sun Aug 23 08:12:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2ecef8171bd3a2899ce5850ad6196173244fdda6, summary: Merge branch 
+    'schema_2_10' of https://github.com/NeurodataWithoutBorders/aqnwb into 
+    schema_2_10, time: Sat Aug 22 20:44:01 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b4405d424b93d89713757efffb598baf9af84035, summary: Fix column description in
+    EventsTable to be consistent with the schema, time: Sat Aug 22 20:42:48 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2d431005d16088ebc95292e03d23d17c7e15788f, summary: Update 
+    MeaningsTable.target doc, time: Sat Aug 22 20:39:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1f64903c4201c98aaf40c09797579dc8c740f95a, summary: Fix column docstrings in 
+    EventsTable::createDefaultDataSpecs to match the spec, time: Sat Aug 22 
+    20:33:48 2026}
+- {author: rly, committer: rly, hexsha: a4e3ae7bf512932a9567bc923568d6e3b76d2225,
+  summary: Fix clang-format violations in the schema doc alignment, time: Sat 
+    Aug 22 07:15:32 2026}
+- {author: rly, committer: rly, hexsha: 06b0939fdf4e1b507d9bdd7dcec30ffff427c9f0,
+  summary: Align MeaningsTable docs with the hdmf-common 1.10 schema, time: Sat 
+    Aug 22 06:54:41 2026}
+- {author: rly, committer: rly, hexsha: 17383a23063cfe1fc6cc6f622e32cbdf4a00e4af,
+  summary: Update changelog for the NWB 2.11 schema, time: Sat Aug 22 06:32:54 
+    2026}
+- {author: rly, committer: rly, hexsha: d13144f2d86da0717c52e5380a1b434e65214d8d,
+  summary: Align docstrings with the NWB 2.11 schema wording, time: Sat Aug 22 
+    06:29:43 2026}
+- {author: rly, committer: rly, hexsha: 8e42ae7202621b0e5ba2987bb9a0ccf7ba8b8d1b,
+  summary: 'Fix typos in events docs, column description, and changelog', time: 
+    Sat Aug 22 06:21:13 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6d044539b9b88506a5d2ec21447060740868b01f, summary: Fix NWB scherma version 
+    in change log, time: Sat Aug 22 00:15:49 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    526e6f55ea7741d8c2f971fe8ebdb0b8e8a9a3c9, summary: Fix failing unit test, 
+    time: Sat Aug 22 00:06:51 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    d262d8ba6b553173cb443bee5540efe718822b45, summary: Merge branch 
+    'add_time_intervals' into copilot/make-subject-required-by-default, time: 
+    Sat Aug 22 00:02:13 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    86625d8d47d0da0bfcacc4177673b9b18be54524, summary: Fix cppcheck warning in 
+    unit tests, time: Sat Aug 22 00:00:16 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    6d38f28b215722785d557f1bfe87fb0f31ab94d9, summary: Merge branch 
+    'schema_2_10' into add_time_intervals, time: Fri Aug 21 23:56:12 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b810516f0f4707c66f7fb6b99c71c65d2b03a879, summary: Update core schema to 
+    2.11, time: Fri Aug 21 23:54:32 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6f3a3b6c088b95a6ce90fd51962d39e6f2c308e6, summary: Support optional 
+    timestamp.resolution and duration.resolution and option duration column in 
+    EventsTable, time: Fri Aug 21 23:43:36 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5ad93fe07c440fbbea2e57dd29f2a81111e4d554, summary: Make events/ and 
+    intervals/ groups optional as defined in the schema, time: Fri Aug 21 
+    22:41:59 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    3c5fae2c645d1c165e79ee5ff5659b113aa147e1, summary: Update 
+    resources/utils/schematype_to_aqnwb.py, time: Fri Aug 21 19:37:26 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    e87f00b2b2b5eb57657f6af5d4c343b41551c2aa, summary: Update 
+    src/nwb/event/DurationVectorData.hpp, time: Fri Aug 21 19:32:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3b0005e354566501daed8901bd0297497bfcc773, summary: Added missing Subject in 
+    new unit test, time: Thu Aug 20 23:14:55 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    0ad29bb17100910906b32b4046f7b23491d84eb5, summary: Merge branch 
+    'add_time_intervals' into copilot/make-subject-required-by-default, time: 
+    Thu Aug 20 23:13:05 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    590388393486b4dcffc3fa59f443102768419c9a, summary: Fix linter error, time: 
+    Thu Aug 20 23:11:50 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    a7074728f5c1b06cde25786c9241f41d18bd9ee8, summary: Merge branch 
+    'schema_2_10' into add_time_intervals, time: Thu Aug 20 23:10:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    62eaf18e75bc2e28575659250f05e8f6bde7a79b, summary: Merge branch 
+    'schema_2_10' of https://github.com/NeurodataWithoutBorders/aqnwb into 
+    schema_2_10, time: Thu Aug 20 23:08:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    994477cf31b87759f59305e9640adc9e449c87b0, summary: Added missing 
+    DEFINE_UNNAMED_REGISTERED_FIELD defintion for EventTable in NWBFile to 
+    simplify read/write, time: Thu Aug 20 23:08:02 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    699e4de8102b9b1a624bdbf73b10e64d1dc4307f, summary: Updated CHANGELOG to 
+    group related changes for the upcoming release, time: Thu Aug 20 22:42:13 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b28ea09c2737d140ea4af8d99bb6f7f6b2586bec, summary: Add missing Subject to 
+    time intervals tests, time: Thu Aug 20 20:34:43 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    19a366a3614d33f9b86b589f0cfecfe991e4c045, summary: Merge branch 
+    'add_time_intervals' into copilot/make-subject-required-by-default, time: 
+    Thu Aug 20 20:20:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bef3132734a6a394885ed6f7ef1c9a5a5af94b71, summary: Fix codespell, time: Thu 
+    Aug 20 20:19:09 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2efab35eab4fed1522e5cab54d85cf13eb12bca7, summary: Allow function changing 
+    in SubjectSpec to ease initalization with optionals, time: Thu Aug 20 
+    20:11:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    87af098abf202f2669a389cd3feea909019112cc, summary: Fix missing Subject in 
+    Event workflow, time: Thu Aug 20 19:42:47 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b164a7a175ffd93037f6868c536f207e78b5595a, summary: Added missing Subject to 
+    unit test to fix nwb-inspector error, time: Thu Aug 20 19:32:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    425ff1340c0759ea4b67af3967b2c2ca4cc355ab, summary: Fix codespell, time: Thu 
+    Aug 20 19:21:40 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5dab595f20b086f791e5a82dc44be552d509e480, summary: Added missing convenience
+    Subject::create to fix the path, time: Thu Aug 20 19:19:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0a430ce90cf279008b41456490d5dc077ead2ec1, summary: Fix missing subject in 
+    unit test from parent branch, time: Thu Aug 20 19:18:47 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    88c3ce976a98e56c0d6f7955909ef6ce1d2d4904, summary: Merge branch 
+    'schema_2_10' into copilot/make-subject-required-by-default, time: Thu Aug 
+    20 19:08:09 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8cd3833fa252043545671def30da617063452e9f, summary: Merge branch 
+    'copilot/make-subject-required-by-default' of 
+    https://github.com/NeurodataWithoutBorders/aqnwb into 
+    copilot/make-subject-required-by-default, time: Thu Aug 20 19:02:33 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    597be22a63a6d1671c0ed33837212b33133d8786, summary: Make Subject constructor 
+    protected, time: Thu Aug 20 19:02:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    f43adfd1e3c0139965f452fc6d026015b9ec4344, summary: Fix link in CHANGELOG, 
+    time: Thu Aug 20 05:54:18 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    707bd63eaa092ed2ba662bff50c06445e5d496d2, summary: 'Merge pull request #328 from
+    NeurodataWithoutBorders/add_global_object_lookup', time: Thu Aug 20 05:52:05
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a0290e75d40488626fa5dadf736ffafadaca2b13, summary: Fix minor build warnings 
+    on Ubuntu and Windows, time: Thu Aug 20 05:31:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    aefadddea0e4d10433b71fc5fd33f45d57d86b78, summary: Merged BaseIO::getDataSet
+    and getCachedRecordingData to make sure all calls go through the cache and 
+    simplofu the API, time: Thu Aug 20 05:17:10 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    49739bfe70152b357298fd1915d60058c628e829, summary: Fix linter, time: Thu Aug
+    20 04:54:29 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    7a2934f6d019b534763f8e681cb27afbf0a9e341, summary: Merge branch 
+    'add_time_intervals' into add_global_object_lookup, time: Thu Aug 20 
+    04:52:31 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    db4b4bb73683195bc030ea88e4ed866b6fb9ecd0, summary: Merge branch 
+    'schema_2_10' into add_time_intervals, time: Thu Aug 20 04:50:02 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    619fa7c77053393854787f5826240a9d3c927902, summary: Merge branch 'main' into 
+    schema_2_10, time: Thu Aug 20 04:48:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9dba136843db8588b13111fd2cc1cf1161f1a541, summary: Fix ubuntu build, time: 
+    Thu Aug 20 04:33:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b521de28b13160c6cb720094f44796715681f791, summary: 'Fix #327. Update caching of
+    objects to centralize caching in the I/O and prevent creation of potentially colliding,
+    duplicate objects', time: Thu Aug 20 04:24:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0e0e3247e221a1fb12fc29e822bdc532385aa0c4, summary: Clarify comment in 
+    VectorData addData, time: Wed Aug 19 22:56:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    aa6f9a807f14037d87ce87b160ec58fadb4ba7d4, summary: Fix spelling error in 
+    CHANGELOG, time: Wed Aug 19 19:01:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    f3eaec60b56da45387718f51c327264a7ab1316d, summary: Add unit tests for 
+    CellValue, time: Wed Aug 19 18:54:55 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5db39e181d329e7a4ebe35e69b4364cbf036e12a, summary: Review and update 
+    VectorIndex unit tests and add error checks, time: Wed Aug 19 18:34:43 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bf2f8f1bdb2a01194906d2a7f00a38934d9ab0d6, summary: Added unit test for 
+    VectorData::appendBuffer, time: Wed Aug 19 18:00:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1f3eae2379a1fa1f540304790ebf8043fd3e3a84, summary: Enhance unit tests for 
+    DynamicTable, time: Wed Aug 19 17:41:01 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    fb7d7f500d0df5a0675c10cb6e647555707b3e3d, summary: Enahnce unit tests for 
+    VectorIndex and add error checking in VectorIndex::readIndexedCellValues, 
+    time: Wed Aug 19 17:14:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d0b07a8724774e326042a87623cfe64fd84d4d7d, summary: Fix cppcheck warning. 
+    Replace loop with std::transform, time: Tue Aug 18 21:21:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    646b31132fd527e14a9167f55056f1da8303c932, summary: Fix performance issue in 
+    VectorIndex::readIndexedCellValues. Read the entire required range from the 
+    target VectorDatas in a sinlge I/O operation instead of looping. Fix deep 
+    nesting in VectorIndex::readIndexedCellValues, time: Tue Aug 18 21:13:36 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2e7a3fc4a6775183950f86db2bb37b60bde2a3af, summary: 'Improved the performance of
+    DynamicTable::addRows by caching target columns and buffering values before writing
+    them to the dataset, which significantly reduces the number of I/O operations.',
+  time: Tue Aug 18 21:04:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    62f256f2ce6d344d5caa682aab0a885f3b58848f, summary: Add missing 
+    DEFINE_UNNAMED_REGISTERED_FIELD( for time intervals, time: Tue Aug 18 
+    20:24:57 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1753e378173a7b805b56eea2ff1f3fb346307db8, summary: Fix performance issue in 
+    VectorIndex::readIndexedCellValues. Read the entire required range from the 
+    target VectorDatas in a sinlge I/O operation instead of looping, time: Tue 
+    Aug 18 19:54:40 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ee21f21aa0721d0943974634dd6ec3419e638cff, summary: Add a validation check 
+    before subtraction in VectorIndex::readIndexedCellValues to prevent 
+    potential underflow, time: Tue Aug 18 19:42:18 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b259db208b54dc9b8fa66132f2a532b809de405e, summary: Make  virtual in  so 
+    polymorphism can be used naturally in, time: Tue Aug 18 19:39:38 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    62d03bba81b26140135a131f749f1c693de3127f, summary: Fix formatting of lists 
+    in DynamicTabel::toString CSV formatting, time: Tue Aug 18 19:36:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7d80fd8e2c4bb0570685a8d387c405e88ba2f280, summary: Enhance type-safety of 
+    Types::CellValue, time: Tue Aug 18 19:25:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6350323e4a6da1ef6367a6b059c9849f018e6ca3, summary: Change Types from a class
+    to a namespace, time: Tue Aug 18 00:01:10 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bc8a095fd299b4a27adbd4b65b886f0a88f036ef, summary: Update clang-format 
+    version in lint.yml, time: Mon Aug 17 23:11:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5cf5e1e6647ef6f260c0854101de6911271ee57a, summary: Fix cppcheck warning in 
+    DynamicTable::toString, time: Mon Aug 17 20:43:11 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3007b7209e9bf47b2114bca44ea2a164f0f9cb94, summary: Move note in docs to 
+    clean up layout, time: Mon Aug 17 20:39:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d953dc02fccbad883c9907be7011e0aebec25fa1, summary: Fix cppcheck warning and 
+    add time_intervals.dox to the page index, time: Mon Aug 17 20:30:40 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    154c7f60d7454e516420f092b26471122aa127fa, summary: Added tutorial for 
+    acquisiton of TimeIntervals, time: Mon Aug 17 20:18:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cffeb4e0a3f52adcbad35ca24cd8afa2f829dcd4, summary: Fix linter, time: Mon Aug
+    17 19:38:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8f3f5e7833f963a6dd4f7c4a4168bfcac61d238f, summary: Add 
+    DynamicTable::toString support for printing a DynamicTable, time: Mon Aug 17
+    19:37:33 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    aeb028d8616568cd2d465fc92d597a101a9256de, summary: Fix linter, time: Mon Aug
+    17 10:50:10 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ac268d41b834b9429fbfbc7c830be0a858f2f21d, summary: Fix cppcheck suggestion, 
+    time: Mon Aug 17 10:48:42 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a76691ffb34f05d8f9bf4c03cb664f5b65a9c6c1, summary: Updated CHANGELOG, time: 
+    Mon Aug 17 10:45:39 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c462a827c31e0310a2d7b889e04071810882ed95, summary: Support row-based read 
+    for DynamicTable, time: Mon Aug 17 10:25:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ed4a3d61bf62adcf1c17956aec5917ef8906f7d4, summary: Fix NWB Insepctor warning
+    due to empty tables, time: Sun Aug 16 10:50:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    65f39480d43292dd59c70a379aae17eeb0bc064b, summary: Fix ubuntu compiler 
+    warning, time: Sun Aug 16 10:48:19 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    082a2e03c7aa40a163e06b9f7463eb4180605026, summary: Fix float comparison in 
+    unit test, time: Sun Aug 16 10:39:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ef2ce8c12fbbf618e244913dc224a52328dd5616, summary: Fix linter, time: Sun Aug
+    16 10:29:57 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a1b3ade9c503b430f951e0b2762f8c782cf17b0e, summary: Fix CI build issue, time: 
+    Sun Aug 16 10:28:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0612740201c22738cc08ad5078649b5bd5d50ecc, summary: Fix spell check errors, 
+    time: Sun Aug 16 10:22:38 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5402bb0ccf972320be3bfb4458669f46c0759cab, summary: Suppress false positive 
+    cppcheck explicit constructor warnings in CellData and document, time: Sun 
+    Aug 16 10:19:09 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    39c5f7a86f8794cce95128fa29fdb65685177ad4, summary: Fix cppcheck error in 
+    TimeIntervals, time: Sun Aug 16 10:11:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    82335ead9e3da1eaa2cd1080dc3ea2475562dc27, summary: Updated NWBFile to 
+    support standard intervals TimeIintervals tables, time: Sun Aug 16 10:01:21 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    292f476cdd3cc3e9c8c2bace53865447b157faef, summary: Added unit tests for 
+    TimeIntervals, time: Sun Aug 16 09:42:53 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    356b537cc586fca62be20ce395a060468967ccf5, summary: Merge branch 
+    'schema_2_10' into add_time_intervals, time: Sun Aug 16 09:23:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    e6419c0835201cb8c1ee07e97bec3b91446e3875, summary: Remove TODO items, time: 
+    Sun Aug 16 09:09:14 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8d4791c7d8ba9b25fca9f2ef57217a51fda681c5, summary: Add support for ragged 
+    column write via VectorIndex and DynamicTable, time: Sun Aug 16 08:59:43 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1591e3e8a677c06765752c5b559ddd24565f2a43, summary: Clean up VectorData.hpp 
+    by moving implementations to the cpp file, time: Sun Aug 16 06:30:05 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9d02b86afa6c693427674586f3f9e620483abe63, summary: Added unit tests for 
+    VectorIndex, time: Sun Aug 16 06:26:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    71a7150e2ef1b434b4aea63bef409d046a9b55df, summary: Fix 
+    DynamicTable::configureDataObject to exclude VectorIndex from colNames, time: 
+    Sun Aug 16 06:02:33 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    76be639e56b87c68be67084fdfc59ca0592ecb06, summary: Merge branch 'main' into 
+    copilot/make-subject-required-by-default, time: Sun Aug 16 05:45:43 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0c94cc2545fc791573bad7008a07af97185aed04, summary: Added tages VectorIndex 
+    to TimeIntervals and fixed configuration, time: Fri Aug 14 05:01:00 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    80aed1dfe7eb9a1973e13cbcd6826ee225b27e91, summary: Add basic outline for 
+    VectorIndex type, time: Fri Aug 14 04:43:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    795eec56ad108fb241aa99dcaa16d1139f4ccd43, summary: Make TimeIntervals 
+    constructor protected, time: Fri Aug 14 04:43:25 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    91d9a2fa175cd6d7e30845393e8b50bdecb5ba65, summary: Add draft outline for the
+    TimeIntervals type, time: Fri Aug 14 03:43:00 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
     c092a77bdc5a3d384cd8346b6fc4736ed47b888c, summary: 'Merge pull request #307 from
     NeurodataWithoutBorders/add_ros3', time: Thu Aug 13 13:58:29 2026}
 - {author: rly, committer: rly, hexsha: 6d4dd9a174f9bc0a53a5db8af8dac92ea7f4762b,
@@ -8,6 +490,65 @@ AqNWB:
 - {author: rly, committer: rly, hexsha: ad52b748cdcae05293ac5096beb4887bc792d0ca,
   summary: Fix doc/CMakeLists mismatch and comment nits, time: Thu Aug 13 
     13:17:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5e39cd2522498c96d79a3bc916f1d37d8aa8b3a4, summary: Prevent invalid Subject 
+    data write, time: Thu Aug 13 09:21:15 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    e6427bd4eed8def1ed0b068eb3b637ad3f8156ca, summary: Avoid overwriting exiting
+    subject, time: Thu Aug 13 09:16:55 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7bb903ea41ab6da5d42311c80b2fb7f2c859fd53, summary: Address review comment, 
+    time: Thu Aug 13 09:11:32 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    7d16947a4f8945b63926b1024c124dfd51113a4b, summary: Potential fix for pull 
+    request finding, time: Thu Aug 13 09:06:24 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    b01612571277b50694e95dabdeec418b2f236da6, summary: Potential fix for pull 
+    request finding, time: Thu Aug 13 09:05:50 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    49f9ea635b8bb79660b1aa6e03b27d1678b435b9, summary: Potential fix for pull 
+    request finding, time: Thu Aug 13 09:05:24 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d3f1893984f06908aa730441430a34bb36d02728, summary: Fix subject metadata 
+    nwb-inspector test, time: Thu Aug 13 08:43:46 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bcb223e6a85156ddfcb88d2434171a576db5cab6, summary: Fix nwb-inspector 
+    validation errors, time: Thu Aug 13 08:07:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    10de7dd4223058f3f1ec9f9aaaff3a1548a6ebf0, summary: Fix nwb-inspector 
+    validation errors, time: Thu Aug 13 07:48:20 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cbd9a1f26db12d2868b7881ea985c4040a2b44d0, summary: Fix validation tests, 
+    time: Thu Aug 13 07:34:32 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    dabddc7ed4c609e4c62f31582abf36b05c568c4a, summary: Fix nwb-inspector 
+    validation errors, time: Thu Aug 13 07:08:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b732aeaf3f6002fefed779f45623027d3279039a, summary: Add missing 
+    testSubject.cpp file, time: Thu Aug 13 06:45:16 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a52666271be9ecd83bb0d82975b35a7176458c50, summary: Update Changelog and fix 
+    docstring, time: Thu Aug 13 06:43:06 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d5a741eaee3b4d14c09fdda05e2f78b84848979f, summary: Update unit tests, time: 
+    Thu Aug 13 06:33:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ac9040104f729cf8d4168419faedc77e188fbaac, summary: Merge branch 
+    'copilot/make-subject-required-by-default' of 
+    https://github.com/NeurodataWithoutBorders/aqnwb into 
+    copilot/make-subject-required-by-default, time: Thu Aug 13 06:18:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b4bd01e9fcb3adf5e9e5265245d2cf37a16f9ca6, summary: Added Subject type, time: 
+    Thu Aug 13 06:18:39 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    b5575c74da577c84f7dbfa46ef9fa7f06c60d7ad, summary: Make Subject required by 
+    default in NWBFile::initialize(), time: Thu Aug 13 05:05:29 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    54fd1242ebcea8d9498a1bf96fa0ec8d1d6a5da5, summary: Apply remaining changes, 
+    time: Thu Aug 13 04:58:39 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    689d747eefce3c7cb6bcf218d4cab7fb48529da2, summary: Initial plan, time: Thu 
+    Aug 13 04:49:58 2026}
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
     a404f2d4754b4b66ec7d1a931dd3d276f6855cc5, summary: Clarify docstring for 
     findObjects, time: Thu Aug 13 04:44:12 2026}
@@ -23,6 +564,9 @@ AqNWB:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     f7f2087e360754721ee6745eb6bb6a18468ef26d, summary: Update CHANGELOG.md, time: 
     Thu Aug 13 04:12:17 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    44d91f054f4d78da270e38cdc8f6de6ce6dff2ba, summary: Merge branch 'main' into 
+    schema_2_10, time: Wed Aug 12 21:22:28 2026}
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
     83f29f1412a65c2e820726e453a82090b8c7ce87, summary: 'Fix comments from #319', 
     time: Wed Aug 12 21:19:04 2026}
@@ -142,6 +686,57 @@ AqNWB:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     88aeda158ee6b83c52dd1c9b3ce2b67680d29163, summary: Apply suggestion from 
     @oruebel, time: Fri Jul 24 21:30:45 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    2fa4b96949744efcfa299cdb8ffef4cd92411d35, summary: 'Merge pull request #301 from
+    NeurodataWithoutBorders/add_event_vectordata', time: Thu Jul 23 18:29:08 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    68f809eb9af891541bd83fb2eabe95ef31ae35de, summary: 'Merge pull request #302 from
+    NeurodataWithoutBorders/add_meanings_table', time: Thu Jul 23 18:27:07 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    e364ecd9f2b973b2a353379ad0cdda060695b634, summary: 'Merge pull request #304 from
+    NeurodataWithoutBorders/add_event_table', time: Thu Jul 23 18:25:49 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    8ecef7c97c9bac37604cf037b0e36a7f4b92c3c9, summary: 'Merge pull request #305 from
+    NeurodataWithoutBorders/rowbased_table_acquisition', time: Thu Jul 23 
+    18:24:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    409ca0914853d50bc252ef49b3f9f0064104e907, summary: Replace raw loop with 
+    std::any_of per CPPCHECK, time: Thu Jul 23 08:57:24 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ce8d4774aa5cbb8787dd6856143a8b1b2660714b, summary: Merge branch 
+    'add_event_table' into rowbased_table_acquisition, time: Thu Jul 23 08:51:21
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    78d7712c6212a38fbd0bdf9238cb04b31b6a16a8, summary: Fix spacing in changelog, 
+    time: Thu Jul 23 08:45:53 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cc4e84c3d9c3edd373adedc157ddf5371ad714bb, summary: Merge branch 
+    'add_meanings_table' into add_event_table, time: Thu Jul 23 08:44:17 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    fc22ec7c801e786bf1f0d3c930611c1bc0057e84, summary: Updated 
+    MeangingsTable.target to be a reference attribute in accordance with HDMF 
+    1.10 schema, time: Thu Jul 23 08:41:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    791a84c0431e702f79e916f529422c8be8927599, summary: Merge branch 
+    'add_event_vectordata' into add_meanings_table, time: Thu Jul 23 08:32:01 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    01a630d3875ccb614fcc3acbf3c0f572bdf19051, summary: Merge branch 
+    'schema_2_10' into add_event_vectordata, time: Thu Jul 23 08:30:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2ec76d40964e668303645f780c023ee527164976, summary: Update changelog, time: 
+    Thu Jul 23 08:23:06 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    79b6fbf72b4d0fb63b9ad9a515bd96b62ffbc1b3, summary: Update hdmf_common schema
+    to 1.10, time: Thu Jul 23 08:21:04 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ff3675c231df652671c351c6119939186b8da58c, summary: trigger ci, time: Thu Jul
+    23 07:56:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3c6662f17e243234b107c5ec26761f95c3ea415e, summary: Add 
+    DyanmicTable::validateDataSpecs logic for validating columns, time: Thu Jul 
+    23 07:18:10 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     80c5893acd8f96cbb058bc845974906fc361cf4c, summary: 'Merge pull request #308 from
     NeurodataWithoutBorders/add_ros3_benchmark_demo', time: Fri Jul 17 04:05:58 
@@ -313,6 +908,219 @@ AqNWB:
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
     b7ee9f1928a83f5ca6731e0509e36dd63761a478, summary: Inital implementation of 
     ROS3 S3 read, time: Mon Jul 13 04:43:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    05296407085a6a65a48638229ec115443c245c5a, summary: Updated changelog, time: 
+    Sun Jul  5 22:15:16 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    434655093bc524eca4e7fe23959b17e85f30aae8, summary: Add tutorial for 
+    MeaningsTable, time: Sun Jul  5 22:11:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    27823c456ad3777025b8adfea66a1f8e8e5de9f0, summary: Fix linter error, time: 
+    Sun Jul  5 16:29:11 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a5b44fe156ea28852e7537e50c9a5e985a729237, summary: Address name shadowing 
+    warnings from sanitize workflow, time: Sun Jul  5 16:27:42 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0ba6b9d225514c8d1b8d4bba23b1d75bdaf4078f, summary: Add mising docs page, 
+    time: Sun Jul  5 16:04:37 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0486fe04339b999fdb5866ce290938f1e53ddf92, summary: Add 
+    DynamicTable::add_column overload to accept a columns spec, time: Sun Jul  5
+    15:49:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    fecdd2b60bbd2917f63c5423bf52bb271f04508d, summary: Add tutorial for 
+    event-based acquistion, time: Sun Jul  5 15:31:59 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    14ff14e4f2a39ae70e3984f6682bf8d7254c3e9f, summary: Updated CHANGELOG, time: 
+    Sun Jul  5 14:15:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d7d562710df1488723b4905416535b59a1a2569a, summary: Fix linter and spellcheck,
+  time: Sun Jul  5 13:39:56 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cc70093e41bd8cb13b20e064cb73c39e979e4cca, summary: Ensure addColumn also 
+    updates the configured columns and remove redundant column tracking, time: 
+    Sun Jul  5 13:37:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    93441075ec745b64d4a3e21c1cd2d77a537191de, summary: Remove unused 
+    DynamicTable::m_recordingColums, time: Sun Jul  5 13:05:31 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9d62d5990e6f3bf12b52474147a255e259a76b0d, summary: Updated DynamicTable 
+    configuration to support row-based recording, time: Sun Jul  5 11:23:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4bd7ba54c190861a73ea6f69a4227ecc407228a1, summary: Updated unit tests to 
+    reflect new colNames management behavior, time: Sun Jul  5 07:07:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    401dad00b607489b55c06cea906c9c61e1d25261, summary: Updated handling of 
+    column names for DynamicTable, time: Sun Jul  5 07:02:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7d2f576bd4c3c394fbd2107889afcd7276047d07, summary: Fix linter and spell 
+    check, time: Thu Jul  2 21:27:06 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    93389ada2ed5414fbdbb2a0386db77130ba96ede, summary: Refactored DynamicTable 
+    initializtion of ElementIdentifiers, time: Thu Jul  2 21:21:43 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1b10ebf6e09c482fc68746b7214a93b245dc446a, summary: Update unit test to write
+    data instead of creating an empty table, time: Thu Jul  2 19:38:01 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    be859a5bf99a248f43d2699b92a1d4f3dc30ed8c, summary: Updated NWBFile to create
+    events/ group and added createEventsTable convenience function, time: Thu 
+    Jul  2 17:58:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a526a635cb60d72b75000a16b40fac6a498e227f, summary: Merge branch 
+    'add_event_table' of https://github.com/NeurodataWithoutBorders/aqnwb into 
+    add_event_table, time: Thu Jul  2 17:26:44 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    1025d5a66294f2bf6b53d4f7ed1d9aeb3763d8f8, summary: Merge branch 
+    'add_meanings_table' into add_event_table, time: Thu Jul  2 17:26:26 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    59b5860775be30b67575029f588d470d60c183ae, summary: Fix lint formatting 
+    failures, time: Thu Jul  2 17:23:42 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    439d3049e28ac9b727d7ed0f1c25961f61f0194f, summary: Fix linter error, time: 
+    Thu Jul  2 17:16:09 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ae71931a3d82697728ce4cec54cf2836b9086f43, summary: First full implementation
+    of EventsTable and add unit tests, time: Thu Jul  2 17:12:20 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ebcc16c2b8cd858c90eb758c8624da224cb479a0, summary: 'Fix bugs in TimestampVectorData
+    and DurationVectorData; bad namespace, ordering of parameters', time: Thu 
+    Jul  2 17:07:26 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    af3b7bb142ef785739c49a3844851b4aabf2a98f, summary: Fix linter, time: Thu Jul  
+    2 15:47:16 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    44b9aa1c1da1e520f3ad978ebce5920dc67730b7, summary: Rough draft of 
+    EventsTable class, time: Thu Jul  2 15:45:06 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6328b632a85682141930a81dfe4c4850ab072394, summary: Merge branch 
+    'add_meanings_table' of https://github.com/NeurodataWithoutBorders/aqnwb 
+    into add_meanings_table, time: Thu Jul  2 15:37:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c7836bf1029aa4898b415856b33873b73705df0d, summary: add missing param 
+    docstring, time: Thu Jul  2 15:37:49 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    16c69d59b86e44a738343e672e7ee12ed8627da4, summary: Potential fix for pull 
+    request finding, time: Thu Jul  2 15:34:58 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    2575ddb6a105861f54365a090b3453d5c8f3e970, summary: Potential fix for pull 
+    request finding, time: Thu Jul  2 15:34:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2b63ef8373af7c2837c6eae82b0ff779f4a314f9, summary: Add missing test source, 
+    time: Thu Jul  2 15:33:49 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    656228f214b6a7c9df647cf70c371b215991275a, summary: Fix issue with exposing 
+    import order requirement to users, time: Thu Jul  2 15:23:02 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9516ba6caf8edde7ec806d13b77bf3161e87d847, summary: fix linter, time: Thu Jul  
+    2 15:07:15 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0c8de846b2aebba40ca2a7d077d6340a7b39bc5a, summary: Update meanings, time: 
+    Thu Jul  2 15:04:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    584f4cfd49531180165b8d2b92292f79069583e9, summary: Reinclude 
+    ElementIdentifiers, time: Thu Jul  2 15:02:33 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    7cca2cac7a0fbeaec6ae98ae5e9847069d6339ac, summary: Potential fix for pull 
+    request finding, time: Thu Jul  2 14:59:47 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    a0046c70f3a51f3e35ade611a2b72758900fbbe3, summary: Potential fix for pull 
+    request finding, time: Thu Jul  2 14:59:13 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    534c61faaa63a397ff9424adcaf23332f490c620, summary: Updated Changelog, time: 
+    Thu Jul  2 14:54:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    00a827862188b681c734bf3635554313486ed1d0, summary: Clarify docstring and fix
+    linter, time: Thu Jul  2 14:22:20 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    930048fb847adbbe986d84b610887f9d7bd5ae94, summary: Update DynamicTable to 
+    support creating and reading MeaningsTables, time: Thu Jul  2 14:12:28 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    1ffb645f1ed3fea56e42aa5348d95f9d01eff739, summary: fix linter, time: Thu Jul  
+    2 14:11:57 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8ff2912259b30b77747a1627fbbd3af21093574c, summary: Add unit tests for 
+    MeaningsTable, time: Thu Jul  2 12:47:58 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3d7af61f7dfee09c1483a13ed57a4dd2c68b0362, summary: Check ElectrodeTable 
+    chunking, time: Thu Jul  2 12:47:00 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8046b990fc7ab26e591ba62e31d2acc33681f517, summary: Add base implemention of 
+    the MeansingTable type, time: Thu Jul  2 12:03:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ebeb926b5a9705a31da94fc3f163f10450bebe23, summary: Allow setting of row 
+    chunking for ElectrodesTable, time: Thu Jul  2 12:03:00 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    4dca8db9c9e2d6962521c3eba2cdc21521764ff3, summary: Allow setting of row 
+    chunking for ElectrodesTable, time: Thu Jul  2 12:02:34 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    0eef7a22cb228aeb6df32bcd38359308d3c1ce50, summary: Apply suggestions from 
+    code review, time: Thu Jul  2 10:17:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ec186bb1736bafde5254acce247fce615a29ea08, summary: Update changelog, time: 
+    Thu Jul  2 10:08:02 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    640e848e822c36b148fbbdbe29fb6c032fb45420, summary: Added override for 
+    DynamicTable.addColumn to support derived VectorData types, time: Thu Jul  2
+    09:57:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6aa48a25803b5b1dca8f8a2d228a5522bf5c27d6, summary: Updated 
+    DynamicTable.readColumn to support reading of derived VectorData types, time: 
+    Thu Jul  2 09:37:01 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    894bac6533d2cc0127c586c1276d8515ac5de51d, summary: Added unit tests for 
+    TimestampVectorData and DurationVectorData, time: Thu Jul  2 08:30:50 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6c197d8e940f1c370fe22dd979de8227f621279d, summary: Add initial 
+    implementation for DurationVectorData, time: Thu Jul  2 08:09:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0b370d3a5701cc076717aef3435daa8c74ec2e40, summary: Add initial 
+    implementation for TimestampeVectorData, time: Thu Jul  2 08:09:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    14cbc2f9daa2ea20210ac67f5a229ee8db4bf8c9, summary: Update 
+    schematype_to_aqnwb to support new weak_ptr style for the I/O object, time: 
+    Thu Jul  2 08:08:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    790db15d6e7835283c8e9dfa20c7e195c58e684d, summary: 'Fix indent of REGISTER_SUBCLESS
+    in schematype_to_aqnwb and set HDMF_COMMON, CORE namespace on includes', 
+    time: Thu Jul  2 07:22:22 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    34f4da621c10fb4203b70ee241705176adf8cece, summary: Merge branch 
+    'schema_2_10' into add_event_vectordata, time: Thu Jul  2 06:54:46 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3acbb5728798c2ebbcdd91a7b1b815edb3d1626d, summary: Fix linter error, time: 
+    Thu Jul  2 06:54:18 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d7d2887ab8651b165689109ddd12212502214e1c, summary: Update python version for
+    resources/utils to ensure usuage of latest PyNWB in uv, time: Thu Jul  2 
+    06:48:14 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    be4f26003deacc49c6df9cce47066b5a660e56ce, summary: Fix old-style cast 
+    compiler warning, time: Thu Jul  2 06:39:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    63a7941d2143fef38d7da9ee8d94d2f0722f5548, summary: Update changelog to 
+    reflect copilot changes, time: Thu Jul  2 06:28:36 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    55d8077c1ffb47b6699f81fb9fbdf12f31cd46b8, summary: 'Fix Windows CI: update CMake
+    generator to Visual Studio 18 2026', time: Thu Jul  2 06:19:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    ff40461553c194d70cd5719d2f53a50495eadcc5, summary: Fixed spelling error in 
+    Changelog, time: Thu Jul  2 06:10:05 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    cadb1f7b51493c9cf11ad4e5cbbe99afad03500d, summary: Add changelog entry for 
+    Windows CI generator fix, time: Thu Jul  2 06:08:37 2026}
+- {author: 'copilot-swe-agent[bot]', committer: GitHub, hexsha: 
+    391f7729cde681c474d803828a7366988afbbee3, summary: 'Fix Windows CI: update CMake
+    generator to Visual Studio 18 2025', time: Thu Jul  2 05:59:05 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    dad1bd823cf3d8701bfd305fa42f983137459f70, summary: Update 
+    schematype_to_aqnwb.py to use forward declarations to avoid circular 
+    includes, time: Thu Jul  2 05:50:16 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6879acfe786c5d8a5755c062be0d83648ea6dcef, summary: Update changelog, time: 
+    Thu Jul  2 05:16:52 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8498202278b3818e836ca5f528907ba7e5ddba56, summary: Update schema to NWB 2.10
+    and HDMF-common 1.9, time: Thu Jul  2 05:08:46 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     6571d661721fcf7778763366eae954cdd6db65db, summary: Fix UTC 
     daylight-savings-time offset issue. -  authored by @cboulay, time: Fri May  
@@ -82392,6 +83200,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    28829bd8007f43477925f4420cdc59436f6d9c65, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Sep  2 06:08:04 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     3b57c63352e039bff2217199e858c5c0bf02a3ca, summary: Automatic update of the 
     code statistics YAML files, time: Tue Sep  1 06:18:38 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -89324,6 +90135,13 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    27f12c134bcb07af87372f9dba3b8828020c97e1, summary: Write GuPPy's bootstrap 
+    PSTH significance results (#2000), time: Wed Sep  2 23:11:13 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8883e799e42aba6dd14a4a63fd7c9258a065a56a, summary: 'More zarr v3 forward compatibility,
+    and fix the wrong shuffle expectations (#2002)', time: Wed Sep  2 21:17:15 
+    2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     ef77f2ebab919245a09016363206c4add6d58e7c, summary: Read the EDF header's 
     birthdate into `Subject.date_of_birth` (#1999), time: Wed Sep  2 05:06:21 
@@ -117513,6 +118331,15 @@ NeuroConv:
     a5026627128de601ffbce2d3e57ea896485c3286, summary: Initial commit, time: Fri
     Jul 26 17:55:13 2019}
 PyNWB:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    8676056552180f3c5b9d92499915af869d6c1ff5, summary: Prepare for release of 
+    PyNWB 4.2.0 (take two) (#2261), time: Wed Sep  2 22:07:34 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    ddcbee32e2e12b723c3115d49935f13492221986, summary: Fix PyPI upload rejecting
+    metadata 2.5 and gate it in CI (#2260), time: Wed Sep  2 21:25:42 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    00faa03aa8121b5652d948b9662dc3a59c7bd417, summary: Prepare for release of 
+    PyNWB 4.2.0 (#2246), time: Wed Sep  2 19:06:04 2026}
 - {author: Aditya Singh, committer: GitHub, hexsha: 
     b5c3b81c57e17abf2bf04830ba46c7378d70398a, summary: Only write 
     ImageSeries.num_samples when it was explicitly provided (#2239), time: Mon 
