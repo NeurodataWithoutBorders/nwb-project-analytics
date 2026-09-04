@@ -1,7 +1,48 @@
 AqNWB:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    423bb0b98a8a2d03706e77ae60ebde89f58bff3f, summary: 'Merge pull request #340 from
+    NeurodataWithoutBorders/prepare_for_0.4_release', time: Thu Sep  3 07:18:33 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    b7ef52f0928fac054361a06fa728c6bfe2560638, summary: Apply suggestion from 
+    @rly, time: Thu Sep  3 06:49:01 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    5d65499203e5184fcb1d40d0ea07195c65e525f8, summary: Update 
+    src/nwb/hdmf/table/DynamicTable.cpp, time: Thu Sep  3 06:47:10 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    71b6915943f6b200b1b1086972e2371b41528dcd, summary: Merge branch 'main' into 
+    prepare_for_0.4_release, time: Thu Sep  3 05:31:05 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    390fdee652891f960dd93d3aed7577b82cad6499, summary: 'Fix #330 Fix 332 Load also
+    index columns in DynamicTable::loadConfiguredColumnsFromFile and support variable
+    index data types for VectorIndex columns in DynamicTable::addRows', time: 
+    Thu Sep  3 05:27:15 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
     6ad63334c684f1b610660ac5874d920bcaa13bba, summary: 'Merge pull request #300 from
     NeurodataWithoutBorders/schema_2_10', time: Thu Sep  3 05:05:21 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    184ff924acb452cb4ba06d0766f9396519104286, summary: 'Fix #331 Updated DynamicTable::addRows
+    to fail when extra values for unknown columns are provided', time: Thu Sep  
+    3 04:18:24 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6f7fb65b84b1e34a0e91c21605e7cf8123ff654f, summary: 'Fix #334 Remove stride and
+    block parameters from VectorIndex::readIndexedCellValues', time: Thu Sep  3 
+    03:43:00 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d5479a5b66469035d7f4e1426b27b8556a9732e3, summary: Fix changelog release 
+    date, time: Thu Sep  3 03:39:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3f64f8a03edb333af2613c1f7f09001cd15f5a6b, summary: Fix changelog release 
+    date, time: Thu Sep  3 03:21:29 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0209b00f4f4d9aa228f471fb60135075de9c5c58, summary: Updated version in 
+    CMakeLists.txt, time: Thu Sep  3 03:20:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a6f7365a9024cc129e3475dfdd62d190dbfef5f8, summary: 'Fix #329 make isISO8601Date()
+    to be less restrive', time: Thu Sep  3 03:10:30 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c0295236c382df376f8b831f581b3ab9a3265cd6, summary: Update date in changelog, 
+    time: Thu Sep  3 03:03:35 2026}
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
     7f7188205e6a872a9b1bbd2b394f9eec0bafc516, summary: Fix failing NWB inspector
     test, time: Thu Sep  3 02:40:08 2026}
@@ -3207,6 +3248,10 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: Sejal, committer: GitHub, hexsha: 
+    d8dcae3ee6840341b5bee9b7d8df4ca8a8a24a12, summary: Refactor validator return
+    type to support warnings via ValidationResult wrapper (#1479) (#1480), time: 
+    Fri Sep  4 05:05:03 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     7c03ebf290e7dea84825a68aeb5661f9dbfdaac7, summary: Support 
     `TermSetWrapper`-wrapped fields and term sequences in `add_ref_termset` 
@@ -30672,6 +30717,25 @@ NDX_Template:
     337d13bf556b7a974d6d0e546ac959ed9c38cdaa, summary: Initial commit. Set up 
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    5fe91648796cc1b895e4edebe2436b467b9104ad, summary: 'Merge pull request #175 from
+    NeurodataWithoutBorders/add_aqnwb_0_4_0_blog_post', time: Thu Sep  3 
+    07:41:07 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    df592b13cddcb5b65fcf303a8fc5dca0e6bd2580, summary: Apply batched suggestions
+    from code review, time: Thu Sep  3 06:45:38 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    bddd375c0dad6be1342910d0725c1d2882318056, summary: Update date of the AqNWB 
+    0.4.0 news release, time: Thu Sep  3 05:33:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9032b5e1bf383d3c99d491ce775adc01f607ecba, summary: Update schema version in 
+    blog post, time: Sat Aug 22 00:16:37 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    6263ff68b0f513ecaddbbdec81acaa1ae549083e, summary: Update banner, time: Fri 
+    Aug 21 07:10:51 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    732fe46feadf2fdebe5dc5d258af6695d13d1d23, summary: Add blog post for AqNWB 
+    0.4.0 release, time: Fri Aug 21 06:57:14 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     636d3ee0d9ab0b89bd08fff96315a63c8207813b, summary: 'Merge pull request #174 from
     NeurodataWithoutBorders/add-carter-peene-instructor', time: Tue Aug  4 
@@ -83200,6 +83264,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    ed2c7cf49a4a0854af309388ccefc5b67203c14c, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Sep  3 06:31:57 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     28829bd8007f43477925f4420cdc59436f6d9c65, summary: Automatic update of the 
     code statistics YAML files, time: Wed Sep  2 06:08:04 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90135,6 +90202,13 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    11017169901804be1747d7d2e8bb7014f1e7c0ab, summary: Filter empty traces on 
+    `shape` instead of `size` (#2005), time: Thu Sep  3 22:01:04 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9bcad4893e46e8ab5e61aa4b1a9156757d70aa05, summary: Drop the 
+    `MultiSegmentationExtractor` branch from `write_segmentation_to_nwbfile` 
+    (#2003), time: Thu Sep  3 15:03:10 2026}
 - {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
     27f12c134bcb07af87372f9dba3b8828020c97e1, summary: Write GuPPy's bootstrap 
     PSTH significance results (#2000), time: Wed Sep  2 23:11:13 2026}
