@@ -11315,6 +11315,16 @@ HDMF_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 HDMF_Zarr:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    2111843ac917ba7bf5d9eeb052ee18ad79a74e94, summary: 'Merge pull request #365 from
+    ehennestad/fix-uint-compound-dtype', time: Wed Sep  9 18:30:28 2026}
+- {author: ehennestad, committer: ehennestad, hexsha: 
+    150f2757ae7837c38881227f26e70abfa33d01ee, summary: 'docs: reference the PR number
+    in the changelog entry', time: Tue Aug 25 14:37:06 2026}
+- {author: ehennestad, committer: ehennestad, hexsha: 
+    24faee423c3a5bc63b7457008c00691964200413, summary: 'fix: resolve compound fields
+    declared uint instead of writing them as float64', time: Tue Aug 25 14:35:58
+    2026}
 - {author: 'dependabot[bot]', committer: GitHub, hexsha: 
     5e633ffd600ae5b5468fd1812d30b470b8ae6d31, summary: Bump actions/setup-python
     from 6 to 7 (#359), time: Wed Jul 29 23:51:58 2026}
@@ -32057,6 +32067,15 @@ NWB.org:
     6cf7dbc7b5c00e3046a3db218db26a524ac63123, summary: add content, time: Mon 
     Nov 18 16:08:27 2024}
 NWBInspector:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    5be8ae3d3c03f3562c29df581bf3f83156bf9a14, summary: Keep integer dtype when 
+    building units duration indices (#741), time: Wed Sep  9 19:09:35 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    b10ba3126781c501d4434ff1277ee33f7f336f8a, summary: Handle subject ages with 
+    more than one slash (#735), time: Wed Sep  9 17:51:37 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    ae8d8280466fc62a4992b8e74797660e4a41c194, summary: Guard four table checks 
+    against zero-row tables (#729), time: Wed Sep  9 16:56:26 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     2a3db01c62144bb556bae9c74ccbddc000ded0b6, summary: Fix inspect_all with 
     n_jobs > 1 when a config is given (#727), time: Wed Sep  9 03:56:15 2026}
@@ -83286,6 +83305,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    988dec98808ac8ceb5b577e5fe2c8cbfb6081046, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Sep  9 06:18:38 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     93718d76c853d47e5ab63d2ba3248d37f8b70527, summary: Automatic update of the 
     code statistics YAML files, time: Tue Sep  8 06:01:58 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90239,6 +90261,42 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    91ac8e68e7869f67efe06f4210641a35df9e334b, summary: Release v0.10.2, time: 
+    Thu Sep 10 05:03:48 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    99bdf5d71851cfbcdd71c3a7d0faf9f883e1ba1b, summary: Finish the towncrier 
+    migration II, time: Thu Sep 10 04:51:51 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    3b53357d56fed0d532230b9a9c3cda1aea6392d5, summary: Finish the towncrier 
+    migration, time: Thu Sep 10 04:36:50 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    bfa4e6c33c738c0ee2ecd5212c065dd86b5db6da, summary: Remove redundant 
+    changelog line, time: Thu Sep 10 04:20:11 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    fcd7654045b9de1b202590c9c9282117f7f1ade7, summary: restore droping extras, 
+    time: Thu Sep 10 04:19:20 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    3bc8edb959be7876bd65251e10b5fa49bee49c17, summary: Forward `compare_key` and
+    `list_dict_deep_update` through `dict_deep_update` (#2009), time: Wed Sep  9
+    23:11:30 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1087d749c62577e99f009502c59c25c202127263, summary: Link the shared 
+    timestamps across a pose container's series (#2044), time: Wed Sep  9 
+    21:53:30 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4c48bccc87e5ffbb84c5380c76e461ed384a8744, summary: Use towncrier for the 
+    changelog (#2042), time: Wed Sep  9 21:42:57 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    306f789d0955bfcff859d32f79ae4806aaadb85f, summary: Read the NPM channel 
+    count from `.npm_params.json` first (#2046), time: Wed Sep  9 20:25:00 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    f8118c70cece9fcaa09ae173a9cb2c5c3e78f64c, summary: Write a masks-only 
+    segmentation under default metadata (#2015), time: Wed Sep  9 19:31:37 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    5503e0bc707ea92ba8b831c7f0a8fd4f04c154dc, summary: Make the `figshare` 
+    download helpers work outside a notebook (#2029), time: Wed Sep  9 18:04:09 
+    2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     122a11969f16f66430dca0e478dad2349accbbea, summary: Add 
     `EventsInterfaceTestMixin` and put the events test classes on it (#2040), 
