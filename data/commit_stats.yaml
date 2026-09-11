@@ -3248,6 +3248,18 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    39a98a64f42e32c331ec228d7c150221d9bb3b5d, summary: Update  
+    ObjectMapper.__apply_string_type to support Zarr-V3 arrays (#1580), time: 
+    Fri Sep 11 01:02:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ced7700ce4b6a90a012feecfefcb9283b87dddf0, summary: Support numpy 
+    variable-length strings (`StringDType`) in `convert_dtype` (#1576), time: 
+    Fri Sep 11 00:57:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e9769cbb58d198de156d65adb76b7696dfe4ec87, summary: Materialize the elements 
+    array before mapping enum terms to their index (#1581), time: Thu Sep 10 
+    05:09:58 2026}
 - {author: Sejal, committer: GitHub, hexsha: 
     d8dcae3ee6840341b5bee9b7d8df4ca8a8a24a12, summary: Refactor validator return
     type to support warnings via ValidationResult wrapper (#1479) (#1480), time: 
@@ -83305,6 +83317,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    1b28de292730886527c43d501b119297dc7e9aae, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Sep 10 06:18:24 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     988dec98808ac8ceb5b577e5fe2c8cbfb6081046, summary: Automatic update of the 
     code statistics YAML files, time: Wed Sep  9 06:18:38 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90261,6 +90276,38 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    f8b31726077cfc844e4e64324d006cd7e66f56d5, summary: Use `Asia/Tokyo` instead 
+    of the legacy `US/Pacific` alias in the docs and tests (#2053), time: Thu 
+    Sep 10 23:12:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9dfc42ad5f3662ffe3a7423cdb78ad5dd6a8ffe6, summary: Sort the electrodes and 
+    units table columns (#1888), time: Thu Sep 10 20:49:40 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ddb068bfba671ae7f387839789b19f58a2c6524c, summary: Run custom conversion 
+    checks on both HDF5 and Zarr (#2050), time: Thu Sep 10 15:41:30 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    94c2159a9603e8a462df21ab09004c8bdce6b3a0, summary: Run the formatwise 
+    gallery test only on what changed (#2049), time: Thu Sep 10 07:02:41 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ed1aa8a4abb372b5d03be8ded246b28463b6560d, summary: Enable Zarr read-back 
+    checks for imaging conversions (#2048), time: Thu Sep 10 06:34:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1eec2cb408bc52ad0725c9059e39078cd9b5c8c3, summary: Align gzip defaults 
+    across backends and preserve iterator dtype (#2047), time: Thu Sep 10 
+    06:06:16 2026}
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    f5152514adfe61de4acc799cfaba9719f4397a3b, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#2035)', time: Thu Sep 10 05:43:45 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    fe3cbbe7b78723431855898a4dbc9a76d1983ef3, summary: Install the dependencies 
+    the dev installs skip (#2043), time: Thu Sep 10 05:41:50 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    e16c3175f07cd433b830c807ac40d58ac55c3def, summary: pre-commit update, time: 
+    Thu Sep 10 05:14:45 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    9c256d7f7a8865090995820a0596f7e58cfdb74e, summary: Post-release bump to 
+    v0.10.3.dev0, time: Thu Sep 10 05:12:53 2026}
 - {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
     91ac8e68e7869f67efe06f4210641a35df9e334b, summary: Release v0.10.2, time: 
     Thu Sep 10 05:03:48 2026}
