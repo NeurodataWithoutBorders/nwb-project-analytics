@@ -83317,6 +83317,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    697cee1590db4cc85fc995ed15d51a0a29e47f8b, summary: Automatic update of the 
+    code statistics YAML files, time: Sat Sep 12 06:16:59 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     5017e186770f4e10f3445fd097733da85f9dcd5a, summary: Automatic update of the 
     code statistics YAML files, time: Fri Sep 11 06:20:18 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90279,6 +90282,18 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7b4570e4db1de5805bb9e80c8486097887aada8b, summary: Return an integer frame 
+    count from `get_electrical_series_chunk_shape` (#2057), time: Sat Sep 12 
+    23:30:20 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3bb77a9f444780f2e3410ea9b7cc0bec8e9463fd, summary: Write `order_of_images` 
+    from the image interfaces so an `IndexSeries` can index them (#2056), time: 
+    Sat Sep 12 23:04:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    68aee3bfdb57474a08189f342d253fad04cf42af, summary: Write the waveform unit 
+    and the spike alignment point from the sorting analyzer (#2055), time: Sat 
+    Sep 12 21:23:32 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     f8b31726077cfc844e4e64324d006cd7e66f56d5, summary: Use `Asia/Tokyo` instead 
     of the legacy `US/Pacific` alias in the docs and tests (#2053), time: Thu 
