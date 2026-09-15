@@ -3248,6 +3248,9 @@ AqNWB:
     2f0c1f5054491e1bdb57c24adab34d556c463552, summary: initial commit, time: Thu
     Feb  1 01:18:07 2024}
 HDMF:
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    5a97cad569d95d2ece8c50dec20cca30b122f311, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#1563)', time: Mon Sep 14 22:44:51 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     39a98a64f42e32c331ec228d7c150221d9bb3b5d, summary: Update  
     ObjectMapper.__apply_string_type to support Zarr-V3 arrays (#1580), time: 
@@ -30739,6 +30742,12 @@ NDX_Template:
     337d13bf556b7a974d6d0e546ac959ed9c38cdaa, summary: Initial commit. Set up 
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    fbabb43b4695243a2ec437e6a3de7a54b61e3af6, summary: 'Merge pull request #179 from
+    NeurodataWithoutBorders/neurodata-ai-links', time: Tue Sep 15 01:20:41 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    8ed45254019ac7889227803a6124c9796e2140ed, summary: Link the NeuroDataReHack 
+    pages to the NeuroData AI Summer School, time: Mon Sep 14 14:39:03 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     5fe91648796cc1b895e4edebe2436b467b9104ad, summary: 'Merge pull request #175 from
     NeurodataWithoutBorders/add_aqnwb_0_4_0_blog_post', time: Thu Sep  3 
@@ -83316,6 +83325,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    2e244cd4c4a73bf050a087c86b95659db8653967, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Sep 14 06:21:50 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     faf15a74977f98a9245ad4f00f31ab930a11f7f2, summary: Automatic update of the 
     code statistics YAML files, time: Sun Sep 13 06:03:51 2026}
