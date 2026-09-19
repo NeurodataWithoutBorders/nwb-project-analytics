@@ -83353,6 +83353,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    6c8ae1fa2917220a348c3deb9360dd7ed55af130, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Sep 18 06:22:09 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     560c95004385e4b38428d0e060d5cd758c20948b, summary: Automatic update of the 
     code statistics YAML files, time: Thu Sep 17 06:12:05 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90330,6 +90333,9 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    48a87b15dac9be26f5efe55afa1896e3e9d1628f, summary: add max_channel column 
+    for phy interface (#961), time: Sat Sep 19 00:43:40 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     c5ad777d70485bcf5b6a1d24fa9af2f216e9bc46, summary: Count only the typo 
     warning in `test_get_json_schema_from_method_signature_docstring_warning` 
