@@ -30742,6 +30742,25 @@ NDX_Template:
     337d13bf556b7a974d6d0e546ac959ed9c38cdaa, summary: Initial commit. Set up 
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    65b394ff54a320254840baec433fcc8b7d0790b1, summary: 'Merge pull request #181 from
+    NeurodataWithoutBorders/link-check-changed-files', time: Sun Sep 20 23:11:37
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    c648203d88c4137779ad60a93d844276928c19f2, summary: 'Merge pull request #177 from
+    NeurodataWithoutBorders/fix-preview-permalinks', time: Sun Sep 20 23:09:09 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    bea0b8fc920c13582c04f261f4fc370e10ff6cf7, summary: Merge branch 'main' into 
+    fix-preview-permalinks, time: Sun Sep 20 23:07:59 2026}
+- {author: rly, committer: rly, hexsha: ae04ae3579307ed307deb8bde667bb0c19ba873d,
+  summary: Revert "Add a canary file with a broken link", time: Wed Sep 16 
+    04:51:40 2026}
+- {author: rly, committer: rly, hexsha: 8b86166054500e72a20a43fa4ea44767a61a5e0a,
+  summary: Add a canary file with a broken link, time: Wed Sep 16 04:50:15 2026}
+- {author: rly, committer: rly, hexsha: 029f76a4f7473724764a4d5c6b3edad5f056a0de,
+  summary: Gate pull requests on links in the files they change, time: Wed Sep 
+    16 04:49:39 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     fbabb43b4695243a2ec437e6a3de7a54b61e3af6, summary: 'Merge pull request #179 from
     NeurodataWithoutBorders/neurodata-ai-links', time: Tue Sep 15 01:20:41 2026}
@@ -30752,6 +30771,11 @@ NWB.org:
     5fe91648796cc1b895e4edebe2436b467b9104ad, summary: 'Merge pull request #175 from
     NeurodataWithoutBorders/add_aqnwb_0_4_0_blog_post', time: Thu Sep  3 
     07:41:07 2026}
+- {author: rly, committer: rly, hexsha: 7b44b5002263559c5cdaae201346bf369fa1ee4a,
+  summary: Restore the NWBView front matter, time: Thu Sep  3 06:58:26 2026}
+- {author: rly, committer: rly, hexsha: a942563fb586228acde42dfcafee72c8d2da6f73,
+  summary: Point preview builds and site URLs at the right host, time: Thu Sep  
+    3 06:58:20 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     df592b13cddcb5b65fcf303a8fc5dca0e6bd2580, summary: Apply batched suggestions
     from code review, time: Thu Sep  3 06:45:38 2026}
@@ -83352,6 +83376,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    fa11943a8f06854c1ce06c1a9dd01294b499f28f, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Sep 20 06:02:45 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     3de4f10650dd0103e86e5baa791af3b5b7ba527e, summary: Automatic update of the 
     code statistics YAML files, time: Sat Sep 19 06:19:35 2026}
