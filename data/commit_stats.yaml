@@ -11330,9 +11330,373 @@ HDMF_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 HDMF_Zarr:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    295efabae3e2453ed028d16a5f994eb3c3465558, summary: 'Merge pull request #325 from
+    hdmf-dev/zarr-v3-migration', time: Tue Sep 22 01:10:26 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    65a0724f2cd0bebb44f56ef987c9cf8d2c63bf25, summary: 'Translate the on-disk reference
+    dtype name once, at read time (#398)', time: Tue Sep 22 00:41:21 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    89835aa96cb22aeef03c5316d18c635a700e7896, summary: Require zarr>=3.4.0 
+    (#402), time: Mon Sep 21 19:22:17 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    64ad33964e299977d2c0541e58877380f05cda0b, summary: Remove code for zarr<3.3 
+    and fix issues found along the way (#400), time: Mon Sep 21 19:11:53 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    bb2d4e9fa55ea86196724917885b28de6a2cd1c5, summary: Remove the extensions 
+    argument from NWBZarrIO and NWBZarrV2IO (#399), time: Mon Sep 21 19:05:18 
+    2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    92fbc1e8253838712ef240b8071a9a8775ab1205, summary: Update changelog date, 
+    time: Mon Sep 21 03:52:27 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    a4f5319602775d838931727e27f1093f06eae910, summary: 'Merge pull request #397 from
+    hdmf-dev/fix/vectorize-text-dataset-writes', time: Mon Sep 21 03:36:28 2026}
+- {author: rly, committer: rly, hexsha: af6805143b522652ee194deb5054d3a9d63b7395,
+  summary: Raise from the bulk text write instead of falling back to a loop, 
+    time: Mon Sep 21 00:31:09 2026}
+- {author: rly, committer: rly, hexsha: ed657a73e1710f22df869744e56513d589574882,
+  summary: Assign the text array with Ellipsis indexing, time: Mon Sep 21 
+    00:31:09 2026}
+- {author: rly, committer: rly, hexsha: 1dbb5b145c0361b49a5c76271a2d84a185cea29d,
+  summary: Write a text dataset in one assignment, time: Mon Sep 21 00:31:09 
+    2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    9a00dac4281857f8b3c68746f0ac15f2d23ee969, summary: 'Fix Zarr v2 write guard, allow_pickle
+    discoverability, and the renamed compressor argument (#393)', time: Mon Sep 
+    21 00:28:23 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    fb08c45a295ff89ab6a2794f4bbfb2d8c9bd4779, summary: Name the dataset when a 
+    value is not valid UTF-8 (#396), time: Sun Sep 20 22:27:17 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    1a905e565e3350030336a6122b8499aea3dcae9e, summary: Store scalar datasets as 
+    zero-dimensional arrays (#391), time: Fri Sep 18 19:19:44 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    2cd4ffe13d0a74ca866e4b6e2946c9f8ac4ac874, summary: Show the Zarr v2 hint 
+    when reading cached specs fails (#392), time: Fri Sep 18 18:46:36 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    e7f13216e8de5fc95451434ccc3ca7762d053a0b, summary: 'Merge pull request #388 from
+    hdmf-dev/fix/v2-pickle-gate-all-codecs', time: Thu Sep 17 16:26:45 2026}
+- {author: rly, committer: rly, hexsha: 041405e1783870007af55e42836d4d2f78a0a0cf,
+  summary: Check the codecs of each opened array in place of an open-time scan, 
+    time: Thu Sep 17 06:40:34 2026}
+- {author: rly, committer: rly, hexsha: 4a867454c60ef2b7929d4901e9be0cb877539b38,
+  summary: Drop pickle tests the rest of the suite already covers, time: Thu Sep
+    17 06:20:35 2026}
+- {author: rly, committer: rly, hexsha: 399a862089887cae8d9381b335c5bf09ea8ace15,
+  summary: Scan a v2 file for pickle when it is opened without allow_pickle, 
+    time: Thu Sep 17 06:04:27 2026}
+- {author: rly, committer: rly, hexsha: e375a8f58a9e8944553e564a2048d53937825aa9,
+  summary: Enforce the pickle policy on the codecs zarr opens an array with, 
+    time: Thu Sep 17 05:46:01 2026}
+- {author: rly, committer: rly, hexsha: 1e3eb5dcfc8071cc487fc881136ee893089f16df,
+  summary: Merge origin/zarr-v3-migration into fix/v2-pickle-gate-all-codecs, 
+    time: Thu Sep 17 05:38:27 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    48bd431c6d364fddbaa25e2f8a5aa975adc9c4a9, summary: 'Merge pull request #390 from
+    hdmf-dev/fix/v2-fixture-core-schema', time: Thu Sep 17 05:21:14 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    602fbd8456bc4ed6dd70ae176e3c0f827a8b490b, summary: Merge branch 
+    'zarr-v3-migration' into fix/v2-fixture-core-schema, time: Thu Sep 17 
+    05:09:18 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    57f96cc0d4a091e69de2ff79f64d6b304b44b599, summary: 'Merge pull request #387 from
+    hdmf-dev/fix/v2-conversion-strict-read', time: Thu Sep 17 05:03:02 2026}
+- {author: rly, committer: rly, hexsha: 1e6ea10f69980e5c27d8382b3176c61e8de6e04c,
+  summary: Regenerate the v2 fixture with its cached core schema, time: Wed Sep 
+    16 23:14:51 2026}
+- {author: rly, committer: rly, hexsha: 2e229c4ab1b4d3991a45c8c1be204803a233fc67,
+  summary: Merge remote-tracking branch 'origin/zarr-v3-migration' into 
+    fix/v2-pickle-gate-all-codecs, time: Wed Sep 16 23:03:34 2026}
+- {author: rly, committer: rly, hexsha: 32238ee34929f559038bcfbb1d75716c321de75a,
+  summary: Merge remote-tracking branch 'origin/zarr-v3-migration' into 
+    fix/v2-conversion-strict-read, time: Wed Sep 16 23:02:30 2026}
+- {author: rly, committer: rly, hexsha: af21e2f2e6ed1e91ae71d69fcbd76162697b46ae,
+  summary: Refuse a pickled cached spec outright, time: Wed Sep 16 22:50:56 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    8595d3a4ec7891509a3c82a3545e416cab972b99, summary: Fill CHANGELOG gaps and 
+    close doc and test gaps from the v3 migration review (#382), time: Wed Sep 
+    16 19:56:41 2026}
+- {author: rly, committer: rly, hexsha: c50dc5b7a63991667d87d0977756ec7325199c47,
+  summary: Enforce the pickle policy on every codec a v2 array declares, time: 
+    Wed Sep 16 19:32:30 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    c5d742113ab26a4ec80d5a8e21198e2ab1bc55c6, summary: Resolve local paths so 
+    export recognizes datasets from the source file (#386), time: Wed Sep 16 
+    19:30:39 2026}
+- {author: rly, committer: rly, hexsha: b832e531dfb6838efbd08b136699eb6f82b42ecf,
+  summary: Drop the allow_incomplete escape hatch, time: Wed Sep 16 19:14:11 
+    2026}
+- {author: rly, committer: rly, hexsha: 48b27e26c7f504defa8811795a86c9efb9ea0c67,
+  summary: Refuse to convert a v2 file when entries could not be read, time: Wed
+    Sep 16 19:04:47 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    97e37d0f8c0caea5933e5b1a476455fdf5ec53bf, summary: Write NaN and Inf 
+    attributes as zarr-python does (#381), time: Tue Sep 15 22:29:57 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    edbc35be7d166cc556fc8f5d7ea8b7dcf8125740, summary: Resolve _SCALAR before 
+    _DTYPE and read the export back in the compound reference test (#378), time: 
+    Tue Sep 15 21:33:28 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    005f67a7234ddcdc8ff802e374028f1f68cba20d, summary: 'Merge pull request #336 from
+    hdmf-dev/unified-zarr-convention', time: Tue Sep 15 21:17:08 2026}
+- {author: rly, committer: rly, hexsha: 6f78737944a2aa5a3dc1138a6faf35cf6acd826d,
+  summary: Correct the legacy zarr_link entry keys in storage.rst, time: Tue Sep
+    15 20:39:59 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    5f06f28092785def7856545a71e10819c4fabbb3, summary: Merge branch 
+    'zarr-v3-migration' into unified-zarr-convention, time: Tue Sep 15 17:50:23 
+    2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    cde6d85a3d2247d2b8965c7c7a33f5b81ec49183, summary: 'Merge pull request #377 from
+    hdmf-dev/fix-root-dataset-export-link', time: Tue Sep 15 16:58:06 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    3f4afec9fe35c8e365991b934a9257a19e920c12, summary: Fix export of root-level 
+    datasets with link_data=True, time: Tue Sep 15 13:44:34 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    88cd77122de8721b125d9554877468a5e97fe39f, summary: 'Address review: fix compound
+    reference export, remove dead code', time: Tue Sep 15 12:42:10 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    2b3af7fb23d2ff4e923b0ab25ad0fd8385752c02, summary: Merge branch 
+    'zarr-v3-migration' into unified-zarr-convention, time: Fri Sep 11 21:55:02 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    1fe0b85790135dd6ca7eebb9058a1a053f4c919e, summary: 'Merge pull request #374 from
+    hdmf-dev/fix/sharded-iterator-writes', time: Fri Sep 11 21:46:48 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    5ab1c9b43d50f59c115d11ee322b7ff8c2fa7991, summary: 'Merge pull request #375 from
+    hdmf-dev/update_V3_changelog', time: Fri Sep 11 21:28:15 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    777ae5c1a9cca8be901c6d3537b0ec7f05dd7682, summary: fix, time: Fri Sep 11 
+    20:23:23 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    cc85e1dc54349ac13e5f6f1db0fc2e4738492605, summary: documentaiton, time: Fri 
+    Sep 11 20:00:16 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    11875cb81fb6dc017d1541b2431ea5d4217a3275, summary: Remove dead sequential 
+    fallback warning checks from parallel write tests, time: Fri Sep 11 03:59:27
+    2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    cc2f3f05e40acfedf56dcf6650d843f94c00cfe3, summary: Document efficient buffer
+    shapes for sharded iterator writes, time: Thu Sep 10 23:15:57 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    e295d4df6f4876a5a1067e2c13932a0fc86fa852, summary: Schedule sharded iterator
+    writes with exclusive task ownership, time: Thu Sep 10 23:08:03 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    533434c9d42d3551eb2f65c025fdac4b43e8d4db, summary: Reorder list of PRs to be
+    in acending order, time: Thu Sep 10 22:34:31 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    d9587c424e8446688cd8a65ed35c98c356ee26e9, summary: Update attribution for 
+    ZarrV3 IO, time: Thu Sep 10 22:29:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c3fffea65ae6f0ee474446f71eaa2e0573ceabc3, summary: Added changelog entry to 
+    clarify V3 upgrade in ZarrIO, time: Thu Sep 10 22:25:48 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9899143e7fe37cb5e50a85e2cb93c777c864183b, summary: Clarified and 
+    consolidated changelog for the upcoming release, time: Thu Sep 10 22:05:55 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    3f85c117c035af713f90c8981cd1f25cfb8b9c0c, summary: Merge branch 
+    'zarr-v3-migration' into unified-zarr-convention, time: Thu Sep 10 20:53:49 
+    2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    cc11c510e2397824b27aeb2abc18146c9588ed2d, summary: 'Merge pull request #373 from
+    hdmf-dev/updated_v3_pins', time: Thu Sep 10 19:17:29 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    aa8be46036e00797d220c4d0c4d5f2f2f9591a0b, summary: Support automatic shards 
+    and guard parallel iterator writes, time: Thu Sep 10 19:00:36 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    e4eadf96f35a5b71bb94696072915795beaee764, summary: Updated CHANGELOG, time: 
+    Thu Sep 10 18:59:56 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    67703b882c5c35cbf695d5fbf150fa5ecacb547f, summary: 'Fix #371 Increase Zarr and
+    Python minimum versions', time: Thu Sep 10 18:55:47 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    997765a07f3c92ddc23ce1a6bf57dbe86bd6d75e, summary: 'Merge pull request #372 from
+    alejoe91/add-sharding', time: Thu Sep 10 15:56:05 2026}
+- {author: Alessio Buccino, committer: Alessio Buccino, hexsha: 
+    589b4e605ddb742d55b7b68f4de2abd590026e9b, summary: 'test: add sharding tests',
+  time: Thu Sep 10 10:07:00 2026}
+- {author: Alessio Buccino, committer: Alessio Buccino, hexsha: 
+    f0e8aee01abe6a1fe2b78ae88f2fb889ac21fb5e, summary: feat-add-sharding-arg, 
+    time: Thu Sep 10 09:57:56 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    4f1c992da2bf5b8deb7f08ed4364843e6c7fdea8, summary: Merge zarr-v3-migration 
+    (compound string width check) into unified-zarr-convention, time: Thu Sep 10
+    00:25:27 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    e43f85d0e0470d5e5d38959e84ad456699af3b6e, summary: 'Address review: drop legacy-attribute
+    warnings, document v2 convention, add Zindi interop test', time: Thu Sep 10 
+    00:12:54 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    87d34f9be82b57d7f42bd659970197736ed85433, summary: Merge zarr-v3-migration 
+    into unified-zarr-convention, time: Thu Sep 10 00:12:35 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    af58284d52250497acdf59b1e14bede4d40c2661, summary: 'Merge pull request #370 from
+    hdmf-dev/compound_string_width_check', time: Wed Sep  9 23:28:11 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    009de08588b861be0daefbe99d7783a9de9350f1, summary: Merge branch 
+    'zarr-v3-migration' into compound_string_width_check, time: Wed Sep  9 
+    23:22:26 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    6f10f312ff3f491fabe3b0521de7e558ca938d82, summary: 'Merge pull request #366 from
+    hdmf-dev/propose_changes_to_V3', time: Wed Sep  9 23:18:39 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c24795aec92a73f5a4e1bb0aa01ab467dd98a0f9, summary: Fix ruff formatting, time: 
+    Wed Sep  9 23:07:20 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cb6a350e261384713e03d3a6a7fe859fbc74e6c2, summary: Fix ruff formatting, time: 
+    Wed Sep  9 23:04:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    34f9b0977b44dc5353e4ef969df168f4862f716a, summary: Removed _make_spec_reader
+    from both ZarrIO and ZarrV2IO since _load_namespaced constructs the spec 
+    reader directly, time: Wed Sep  9 23:00:55 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    4bda0cff913f2fa15edff9eca0a5ee722cd19356, summary: Apply suggestion from 
+    @h-mayorquin, time: Wed Sep  9 22:48:49 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    0cd155bf736e209fc555bf1be9edd808c964d932, summary: Apply suggestion from 
+    @h-mayorquin, time: Wed Sep  9 22:48:35 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b38b7e35dd81cbfaa756f27b55df369c7349786d, summary: Update Numpy version to 
+    ensure StringDType is available, time: Wed Sep  9 22:45:50 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    6d52e92e74b2404220899749d7495cc3c0ebfb80, summary: Add check for silent 
+    error, time: Wed Sep  9 22:38:55 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    ea5c8a745f961e48915bbde9743300c9627e3e0c, summary: Merge branch 
+    'zarr-v3-migration' into propose_changes_to_V3, time: Wed Sep  9 19:56:24 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    17d14560afa6b43ea3dbc1e5e85045e333cd6bee, summary: Fix broken test after 
+    sync with dev, time: Wed Sep  9 19:52:14 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    36a026f74bfa5ce86cc796bab5b846e937a3cf31, summary: 'Merge pull request #368 from
+    hdmf-dev/fix_v2_compound_object_decode', time: Wed Sep  9 19:30:09 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    b3cfb3f3f8db633f7d8a1c7a356d7401f36ede44, summary: Cover the v2 compound 
+    decode with a synthetic store, time: Wed Sep  9 19:14:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b5dbc13492f47bb18032cb113c42b64e5a4fd241, summary: Merge branch 'dev' into 
+    zarr-v3-migration, time: Wed Sep  9 18:37:49 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     2111843ac917ba7bf5d9eeb052ee18ad79a74e94, summary: 'Merge pull request #365 from
     ehennestad/fix-uint-compound-dtype', time: Wed Sep  9 18:30:28 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    d8b14ef59c3ee3913c87232bdc32a814b0498279, summary: Merge branch 
+    'propose_changes_to_V3' into fix_v2_compound_object_decode, time: Wed Sep  9
+    17:29:18 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    16e22f0ba58b6cb018727625ee5ccf6ea93f85d4, summary: Merge branch 
+    'zarr-v3-migration' into propose_changes_to_V3, time: Wed Sep  9 17:27:53 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    26a93ddcaab397cfa7d36502fbac1297b5ea38fb, summary: 'Merge pull request #369 from
+    hdmf-dev/align_zarrdataio_with_zarr_codecs', time: Wed Sep  9 17:01:51 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0d4dccec645b2702cef02b02e9d4b44f24a7313a, summary: Fix Sphinx build warnings,
+  time: Wed Sep  9 16:49:30 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8c9f0a2b865eda0cc0f4b17e91826ff0cd1f0962, summary: Fix codespell, time: Wed 
+    Sep  9 16:41:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9c90f8041f90034c6d6d1411e6092e6174631217, summary: Added docs for 
+    HDMFZarrArray and reenebaled __len__ and __iter__ on HDMFZarrArray, time: 
+    Wed Sep  9 16:39:16 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    82bc2a994e04735ffeeae3f71e666724fa66c108, summary: Add a CHANGELOG entry for
+    the ZarrDataIO codec API change, time: Wed Sep  9 03:29:25 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    e07666db76c18379a5dcd7e2a594885a597e9188, summary: Align ZarrDataIO with the
+    zarr codec API, time: Wed Sep  9 03:20:19 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    7fc75a52e4301f33493a2e1a1532dd16025eef7b, summary: Resolve a structured fill
+    value that v2 stores as base64, time: Wed Sep  9 02:50:25 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    19e6c87eb83a2f6f69a2bafd3245a93d78b9a250, summary: Decode a zarr v2 compound
+    that holds an object field, time: Wed Sep  9 02:50:19 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    c6dd10651c831db4dbf1b5ed9ee5fe6290d1a011, summary: Merge branch 
+    'zarr-v3-migration' into propose_changes_to_V3, time: Tue Sep  8 19:54:48 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    f56a0c70f5078474d5fc55cfcdabe60c74de45f0, summary: 'Merge pull request #367 from
+    hdmf-dev/fix_compound_reference_reassembly', time: Tue Sep  8 19:54:28 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a9429ca058a1a660d0f27451dd55a743cd751447, summary: Test removing 
+    HDMFZarrArray.__len__ and __iter__, time: Tue Sep  8 19:53:53 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    8f0c6fb4a1bf6aff04d971be2fd3c2963997942a, summary: Merge branch 
+    'zarr-v3-migration' into propose_changes_to_V3, time: Tue Sep  8 19:29:01 
+    2026}
+- {author: rly, committer: rly, hexsha: a8628a2c0124ace1980afa1d9a6d60eba80b1fca,
+  summary: Require pynwb 4.2.0 to match the hdmf 6.2.0 floor, time: Thu Sep  3 
+    05:24:46 2026}
+- {author: rly, committer: rly, hexsha: b841c84f22804a4a1a4e85f6f76863218a91cbc9,
+  summary: Require hdmf 6.2.0 for the Zarr-to-HDF5 export deadlock fix, time: 
+    Thu Sep  3 05:11:42 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    88894dc1cebe006a0dc2331be36d3fff54e027d0, summary: Fix bug on icephys, time: 
+    Wed Sep  2 21:59:08 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    13c568d3173e7fd80c3113922485eba946ebf7ff, summary: Hardened Zarr v2 
+    compatibility reads by rejecting unsafe pickle codecs by default, time: Wed 
+    Sep  2 01:48:15 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c82b832221202da6c2095479e80d53b173876071, summary: 
+    ZarrV2IO._decode_v2_dataset fixed sparse v2 raw-array decoding, time: Wed 
+    Sep  2 00:34:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    af783814cf4ccdc7629aefa942a8f59d4d9aa615, summary: Fixed v2 remote URL 
+    detection, time: Wed Sep  2 00:08:41 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    8a760bd0f2c3c8695b50624c716d8fa55b5f3c59, summary: Fix decode_v2_chunk and 
+    iter_children bug in ZarrV2IO, time: Tue Sep  1 23:59:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    eb003c863ff720d8549ad6693ed64d9aa2afbcc2, summary: Fixed  from_h5py_dataset 
+    now lets explicit  compressor  and  filters  override inferred HDF5 codecs 
+    without duplicate-keyword errors, time: Tue Sep  1 23:18:40 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    488570df01b6ccf88ff906410a3ad4a179b1a9b2, summary:  Fix scalar ndarray 
+    attribute serialization , time: Tue Sep  1 23:01:45 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    415419a993bc07b48f49c2c9ea3e82be589ec260, summary: Merge branch 
+    'zarr-v3-migration' into propose_changes_to_V3, time: Tue Sep  1 22:52:19 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0f48a0ddb690fdfbdb1acd3def946874ac702f70, summary: Fix error in tutorial to 
+    use the custom LocalStore, time: Tue Sep  1 22:49:44 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    c64acac494e0a8c835fd0d6a5d651a317cc4f81d, summary: Potential fix for pull 
+    request finding, time: Tue Sep  1 22:45:18 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7bf779d9ed1dbb3da865bd807cede9750e87697a, summary: Merge branch 
+    'zarr-v3-migration' into propose_changes_to_V3, time: Tue Sep  1 22:35:38 
+    2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    84350336fd0428a6c2dae3961cebba78d813409b, summary: Potential fix for pull 
+    request finding, time: Tue Sep  1 22:30:07 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    5d6ed2d7ba849f811b0384502f20575978d3803d, summary: Support lazy load for 
+    strings via HDMFZarrArray, time: Tue Sep  1 22:22:27 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    681200d942a839c286a2c5dae061f1e2c0aaf862, summary: Update minimum PyNWB 
+    version, time: Mon Aug 31 21:52:30 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    717de41bfe8a4e7f06e3fe48d7d16a98787ae344, summary: Reapply changes to test 
+    in CI what is still failing, time: Mon Aug 31 21:41:59 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    da0882c1ad7b0f89fdcc6206b8a1997d13d5bfe1, summary: Remove patching 
+    HDMFZarrArray in favour of the recent PyNWB changes, time: Mon Aug 31 
+    21:34:13 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    9bb6e52dfaa5986965a3b882888cb27e9bf4d6da, summary: Add custom HDMFZarrArray 
+    class to add missing features instead of patch instances rathern than Zarr 
+    itself, time: Mon Aug 31 20:55:29 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    80ff3768ce4b45de33cd73a7c8f112d538aaded0, summary: Merge branch 
+    'zarr-v3-migration' into test_avoid_monkey_patching_zarr_migration, time: 
+    Mon Aug 31 18:40:38 2026}
 - {author: ehennestad, committer: ehennestad, hexsha: 
     150f2757ae7837c38881227f26e70abfa33d01ee, summary: 'docs: reference the PR number
     in the changelog entry', time: Tue Aug 25 14:37:06 2026}
@@ -11340,13 +11704,41 @@ HDMF_Zarr:
     24faee423c3a5bc63b7457008c00691964200413, summary: 'fix: resolve compound fields
     declared uint instead of writing them as float64', time: Tue Aug 25 14:35:58
     2026}
+- {author: Alessio Buccino, committer: GitHub, hexsha: 
+    003a83e78795209cceb849c458f073859334c3c0, summary: Merge branch 'dev' into 
+    zarr-v3-migration, time: Thu Jul 30 12:47:20 2026}
+- {author: rly, committer: rly, hexsha: fde2ec488b776cc12647d0ea487c177371f799a4,
+  summary: Pin hdmf to released >=6.1.0 instead of the git branch, time: Thu Jul
+    30 00:47:42 2026}
+- {author: rly, committer: rly, hexsha: 88e4a6f67ef04e9901879743d57c17913428c3a0,
+  summary: Merge branch 'zarr-v3-migration' into 
+    test_avoid_monkey_patching_zarr_migration, time: Wed Jul 29 23:58:05 2026}
 - {author: 'dependabot[bot]', committer: GitHub, hexsha: 
     5e633ffd600ae5b5468fd1812d30b470b8ae6d31, summary: Bump actions/setup-python
     from 6 to 7 (#359), time: Wed Jul 29 23:51:58 2026}
+- {author: Alessio Buccino, committer: GitHub, hexsha: 
+    c2b58bdbdd1aa0285826b116ff7d82befa8e4e76, summary: Read zarr v2 NWB files 
+    via a dedicated `NWBZarrV2IO` (#349), time: Wed Jul 29 23:51:31 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    b3dbd3071d9995a16894a461f0b0e7c3e4c8b353, summary: Decode StringDType 
+    datasets to object array instead of lazy wrapper, time: Tue Jul  7 02:10:21 
+    2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    ed79899457b6c0cf7884239fededf94cc91c7aeb, summary: Fix fsspec URL corruption
+    and bound _copy_array memory during export, time: Tue Jul  7 01:58:23 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    b23a49a1d6f70c08cdc1facba56af5d53b44ac0c, summary: Lazily wrap StringDType 
+    datasets instead of materializing on read, time: Tue Jul  7 01:49:27 2026}
+- {author: Alessio Buccino, committer: Alessio Buccino, hexsha: 
+    d5de9267cf44c41986ba01a41f94d02956c40fcd, summary: 'fix: conflicts', time: 
+    Thu Jun 25 13:22:19 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     0a537fa66e8c8e01cefc9c9280b0f91476674ce3, summary: Ensure generating html 
     does not fail when a non-zarr array is passed (#355), time: Thu Jun 25 
     00:14:45 2026}
+- {author: Alessio Buccino, committer: Alessio Buccino, hexsha: 
+    9691f3e04aaea1c0048e0850f948dea3f55d49fd, summary: 'fix: solve conflicts', 
+    time: Wed Jun 24 08:36:15 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     ba67d05175aa83d24febf7ec97d0874a1853083e, summary: Fix deploy release 
     workflow tox env to match Python 3.14 (#353), time: Tue Jun 23 01:13:11 2026}
@@ -11363,6 +11755,9 @@ HDMF_Zarr:
     c1a03006a1081dbfb499c54838ad32cba37527e8, summary: Fix `resolve_ref` 
     self-reference resolution over fsspec stores (#348), time: Fri Jun 19 
     18:25:26 2026}
+- {author: Alessio Buccino, committer: GitHub, hexsha: 
+    de939ab2e4f8562c3a4dd7bf2616efffbd6b9130, summary: Merge branch 'dev' into 
+    zarr-v3-migration, time: Fri May 29 13:57:15 2026}
 - {author: 'dependabot[bot]', committer: GitHub, hexsha: 
     212d2a45eb038f766b2e5469126a52542171fc3e, summary: Bump 
     actions/add-to-project from 1.0.2 to 2.0.0 (#347), time: Tue May  5 05:41:24
@@ -11380,6 +11775,57 @@ HDMF_Zarr:
     57122f488540510a82af2c195fa3ead53c70d31f, summary: Bump 
     conda-incubator/setup-miniconda from 3 to 4 (#342), time: Sat May  2 
     19:35:37 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    b1389ae50aa34d2c427320a8bd0a6cf09741b8e1, summary: 'Fix ruff: remove unused json
+    import and unused variable in test', time: Sat Mar 21 21:12:18 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    a0a4f3ae807ca8df10ebe4f092b897919f2473ba, summary: Reject _COMPOUND_DTYPE 
+    attribute with error instead of backward compat, time: Sat Mar 21 20:46:44 
+    2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    ff2824e029797372a301e07696499cbc47ad5953, summary: Fix single-row compound 
+    datasets with references being flattened, time: Sat Mar 21 20:44:54 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    6ddd95745511ba0092c3fad1ec544cc087ad582a, summary: Fix _COMPOUND_DTYPE 
+    backward compat priority in __read_dataset, time: Sat Mar 21 20:31:57 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    16c4a8b98354889a1bf4d0d7de9ace6ef7d5c674, summary: 'Fix ruff lint errors: move
+    import to top, fix line lengths', time: Sat Mar 21 20:25:04 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    9ab2b00174eb7ab61304a53a33ab76aba0f93c2d, summary: Support arbitrary zarr 
+    Store backends and fix reference resolution, time: Sat Mar 21 18:49:20 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    257b46cb669c7d0d7616d9e1763e9b6eaba85b30, summary: Align with latest unified
+    convention decisions, time: Sat Mar 21 17:30:55 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    51785d2268e091b09aaf0c83f788b1cbcb274d17, summary: Adopt unified Zarr v3 
+    convention for hdmf-zarr/LINDI interoperability, time: Fri Mar 20 23:18:24 
+    2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    8f63d2d7920c065c9d01f6be958a6046394412df, summary: Merge branch 'dev' into 
+    zarr-v3-migration, time: Thu Mar  5 21:31:05 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    1b3f624a630dad0b86e020e8259efc2731d69c5e, summary: Point uv source to remote
+    hdmf branch instead of local path, time: Tue Mar  3 09:00:25 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    d39c509f56876c21f6eb415a2c9cdff7b8d26d5e, summary: Restore git dep for CI 
+    after hdmf fixes for len() and 0-d array iteration, time: Tue Mar  3 
+    08:41:52 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    5588d67c65396c92da149f7079e6475b6683be6a, summary: Re-trigger CI after hdmf 
+    _unwrap_scalar fix in table.py, time: Tue Mar  3 08:20:58 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    0aa91ccfe4eb163ad161670606abeccd6b70a804, summary: Allow direct references 
+    in hatchling for git dependency, time: Tue Mar  3 08:05:20 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    44133fd4890a58d97e69be9294a330fbdb63ad5a, summary: Use hdmf branch with 
+    ndim-based detection and 0-d ndarray fixes, time: Tue Mar  3 08:01:58 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    3af3b962ae66b504a9e06b70fc3c876e3a985cd2, summary: 'Remove zarr.Array monkey-patches,
+    use ndim-based collection detection', time: Tue Mar  3 07:45:55 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    eb5c8db73cc86fa4af36483a4761fd8edf2b6e7d, summary: Merge dev into 
+    zarr-v3-migration branch, time: Tue Mar  3 07:42:51 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     a9e1d79f34bda68d1c8a03550e5c9388b80f469b, summary: Refactor is_remote tests 
     to remove store type checks (#331), time: Tue Mar  3 06:22:56 2026}
@@ -11418,6 +11864,59 @@ HDMF_Zarr:
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     2d453d9a86a319de08aab06b5fa76daf3f8ce3cb, summary: Remove extras setting 
     from wheelinstall testenv (#326), time: Mon Mar  2 18:24:39 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    ee6fa762904aa473f8e805a8b3aa391cb7dbed2c, summary: Fix broken zarr storage 
+    docs link in overview.rst, time: Wed Feb 25 17:12:24 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    ff4e80dee987e325ea65f6a549dccc2db66d044d, summary: Remove unnecessary dtype 
+    fallback in __setup_chunked_dataset__, time: Wed Feb 25 02:47:45 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    efa03f3f6402ff165c0cf6ebb01a674aead1762a, summary: Add explicit else branch 
+    with comment for chunking fallback, time: Wed Feb 25 02:46:16 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    089ff3a14fcbfded870d5f095f7826e7cd7ae29b, summary: Restore accidentally 
+    removed comments and docstring, time: Wed Feb 25 02:45:15 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    7f2f72d78dd14604d645ccee3aacbd3942ae6bd0, summary: Use __get_store_path 
+    instead of str() for store-to-path conversion in __add_link__, time: Wed Feb
+    25 02:43:57 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    5d83ba7a6d027ce255c8f9b670c702bc6bf8d506, summary: Restore removed comment 
+    about ref_link_source type handling, time: Wed Feb 25 02:43:06 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    8a0195d3c6751d129cbd042dbbe334acdc0964ae, summary: 'Address review: FsspecStore
+    imports, code cleanup, docs, compound dtype min length', time: Wed Feb 25 
+    02:31:44 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    b3ccee06847c95e12be044a08e4f07531a14fdd1, summary: 'Fix compound dtype string
+    truncation: dynamically size string fields', time: Tue Feb 24 20:12:48 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    87300c2b4129fc4a4ab76de2040668a9a1c156a3, summary: 'Fix ruff, gallery, and docs:
+    remove unused numcodecs import, update examples', time: Tue Feb 24 19:44:45 
+    2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    f771c89e98d68c0d4de4b18930f42afdfb3cb5d1, summary: 'Address review: remove deprecated
+    params, require zarr v3 codecs', time: Tue Feb 24 19:40:49 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    3b9a8bed2fb60a89d997ed1084b7eb9e70eb7601, summary: 'Fix CI: wheelinstall, broken
+    docs links, fsspec skip, bump hdmf min, dtype guards', time: Tue Feb 24 
+    18:30:58 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    02d1d738fb7283d4c6c436bd4989cb85e82ffcab, summary: Add 
+    DtypeConversionWarning filter to gallery tests, time: Tue Feb 24 18:05:42 
+    2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    47b6d8286aaa879dbf55702de3f104e6e75c6e1f, summary: Bump zarr minimum to 
+    3.1.3 and suppress zarr v3 gallery warnings, time: Tue Feb 24 18:03:05 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    530a1be5b58d3312b5a07739a4a2679ea526bf47, summary: Bump numpy and numcodecs 
+    minimums to match zarr 3.1.0 requirements, time: Tue Feb 24 17:59:11 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    ced00daf5bb4db59fcc58fc7dac1744e4231b9ec, summary: 'Fix CI failures: ruff lint,
+    Python 3.11 minimum, gallery v3 API, fsspec', time: Tue Feb 24 17:56:36 2026}
+- {author: Ben Dichter, committer: Ben Dichter, hexsha: 
+    de60ce52179883822c11e08cb4229a740af600bd, summary: Migrate hdmf-zarr from 
+    zarr-python v2 to v3, time: Tue Feb 24 17:46:55 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     872bb39fc0beb49b4e5f3ef712e98a51de09748e, summary: Update hdf5 to zarr 
     conversion tutorial and test data (#312), time: Thu Jan  8 17:35:41 2026}
@@ -83376,6 +83875,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    2dbcd5a5eab250f774f275b57b83e7e659ecc2ea, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Sep 21 05:55:25 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     fa11943a8f06854c1ce06c1a9dd01294b499f28f, summary: Automatic update of the 
     code statistics YAML files, time: Sun Sep 20 06:02:45 2026}
