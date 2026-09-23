@@ -11330,6 +11330,13 @@ HDMF_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 HDMF_Zarr:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    2eef251770b8fde297f74c0d726349b1b4999395, summary: Run HDMF dev 
+    compatibility check daily and on pushes to dev (#405), time: Tue Sep 22 
+    18:34:26 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    13aa0284faa72246a341f944c5d305ee1177e2ee, summary: Prepare for release of 
+    HDMF-Zarr 0.14.0 (#404), time: Tue Sep 22 16:01:15 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     295efabae3e2453ed028d16a5f994eb3c3465558, summary: 'Merge pull request #325 from
     hdmf-dev/zarr-v3-migration', time: Tue Sep 22 01:10:26 2026}
@@ -19116,6 +19123,27 @@ LINDI:
     487980fc5b2e96179943080c420aaf1af78eead3, summary: Initial commit, time: Wed
     Mar 13 01:02:13 2024}
 MatNWB:
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    b164e63594af03d9ff2190f8f0a6110f83edb8e0, summary: 'feat(types): add TimeSeries.getDataInUnits
+    and applyConversion (#888)', time: Tue Sep 22 20:37:22 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    e9623e7589f9bd5fb8ed27576011ae4052524545, summary: 'test(system): read PyNWB files
+    without regenerating classes (#889)', time: Tue Sep 22 20:12:29 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    3813e091a10420f53b7a5b7b62bff889485317d2, summary: 'docs(tutorials): add a tutorial
+    for external resource references (#885)', time: Tue Sep 22 19:17:12 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    59be045107d354b9708e6ab2a11fe8559c49e1d0, summary: 'feat(herd): add a user-facing
+    API for external resource references (#877)', time: Tue Sep 22 19:17:11 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    8d9b2c277a0044b3244bebe366dae56d617ef485, summary: 'fix(io): write compound datasets
+    that have no rows (#876)', time: Tue Sep 22 14:04:31 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    4b9d751d46d193dace64d6d802709d4132729521, summary: 'docs: correct the dtype mapping
+    reference for int/uint (#878)', time: Tue Sep 22 14:02:42 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    f415fe13973039f891412787c736b62f6b936240, summary: 'fix(io): correct the misspelled
+    compound resize warning identifier (#882)', time: Tue Sep 22 14:00:53 2026}
 - {author: Prepare release by ehennestad, committer: Prepare release by 
     ehennestad, hexsha: 44aa826f0cfc77f06312119026e7d5cfead096a1, summary: 
     Update version number in Contents.m, time: Mon Aug 31 14:51:58 2026}
@@ -31242,6 +31270,12 @@ NDX_Template:
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    9b6ffb05527f6620f14923c8e2c23c71db502911, summary: 'Merge pull request #180 from
+    NeurodataWithoutBorders/hdmf_zarr_0_14_news', time: Tue Sep 22 19:37:08 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    345c43628eb8cadb4512e58990b3f64063ff21d3, summary: Merge branch 'main' into 
+    hdmf_zarr_0_14_news, time: Sun Sep 20 23:11:48 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
     65b394ff54a320254840baec433fcc8b7d0790b1, summary: 'Merge pull request #181 from
     NeurodataWithoutBorders/link-check-changed-files', time: Sun Sep 20 23:11:37
     2026}
@@ -31252,6 +31286,10 @@ NWB.org:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     bea0b8fc920c13582c04f261f4fc370e10ff6cf7, summary: Merge branch 'main' into 
     fix-preview-permalinks, time: Sun Sep 20 23:07:59 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    df8b1e43ad7b13fa6f14aff558b3531775369407, summary: Update 
+    content/news/hdmf-zarr-0.14-release-2026-09-18.md, time: Sun Sep 20 23:07:29
+    2026}
 - {author: rly, committer: rly, hexsha: ae04ae3579307ed307deb8bde667bb0c19ba873d,
   summary: Revert "Add a canary file with a broken link", time: Wed Sep 16 
     04:51:40 2026}
@@ -31260,6 +31298,9 @@ NWB.org:
 - {author: rly, committer: rly, hexsha: 029f76a4f7473724764a4d5c6b3edad5f056a0de,
   summary: Gate pull requests on links in the files they change, time: Wed Sep 
     16 04:49:39 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b5a6f401d4b003b2fe524f33176b9ab4ac3cbc5a, summary: Add news release for 
+    hdmf-zarr 0.14 Zarr V3 release, time: Tue Sep 15 22:04:58 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     fbabb43b4695243a2ec437e6a3de7a54b61e3af6, summary: 'Merge pull request #179 from
     NeurodataWithoutBorders/neurodata-ai-links', time: Tue Sep 15 01:20:41 2026}
@@ -83875,6 +83916,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    060b3f1d4ec5dfef10ee757fa53f1969d1dfbdf8, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Sep 22 06:21:04 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     2dbcd5a5eab250f774f275b57b83e7e659ecc2ea, summary: Automatic update of the 
     code statistics YAML files, time: Mon Sep 21 05:55:25 2026}
