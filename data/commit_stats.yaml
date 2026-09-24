@@ -31269,6 +31269,9 @@ NDX_Template:
     337d13bf556b7a974d6d0e546ac959ed9c38cdaa, summary: Initial commit. Set up 
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    e71c839dca67eba87313caa8e56a1c9cd8074512, summary: Add Branding & Logos page
+    with NWB artwork (#182), time: Wed Sep 23 07:17:51 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     9b6ffb05527f6620f14923c8e2c23c71db502911, summary: 'Merge pull request #180 from
     NeurodataWithoutBorders/hdmf_zarr_0_14_news', time: Tue Sep 22 19:37:08 2026}
@@ -83916,6 +83919,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    58ea6baf043d7d719e9bbc8eba5618b463af50e1, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Sep 23 06:19:31 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     060b3f1d4ec5dfef10ee757fa53f1969d1dfbdf8, summary: Automatic update of the 
     code statistics YAML files, time: Tue Sep 22 06:21:04 2026}
