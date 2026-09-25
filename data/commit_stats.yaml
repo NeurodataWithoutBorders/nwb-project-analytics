@@ -42599,6 +42599,9 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    c393dbfe58c9b59d33b0190314d9d7aa665c55f8, summary: Fix benchmark plotting 
+    filters and labels (#189), time: Thu Sep 24 17:22:21 2026}
 - {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
     af393552296d7392ed38d82134fdf96417d27441, summary: '[pre-commit.ci] pre-commit
     autoupdate (#187)', time: Mon Feb 23 18:31:02 2026}
@@ -83920,6 +83923,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    e65bbf42cc37f9b01da0a12c94cf8f1dbb0d8515, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Sep 24 06:19:08 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     58ea6baf043d7d719e9bbc8eba5618b463af50e1, summary: Automatic update of the 
     code statistics YAML files, time: Wed Sep 23 06:19:31 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90915,6 +90921,17 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    5c19146a2cb4759c889af354b648e236403924fa, summary: Read Guppy NPM storenames
+    from .npm_params.json instead of duplicating its logic (#2058), time: Thu 
+    Sep 24 21:14:35 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    ccd1aa16cf094d63eba9c369dc3638d7e2216d3d, summary: Pin `zarr<3` so fresh 
+    installs do not resolve hdmf-zarr 0.14 (#2063), time: Thu Sep 24 20:23:53 
+    2026}
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    de0c2956878a715ecc756c095df97f176ee9cefb, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#2059)', time: Thu Sep 24 14:53:15 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     48a87b15dac9be26f5efe55afa1896e3e9d1628f, summary: add max_channel column 
     for phy interface (#961), time: Sat Sep 19 00:43:40 2026}
