@@ -19124,6 +19124,13 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    535392bbf628020801239a846751085f71560933, summary: Probe reference 
+    resolvability through the backend writer (#867), time: Fri Sep 25 16:52:00 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    b37e6a6a7c20075754cd300460cfc6df37b42261, summary: Support nwb-schema 
+    v2.11.0 (#859), time: Fri Sep 25 16:50:28 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     b164e63594af03d9ff2190f8f0a6110f83edb8e0, summary: 'feat(types): add TimeSeries.getDataInUnits
     and applyConversion (#888)', time: Tue Sep 22 20:37:22 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
@@ -42599,6 +42606,14 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    634dd2d27660f110eeb6edb394e0124de144a693, summary: Updated plotting to 
+    generate plots for the individual environments  (#192), time: Fri Sep 25 
+    15:39:42 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    67332407244515fe1684db4cf7160ae0739b58e6, summary: Handle slicing results 
+    with preloading in the heatmap and network tracking plots (#191), time: Fri 
+    Sep 25 12:55:53 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     c393dbfe58c9b59d33b0190314d9d7aa665c55f8, summary: Fix benchmark plotting 
     filters and labels (#189), time: Thu Sep 24 17:22:21 2026}
@@ -83922,6 +83937,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    83ea6746b77126ce4949f473d8a03e9b320b35d4, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Sep 25 05:53:28 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     e65bbf42cc37f9b01da0a12c94cf8f1dbb0d8515, summary: Automatic update of the 
     code statistics YAML files, time: Thu Sep 24 06:19:08 2026}
