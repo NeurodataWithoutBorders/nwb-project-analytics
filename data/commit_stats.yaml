@@ -19124,6 +19124,12 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    1565936e6a7378ee8b6c27f79c96d00e87c3e7cb, summary: Copy DataStub datasets 
+    through the backend writer (#868), time: Sun Sep 27 18:14:06 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    a50030b07424116b7e7b71552d8647c8fad9c405, summary: 'feat(herd): reference plain-value
+    attributes with a relative path (#890)', time: Sun Sep 27 14:14:35 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     535392bbf628020801239a846751085f71560933, summary: Probe reference 
     resolvability through the backend writer (#867), time: Fri Sep 25 16:52:00 
     2026}
@@ -83937,6 +83943,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    bdc8011c047f63095050d779993920f37d6c0bc0, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Sep 27 06:18:44 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     909f1f785e37e14821a0d562da402f7b11692743, summary: Automatic update of the 
     code statistics YAML files, time: Sat Sep 26 06:01:34 2026}
