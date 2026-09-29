@@ -42612,6 +42612,12 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    6f140348bd215de265c097b8da1e802edb7f208e, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#194)', time: Mon Sep 28 18:32:03 2026}
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    4278ab326ca37b6e69ac46f16633046df0a70024, summary: Update 
+    .pre-commit-config.yaml, time: Mon Sep 28 18:30:18 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     634dd2d27660f110eeb6edb394e0124de144a693, summary: Updated plotting to 
     generate plots for the individual environments  (#192), time: Fri Sep 25 
@@ -83943,6 +83949,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    a9a62b52eec57a2032942508f5cb6be4a6a58397, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Sep 28 06:21:50 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     bdc8011c047f63095050d779993920f37d6c0bc0, summary: Automatic update of the 
     code statistics YAML files, time: Sun Sep 27 06:18:44 2026}
