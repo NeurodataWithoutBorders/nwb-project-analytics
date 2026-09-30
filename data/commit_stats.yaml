@@ -83950,6 +83950,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    9b1c7ea42493d8d833f01807b46d6fd16c659cf0, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Sep 29 06:24:58 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     a9a62b52eec57a2032942508f5cb6be4a6a58397, summary: Automatic update of the 
     code statistics YAML files, time: Mon Sep 28 06:21:50 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -90960,6 +90963,15 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Alessio Buccino, committer: GitHub, hexsha: 
+    51f68e13d5eff5ebb4bca05a1f897bb994da5632, summary: Spikeinterface v0.105.0 
+    and location fixes (#2067), time: Tue Sep 29 15:31:27 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a71a3213f7033f0b616ddd4ff23478cdd196ff10, summary: Add EthoVision Manual 
+    Scoring interface (#2066), time: Tue Sep 29 08:41:11 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4f4a5c3c806a3601ec011dff134af91f045d1041, summary: Add EthoVision data 
+    interface (#2054), time: Tue Sep 29 08:03:57 2026}
 - {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
     5c19146a2cb4759c889af354b648e236403924fa, summary: Read Guppy NPM storenames
     from .npm_params.json instead of duplicating its logic (#2058), time: Thu 
