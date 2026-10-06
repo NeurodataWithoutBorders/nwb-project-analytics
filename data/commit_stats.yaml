@@ -19131,6 +19131,13 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    621b043dfff2e8e35dabd49120216fe9d7e7f93b, summary: 'fix(io): keep the requested
+    order of unsorted DataStub subscripts (#924)', time: Mon Oct  5 22:00:02 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    085273829be3d22e64e38fe7305b26512b884353, summary: 'chore(types): regenerate MeaningsTable
+    with its schema relative paths (#894)', time: Mon Oct  5 20:35:18 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     1565936e6a7378ee8b6c27f79c96d00e87c3e7cb, summary: Copy DataStub datasets 
     through the backend writer (#868), time: Sun Sep 27 18:14:06 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
@@ -30068,6 +30075,12 @@ NDX_Extension_Smithy:
     6563111438b3a9ef3e6ec548a0ed2ee4559113e7, summary: Starting to take shape., 
     time: Wed Apr 29 07:45:25 2015}
 NDX_Staged_Extensions:
+- {author: NWB Extensions Bot, committer: NWB Extensions Bot, hexsha: 
+    58fd3561a9bf025ac0e1778fd82c2ed829cf998a, summary: 'Remove staged extension ndx-guppy/
+    [skip ci]', time: Tue Oct  6 00:12:29 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    0926abe07dd755e4285213e997e6610335fa3bde, summary: Add new catalog entry for
+    ndx-guppy (#63), time: Tue Oct  6 00:11:18 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     363c37c691a7ad664adcf27cb8a099ad56ba7bfa, summary: Add main branch trigger 
     to run_smithy workflow (#62), time: Tue Jan 13 23:29:24 2026}
@@ -42619,6 +42632,9 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
+    b3a5a7b645154ebc46854734bd1e64434ebd86ac, summary: '[pre-commit.ci] pre-commit
+    autoupdate (#202)', time: Mon Oct  5 18:46:01 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     c328d5bceb4cdc40e1de8341e01efd61a3786275, summary: 'Merge pull request #200 from
     NeurodataWithoutBorders/set_number', time: Mon Oct  5 05:22:44 2026}
@@ -83990,6 +84006,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    c25d9e257c318a336a2e8eaa34b4bf5f49f8d98e, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Oct  5 06:36:26 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     1d94016858fa154d812bd66525e4800fbb9e4856, summary: Automatic update of the 
     code statistics YAML files, time: Sun Oct  4 08:02:48 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91018,6 +91037,10 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    86978c9c7013694b777e37d9a1ad2b32e7e14c3c, summary: Close the NWB files left 
+    open by `repack_nwbfile` and the recording and events test mixins (#2075), 
+    time: Mon Oct  5 23:11:39 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     7a89436952878d6e2e0b7322c429d2bc719f0ebc, summary: Count only the expected 
     warning in the json schema docstring warning tests (#2074), time: Fri Oct  2
