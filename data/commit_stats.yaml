@@ -19131,6 +19131,63 @@ LINDI:
     Mar 13 01:02:13 2024}
 MatNWB:
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    ff0d00ede6ce5c6360defdab7b41a171736cfe1a, summary: 'fix(util): accept column vectors
+    and array rows in create_indexed_column (#892)', time: Tue Oct  6 15:18:07 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    6d6a85b573c650f3d4a5b8804164307ad48b3d21, summary: 'fix(dynamictable): assign
+    unique ids when adding rows to unbound DataPipe tables (#897)', time: Tue 
+    Oct  6 15:17:54 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    bd20994a6e1149983751a1151a02333ba80febee, summary: 'fix(dynamictable): count new
+    elements when adding a ragged row to a DataPipe column (#896)', time: Tue 
+    Oct  6 15:17:53 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    450578e5650b0b8680ae99d103b13f8cb07efcbc, summary: 'fix(dynamictable): exclude
+    EnumData elements from the colnames check (#900)', time: Tue Oct  6 15:17:15
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    81e71711b1ed971620b41775bf4800d81408adf9, summary: 'perf(read): validate DataStubs
+    from their recorded data type (#915)', time: Tue Oct  6 15:16:53 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    bb882cc5f657a2774efa4e667bfc1ded8b6d2612, summary: 'perf(io): open the HDF5 file
+    once per DataStub read (#910)', time: Tue Oct  6 14:42:46 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    7292950963bba7259820db4fb04e7179c1566298, summary: 'perf(read): check type classes
+    with meta.class.fromName instead of exist (#914)', time: Tue Oct  6 14:42:15
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    46ff139cfcab58c4a54758033a7ff5ab4da9ca2b, summary: 'fix(dynamictable): accept
+    column and category names in either orientation in toTable and getRow (#898)',
+  time: Tue Oct  6 14:40:25 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    e960ac3bf7b0d9d1a853486ed1c1d4279f51ba14, summary: 'perf(read): build full class
+    names by string concatenation (#920)', time: Tue Oct  6 14:36:48 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    b5c5b0820032b32a111736ad1845d82a0945233e, summary: 'fix(dynamictable): fix addRow
+    errors for ragged columns (#895)', time: Tue Oct  6 14:32:30 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    3806c309afc4c2cf0ef2dc1f5903e34fde8b9830, summary: 'fix(dynamictable): accept
+    row vector ids in toTable (#902)', time: Tue Oct  6 14:29:22 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    06f8482ff616b435e042219411fb74fd66ee124c, summary: 'fix(dynamictable): make `clear`
+    (`DynamicTable` method) leave a usable table (#899)', time: Tue Oct  6 
+    14:28:20 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    bed11d73bc338708cc1758c9fb924c25aa4beaaa, summary: 'fix(dynamictable): add an
+    empty ragged row without advancing the index (#908)', time: Tue Oct  6 
+    14:23:07 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    5e793926a4a687aa8b957a021c5ae25aeec9ef69, summary: 'feat: suggest every bundled
+    schema version for generateCore (#911)', time: Tue Oct  6 14:16:44 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    a40e2fa213ce8ee1d115bf42f1e939ce4af46a25, summary: 'fix(generation): write boolean
+    default values into generated classes (#931)', time: Tue Oct  6 14:08:12 
+    2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    a2482e8e4b568d6591f73eb89415dcd506d33f2e, summary: 'fix(export): restore the NeedsManualConversion
+    warning state after validation (#916)', time: Tue Oct  6 14:07:07 2026}
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
     621b043dfff2e8e35dabd49120216fe9d7e7f93b, summary: 'fix(io): keep the requested
     order of unsorted DataStub subscripts (#924)', time: Mon Oct  5 22:00:02 
     2026}
@@ -32688,6 +32745,10 @@ NWB.org:
     6cf7dbc7b5c00e3046a3db218db26a524ac63123, summary: add content, time: Mon 
     Nov 18 16:08:27 2024}
 NWBInspector:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    e6d968a1e0a62aa8f6611f45f242196d9ce75ea5, summary: Support hdmf-zarr 0.14 
+    and zarr-python 3 in the compression checks (#767), time: Tue Oct  6 
+    21:24:35 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     7f774cf0183fd51836056145aa935bc64cc95d9b, summary: Add 
     `check_photon_series_undeclared_depth` (#758), time: Wed Sep 16 22:39:17 
@@ -42632,12 +42693,55 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    ed5885c19f585dda71455f79a037c0cbd0ba3c4c, summary: 'Merge pull request #204 from
+    NeurodataWithoutBorders/rly-patch-2', time: Tue Oct  6 22:14:43 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    2f7694e8c053d2a26ee0c6d60fbc4f9b5c18fab6, summary: Specify version for 
+    hdmf-zarr in YAML file, time: Tue Oct  6 22:13:55 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    9ae6d7dd639d899b1eeb23da658171ad4e3da8c6, summary: 'Merge pull request #199 from
+    NeurodataWithoutBorders/claude/focused-volta-led3bw', time: Tue Oct  6 
+    22:11:20 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    5e7833620156646aa67fc368af90fe2ae7254e96, summary: Merge branch 'main' into 
+    claude/focused-volta-led3bw, time: Mon Oct  5 18:50:33 2026}
 - {author: 'pre-commit-ci[bot]', committer: GitHub, hexsha: 
     b3a5a7b645154ebc46854734bd1e64434ebd86ac, summary: '[pre-commit.ci] pre-commit
     autoupdate (#202)', time: Mon Oct  5 18:46:01 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    9d6b21f86818d5f53d54691469817a65b3655878, summary: Add AGENTS.md with the 
+    version bump rule and bump to 0.1.2, time: Mon Oct  5 06:05:05 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    be9ed6f962abbf4db6cdcb69e234f74332288bbd, summary: Merge branch 'main' into 
+    claude/focused-volta-led3bw, time: Mon Oct  5 05:50:59 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     c328d5bceb4cdc40e1de8341e01efd61a3786275, summary: 'Merge pull request #200 from
     NeurodataWithoutBorders/set_number', time: Mon Oct  5 05:22:44 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    3826771543d848787e4d949e678ea6dfa0a83ab9, summary: Drop the note on shared 
+    parameters from the writing-benchmarks docs, time: Mon Oct  5 05:16:56 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    4a2dce9e01cb1e82d834d1627bc629bb18e8806f, summary: Resolve the S3 blob 
+    locations at import again, time: Mon Oct  5 05:13:22 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    4b451e00a2c3da7a347f4acc48f38babd9709cd4, summary: Hardcode the resolved 
+    DANDI URLs in the benchmark parameters, time: Mon Oct  5 04:55:24 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    f8eb3cabc6f22dcb12ef9a23f55405995b89ce53, summary: Run both CI benchmarks in
+    a single asv invocation, time: Mon Oct  5 04:49:23 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    0b42517a346bfd9ec725d7ad34d1b41670f7404a, summary: Export CONDA so the 
+    environment cache path resolves, time: Mon Oct  5 04:48:15 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    88d9c067af813030a2d1826eb0185408402b696c, summary: Cache the conda 
+    environment between CI runs, time: Mon Oct  5 04:43:55 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    a4b86c3ae3be22245bcb6a12dde6ead0d48804c9, summary: Resolve DANDI asset URLs 
+    sequentially again, time: Mon Oct  5 04:07:48 2026}
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    f243ee43692a73104d8688c6fbd2665d2ebb2cb0, summary: Merge branch 'main' into 
+    claude/focused-volta-led3bw, time: Mon Oct  5 04:01:21 2026}
 - {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
     d69080b151ad49359adce145a1fc78b109986613, summary: Set number=1 in 
     BaseBenchmark class, time: Mon Oct  5 02:59:17 2026}
@@ -42645,6 +42749,12 @@ NWB_Benchmarks:
     e3fa67a43019918b526d1b8ecaa402a57672dac5, summary: 'Merge pull request #197 from
     NeurodataWithoutBorders/add_scatter_trajectories', time: Mon Oct  5 02:35:16
     2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    59e836af21f2c54b8b24a898f890ed5ce95c7b6f, summary: Merge branch 'main' into 
+    claude/focused-volta-led3bw, time: Sun Oct  4 21:03:07 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    120d4b7273eff8f25356d5c134f233f9ae0858d9, summary: Speed up the pull request
+    CI run, time: Sun Oct  4 20:09:30 2026}
 - {author: Cody Baker, committer: GitHub, hexsha: 
     737f85a3506c40339ca255aa2562875419b4f904, summary: Merge branch 'main' into 
     add_scatter_trajectories, time: Sun Oct  4 15:41:23 2026}
@@ -84006,6 +84116,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    5022bbd764d350a4e1798c8ecf1b14da211a4bf7, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Oct  6 06:26:48 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     c25d9e257c318a336a2e8eaa34b4bf5f49f8d98e, summary: Automatic update of the 
     code statistics YAML files, time: Mon Oct  5 06:36:26 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91037,6 +91150,13 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    4e77b5ec80311b4d0b58e7081ce7c4b1fd7b2359, summary: Read pyPhotometry 
+    sessions in `GuppyConverter` (#2077), time: Tue Oct  6 22:40:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    76c9c0c84b5b58a731548397e7786525b76f66bb, summary: List the Zarr compression
+    methods explicitly so neuroconv imports under zarr 3 (#2079), time: Tue Oct  
+    6 20:35:18 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     86978c9c7013694b777e37d9a1ad2b32e7e14c3c, summary: Close the NWB files left 
     open by `repack_nwbfile` and the recording and events test mixins (#2075), 
