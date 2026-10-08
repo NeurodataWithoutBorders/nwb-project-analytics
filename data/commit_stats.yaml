@@ -42693,6 +42693,70 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    887c784504e8a14904005d7c67db2684ac3a1786, summary: 'Merge pull request #203 from
+    NeurodataWithoutBorders/add_time_slicing_benchmark', time: Wed Oct  7 
+    23:55:54 2026}
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    68684984e77d7c3b8f8f50c10e6e8881ddbacb69, summary: Merge branch 'main' into 
+    add_time_slicing_benchmark, time: Wed Oct  7 22:32:59 2026}
+- {author: Claude, committer: Claude, hexsha: 
+    e1abf5fb951001bc2e0ea9091902750b0d2a09b4, summary: Move 
+    RUN_INCREMENTAL_SLICING_BENCHMARKS handling into the benchmark params, time: 
+    Wed Oct  7 22:31:40 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    e4e0ee773bcf7676710bd0909636762016f610ca, summary: 'Merge pull request #209 from
+    NeurodataWithoutBorders/pin-python-3.13', time: Wed Oct  7 19:04:15 2026}
+- {author: Cody Baker, committer: Cody Baker, hexsha: 
+    0886f65063386739b38884522b82cf2b31344398, summary: Pin Python 3.13 in the 
+    conda environment, time: Wed Oct  7 17:43:30 2026}
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    952da087f74d12be5eae296e1bfb5566a9e69e95, summary: Regenerate the reducer 
+    test fixture with asv 0.6.6 (#208), time: Wed Oct  7 15:50:14 2026}
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    2d26a3bce3524e160b7c9d6ab735ba5303b6872d, summary: Merge branch 'main' into 
+    add_time_slicing_benchmark, time: Wed Oct  7 15:49:19 2026}
+- {author: Ryan Ly, committer: GitHub, hexsha: 
+    75b7e3df3f272c8b67e7cf6b7b5da9a63c21798a, summary: 'Merge pull request #205 from
+    NeurodataWithoutBorders/upgrade_pinned_dependencies', time: Wed Oct  7 
+    08:00:39 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    5a0482da1e1ce3a82adf7dd74c3520707252228d, summary: 'Merge pull request #207 from
+    NeurodataWithoutBorders/claude/bold-volta-rzyanr', time: Wed Oct  7 07:08:40
+    2026}
+- {author: Claude, committer: Claude, hexsha: 
+    e9af9fbe3b84df5675098fe4d4d5b096a2923ce0, summary: Wrap incremental slicing 
+    results as ASV samples; restore the existing reducer, time: Wed Oct  7 
+    05:27:00 2026}
+- {author: Claude, committer: Claude, hexsha: 
+    57c75e5c5581dc35c8cfa07a68338a9f617f4d94, summary: Drop the no-op `number` 
+    override and the hdf5 prefix of the shared params, time: Wed Oct  7 05:17:24
+    2026}
+- {author: Claude, committer: Claude, hexsha: 
+    d03707eae24cc03f7f89f46c9e758918aa5cc0a7, summary: Add unit tests and run 
+    them in CI, time: Wed Oct  7 05:04:50 2026}
+- {author: Claude, committer: Claude, hexsha: 
+    2a2e5d93a2c455454650e07ebe7a7e0ebaa9a10b, summary: Record incremental 
+    slicing timings as a single list of cumulative times, time: Wed Oct  7 
+    05:04:50 2026}
+- {author: Claude, committer: Claude, hexsha: 
+    3b6af3bd62c5b4acda862a515d32c17175a6b03e, summary: Bump package version to 
+    0.2.0, time: Wed Oct  7 04:41:44 2026}
+- {author: Claude, committer: Claude, hexsha: 
+    ee63956cbea63dd199a1df70a818126c42418eb0, summary: Group platform-specific 
+    env var snippets into synced tabs, time: Wed Oct  7 04:29:35 2026}
+- {author: rly, committer: rly, hexsha: 104ad8f2457e3a4641ecc1cacb32f9d8f1fcf9a6,
+  summary: Upgrade pinned dependencies to Python 3.14, time: Wed Oct  7 00:21:52
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    cbd8af6c221255aee63f03cb31d6aabd1acb812b, summary: Merge branch 'main' into 
+    add_time_slicing_benchmark, time: Tue Oct  6 23:20:44 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    585822c021509de07f4bfd857537a33da7d14b61, summary: Address copilot feedback, 
+    time: Tue Oct  6 23:12:23 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b119932ea6cfed81f58acbf73f010f48a9cbe4dc, summary: Address review comments, 
+    time: Tue Oct  6 22:56:15 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     ed5885c19f585dda71455f79a037c0cbd0ba3c4c, summary: 'Merge pull request #204 from
     NeurodataWithoutBorders/rly-patch-2', time: Tue Oct  6 22:14:43 2026}
@@ -42703,6 +42767,25 @@ NWB_Benchmarks:
     9ae6d7dd639d899b1eeb23da658171ad4e3da8c6, summary: 'Merge pull request #199 from
     NeurodataWithoutBorders/claude/focused-volta-led3bw', time: Tue Oct  6 
     22:11:20 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    76128ee9a38041426a0f8c79ddc9ba19b1fcb03a, summary: Merge branch 'main' into 
+    add_time_slicing_benchmark, time: Tue Oct  6 20:32:36 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3d67b5292265f6c5f4e7cf5f68a00558c02b509c, summary: Add missing 
+    /track_incremental_slicing.py file, time: Tue Oct  6 20:30:59 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    da1cacc6071347235da9a2277bc9dc7897038123, summary: Fix but in result parser, 
+    time: Tue Oct  6 20:10:33 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    7b7e6760f768aba390accb6a2f5c61ce8b50115b, summary: Make it easy to run the 
+    incremental slice benchmark for individual modalitities via an environment 
+    variable, time: Tue Oct  6 20:10:02 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    c441814d678c18e0250b6ff0c4b17b92a9ec3a10, summary: Document evironment 
+    variables, time: Tue Oct  6 20:08:18 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3da3fa464dcbce8e7bf9940be33d86644208d80d, summary: Add benchmarks for 
+    incremetnally slicing a file, time: Tue Oct  6 19:40:46 2026}
 - {author: Cody Baker, committer: Cody Baker, hexsha: 
     5e7833620156646aa67fc368af90fe2ae7254e96, summary: Merge branch 'main' into 
     claude/focused-volta-led3bw, time: Mon Oct  5 18:50:33 2026}
@@ -84116,6 +84199,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    e51e7e15d6ac1ce7f751fbbc3d7a15b8db3ef0d5, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Oct  7 06:06:07 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     5022bbd764d350a4e1798c8ecf1b14da211a4bf7, summary: Automatic update of the 
     code statistics YAML files, time: Tue Oct  6 06:26:48 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91150,6 +91236,12 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    41a84f89c1a592d592c273ffebb54fb6ee3cc55c, summary: Require numpy 2.0 or 
+    newer (#2081), time: Thu Oct  8 03:59:57 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ea5db154661af106a8cd19db7019fc990f9f205d, summary: Drop Python 3.10 support 
+    (#2080), time: Wed Oct  7 20:10:35 2026}
 - {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
     4e77b5ec80311b4d0b58e7081ce7c4b1fd7b2359, summary: Read pyPhotometry 
     sessions in `GuppyConverter` (#2077), time: Tue Oct  6 22:40:55 2026}
