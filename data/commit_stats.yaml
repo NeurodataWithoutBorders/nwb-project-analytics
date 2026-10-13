@@ -42735,6 +42735,9 @@ NWB_1.x_Python:
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
 - {author: Cody Baker, committer: GitHub, hexsha: 
+    16cb0211523dbd864d0b981a2e57464e2acdb252, summary: Name the machine after 
+    the GitHub Actions runner (#217), time: Mon Oct 12 17:05:46 2026}
+- {author: Cody Baker, committer: GitHub, hexsha: 
     be1fa2ff40c0fce223d1774a445e2ca9aafda100, summary: 'Add `nwb_benchmarks run --random`:
     run one benchmark chosen at random (#216)', time: Sun Oct 11 20:03:02 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
@@ -84256,6 +84259,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    3d3f479c8f59f0c70c4134408fc42582b0bef486, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Oct 12 06:27:39 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     dd44b3aff3fa46b35c2ee3582468112ae6686a18, summary: Automatic update of the 
     code statistics YAML files, time: Sat Oct 10 06:20:07 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91299,6 +91305,36 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    770fbb4d1af28c54098fa0016f2d0ebda60ddcae, summary: Remove `alignment.offset`
+    now that each time-bearing object holds its own offset (#2097), time: Mon 
+    Oct 12 20:28:34 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    697c5aebbc9e81e8406bec7044a7976f02dcee82, summary: Write 
+    `ImageSeries.external_file` paths relative to the NWB file (#2041), time: 
+    Mon Oct 12 20:15:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    570a7f5637358e80dc756a6d4259b57e1ed3280f, summary: Declare the commanded 
+    voltage drives in the constructor instead of the metadata (#2084), time: Mon
+    Oct 12 19:42:27 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b7ca788538e035e5d2bdf3b9abbf5e0e2b14e3ad, summary: Remove the `hdf5` and 
+    `sbx` extras and the TDT `stream_id` argument (#2094), time: Mon Oct 12 
+    18:26:25 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    da090db2df4523638a70d7b4f0dd37b0ac2c5a14, summary: Remove the deprecated 
+    `configuration_file_path` from `MiniscopeImagingInterface` (#2092), time: 
+    Mon Oct 12 17:03:10 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    87e6fe155d26d7b3e96d9c7e5fb9b8654acdac76, summary: Restate the dated 
+    deprecations as v0.12.0 and v0.13.0 (#2088), time: Mon Oct 12 16:53:20 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7d5f2a086007b1e2b990bddf3d5c9b5f903f28af, summary: Remove the deprecations 
+    that came due before 0.11 (#2089), time: Mon Oct 12 16:20:05 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3209d84b45fa96b5da52cc5838417c84439c2474, summary: 'Require spikeinterface 0.105.1,
+    which removed the `with_warning` argument of `set_times` (#2091)', time: Mon
+    Oct 12 15:54:20 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     515816c6147f75db57374b858cf49d65895a78d7, summary: Make arguments 
     keyword-only now that the positional deprecation is due (#2090), time: Thu 
