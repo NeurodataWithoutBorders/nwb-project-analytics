@@ -84259,6 +84259,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    e5e0ba4a051a16f96dd62a9e3a7253a389cc5e71, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Oct 14 06:19:12 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     90ad66bbd4b9e58a9df677ac8b0984c47b56d136, summary: Automatic update of the 
     code statistics YAML files, time: Tue Oct 13 06:20:49 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91308,6 +91311,30 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5d6cc88bde061c354e1d48cec5d16d846bf1535d, summary: Check that every adopted 
+    interface writes the times its `alignment` reports (#2100), time: Wed Oct 14
+    21:28:47 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e4450a8e8fb61ad025cc4a45f5dcdf3cf508fddb, summary: Support python 3.14 
+    (#1542), time: Wed Oct 14 20:28:32 2026}
+- {author: Alessandra Trapani, committer: GitHub, hexsha: 
+    1824535f29af62cae9f09445b3aa72070afa137e, summary: Cap ndx-fiber-photometry 
+    below 0.3 (#2102), time: Wed Oct 14 20:22:34 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    08e47e4dc3fb82fd95290356673d79f2d231a07f, summary: Remove the unreachable 
+    list-based segmentation writer from the roiextractors tools (#2093), time: 
+    Wed Oct 14 17:20:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e926508b2d06e5c3439fe67b2f49c032a2fcf8a0, summary: Add direct tests for 
+    temporal alignment (#2098), time: Wed Oct 14 17:16:07 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a504c9e0822e9ffe4d3b3e31ebc16cc9a1f15a77, summary: Chunk `waveform_mean` and
+    `waveform_sd` of the `Units` table by whole templates (#2099), time: Wed Oct
+    14 17:08:54 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    230d24b3ac07db0449330d9f17035df8a7a1a54e, summary: Split the Zarr codecs 
+    into compression and filter maps (#2101), time: Wed Oct 14 16:59:26 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     6c3b0d9f183d8465307d9290270e0a2c71f4f513, summary: Remove the segmentation 
     arguments the new pipeline ignores (#2096), time: Tue Oct 13 17:48:21 2026}
