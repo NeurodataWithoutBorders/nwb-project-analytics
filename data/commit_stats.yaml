@@ -84259,6 +84259,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    4240998f83e60b7c5fb38580e0a09ac7e9bb7019, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Oct 15 06:20:32 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     e5e0ba4a051a16f96dd62a9e3a7253a389cc5e71, summary: Automatic update of the 
     code statistics YAML files, time: Wed Oct 14 06:19:12 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91311,6 +91314,39 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    c063512b752cbab6e3588013e0c2938c024cf2ff, summary: Simplify metadata 
+    validation integration tests (#2115), time: Fri Oct 16 22:24:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    89894b4cbe2edc539f8472e942d534194762aedf, summary: Deprecate metadata 
+    without `metadata_key` on the ophys pipeline (#2113), time: Fri Oct 16 
+    20:56:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    deb6fc9c90875b8e1a9cb202043aa02031af1aa0, summary: Unify metadata key and 
+    path validation across writers (#2112), time: Fri Oct 16 12:53:26 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1648396fe0e60df99dea132893d5a2320eee26c4, summary: Merge the two 
+    time-bearing classes into one `_TimeBearingObject` (#2111), time: Fri Oct 16
+    12:52:48 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b0a1943e7a9efc54e50d1fc4bb7a386e58919f82, summary: Require ndx-pose 0.4.0 
+    from PyPI instead of its main branch (#2110), time: Thu Oct 15 22:13:35 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    be3b3f4bd38e9585ec8b91bacbb3ae07a5692f8e, summary: Support `set_times` and 
+    `remap_times` on event types (#2104), time: Thu Oct 15 21:57:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4d5c26eeca5de1d560a2839727192fee2a32f042, summary: Raise a named error when 
+    an ophys metadata key is missing (#2107), time: Thu Oct 15 21:57:09 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    db11ff7fdb98fd0131a54e071086fc7095c67fa5, summary: Pin neo below 0.14.6 
+    until the next spikeinterface release (#2109), time: Thu Oct 15 21:18:10 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b64d83f12cad3f43da664acae211a61d13cc9d1f, summary: Stop testing on Intel 
+    macOS (#2108), time: Thu Oct 15 21:17:19 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9001fb94be69b64a671c66ceabe3f62602d19f68, summary: Port the Zarr backend to 
+    zarr 3 (#2105), time: Thu Oct 15 12:49:31 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     5d6cc88bde061c354e1d48cec5d16d846bf1535d, summary: Check that every adopted 
     interface writes the times its `alignment` reports (#2100), time: Wed Oct 14
