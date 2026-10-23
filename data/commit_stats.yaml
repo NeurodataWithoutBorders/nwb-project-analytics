@@ -84270,6 +84270,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    8d3f54d5fa81eb9c53ec539fe215e865c60d9cde, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Oct 22 06:12:05 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     16fa95c3b00d858dbd69cf27f2a33ba948b5ef36, summary: Automatic update of the 
     code statistics YAML files, time: Wed Oct 21 05:51:19 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91334,6 +91337,16 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d9eff9f6cfb161842b61153c55617e776561cb33, summary: Name the event detection 
+    helpers in samples instead of frames (#2134), time: Fri Oct 23 02:29:57 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d4f0a0ad430f95910253aef0b3f5c710bb8bf22d, summary: Add DANNCE to the 
+    behavior API reference (#2131), time: Thu Oct 22 23:19:58 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ed9aa7f07adcaf12b96ed06ea22c6a9ebabf2248, summary: Add derived and 
+    predictable keys to the `metadata_key` principles (#2132), time: Thu Oct 22 
+    23:19:45 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     37746b6c6f8298138d53a9d94a862779049de147, summary: 'Name multi-segment series
     with an unpadded `Segment{index}` and drop the `Raw` and `Processed` default suffixes
