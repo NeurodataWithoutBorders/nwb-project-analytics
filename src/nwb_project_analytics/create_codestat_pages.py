@@ -199,11 +199,14 @@ def __create_nwb_codestat_summary_rst(
         release_timeline_figure: RSTFigure = None,
         codecov_nwb_summary_figure: RSTFigure = None,
         contributors: pd.DataFrame = None,
+        hidden_contributor_names: list = None,
         print_status: bool = True):
     """
     Render the RST document with the plots of the NWB summary
 
     :param out_dir: Output directory
+    :param hidden_contributor_names: List of git author names to omit when rendering the list of contributors.
+                                     See `__contributors_to_rst_list` for details.
     :param print_status: Print status of creation (Default=True)
     :return: RSTDocument with nwb codestat summary
     """
@@ -236,23 +239,41 @@ def __create_nwb_codestat_summary_rst(
             "file as part of the `nwb-project-analytics "
             "<https://github.com/NeurodataWithoutBorders/nwb-project-analytics>`_ "
             "Git repository. \n\n")
-        codestats_rst.add_text(__contributors_to_rst_list(contributors))
+        codestats_rst.add_text(__contributors_to_rst_list(
+            contributors=contributors,
+            hidden_contributor_names=hidden_contributor_names))
 
     return codestats_rst
 
 
-def __contributors_to_rst_list(contributors: pd.DataFrame):
+def __contributors_to_rst_list(contributors: pd.DataFrame,
+                               hidden_contributor_names: list = None):
     """
     Internal helper function used to convert the DataFrame of  contributors to an RST list
     :param contributors: DataFrame of  contributors from `GitCodeStats.contributors`
+    :param hidden_contributor_names: List of git author names that should not be displayed. The commits
+                                     of hidden names are still counted and associated with the contributor
+                                     (i.e., the contributors DataFrame is used as is), only the names are
+                                     omitted from the output. Contributors for which all names are hidden
+                                     are omitted from the list entirely. Names must match exactly.
     :return: String with the RST list
     """
+    if hidden_contributor_names is None:
+        hidden_names = set()
+    elif isinstance(hidden_contributor_names, str):
+        hidden_names = {hidden_contributor_names}
+    else:
+        hidden_names = set(hidden_contributor_names)
     start_col = 2 if "email" in contributors.columns else 1
     contributors['Total'] = contributors.iloc[:, start_col:].sum(axis=1)
     contributors.sort_values(by=['Total'], ascending=False, inplace=True)
     rstlist = ""
     for index, row in contributors.iterrows():
         names = make_tuple(row['name']) if isinstance(row['name'], str) else row['name']
+        # Omit hidden names. The contributions of hidden names are still counted as part of the row
+        names = [n for n in names if n not in hidden_names]
+        if len(names) == 0:
+            continue  # All names of the contributor are hidden, i.e., do not show the contributor
         main_name = names[0]
         aliases = ""
         if len(names) > 1:
@@ -316,7 +337,8 @@ def create_codestat_pages(out_dir: str,
                           cache_contributor_emails: bool = False,
                           start_date: datetime = None,
                           end_date: datetime = None,
-                          print_status: bool = True):
+                          print_status: bool = True,
+                          hidden_contributor_names: list = None):
     """
     Main function used to render all pages and figures related to the tool statistics
 
@@ -331,6 +353,13 @@ def create_codestat_pages(out_dir: str,
     :param end_date: Datetime object with the end date for plots. If None then
                      datetime.today() will be used as default.
     :param print_status: Print status of creation (Default=True)
+    :param hidden_contributor_names: List of git author names that should not be shown in the list of
+                                     contributors. If None (default) then NWBGitInfo.HIDDEN_CONTRIBUTOR_NAMES
+                                     is used. Use an empty list to show all names. Hidden names are still
+                                     used when computing the contributor statistics (i.e., their commits
+                                     are counted and associated with the contributor and the names are
+                                     still being cached in the contributors TSV), the names are only
+                                     omitted when rendering the list of contributors.
     """
     # 1. Init the directory
     init_codestat_pages_dir(out_dir=out_dir)
@@ -340,6 +369,8 @@ def create_codestat_pages(out_dir: str,
         PrintHelper.print("BUILDING Code statistics", PrintHelper.BOLD)
     start_date = NWBGitInfo.NWB2_START_DATE if start_date is None else start_date
     end_date = datetime.today() if end_date is None else end_date
+    if hidden_contributor_names is None:
+        hidden_contributor_names = NWBGitInfo.HIDDEN_CONTRIBUTOR_NAMES
     git_code_stats, summary_stats, per_repo_lang_stats, languages_used_all = GitCodeStats.from_nwb(
         cache_dir=data_dir,
         cloc_path=cloc_path,
@@ -489,6 +520,7 @@ def create_codestat_pages(out_dir: str,
         release_timeline_figure=release_timeline_figure,
         codecov_nwb_summary_figure=codecov_nwb_summary_figure,
         contributors=git_code_stats.contributors,
+        hidden_contributor_names=hidden_contributor_names,
         print_status=print_status)
     # Write the summary RST documents
     codestats_rst.write(os.path.join(out_dir, "code_stats_main.rst"))

@@ -553,6 +553,22 @@ class NWBGitInfo:
     core developer issues should not count against user issues.
     """
 
+    HIDDEN_CONTRIBUTOR_NAMES = [
+        # Stray git author name used for a handful of NeuroConv commits in Nov 2020
+        "Blood Raven",
+        # Mangled git user.name (a git alias command) used for a number of commits across repos in 2019-2021
+        "!git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`",
+    ]
+    """
+    List of git author names that should not be displayed in the public list of contributors, e.g., because
+    the name is mangled or is a nickname a contributor does not want to be shown. Hidden names are still used
+    when computing the contributor statistics, i.e., their commits are still counted and associated with the
+    contributor (and the names remain in the cached contributors TSV file). The names are only omitted when
+    rendering the list of contributors (see
+    :py:func:`~nwb_project_analytics.create_codestat_pages.create_codestat_pages`). Names must match the
+    author name in the git log exactly.
+    """
+
     STANDARD_ISSUE_LABELS = IssueLabels(
         [("category: bug",
           IssueLabel(label="category: bug",
