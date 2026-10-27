@@ -84270,6 +84270,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    735dd1ecbed395a3a240f96ba1ab905db5cd82f0, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Oct 26 06:21:33 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     3051fc4e539636154ccce8e7639ae41d2214733c, summary: Automatic update of the 
     code statistics YAML files, time: Sun Oct 25 06:19:38 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91343,6 +91346,28 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2c85f651e72f0af026d67db970296b6954494b4f, summary: Keep 
+    `AxonRecordingInterface.get_metadata` working after `remove_channels` 
+    (#2140), time: Mon Oct 26 23:06:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2a46c7e3ef34baca4b41494ce86faa550502a2a6, summary: Adopt 
+    `interface.temporal_alignment` in the recording interfaces with a private 
+    writer (#2139), time: Mon Oct 26 22:47:31 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e11ea737944352162e5dc468409e0861e2bd3feb, summary: Move 
+    `interface.temporal_alignment` in the imaging interfaces to a private writer
+    (#2138), time: Mon Oct 26 22:38:28 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9e0188598e6722d21970ee660f714e7ac0242b92, summary: Set the default 
+    `metadata_key` before the base constructor in the recording interfaces 
+    (#2136), time: Mon Oct 26 17:28:46 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    806420b91972c1144ed8241a6ab0811df016f271, summary: Read GuPPy's CSV results 
+    layout (#2095), time: Mon Oct 26 17:10:35 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    feb5c7bda3ce38a4e97b404a8924ee0f92db0531, summary: Keep the time vector of a
+    recording when stubbing it (#2135), time: Mon Oct 26 16:29:57 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     d9eff9f6cfb161842b61153c55617e776561cb33, summary: Name the event detection 
     helpers in samples instead of frames (#2134), time: Fri Oct 23 02:29:57 2026}
