@@ -77,6 +77,11 @@ How to add a new code
 
 To add a new entry to the ``NWBGitInfo.GIT_REPOS`` dictionary in ``src/nwb_project_analytics/gitstats.py``. The dictionary is used to track all main NWB repositories and stores for each repo a `` GitRepo`` object with basic metadata about the code (e.g., the location of the repo, name of the main branch, etc.). When adding a new code, all statistics need to be updated following the instructions above on **How to update the ``data/``**.
 
+How to hide a contributor name
+==============================
+
+The list of contributors shown on the code statistics page is generated from the git author names of all commits. Names that should not be shown on the public page (e.g., because the name is mangled or is a nickname a contributor does not want to be shown) can be added to the ``NWBGitInfo.HIDDEN_CONTRIBUTOR_NAMES`` list in ``src/nwb_project_analytics/gitstats.py``. Hidden names are still used when computing the statistics, i.e., their commits are still counted and associated with the contributor (and the names remain in ``data/contributors.tsv``). The names are only omitted when rendering the list of contributors. Names must match the git author names exactly. Changing the list does not require an update of the ``data/``, only a rebuild of the docs (see **How to force rebuild of all figures and apidoc**).
+
 How are code statistcs computed?
 ================================
 
