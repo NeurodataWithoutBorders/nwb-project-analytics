@@ -11337,6 +11337,13 @@ HDMF_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 HDMF_Zarr:
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    fda82e540be7d2839549c8850b9df7ba7e1b7e0c, summary: 'Merge pull request #414 from
+    hdmf-dev/fix_numcodes', time: Wed Oct 28 03:07:00 2026}
+- {author: Heberto Mayorquin, committer: Heberto Mayorquin, hexsha: 
+    3a6a73351b4dc4de830397abb6f33593f2cdd6c2, summary: Decode the pickle codec 
+    of trusted v2 files instead of going through numcodecs, time: Tue Oct 20 
+    21:23:36 2026}
 - {author: Ryan Ly, committer: GitHub, hexsha: 
     2eef251770b8fde297f74c0d726349b1b4999395, summary: Run HDMF dev 
     compatibility check daily and on pushes to dev (#405), time: Tue Sep 22 
@@ -84269,6 +84276,13 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    892f311f95962ab9620d9ff5e37414d1e3b6bdac, summary: Add 
+    HIDDEN_CONTRIBUTOR_NAMES to omit git author names from the contributors list
+    (#59), time: Tue Oct 27 07:23:55 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    33f7d8b6f72954218b02a90e9ba57c3e2c3ba057, summary: Automatic update of the 
+    code statistics YAML files, time: Tue Oct 27 06:21:53 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
     735dd1ecbed395a3a240f96ba1ab905db5cd82f0, summary: Automatic update of the 
     code statistics YAML files, time: Mon Oct 26 06:21:33 2026}
@@ -91346,6 +91360,41 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ea1f3622ddac78570cb94cbbad4f691d18f4ee24, summary: Adopt 
+    `interface.temporal_alignment` in the time intervals interfaces (#2147), 
+    time: Wed Oct 28 05:00:58 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    cd90e018566fe667d4279719142031759103bb40, summary: Give each segment its own
+    default name in the `TimeSeries` and `SpatialSeries` writers (#2146), time: 
+    Wed Oct 28 02:16:33 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1fc66ff9d6f95283d005b0f47c7d90f75167886f, summary: 'Let a `{metadata_key}_{segment_index}`
+    entry override the shared entry for one segment in the `TimeSeries` and `SpatialSeries`
+    writers (#2145)', time: Wed Oct 28 01:44:50 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    f4599d5111a1eecc27270afc149b8d2280eaa517, summary: Declare the start and 
+    stop time columns in the constructor of the time intervals interfaces 
+    (#2143), time: Wed Oct 28 00:32:23 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9cb9f7c54690dfee5db51e1067cc2f858a3a0c5a, summary: Adopt 
+    `interface.temporal_alignment` in `FicTracDataInterface` (#2142), time: Tue 
+    Oct 27 22:05:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    2d7cced5c067fc33c1d79103c9b09576ac65f19c, summary: Adopt 
+    `interface.temporal_alingment` in the segmentation interfaces (#2103), time: 
+    Tue Oct 27 21:09:16 2026}
+- {author: Abdalrhman Mostafa, committer: GitHub, hexsha: 
+    128578d4a78de3e115500cc8d349a6be44dcd4a7, summary: Keep 
+    `OpenEphysLegacyRecordingInterface.get_metadata` working after 
+    `remove_channels` (#2141), time: Tue Oct 27 15:27:17 2026}
+- {author: Szonja Weigl, committer: GitHub, hexsha: 
+    f0011dec2eb9e30a1b4da1fdf1c24010e5d09f5f, summary: Add OptiTrack interface 
+    (#2085), time: Tue Oct 27 15:25:54 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d3e31e9e7797d561979b70bc7ddcce47b3937146, summary: Add 
+    `event_time_convention` to detection specs to choose which sample an event 
+    is timed at (#2133), time: Tue Oct 27 14:22:56 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     2c85f651e72f0af026d67db970296b6954494b4f, summary: Keep 
     `AxonRecordingInterface.get_metadata` working after `remove_channels` 
