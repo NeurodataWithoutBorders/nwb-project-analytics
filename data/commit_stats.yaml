@@ -32801,6 +32801,9 @@ NWB.org:
     Nov 18 16:08:27 2024}
 NWBInspector:
 - {author: Ben Dichter, committer: GitHub, hexsha: 
+    fe72b42cf2af485f9566fd33b7a1cf1786ec6ed0, summary: Add MeaningsTable checks 
+    (#773), time: Wed Oct 28 15:32:36 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
     e6d968a1e0a62aa8f6611f45f242196d9ce75ea5, summary: Support hdmf-zarr 0.14 
     and zarr-python 3 in the compression checks (#767), time: Tue Oct  6 
     21:24:35 2026}
@@ -84276,6 +84279,9 @@ NWB_Overview:
     edd45d0c115bce3053c017f9a0042f529e628250, summary: Initial commit, time: Wed
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
+    65e98a9e1588f95e943f9af74437092658c96fdc, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Oct 28 05:51:43 2026}
 - {author: Cody Baker, committer: GitHub, hexsha: 
     892f311f95962ab9620d9ff5e37414d1e3b6bdac, summary: Add 
     HIDDEN_CONTRIBUTOR_NAMES to omit git author names from the contributors list
@@ -91360,6 +91366,10 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Alessandra Trapani, committer: GitHub, hexsha: 
+    f79a6c4af6f2a60dd3736d20a2c0cc487f22e204, summary: 'Keep only the annotation step
+    in `tools.external_resources` and remove species and brain-region inference (#2148) ',
+  time: Wed Oct 28 21:09:28 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     ea1f3622ddac78570cb94cbbad4f691d18f4ee24, summary: Adopt 
     `interface.temporal_alignment` in the time intervals interfaces (#2147), 
