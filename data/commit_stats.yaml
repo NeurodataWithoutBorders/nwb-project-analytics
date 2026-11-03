@@ -1,5 +1,19 @@
 AqNWB:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    7c99a0c53d763e3514996aeb0e122dea1b5f0743, summary: 'Improve SpikeEventSeries,
+    HDF5 I/O, and NWBFile metadata for acquisition systems (#355)', time: Mon 
+    Nov  2 11:45:44 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    9be008806c744454d80adad948f8c76dfd7de7ab, summary: 'Merge pull request #353 from
+    NeurodataWithoutBorders/fix-coverage-lcov-inconsistent', time: Mon Nov  2 
+    11:09:54 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b42029aa18efd4634d7bf18e4988ba6ead4c8db7, summary: Add the PR link to the 
+    CHANGELOG entry, time: Mon Nov  2 10:45:18 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    0b8289ebfad2076fcb6c732ec49a204f1aa375ab, summary: Ignore inconsistent lcov 
+    records when processing coverage, time: Mon Nov  2 09:24:29 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
     423bb0b98a8a2d03706e77ae60ebde89f58bff3f, summary: 'Merge pull request #340 from
     NeurodataWithoutBorders/prepare_for_0.4_release', time: Thu Sep  3 07:18:33 
     2026}
@@ -84280,6 +84294,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    a9432ada54e18efb7525a244b65af642c7246346, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Nov  2 06:19:58 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     cf5370a4b6ba67eb67873bdfcdb6f84b8204870c, summary: Automatic update of the 
     code statistics YAML files, time: Sun Nov  1 06:01:25 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91378,6 +91395,26 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Abdalrhman Mostafa, committer: GitHub, hexsha: 
+    97cd1ffee0a8bfc3f5a56d6a57d98ac689abbc63, summary: Keep 
+    `AxonaRecordingInterface.get_metadata` working after `remove_channels` 
+    (#2159), time: Tue Nov  3 04:55:16 2026}
+- {author: Paul Adkisson-Floro, committer: GitHub, hexsha: 
+    f6d611b1175d2b0e52ec3de9b2c37bbf76bb5ee6, summary: Give the pyPhotometry 
+    dark measurement its own `FiberPhotometryTable` row (#2166), time: Tue Nov  
+    3 04:54:37 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    fa536f51b15f841fcf590413e0d19b57d8a5bae4, summary: 'Annotate `NWBFile.institution`
+    with ROR IDs from `metadata["ExternalResources"]["institution"]` (#2164)', 
+    time: Mon Nov  2 20:21:04 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    b82b839358a24b60eba4354ac4432b1c5b241c09, summary: 'Write the `metadata["ExternalResources"]`
+    terms in `configure_and_write_nwbfile` (#2162)', time: Mon Nov  2 19:39:45 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    336c6d672076a0dc8b1e218a8cc671b6ebdb96ba, summary: 'Annotate `NWBFile.experimenter`
+    with ORCID iDs from `metadata["ExternalResources"]["experimenter"]` (#2165)',
+  time: Mon Nov  2 19:14:31 2026}
 - {author: Abdalrhman Mostafa, committer: GitHub, hexsha: 
     ca50144acf286d5d181c93c06368c6c0a7eb1f32, summary: Keep 
     `NeuralynxRecordingInterface.get_metadata` working after `remove_channels` 
