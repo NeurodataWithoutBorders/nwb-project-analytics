@@ -1,5 +1,11 @@
 AqNWB:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    4b3fa21bf2b3d8ed40eea6644d6fef55517768f4, summary: Fix cppcheck 2.19 and 
+    2.22 warnings (#364), time: Wed Nov  4 09:16:24 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    d5d5c2d7b8329973cd059da295eaf6e0b6b4a1b5, summary: Return Status::Failure 
+    from HDF5IO::open instead of throwing (#363), time: Wed Nov  4 08:53:32 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
     59a508faf976b1270f847d2e39c1260d95ca51e4, summary: Prepare for 0.5 release 
     (#357), time: Wed Nov  4 01:54:34 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
@@ -84297,6 +84303,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    c7fa47f72b37694961732117c44ab97ba740ea72, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Nov  4 06:19:28 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     e76a59f9c6e1ce721d012c76e1b25922fae41c25, summary: Automatic update of the 
     code statistics YAML files, time: Tue Nov  3 05:53:51 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91401,6 +91410,30 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8b39a41fe91b9cf338d89453b45eb5050a519320, summary: Take the frame duration 
+    of label bouts from the frame times they are written with (#2180), time: Wed
+    Nov  4 22:08:02 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d5728e0199a6b516ce1b5dd531a40a862d5b2eef, summary: Deprecate the old 
+    alignment methods and `register_recording` on the sorting interfaces (#2179),
+  time: Wed Nov  4 21:41:48 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6e8bd0cc38845cd01283d82eb38abe08926c8bf8, summary: Derive the units table 
+    placement from its `UnitsTables` key and deprecate `parent_container` on the
+    sorting path (#2177), time: Wed Nov  4 21:37:10 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    aaa6c083709e2b7afb0dd351c8c9c8cf3f4fecb2, summary: Add 
+    `interface.temporal_alignment` to the sorting interfaces (#2178), time: Wed 
+    Nov  4 20:59:38 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    b2713224aa60af7ec4d6ee51db082aeb78914053, summary: Fix the Subject age 
+    pattern and accept age ranges such as '/' (#2176), time: Wed Nov  4 20:52:08
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3b78c9257fc256b46737848e3570ebb39f33116c, summary: Add `metadata_key` to the
+    sorting interfaces and name their units tables in dict metadata (#2156), 
+    time: Wed Nov  4 18:28:31 2026}
 - {author: Szonja Weigl, committer: GitHub, hexsha: 
     0b1d6d4bd38f6fba982d89748bb5535731a3f921, summary: Change OptiTrack to 
     conditionally import ndx_pose based on asset types (#2171), time: Tue Nov  3
