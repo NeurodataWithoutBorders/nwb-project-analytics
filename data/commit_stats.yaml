@@ -42777,6 +42777,9 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    202d24cd2bd3dacebbcdbdd3abc700e368b1cb0e, summary: Add results to plotting 
+    (#218), time: Sat Nov  7 04:07:56 2026}
 - {author: Cody Baker, committer: GitHub, hexsha: 
     211b6b7b77b4160f0660f95d9f86937a1552c298, summary: Capture the environment 
     of the running interpreter (#212), time: Fri Nov  6 03:59:53 2026}
@@ -84309,6 +84312,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    ba18394f3368c55936a63f878e4b4c89bfdaf838, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Nov  6 06:17:09 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     aa0114f937e86d1159a85cd21a9f8a9963cd4d45, summary: Automatic update of the 
     code statistics YAML files, time: Thu Nov  5 05:55:15 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91419,6 +91425,22 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    db552d3ca93ac2307eb924bd508eb632459e0a21, summary: Let a sorting's entry 
+    name and describe a units table of its own (#2187), time: Fri Nov  6 
+    22:16:49 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    44148d232836563b1615f0415c4bee6a52d5553b, summary: Read the Blackrock 
+    session start time as UTC where the file stores UTC (#2185), time: Fri Nov  
+    6 20:19:29 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    c59475b64d01a707e478c3a35997f8e139b98eec, summary: 'Write the photon series `dimension`
+    in the column, row order of the NWB schema (#2183)', time: Fri Nov  6 
+    19:40:22 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6ce1ff9fede81c10d85f9c19f2ed61feeebde594, summary: 'Write pixel and voxel masks
+    in the column, row order of the NWB schema (#2182)', time: Fri Nov  6 
+    18:46:01 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     4f970fdca53e85930a86431b541cd64f55c27399, summary: Let several segmentation 
     interfaces write into one PlaneSegmentation through `SegmentationTables` 
