@@ -42778,6 +42778,9 @@ NWB_1.x_Python:
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    ad692c07279501467cdb679d5d1018528c633d73, summary: Added plots for the 
+    incremental slicing benchmark results (#221), time: Sun Nov  8 16:29:56 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
     202d24cd2bd3dacebbcdbdd3abc700e368b1cb0e, summary: Add results to plotting 
     (#218), time: Sat Nov  7 04:07:56 2026}
 - {author: Cody Baker, committer: GitHub, hexsha: 
@@ -84312,6 +84315,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    12192ac51f57aa21be45a25977f7721d0581fbb6, summary: Automatic update of the 
+    code statistics YAML files, time: Sun Nov  8 06:11:53 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     a8184c017b85e33607d173c45ebdb10fcbe7c543, summary: Automatic update of the 
     code statistics YAML files, time: Sat Nov  7 06:13:54 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91428,6 +91434,49 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    572af49bae0b9474e30da666a7e83bac1d01aaf6, summary: Deprecate the old 
+    alignment methods on `AudioInterface` (#2199), time: Mon Nov  9 04:03:49 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    81c7ecb093f4733efb9b5062a8aeaa6ca06cf593, summary: Require 
+    `ndx-sound>=0.3.0` so audio with more than two channels writes valid files 
+    (#2198), time: Mon Nov  9 03:35:41 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    9f2179d811d009df3bd733e6c6b93b8558bc2607, summary: Adopt 
+    `interface.temporal_alignment` in `AudioInterface` (#2197), time: Mon Nov  9
+    03:34:28 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0ed29268fb2f6ad465cf4fc91b7755777ce79340, summary: Let `AudioInterface` take
+    a single `file_path` and add `MockAudioInterface` (#2196), time: Mon Nov  9 
+    02:36:46 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    4a4fa67deac334883a1119581c900c0fe39df100, summary: Rename the icephys 
+    `sequence` column to `protocol_run` (#2195), time: Mon Nov  9 02:15:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5979c8bbd17df47eef7a08d244b049f325340949, summary: Deprecate `"stimulus"` as
+    the default `parent_container` for audio (#2194), time: Mon Nov  9 01:47:11 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0ae71751d25ced553ba1b7995bd671eff738bb9d, summary: Let 
+    `add_acoustic_waveform_series` write audio with irregular timestamps (#2193),
+  time: Mon Nov  9 01:13:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3e50eb52b6e606be763d0f0d539f9e116d6b7a31, summary: Read the Bruker 
+    VoltageOutput command as the stimulus (#2192), time: Sun Nov  8 23:27:53 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d830c365fa75bc6de2bb0cbefcb4ff00ac0b8596, summary: Read the Bruker gin 
+    fixtures from their folders per clamp mode (#2191), time: Sun Nov  8 
+    21:11:41 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    286fa85b145f50a647604a35602dc8ee65179bdc, summary: Give every paired icephys
+    stimulus its own temporal alignment key (#2190), time: Sun Nov  8 20:49:33 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    e2ecb0ca4e400e2ed48bec0c0ce18fe62a5ebee9, summary: Read the Bruker 
+    VoltageRecording start times from the PVScan XML instead of `DateTime` 
+    (#2189), time: Sun Nov  8 20:15:42 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     cc7c9ce86e7bbaf4b16735f3e05fb7a7b0d3cf37, summary: Remove imaging interface 
     tests that only check roiextractors error messages (#2188), time: Sat Nov  7
