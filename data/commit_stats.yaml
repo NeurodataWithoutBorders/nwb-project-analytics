@@ -84315,6 +84315,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    b4c6e33ea8f57e391a8eda67577a2773ffcb199e, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Nov  9 06:19:00 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     12192ac51f57aa21be45a25977f7721d0581fbb6, summary: Automatic update of the 
     code statistics YAML files, time: Sun Nov  8 06:11:53 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91434,6 +91437,17 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    691181d36173806dc13ea31aeba04464bd91bd58, summary: Deprecate the old 
+    alignment methods on `VameInterface` (#2202), time: Mon Nov  9 06:18:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8a8d54b228eddfb82a8f1315d75dc8cf1e03b484, summary: Add 
+    `converter.temporal_alignment` to reach each child's alignment by name 
+    (#2200), time: Mon Nov  9 05:44:33 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7366e892b66b59916e560eeb14e05c0472a928e4, summary: Adopt 
+    `interface.temporal_alignment` in `VameInterface` (#2201), time: Mon Nov  9 
+    05:44:11 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     572af49bae0b9474e30da666a7e83bac1d01aaf6, summary: Deprecate the old 
     alignment methods on `AudioInterface` (#2199), time: Mon Nov  9 04:03:49 
