@@ -17911,6 +17911,27 @@ Hackathons:
     36f80fce751d79214616cd569ec74eefaafe3af8, summary: Initial commit, time: Fri
     Jan 12 23:42:41 2018}
 LINDI:
+- {author: Jeremy Magland, committer: GitHub, hexsha: 
+    172b4272bf9592957b667b8d62c3556c7b4a7d9f, summary: 'Merge pull request #127 from
+    NeurodataWithoutBorders/speed_up_remote_chunk_reads', time: Wed Nov 11 
+    13:43:02 2026}
+- {author: Jeremy Magland, committer: GitHub, hexsha: 
+    4a86171cef66c7af8d38aeb14a4b1284c6a58bd3, summary: 'Merge pull request #128 from
+    NeurodataWithoutBorders/pin_python_version_in_ci', time: Wed Nov 11 13:42:42
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    b453513c336ad2c61e28603c4594eee9482c32c6, summary: Make concurrent chunk 
+    fetching configurable and release it on close, time: Wed Nov 11 09:56:33 
+    2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    a1caf248546bde64a723cb1f0cb778e3036da91c, summary: Fetch the chunks of a 
+    selection concurrently, time: Wed Nov 11 09:56:33 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    3430e02a93cb73302978efcc4a266ec0f589d45a, summary: Reuse HTTP connections 
+    when reading remote chunks, time: Wed Nov 11 09:56:33 2026}
+- {author: Oliver Ruebel, committer: Oliver Ruebel, hexsha: 
+    55160bb4acfef519b7f9c871ae84f0ea1d30c2d4, summary: Pin Python 3.13 in the CI
+    workflows, time: Wed Nov 11 09:56:01 2026}
 - {author: Jeremy Magland, committer: Jeremy Magland, hexsha: 
     f48e993249fca66378d9598cfe83a29fd8e51ad4, summary: incr version, time: Mon 
     Mar  9 14:44:53 2026}
@@ -19166,6 +19187,9 @@ LINDI:
     487980fc5b2e96179943080c420aaf1af78eead3, summary: Initial commit, time: Wed
     Mar 13 01:02:13 2024}
 MatNWB:
+- {author: Eivind Hennestad, committer: GitHub, hexsha: 
+    9961193202537665d0a23f543fe760a2edff7d2c, summary: 'ci: pin MATLAB test jobs to
+    ubuntu-24.04 (#948)', time: Fri Nov 13 03:15:34 2026}
 - {author: Eivind Hennestad, committer: GitHub, hexsha: 
     5aada45ae4da8cba4b8cea49b8112346f4854fd2, summary: 'fix(types): allow one object
     in several unnamed groups (#918)', time: Tue Oct 20 14:12:26 2026}
@@ -32829,6 +32853,10 @@ NWB.org:
     6cf7dbc7b5c00e3046a3db218db26a524ac63123, summary: add content, time: Mon 
     Nov 18 16:08:27 2024}
 NWBInspector:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    1aaa57093e11107affdba1bad234e51bdc7c4722, summary: Add 
+    `check_image_series_external_file_format` (#759), time: Wed Nov 11 15:26:08 
+    2026}
 - {author: Yaroslav Halchenko, committer: GitHub, hexsha: 
     8f2a3d7639234d6c6cd5c532d51d0c74d18c10d3, summary: Accept C. elegans sex 
     from ndx-subjects' c_elegans_sex (#774), time: Thu Nov  5 15:58:51 2026}
@@ -42783,6 +42811,13 @@ NWB_1.x_Python:
     b4428d208b395c97946c079998f27a0ec8e1a1cd, summary: first commit, time: Wed 
     Aug  5 08:16:46 2015}
 NWB_Benchmarks:
+- {author: Cody Baker, committer: GitHub, hexsha: 
+    f88603ab32e0effe39c658f3ed617289be64ea3f, summary: Pinned polars below 2 for
+    the database group (#227), time: Thu Nov 12 23:47:55 2026}
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    a02d3e8328857a63d6d45ee1bbd3079741cc5649, summary: Included the re-hashed 
+    Python 3.13 environment in the 2026-10-07 timepoint (#225), time: Thu Nov 12
+    23:46:36 2026}
 - {author: Oliver Ruebel, committer: GitHub, hexsha: 
     ad692c07279501467cdb679d5d1018528c633d73, summary: Added plots for the 
     incremental slicing benchmark results (#221), time: Sun Nov  8 16:29:56 2026}
@@ -84321,6 +84356,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    204092b4376feef57a528c5ecefc12ceff6e098c, summary: Automatic update of the 
+    code statistics YAML files, time: Wed Nov 11 06:19:44 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     6ace71749076ef6e9ce674912f80d189e118032e, summary: Automatic update of the 
     code statistics YAML files, time: Tue Nov 10 06:19:44 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91446,6 +91484,63 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    f8e0852455cda533018a0b4039bb45d8b6a467d5, summary: Test 
+    `LightningPoseConverter` on `DataInterfaceTestMixin` (#2225), time: Fri Nov 
+    13 01:08:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    edca62c8d947a91eaea51fa58ccf7228418292f1, summary: Document the temporal 
+    alignment API (#1793), time: Thu Nov 12 23:35:57 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5bec5920a1b0d98d564886e4e22d212b7ed9accf, summary: Name Open Ephys electrode
+    groups after their probe (#2158), time: Thu Nov 12 19:22:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    47c36a0de43a9dc5ce79390f187399a75f60fbef, summary: Add `channels_to_exclude`
+    to the recording interfaces (#2222), time: Thu Nov 12 18:48:15 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    cf7d179c82ef77108a26a50a6ac14437e568d93c, summary: Add `remap_times` to 
+    converter temporal alignment (#2221), time: Thu Nov 12 08:03:00 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    12d6d90f0919ca8a9bcd76e414c1b5e28aaed384, summary: Adopt 
+    `interface.temporal_alignment` in the interfaces that write a recording as a
+    `TimeSeries` (#2220), time: Thu Nov 12 07:57:26 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    77a3d64acef6bc5d426d2a5dfc133f36e9df2cae, summary: Test converter temporal 
+    alignment on a minimal timed mock (#2219), time: Thu Nov 12 07:34:51 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    03e2f55f15e01da900b60908fbfc7bd8e3433200, summary: Deprecate data and timing
+    fields in the metadata entries of the recording series writers (#2218), time: 
+    Thu Nov 12 07:17:12 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    fd5da02bf05e5523b18175a66e103e960335c930, summary: Add 
+    `move_earliest_observation_to` to converter temporal alignment (#2217), time: 
+    Thu Nov 12 06:55:58 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    554381fe809b990eceea198b8b410176cfcf2797, summary: Adopt 
+    `interface.temporal_alignment` in `NeuralynxNvtInterface` (#2216), time: Thu
+    Nov 12 06:22:55 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    357a7c5291b0a787dfce34f369aacdc9ae1b0b81, summary: Adopt 
+    `interface.temporal_alignment` in `MiniscopeHeadOrientationInterface` 
+    (#2215), time: Thu Nov 12 06:22:38 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7d72b0b185201164a2213dd226b0ab2dfc45b1d3, summary: Read the ScanImage and 
+    Thor tests and gallery pages from the new gin folders (#2213), time: Thu Nov
+    12 00:56:21 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    10d95bd24128de6307767ee07dec561d36b59373, summary: Read the Micro-Manager 
+    test and gallery page from the new gin fixture (#2212), time: Thu Nov 12 
+    00:50:29 2026}
+- {author: Ben Dichter, committer: GitHub, hexsha: 
+    b057d9fb02bfe6185d8e006bd194552a7dcb7456, summary: Add a Getting help 
+    section to the docs index and README (#2209), time: Thu Nov 12 00:36:44 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    7547f1e6f805268ac0d0cd95dc6cb3267f271144, summary: Post a single Codecov 
+    comment per pull request (#2211), time: Thu Nov 12 00:26:22 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    27f8eeba0b958a01f4b87301162429632e016484, summary: Match units by 
+    `sorting_name` and `unit_name` when writing to an existing units table 
+    (#2210), time: Wed Nov 11 22:26:58 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     adf70fe51e5f4a76e75c0e9afd645b3dab90c480, summary: Add `shift_times` to 
     converter temporal alignment (#2208), time: Wed Nov 11 02:45:51 2026}
