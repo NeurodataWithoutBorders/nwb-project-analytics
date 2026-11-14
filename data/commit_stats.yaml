@@ -84356,6 +84356,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    09d4aac461385100e8da6f4f7b20a35d48920794, summary: Automatic update of the 
+    code statistics YAML files, time: Fri Nov 13 05:52:23 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     204092b4376feef57a528c5ecefc12ceff6e098c, summary: Automatic update of the 
     code statistics YAML files, time: Wed Nov 11 06:19:44 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91484,6 +91487,91 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    dd1059118fb7cde0cc8f9f4305ae11fef276b18b, summary: Add 
+    `NeuroExplorerSortingInterface` (#2245), time: Sat Nov 14 01:08:40 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    cb79238153cee946bbd516b4341cd3d17a169608, summary: Add `temporal_alignment` 
+    to `SpikeGLXNIDQInterface` (#2247), time: Sat Nov 14 01:04:04 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    33d5dffeee929db8c3939f11c1bd8bf504d0c92b, summary: 'Key each analog stream of
+    `OpenEphysBinaryConverter` by its stream name, and update the sorting docs (#2246)',
+  time: Fri Nov 13 23:34:14 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d37b9b70045a0bb7652c6fd3558b3430fb246e8b, summary: 'Add Inscopix GPIO interfaces:
+    channels as TimeSeries and derived events (#1790)', time: Fri Nov 13 
+    22:21:36 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    aa2902e3d064e2ebb0d2544b9863d6dfc3c5993d, summary: "Warn when the provenance record
+    cannot link to the conversion script, and record NeuroConv's own commit (#2244)",
+  time: Fri Nov 13 22:11:59 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ab77ce3cce6c1e3a8610a15ec930f6599a3b3002, summary: Register event types with
+    `temporal_alignment` when an events interface is constructed (#2243), time: 
+    Fri Nov 13 22:04:36 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d09a602b30e5755e6fad4724777f93dd6d31af22, summary: Install `dandi` on Python
+    3.14 (#2242), time: Fri Nov 13 21:48:48 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ef166195a28701fee0e0d4ce7b6b36f526a0c00d, summary: Add 
+    `OpenEphysLegacyAnalogInterface` for the analog inputs of the acquisition 
+    board in legacy Open Ephys recordings (#2237), time: Fri Nov 13 21:32:23 
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a51da8874ea51587f6a5461422bfa0c432144ebb, summary: Skip the hdmf-zarr dev 
+    install on Python 3.11 in the dev dailies (#2241), time: Fri Nov 13 21:10:38
+    2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5f83138575b843d43c157b6623d7b9907f6e7eca, summary: Add `temporal_alignment` 
+    to `DANNCEConverter` (#2240), time: Fri Nov 13 21:10:16 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ac643a9dd2665b501499752d16a1708960f46a1d, summary: Move to SpikeInterface 
+    0.106.0 and lift the `neo` and `zarr` pins (#2239), time: Fri Nov 13 
+    21:07:15 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8473959642f4064b520e9ae439e95ce2bbb50060, summary: Add `AxonAnalogInterface`
+    for the non-neural channels of Axon Binary Format files (#2238), time: Fri 
+    Nov 13 20:36:39 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    04caedb58360269dd48e78b4d10e043d53ce87de, summary: Test `DANNCEConverter` on
+    `DataInterfaceTestMixin` (#2236), time: Fri Nov 13 19:03:42 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    d8c7b936a0105670776a07f9e3d1aa4f265a8a7d, summary: Stop installing 
+    `hdmf_zarr` on Python 3.11 (#2231), time: Fri Nov 13 18:55:44 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    bcaaf788ae828eecd1e2c32fc17b04beb3b1d0c8, summary: Run the live-service 
+    tests on pull requests only when the transfer tools or the dependencies 
+    change (#2235), time: Fri Nov 13 18:49:46 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    6edcaf784c1efecba4e7e661a5192a0e529654f4, summary: Run the recording test 
+    mixin on the Cheetah 5.x Neuralynx classes and on extracellular Axon data 
+    (#2230), time: Fri Nov 13 18:43:26 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    5d7d9360f8dbaf56f55c13fbd13ba9885df64712, summary: Add `channels_to_include`
+    to the interfaces that write a recording as a `TimeSeries` (#2234), time: 
+    Fri Nov 13 18:42:56 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    8f3cf3e0cdcd6c47e1eeb8a0ee1ed4021bae28d8, summary: Raise when a reused 
+    electrode gets a different value (#2233), time: Fri Nov 13 18:41:17 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    3a4c1e5050cc166f13da552f348f27ebe96867db, summary: Match ROIs in a shared 
+    `PlaneSegmentation` by `segmentation_name` and `roi_name` (#2232), time: Fri
+    Nov 13 18:19:34 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    db60c5c82c7467fe404bea0e8b1e2db46eb94fb9, summary: Raise when an unnamed 
+    sorting matches unnamed units or a reused unit gets a different value 
+    (#2229), time: Fri Nov 13 17:52:32 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    0c8fd0d3b152e24bf2ff478e48c215da88d48b9d, summary: Name CellExplorer 
+    sortings after the clustering folder recorded in the spikes file (#2228), 
+    time: Fri Nov 13 15:53:24 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    471f9c59dad9c5065c2238899e1123b8e08904ef, summary: Write `sorting_name` only
+    when a sorting in the units table is named (#2227), time: Fri Nov 13 
+    15:39:25 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    14e7e8cd35a6f75be48f83448fc7624b9f6a1ad8, summary: Add `temporal_alignment` 
+    to `LightningPoseConverter` (#2226), time: Fri Nov 13 14:53:26 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     f8e0852455cda533018a0b4039bb45d8b6a467d5, summary: Test 
     `LightningPoseConverter` on `DataInterfaceTestMixin` (#2225), time: Fri Nov 
