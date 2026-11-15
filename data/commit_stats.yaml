@@ -84356,6 +84356,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    64abef359b2917934282e437f8bf82edac231d8a, summary: Automatic update of the 
+    code statistics YAML files, time: Sat Nov 14 06:14:06 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     09d4aac461385100e8da6f4f7b20a35d48920794, summary: Automatic update of the 
     code statistics YAML files, time: Fri Nov 13 05:52:23 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91487,6 +91490,10 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    46827a466123734c57852c38d8bd01e859b07f74, summary: 'Read OptiTrack exports with
+    extra empty fields in some rows, and raise on exports with no assets (#2248)',
+  time: Sat Nov 14 06:28:24 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     dd1059118fb7cde0cc8f9f4305ae11fef276b18b, summary: Add 
     `NeuroExplorerSortingInterface` (#2245), time: Sat Nov 14 01:08:40 2026}
