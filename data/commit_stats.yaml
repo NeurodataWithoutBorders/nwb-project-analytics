@@ -31426,6 +31426,12 @@ NDX_Template:
     337d13bf556b7a974d6d0e546ac959ed9c38cdaa, summary: Initial commit. Set up 
     cookiecutter and template files, time: Wed May  1 01:30:22 2019}
 NWB.org:
+- {author: Oliver Ruebel, committer: GitHub, hexsha: 
+    78dad3c9684ac708c8c8c7daddb2f7adaeb40b69, summary: 'Merge pull request #213 from
+    robin-dard/update-cicada-page', time: Tue Nov 17 04:42:38 2026}
+- {author: robin-dard, committer: GitHub, hexsha: 
+    d1137cb98a5e6a9efbb3409769e905cd1a7a7ea6, summary: Revise CICADA 
+    documentation and update links, time: Mon Nov 16 14:41:34 2026}
 - {author: Ben Dichter, committer: GitHub, hexsha: 
     2982a7aaada324eee4854d5648ba433952a5abc4, summary: 'Merge pull request #199 from
     NeurodataWithoutBorders/robots-txt', time: Sun Oct 11 14:25:19 2026}
@@ -84356,6 +84362,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    2f4ed1da3938b971403dda737c9504fc92a780d8, summary: Automatic update of the 
+    code statistics YAML files, time: Mon Nov 16 05:49:24 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     137af01909800f0fbd90f262825b06f7e86b3f0f, summary: Automatic update of the 
     code statistics YAML files, time: Sun Nov 15 05:53:10 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91493,6 +91502,20 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Alessio Buccino, committer: GitHub, hexsha: 
+    b3045337f4ad5a4e76ba4edd54b7a16d418975b0, summary: Zarr v3 backend 
+    configuration (#1749), time: Mon Nov 16 22:34:47 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a39d8abde55c7e8f50ec5f59a3fb968e597c5ba6, summary: Deprecate 
+    `ScanImageLegacyImagingInterface` and read ScanImage 3.x and 4.x files with 
+    `ScanImageImagingInterface` (#2253), time: Mon Nov 16 20:51:56 2026}
+- {author: AxelNoun, committer: GitHub, hexsha: 
+    516a3f385fea910cd9a31e3b09c167ea55cacd7a, summary: Re-enable Spike2 
+    real-data tests on platforms with sonpy wheels (#1914), time: Mon Nov 16 
+    20:51:32 2026}
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    ad1c57bb843469fa8cbbdbf818e9c6744e58faa8, summary: Follow a ScanImage file 
+    series from its first file (#2214), time: Mon Nov 16 17:17:23 2026}
 - {author: Heberto Mayorquin, committer: GitHub, hexsha: 
     69e663b50c8d60e5988e707a5c4ec715f11298d8, summary: Deprecate 
     `get_original_timestamps` on the interfaces with temporal alignment (#2251), 
