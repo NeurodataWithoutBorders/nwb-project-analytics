@@ -84362,6 +84362,9 @@ NWB_Overview:
     Mar  9 15:37:05 2022}
 NWB_Project_Analytics:
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
+    3bf52525e0cf007a0d903ea923d4d6bd96af9658, summary: Automatic update of the 
+    code statistics YAML files, time: Thu Nov 19 06:05:23 2026}
+- {author: NWB Bot, committer: NWB Bot, hexsha: 
     71fff38cd513c4c0485f045b1720009081718eeb, summary: Automatic update of the 
     code statistics YAML files, time: Tue Nov 17 06:03:29 2026}
 - {author: NWB Bot, committer: NWB Bot, hexsha: 
@@ -91505,6 +91508,10 @@ NWB_Schema_Language:
     db052965ebb51a7460a1dec1ae7d428aaa3727cd, summary: Initial commit, time: Sat
     Jan  4 00:37:38 2020}
 NeuroConv:
+- {author: Heberto Mayorquin, committer: GitHub, hexsha: 
+    a4a4f1c58f65eb38335012c40865bcdac01754f7, summary: Rename 
+    `_TemporalAlignment._register` to `_add_time_bearing_object` (#2256), time: 
+    Fri Nov 20 00:45:53 2026}
 - {author: Alessio Buccino, committer: GitHub, hexsha: 
     b3045337f4ad5a4e76ba4edd54b7a16d418975b0, summary: Zarr v3 backend 
     configuration (#1749), time: Mon Nov 16 22:34:47 2026}
